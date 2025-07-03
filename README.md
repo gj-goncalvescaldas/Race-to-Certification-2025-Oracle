@@ -32,6 +32,53 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 - [ ] Tenancy Setup *(5 min)* – _Notes pending_
 - [ ] Skill Check: Identity and Access Management (IAM) – _Not Attempted_
 
+### 4. Networking
+- [ ] VCN Introduction *(5 min)* – _Notes pending_
+- [ ] Demo: VCN Creation Using Wizard *(6 min)* – _Notes pending_
+- [ ] VCN Routing *(6 min)* – _Notes pending_
+- [ ] VCN Security *(4 min)* – _Notes pending_
+- [ ] Load Balancer *(5 min)* – _Notes pending_
+- [ ] Demo: Load Balancing *(10 min)* – _Notes pending_
+- [ ] Skill Check: Networking – _Not Attempted_
+
+### 5. Compute
+- [ ] Compute Introduction *(5 min)* – _Notes pending_
+- [ ] Instance Basics *(4 min)* – _Notes pending_
+- [ ] Demo: Getting Started with Cloud Shell *(3 min)* – _Notes pending_
+- [ ] Demo: Creating a Compute Instance *(12 min)* – _Notes pending_
+- [ ] Scaling *(5 min)* – _Notes pending_
+- [ ] Oracle Container Engine for Kubernetes (OKE) *(10 min)* – _Notes pending_
+- [ ] Container Workloads in OCI *(3 min)* – _Notes pending_
+- [ ] Serverless with Oracle Functions *(5 min)* – _Notes pending_
+- [ ] Skill Check: Compute – _Not Attempted_
+
+### 6. Storage
+- [ ] Storage Introduction *(5 min)* – _Notes pending_
+- [ ] Object Storage *(8 min)* – _Notes pending_
+- [ ] Demo: Object Storage *(6 min)* – _Notes pending_
+- [ ] Block Volume *(5 min)* – _Notes pending_
+- [ ] Demo: Block Volume *(9 min)* – _Notes pending_
+- [ ] File Storage *(4 min)* – _Notes pending_
+- [ ] Skill Check: Storage – _Not Attempted_
+
+### 7. Security
+- [ ] Security Introduction *(9 min)* – _Notes pending_
+- [ ] Cloud Guard *(5 min)* – _Notes pending_
+- [ ] Security Zones and Security Advisor *(4 min)* – _Notes pending_
+- [ ] Demo: Security Zone and Security Advisor *(6 min)* – _Notes pending_
+- [ ] Encryption Basics *(11 min)* – _Notes pending_
+- [ ] Vault *(8 min)* – _Notes pending_
+- [ ] Demo: Vault *(7 min)* – _Notes pending_
+- [ ] Skill Check: Security – _Not Attempted_
+
+### 8. Governance and Administration
+- [ ] Pricing *(5 min)* – _Notes pending_
+- [ ] Cost Management *(4 min)* – _Notes pending_
+- [ ] Demo: Cost Management *(9 min)* – _Notes pending_
+- [ ] Demo: Cloud Advisor *(7 min)* – _Notes pending_
+- [ ] Tagging *(6 min)* – _Notes pending_
+- [ ] Support Rewards *(4 min)* – _Notes pending_
+- [ ] Skill Check: Governance and Administration – _Not Attempted_
 ---
 
 ## 📂 Lesson Notes
