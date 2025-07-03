@@ -310,16 +310,12 @@ Allow group OCI-admin-group to manage compartments in tenancy
 > 📝 **Summary:**  
 > A **Virtual Cloud Network (VCN)** is a software-defined, private network in OCI that enables secure communication between cloud resources, on-premises systems, and other OCI regions. It is regional, scalable, highly available, and managed by Oracle.
 
----
-
 #### 🧱 Key Concepts
 
 - **VCN Addressing:**
   - Defined using **CIDR notation** (e.g., `10.0.0.0/16`)
   - Divided into **subnets** (public or private)
   - Instances are deployed into subnets and get assigned **private IPs**
-
----
 
 #### 🌐 VCN Communication Components
 
@@ -330,14 +326,11 @@ Allow group OCI-admin-group to manage compartments in tenancy
 | **Service Gateway**  | Enables access to **OCI public services** (like Object Storage) securely|
 | **Dynamic Routing Gateway (DRG)** | Connects VCN to **on-premises networks** or other private destinations |
 
----
-
 #### ✅ Recap
 
 - A VCN enables secure, scalable communication in OCI.
 - Gateways and routers control how resources communicate externally and internally.
 - It is the **foundation** of OCI networking and underpins compute, database, and service access.
-
 
 ---
 ---
