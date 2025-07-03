@@ -157,7 +157,7 @@ An **Identity Domain** is a logical boundary for a user population and related s
 
 ---
 
-#### 🗂️ Compartments
+### Identity and Access Management → Class: **Compartments**
 
 When you create a tenancy (OCI account), OCI provides a default **Root Compartment**.
 
