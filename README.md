@@ -269,6 +269,38 @@ Allow group <group_name> to <verb> <resource-type> in <location>
 ---
 ---
 
+### Identity and Access Management → Class: **Tenancy Setup**
+
+> 📝 **Summary:**  
+> This lesson explains how to properly configure your OCI tenancy by following key best practices. It introduces the concept of delegating responsibilities to an **OCI Admin Group** instead of using the tenancy administrator for day-to-day operations.
+
+#### ✅ Best Practices for Tenancy Setup
+
+1. **Do NOT use the tenancy administrator** for regular tasks.  
+   → Delegate daily operations to an OCI Admin group.
+
+2. **Create dedicated compartments** to isolate resources:
+   - By environment: dev / prod / test
+   - By region or business unit
+   - Avoid placing all resources in the Root Compartment
+
+3. **Enforce Multi-Factor Authentication (MFA)**  
+   → Combines something you **know** (e.g., password) with something you **have** (e.g., phone).
+
+#### 🔐 Required IAM Policies for OCI Admin Group
+
+To allow delegated administrators to function like tenancy admins, apply the following minimum set of policies:
+
+```plaintext
+Allow group OCI-admin-group to manage all-resources in tenancy
+
+Allow group OCI-admin-group to manage domains in tenancy
+Allow group OCI-admin-group to manage users in tenancy
+Allow group OCI-admin-group to manage groups in tenancy
+Allow group OCI-admin-group to manage dynamic-groups in tenancy
+Allow group OCI-admin-group to manage policies in tenancy
+Allow group OCI-admin-group to manage compartments in tenancy
+```
 
 ---
 ---
