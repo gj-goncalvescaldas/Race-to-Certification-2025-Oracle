@@ -21,7 +21,7 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 ### 2. OCI Introduction
 - [x] OCI Architecture *(7 min)* – ✅ [See Summary](#oci-introduction--class-oci-architecture)
 - [x] Demo: OCI Console Walkthrough *(8 min)* – _No notes_
-- [x] Skill Check: OCI Introduction – ✅ [See Answers](#skill-check-oci-introduction)
+- [x] Skill Check: OCI Introduction – ✅ [See Answers](#-skill-check-oci-introduction)
 
 ---
 
