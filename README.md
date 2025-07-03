@@ -213,6 +213,8 @@ This demo shows how to create a new compartment (`sandbox`) and an identity doma
 ![IAM Architecture Diagram](img/4.png)
 
 ---
+---
+
 
 ### Identity and Access Management → Class: **AuthN and AuthZ**
 
