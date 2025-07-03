@@ -30,7 +30,7 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 - [x] AuthN and AuthZ *(7 min)* – ✅ [See Summary](#identity-and-access-management--class-authn-and-authz)
 - [x] Demo: AuthN and AuthZ *(9 min)* – ✅ [See Summary](#identity-and-access-management--class-demo-authn-and-authz)
 - [x] Tenancy Setup *(5 min)* – ✅ [See Summary](#identity-and-access-management--class-tenancy-setup)
-- [ ] Skill Check: Identity and Access Management (IAM) – _Not Attempted_
+- [ ] Skill Check: Identity and Access Management (IAM) – ✅ [See Answers](#-skill-check-identity-and-acess-management-iam)
 
 ### 4. Networking
 - [ ] VCN Introduction *(5 min)* – _Notes pending_
@@ -310,8 +310,6 @@ Allow group OCI-admin-group to manage compartments in tenancy
 
 This section summarizes the questions and correct answers for the Skill Check quiz in Module 2.
 
----
-
 ### **1. Which statement about regions and availability domains is true?**
 
 **✅ Correct Answer:**  
@@ -320,8 +318,6 @@ This section summarizes the questions and correct answers for the Skill Check qu
 **Explanation:**  
 Each region is a localized geographic area with one or more ADs. Fault domains provide protection **within** an AD, not across regions.
 
----
-
 ### **2. Which capability can be used to protect against failures within an OCI availability domain?**
 
 **✅ Correct Answer:**  
@@ -329,8 +325,6 @@ Each region is a localized geographic area with one or more ADs. Fault domains p
 
 **Explanation:**  
 Fault Domains isolate hardware within a single AD. Distributing resources across FDs reduces the impact of failures within that AD.
-
----
 
 ### **3. Which Oracle Cloud Infrastructure service is NOT intended for a multicloud solution?**
 
@@ -344,8 +338,6 @@ Multicloud services include:
 - Oracle Interconnect for Azure  
 - Oracle MySQL HeatWave on AWS
 
----
-
 ### **4. Which statement about OCI is NOT true?**
 
 **✅ Correct Answer:**  
@@ -353,8 +345,6 @@ Multicloud services include:
 
 **Explanation:**  
 Fault Domains are scoped to a **single AD**. They do not span ADs.
-
----
 
 ### **5. You have subscribed to an OCI region with one availability domain. You want to deploy a highly available application with two servers and a 2-node database. How would you place the components?**
 
@@ -365,3 +355,49 @@ Fault Domains are scoped to a **single AD**. They do not span ADs.
 When limited to one AD, the best way to increase availability is to **spread components across multiple fault domains** within that AD.
 
 ---
+---
+
+## 🧪 Skill Check: Identity and Access Management (IAM)
+
+### **1. Which is NOT a component of OCI Identity and Access Management?**  
+**✅ Correct Answer:** *Network Security Group*
+
+🧠 **Explanation:**  
+Network Security Groups are part of OCI networking, not IAM. IAM components include:
+- **Principals**
+- **Policies**
+- **Federation**
+
+### **2. Which statement about OCI compartments is NOT true?**  
+**✅ Correct Answer:** *It is a best practice to create all your resources in the root compartment.*
+
+🧠 **Explanation:**  
+It is **not** recommended to use the root compartment for everything. Best practice is to use **custom compartments** to:
+- Organize resources
+- Isolate environments
+- Apply access controls
+
+### **3. Which IAM component helps to organize multiple users into a team?**  
+**✅ Correct Answer:** *Groups*
+
+🧠 **Explanation:**  
+**Groups** allow you to organize users into logical collections. You can then assign **policies** to groups rather than individuals.
+
+### **4. How is a resource in OCI identified?**  
+**✅ Correct Answer:** *With OCID*
+
+🧠 **Explanation:**  
+Every OCI resource is assigned a globally unique identifier called an **OCID (Oracle Cloud Identifier)**.
+
+### **5. Which statement about OCI IAM is true?**  
+**✅ Correct Answer:** *It enables you to control access for a group of users.*
+
+🧠 **Explanation:**  
+IAM allows you to:
+- Group users
+- Assign permissions through policies
+- Control access to OCI resources efficiently
+
+---
+
+
