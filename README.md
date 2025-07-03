@@ -189,6 +189,30 @@ When you create a tenancy (OCI account), OCI provides a default **Root Compartme
 
 ---
 
+### Identity and Access Management → Class: **Demo: Compartments and Identity**
+
+**Summary:**  
+This demo shows how to create a new compartment (`sandbox`) and an identity domain (`sandbox-domain`). It also explores nesting compartments and assigning identity resources like users and groups to separate domains for better management and isolation.
+
+---
+
+#### 📸 Screenshots
+
+![Create Compartment](img/1.png)
+
+---
+
+![Sandbox Compartment Info](img/2.png)
+
+---
+
+![Identity Domains](img/3.png)
+
+---
+
+![IAM Architecture Diagram](img/4.png)
+
+
 ## 🧪 Skill Check: OCI Introduction
 
 This section summarizes the questions and correct answers for the Skill Check quiz in Module 2.
