@@ -118,6 +118,8 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 - Use these constructs to build **highly available**, **resilient** architectures
 
 ---
+---
+---
 
 ### Identity and Access Management → Class: **IAM Introduction**
 
@@ -135,8 +137,6 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 
 IAM enables users to be assigned **predefined roles**, each containing a set of **permissions**.
 
----
-
 #### 🏛️ Identity Domains
 
 An **Identity Domain** is a logical boundary for a user population and related security settings.
@@ -147,14 +147,13 @@ An **Identity Domain** is a logical boundary for a user population and related s
 3. Write **Policies** targeting those groups  
    _(Policies are scoped to tenancy, account, or compartment)_
 
----
-
 #### 📦 Resources and OCID
 
 - A **resource** is any cloud object created in OCI (e.g., compute, storage, databases).
 - Each resource is automatically assigned a unique identifier: the **OCID (Oracle Cloud Identifier)**.
 - You don’t manage OCIDs manually—OCI handles it.
 
+---
 ---
 
 ### Identity and Access Management → Class: **Compartments**
@@ -171,15 +170,12 @@ When you create a tenancy (OCI account), OCI provides a default **Root Compartme
 - Resources can be **moved** between compartments.
 - **Multi-region resources** can be grouped in a single compartment.
 
----
-
 #### 🛡️ Why Use Compartments?
 
 - **Access Control:** Define fine-grained policies per compartment.
 - **Environment Isolation:** Separate development, staging, and production.
 - **Organization:** Group related resources together (e.g., by project or team).
 
----
 
 #### 📌 Example: Access Control Using Compartments
 
@@ -188,40 +184,30 @@ When you create a tenancy (OCI account), OCI provides a default **Root Compartme
 3. Write policies granting access to each group only for resources in their designated compartment.
 
 ---
+---
 
 ### Identity and Access Management → Class: **Demo: Compartments and Identity**
 
 **Summary:**  
 This demo shows how to create a new compartment (`sandbox`) and an identity domain (`sandbox-domain`). It also explores nesting compartments and assigning identity resources like users and groups to separate domains for better management and isolation.
 
----
-
 #### 📸 Images
 
 ![Create Compartment](img/1.png)
 
----
-
 ![Sandbox Compartment Info](img/2.png)
 
----
-
 ![Identity Domains](img/3.png)
-
----
 
 ![IAM Architecture Diagram](img/4.png)
 
 ---
 ---
 
-
 ### Identity and Access Management → Class: **AuthN and AuthZ**
 
 **Summary:**  
 This lesson covers the two core IAM concepts in OCI: **Authentication (AuthN)** and **Authorization (AuthZ)**. It introduces key identity types, access control mechanisms, and how policies are used to grant permissions.
-
----
 
 #### 🔐 What Is a Principal?
 
@@ -232,8 +218,6 @@ There are two types:
 
 Users are grouped into **Groups**, and permissions are assigned to groups — not to individual users.
 
----
-
 #### 🔑 Authentication (AuthN)
 
 AuthN answers: **"Are you who you say you are?"**
@@ -243,7 +227,6 @@ AuthN answers: **"Are you who you say you are?"**
 2. **API Signing Keys** (RSA public/private key pairs for CLI/SDK)
 3. **Auth Tokens** (used for 3rd-party tools that don't support API signing)
 
----
 
 #### 🛡️ Authorization (AuthZ)
 
@@ -260,6 +243,36 @@ OCI uses **IAM policies** to define authorization rules.
 ```plaintext
 Allow group <group_name> to <verb> <resource-type> in <location>
 ```
+
+---
+---
+
+### Identity and Access Management → Class: **Demo: AuthN and AuthZ**
+
+> 🔍 **Summary:**  
+> This demo walks through how authentication (AuthN) and authorization (AuthZ) are implemented in OCI using identity domains, users, groups, and policies.  
+> It shows how a newly created user can log in but needs specific permissions (via policies) to access OCI resources.
+
+#### 📸 Images
+
+![User Creation – OCI Admin](img/5.png)  
+
+
+![Group Creation – OCI Admin Group](img/6.png)  
+
+
+![Policy Creation with Policy Builder](img/7.png)  
+
+
+![Bucket Creation – Authorized Action](img/8.png)  
+
+---
+---
+
+
+---
+---
+---
 
 ## 🧪 Skill Check: OCI Introduction
 
