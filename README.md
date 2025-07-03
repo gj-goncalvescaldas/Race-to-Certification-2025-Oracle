@@ -23,6 +23,15 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 - [x] Demo: OCI Console Walkthrough *(8 min)* – _No notes_
 - [x] Skill Check: OCI Introduction – ✅ [See Answers](#-skill-check-oci-introduction)
 
+### 3. Identity and Access Management (IAM)
+- [ ] IAM Introduction *(6 min)* – _Notes pending_
+- [ ] Compartments *(5 min)* – _Notes pending_
+- [ ] Demo: Compartments and Identity Domains *(7 min)* – _Notes pending_
+- [ ] AuthN and AuthZ *(7 min)* – _Notes pending_
+- [ ] Demo: AuthN and AuthZ *(9 min)* – _Notes pending_
+- [ ] Tenancy Setup *(5 min)* – _Notes pending_
+- [ ] Skill Check: Identity and Access Management (IAM) – _Not Attempted_
+
 ---
 
 ## 📂 Lesson Notes
