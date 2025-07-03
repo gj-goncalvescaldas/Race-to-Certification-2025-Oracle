@@ -196,7 +196,7 @@ This demo shows how to create a new compartment (`sandbox`) and an identity doma
 
 ---
 
-#### 📸 Screenshots
+#### 📸 Images
 
 ![Create Compartment](img/1.png)
 
@@ -211,6 +211,50 @@ This demo shows how to create a new compartment (`sandbox`) and an identity doma
 ---
 
 ![IAM Architecture Diagram](img/4.png)
+
+### Identity and Access Management → Class: **AuthN and AuthZ**
+
+**Summary:**  
+This lesson covers the two core IAM concepts in OCI: **Authentication (AuthN)** and **Authorization (AuthZ)**. It introduces key identity types, access control mechanisms, and how policies are used to grant permissions.
+
+---
+
+#### 🔐 What Is a Principal?
+
+A **principal** is an IAM identity allowed to interact with OCI resources.  
+There are two types:
+- **User Principal:** A person using the console, CLI, or SDK.
+- **Resource Principal:** A cloud resource (like a compute instance) authorized to call OCI services.
+
+Users are grouped into **Groups**, and permissions are assigned to groups — not to individual users.
+
+---
+
+#### 🔑 Authentication (AuthN)
+
+AuthN answers: **"Are you who you say you are?"**
+
+**OCI supports 3 authentication methods:**
+1. **Username & Password** (for console access)
+2. **API Signing Keys** (RSA public/private key pairs for CLI/SDK)
+3. **Auth Tokens** (used for 3rd-party tools that don't support API signing)
+
+---
+
+#### 🛡️ Authorization (AuthZ)
+
+AuthZ answers: **"What can you do?"**  
+OCI uses **IAM policies** to define authorization rules.
+
+- Policies are **human-readable** statements.
+- They grant **permissions to groups**, not individuals.
+- Policies can be scoped to:
+  - The **tenancy** (all resources)
+  - A specific **compartment**
+
+**Policy Syntax:**
+```plaintext
+Allow group <group_name> to <verb> <resource-type> in <location>
 
 
 ## 🧪 Skill Check: OCI Introduction
