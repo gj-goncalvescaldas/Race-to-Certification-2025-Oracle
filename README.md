@@ -30,7 +30,7 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 - [x] AuthN and AuthZ *(7 min)* – ✅ [See Summary](#identity-and-access-management--class-authn-and-authz)
 - [x] Demo: AuthN and AuthZ *(9 min)* – ✅ [See Summary](#identity-and-access-management--class-demo-authn-and-authz)
 - [x] Tenancy Setup *(5 min)* – ✅ [See Summary](#identity-and-access-management--class-tenancy-setup)
-- [ ] Skill Check: Identity and Access Management (IAM) – ✅ [See Answers](#-skill-check-identity-and-acess-management-iam)
+- [x] Skill Check: Identity and Access Management (IAM) – ✅ [See Answers](#-skill-check-identity-and-acess-management)
 
 ### 4. Networking
 - [ ] VCN Introduction *(5 min)* – _Notes pending_
@@ -357,7 +357,7 @@ When limited to one AD, the best way to increase availability is to **spread com
 ---
 ---
 
-## 🧪 Skill Check: Identity and Access Management (IAM)
+## 🧪 Skill Check: Identity and Access Management
 
 ### **1. Which is NOT a component of OCI Identity and Access Management?**  
 **✅ Correct Answer:** *Network Security Group*
