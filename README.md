@@ -25,7 +25,7 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 
 ### 3. Identity and Access Management (IAM)
 - [x] IAM Introduction *(6 min)* – ✅ [See Summary](#identity-and-access-management--class-iam-introduction)
-- [x] Compartments *(5 min)* – ✅ [See Summary](#identity-and-access-management--class-compartments)
+- [x] Compartments *(5 min)* – ✅ [See Summary](#identity-and-access-management--class--compartments)
 - [ ] Demo: Compartments and Identity Domains *(7 min)* – _Notes pending_
 - [ ] AuthN and AuthZ *(7 min)* – _Notes pending_
 - [ ] Demo: AuthN and AuthZ *(9 min)* – _Notes pending_
