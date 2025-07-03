@@ -24,8 +24,8 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 - [x] Skill Check: OCI Introduction – ✅ [See Answers](#-skill-check-oci-introduction)
 
 ### 3. Identity and Access Management (IAM)
-- [ ] IAM Introduction *(6 min)* – _Notes pending_
-- [ ] Compartments *(5 min)* – _Notes pending_
+- [x] IAM Introduction *(6 min)* – ✅ [See Summary](#identity-and-access-management--class-iam-introduction)
+- [x] Compartments *(5 min)* – ✅ [See Summary](#identity-and-access-management--class-compartments)
 - [ ] Demo: Compartments and Identity Domains *(7 min)* – _Notes pending_
 - [ ] AuthN and AuthZ *(7 min)* – _Notes pending_
 - [ ] Demo: AuthN and AuthZ *(9 min)* – _Notes pending_
@@ -116,6 +116,76 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 
 - **Region → Availability Domains → Fault Domains**
 - Use these constructs to build **highly available**, **resilient** architectures
+
+---
+
+### Identity and Access Management → Class: **IAM Introduction**
+
+#### 🔐 What is IAM?
+
+**IAM (Identity and Access Management)** is a foundational OCI service that controls:
+- **Who** can access OCI resources
+- **What** they can access
+- **How** they interact with those resources
+
+#### 🧠 Key Concepts
+
+- **AuthN (Authentication):** Who are you?
+- **AuthZ (Authorization):** What permissions do you have?
+
+IAM enables users to be assigned **predefined roles**, each containing a set of **permissions**.
+
+---
+
+#### 🏛️ Identity Domains
+
+An **Identity Domain** is a logical boundary for a user population and related security settings.
+
+**Typical Workflow:**
+1. Create an Identity Domain
+2. Create **Users** and **Groups** within the domain
+3. Write **Policies** targeting those groups  
+   _(Policies are scoped to tenancy, account, or compartment)_
+
+---
+
+#### 📦 Resources and OCID
+
+- A **resource** is any cloud object created in OCI (e.g., compute, storage, databases).
+- Each resource is automatically assigned a unique identifier: the **OCID (Oracle Cloud Identifier)**.
+- You don’t manage OCIDs manually—OCI handles it.
+
+---
+
+#### 🗂️ Compartments
+
+When you create a tenancy (OCI account), OCI provides a default **Root Compartment**.
+
+**Compartments are:**
+- Logical containers to **organize and isolate** cloud resources.
+- Useful for enforcing **access control**, **quotas**, and **budgets**.
+
+**Key Points:**
+- You can create **custom compartments** under the root.
+- Every resource belongs to **one compartment**.
+- Resources can be **moved** between compartments.
+- **Multi-region resources** can be grouped in a single compartment.
+
+---
+
+#### 🛡️ Why Use Compartments?
+
+- **Access Control:** Define fine-grained policies per compartment.
+- **Environment Isolation:** Separate development, staging, and production.
+- **Organization:** Group related resources together (e.g., by project or team).
+
+---
+
+#### 📌 Example: Access Control Using Compartments
+
+1. Place block storage resources in `Compartment A`.
+2. Create user groups: `ComputeAdmins` and `StorageAdmins`.
+3. Write policies granting access to each group only for resources in their designated compartment.
 
 ---
 
