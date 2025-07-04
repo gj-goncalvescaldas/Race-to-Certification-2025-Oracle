@@ -34,8 +34,8 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 
 ### 4. Networking
 - [x] VCN Introduction *(5 min)* – ✅ [See Summary](#networking--class-vcn-introduction)
-- [ ] Demo: VCN Creation Using Wizard *(6 min)* – _Notes pending_
-- [ ] VCN Routing *(6 min)* – _Notes pending_
+- [x] Demo: VCN Creation Using Wizard *(6 min)* – _Notes pending_
+- [x] VCN Routing *(6 min)* – _No notes_
 - [ ] VCN Security *(4 min)* – _Notes pending_
 - [ ] Load Balancer *(5 min)* – _Notes pending_
 - [ ] Demo: Load Balancing *(10 min)* – _Notes pending_
@@ -349,6 +349,117 @@ Allow group OCI-admin-group to manage compartments in tenancy
 
 ![VCN Topology Overview](img/11.png)  
 
+
+---
+---
+
+### Networking → Class: **VCN Routing**
+
+> 📝 **Summary:**  
+> This lesson explains how **route tables** are used in OCI to direct traffic from a VCN to external destinations like the internet, on-premises networks, or other VCNs via peering. It also introduces **DRG v2** for scalable network architectures.
+
+#### 🚦 Route Tables
+
+- A **route table** contains rules that define:
+  - **Destination CIDR block**
+  - **Route target** (next hop: e.g., NAT Gateway, DRG)
+
+- **VCN-local traffic** (within the same VCN/subnets) is automatically routed—no route table needed.
+
+#### 🌐 Common Routing Scenarios
+
+| Traffic Destination        | Route Target        |
+|----------------------------|---------------------|
+| Internet                   | Internet Gateway / NAT Gateway  
+| On-premises                | Dynamic Routing Gateway (DRG)  
+| Another VCN (same region)  | Local Peering Gateway (LPG)  
+| Another VCN (other region) | Remote Peering via DRG  
+
+- **Longest Prefix Match** (most specific CIDR) takes priority when evaluating routes.
+
+#### 🧩 DRG v2 (Dynamic Routing Gateway v2)
+
+- Supports **scalable VCN communication** (up to 300 VCNs on one DRG)
+- Eliminates the need for point-to-point peering via LPG
+- Can connect to additional DRGs via **remote peering** for further scaling
+
+#### ✅ Recap
+
+- Use **route tables** to direct traffic leaving a VCN
+- Use **DRG v2** for simplified, scalable VCN-to-VCN communication
+- OCI provides flexible routing for internet, hybrid, and multi-VCN architectures
+
+---
+---
+
+### Networking → Class: **VCN Security**
+
+> 📝 **Summary:**  
+> This lesson explains how **Security Lists** and **Network Security Groups (NSGs)** control traffic within a Virtual Cloud Network (VCN), acting like firewalls at the subnet and instance levels.
+
+#### 🔐 Security Lists
+- Apply to **all instances** in a **subnet**
+- Define **ingress/egress rules** using CIDR blocks
+- Rules can be **stateful** or **stateless**
+- Example: Allow TCP traffic from `0.0.0.0/0` on port `80` (web traffic)
+
+#### 🧱 Network Security Groups (NSGs)
+- Apply to specific **VNICs** (virtual NICs)
+- Support **granular control** per instance
+- Can use **NSG names** as source/destination (unlike security lists which use only CIDRs)
+- Allow **different rules** for instances in the same subnet
+
+#### ✅ Recap
+- Use **Security Lists** for subnet-wide rules
+- Use **NSGs** for fine-grained, instance-level control within the VCN
+
+---
+---
+
+### Networking → Class: **Load Balancer**
+
+> 📝 **Summary:**  
+> OCI Load Balancers distribute incoming traffic across backend servers to achieve **high availability** and **scalability**. They act as reverse proxies and support both public and private configurations.
+
+#### ⚖️ Types of Load Balancers in OCI
+
+1. **HTTP Load Balancer (Layer 7)**  
+   - Understands HTTP/HTTPS traffic  
+   - Supports advanced features like content-based routing, SSL termination  
+   - Two shapes:
+     - **Flexible**: Scales within a defined bandwidth range (10 Mbps–8 Gbps)
+     - **Predefined**: Micro, Small, Medium, Large (auto scales per shape)  
+   - Suitable for **intelligent routing**
+
+2. **Network Load Balancer (Layer 3/4)**  
+   - Supports TCP, UDP, ICMP  
+   - Lower latency and higher performance  
+   - Also available as public or private  
+   - Ideal when **speed and performance** are critical
+
+#### ✅ Recap
+- Use **HTTP Load Balancer** for smart, content-aware routing  
+- Use **Network Load Balancer** for faster, low-latency traffic handling  
+- Both options are **highly available and scalable** by design
+  
+---
+---
+### Networking → Class: **Demo: Load Balancer**
+
+> 📝 **Summary:**  
+> This demo shows how to deploy a **Layer 7 (HTTP) Load Balancer** in a public subnet that distributes traffic to two backend web servers in a private subnet using **weighted round robin**.  
+> It covers setting up the VCN, subnets, compute instances, security rules, health checks, and listener configuration.
+
+#### 📸 Screenshots
+
+![VCN and Subnet Setup](img/12.png)  
+
+![Web Server Configuration](img/13.png)  
+
+![Load Balancer Health Check & Routing](img/14.png)  
+
+---
+---
 
 ---
 ---
