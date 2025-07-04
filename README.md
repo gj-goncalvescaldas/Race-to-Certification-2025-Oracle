@@ -33,13 +33,13 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 - [x] Skill Check: Identity and Access Management (IAM) – ✅ [See Answers](#-skill-check-identity-and-access-management)
 
 ### 4. Networking
-- [x] VCN Introduction *(5 min)* – ✅ [See Summary](#networking--class-vcn-introduction)
-- [x] Demo: VCN Creation Using Wizard *(6 min)* – _Notes pending_
-- [x] VCN Routing *(6 min)* – _No notes_
-- [ ] VCN Security *(4 min)* – _Notes pending_
-- [ ] Load Balancer *(5 min)* – _Notes pending_
-- [ ] Demo: Load Balancing *(10 min)* – _Notes pending_
-- [ ] Skill Check: Networking – _Not Attempted_
+- [x] VCN Introduction *(5 min)* – ✅ [See Summary](#vcn-introduction)
+- [x] Demo: VCN Creation Using Wizard *(6 min)* – ✅ [See Summary](#demo-vcn-creation-using-wizard)
+- [x] VCN Routing *(6 min)* – ✅ [See Summary](#vcn-routing)
+- [x] VCN Security *(4 min)* – ✅ [See Summary](#vcn-security)
+- [x] Load Balancer *(5 min)* – ✅ [See Summary](#load-balancer)
+- [x] Demo: Load Balancer *(10 min)* – ✅ [See Summary](#demo-load-balancing)
+- [x] Skill Check: Networking – ✅ [See Summary](#skill-check-networking)
 
 ### 5. Compute
 - [ ] Compute Introduction *(5 min)* – _Notes pending_
@@ -558,5 +558,55 @@ IAM allows you to:
 - Control access to OCI resources efficiently
 
 ---
+---
 
+## 🌐 Skill Check: Networking
+
+### **1. Which VCN component blocks inbound traffic, but enables outbound traffic to the internet?**
+
+**✅ Correct Answer:**  
+**NAT Gateway**
+
+**Explanation:**  
+A **NAT Gateway** enables **outbound-only internet access** for private subnet instances while blocking **unsolicited inbound traffic** from the internet.
+
+### **2. Which statement about Virtual Cloud Network (VCN) peering between two VCNs is NOT valid?**
+
+**✅ Correct Answer:**  
+**A VCN peering connection is a VPN-based connection.**
+
+**Explanation:**  
+VCN peering (local or remote) uses **OCI’s internal network**, not VPN. This makes it more efficient and secure for cross-VCN communication.
+
+### **3. Which component is NOT created by default with the creation of a Virtual Cloud Network?**
+
+**✅ Correct Answer:**  
+**Default Local Peering Gateway**
+
+**Explanation:**  
+When you create a VCN, the following are created by default:
+- Default Route Table  
+- Default Security List  
+- Default DHCP Options  
+**Local Peering Gateway** must be created manually if needed.
+
+### **4. Which statement about a Virtual Cloud Network (VCN) is true?**
+
+**✅ Correct Answer:**  
+**A VCN can reside only in a single region but can span multiple availability domains.**
+
+**Explanation:**  
+A **VCN is region-specific** but can span multiple **availability domains (ADs)** within that region. It **cannot** span multiple regions.
+
+> ⚠️ The selected answer in the screenshot (“A VCN can be used with only one instance.”) is **incorrect**.
+
+### **5. Which OSI layer traffic is supported by the OCI Network Load Balancer?**
+
+**✅ Correct Answer:**  
+**Layer 4 (transport)**
+
+**Explanation:**  
+The **OCI Network Load Balancer (NLB)** supports **Layer 4 (TCP/UDP)** traffic. For Layer 7 (HTTP/HTTPS), use the **OCI Load Balancer (LB)** instead.
+
+---
 
