@@ -337,7 +337,7 @@ Allow group OCI-admin-group to manage compartments in tenancy
 ### Networking → Class: **Demo: VCN Creation Using Wizard**
 
 > 📝 **Summary:**  
-> This demo shows how to create a VCN using the OCI VCN Wizard, which sets up a public subnet, a private subnet, and three key gateways (Internet, NAT, and Service). The Network Visualizer is used to review the full topology.
+> This demo shows how to create a VCN using the OCI VCN Wizard, which sets up a public subnet, a private subnet, and three key gateways (Internet, NAT, and Service).
 
 #### 📸 Screenshots
 
