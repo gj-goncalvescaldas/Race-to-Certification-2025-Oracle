@@ -39,7 +39,7 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 - [x] VCN Security *(4 min)* – ✅ [See Summary](#networking--class-vcn-security)
 - [x] Load Balancer *(5 min)* – ✅ [See Summary](#networking--class-load-balancer)
 - [x] Demo: Load Balancer *(10 min)* – ✅ [See Summary](#networking--class-demo-load-balancing)
-- [x] Skill Check: Networking – ✅ [See Summary](#skill-check-networking)
+- [x] Skill Check: Networking – ✅ [See Summary](#-skill-check-networking)
 
 ### 5. Compute
 - [ ] Compute Introduction *(5 min)* – _Notes pending_
