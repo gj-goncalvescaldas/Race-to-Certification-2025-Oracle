@@ -37,8 +37,7 @@ This repo not only tracks my learning but also serves as a **study guide** for o
 
 If you're also working toward Oracle certifications, feel free to fork this repo or reach out with suggestions and feedback!
 
-More info: [Race to Certification 2025](https://education.oracle.com/race-to-certification)
-
+More info: [Race to Certification 2025](https://education.oracle.com/es/race-to-certification-2025)
 ---
 
 > “The comeback is always stronger than the setback.” 💪
