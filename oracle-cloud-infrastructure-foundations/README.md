@@ -34,12 +34,12 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 
 ### 4. Networking
 - [x] VCN Introduction *(5 min)* – ✅ [See Summary](#networking--class-vcn-introduction)
-- [ ] Demo: VCN Creation Using Wizard *(6 min)* – _Notes pending_
-- [ ] VCN Routing *(6 min)* – _Notes pending_
-- [ ] VCN Security *(4 min)* – _Notes pending_
-- [ ] Load Balancer *(5 min)* – _Notes pending_
-- [ ] Demo: Load Balancing *(10 min)* – _Notes pending_
-- [ ] Skill Check: Networking – _Not Attempted_
+- [x] Demo: VCN Creation Using Wizard *(6 min)* – ✅ [See Summary](#networking--class-demo-vcn-creation-using-wizard)
+- [x] VCN Routing *(6 min)* – ✅ [See Summary](#networking--class-vcn-routing)
+- [x] VCN Security *(4 min)* – ✅ [See Summary](#networking--class-vcn-security)
+- [x] Load Balancer *(5 min)* – ✅ [See Summary](#networking--class-load-balancer)
+- [x] Demo: Load Balancer *(10 min)* – ✅ [See Summary](#networking--class-demo-load-balancing)
+- [x] Skill Check: Networking – ✅ [See Summary](#-skill-check-networking)
 
 ### 5. Compute
 - [ ] Compute Introduction *(5 min)* – _Notes pending_
@@ -352,6 +352,117 @@ Allow group OCI-admin-group to manage compartments in tenancy
 
 ---
 ---
+
+### Networking → Class: **VCN Routing**
+
+> 📝 **Summary:**  
+> This lesson explains how **route tables** are used in OCI to direct traffic from a VCN to external destinations like the internet, on-premises networks, or other VCNs via peering. It also introduces **DRG v2** for scalable network architectures.
+
+#### 🚦 Route Tables
+
+- A **route table** contains rules that define:
+  - **Destination CIDR block**
+  - **Route target** (next hop: e.g., NAT Gateway, DRG)
+
+- **VCN-local traffic** (within the same VCN/subnets) is automatically routed—no route table needed.
+
+#### 🌐 Common Routing Scenarios
+
+| Traffic Destination        | Route Target        |
+|----------------------------|---------------------|
+| Internet                   | Internet Gateway / NAT Gateway  
+| On-premises                | Dynamic Routing Gateway (DRG)  
+| Another VCN (same region)  | Local Peering Gateway (LPG)  
+| Another VCN (other region) | Remote Peering via DRG  
+
+- **Longest Prefix Match** (most specific CIDR) takes priority when evaluating routes.
+
+#### 🧩 DRG v2 (Dynamic Routing Gateway v2)
+
+- Supports **scalable VCN communication** (up to 300 VCNs on one DRG)
+- Eliminates the need for point-to-point peering via LPG
+- Can connect to additional DRGs via **remote peering** for further scaling
+
+#### ✅ Recap
+
+- Use **route tables** to direct traffic leaving a VCN
+- Use **DRG v2** for simplified, scalable VCN-to-VCN communication
+- OCI provides flexible routing for internet, hybrid, and multi-VCN architectures
+
+---
+---
+
+### Networking → Class: **VCN Security**
+
+> 📝 **Summary:**  
+> This lesson explains how **Security Lists** and **Network Security Groups (NSGs)** control traffic within a Virtual Cloud Network (VCN), acting like firewalls at the subnet and instance levels.
+
+#### 🔐 Security Lists
+- Apply to **all instances** in a **subnet**
+- Define **ingress/egress rules** using CIDR blocks
+- Rules can be **stateful** or **stateless**
+- Example: Allow TCP traffic from `0.0.0.0/0` on port `80` (web traffic)
+
+#### 🧱 Network Security Groups (NSGs)
+- Apply to specific **VNICs** (virtual NICs)
+- Support **granular control** per instance
+- Can use **NSG names** as source/destination (unlike security lists which use only CIDRs)
+- Allow **different rules** for instances in the same subnet
+
+#### ✅ Recap
+- Use **Security Lists** for subnet-wide rules
+- Use **NSGs** for fine-grained, instance-level control within the VCN
+
+---
+---
+
+### Networking → Class: **Load Balancer**
+
+> 📝 **Summary:**  
+> OCI Load Balancers distribute incoming traffic across backend servers to achieve **high availability** and **scalability**. They act as reverse proxies and support both public and private configurations.
+
+#### ⚖️ Types of Load Balancers in OCI
+
+1. **HTTP Load Balancer (Layer 7)**  
+   - Understands HTTP/HTTPS traffic  
+   - Supports advanced features like content-based routing, SSL termination  
+   - Two shapes:
+     - **Flexible**: Scales within a defined bandwidth range (10 Mbps–8 Gbps)
+     - **Predefined**: Micro, Small, Medium, Large (auto scales per shape)  
+   - Suitable for **intelligent routing**
+
+2. **Network Load Balancer (Layer 3/4)**  
+   - Supports TCP, UDP, ICMP  
+   - Lower latency and higher performance  
+   - Also available as public or private  
+   - Ideal when **speed and performance** are critical
+
+#### ✅ Recap
+- Use **HTTP Load Balancer** for smart, content-aware routing  
+- Use **Network Load Balancer** for faster, low-latency traffic handling  
+- Both options are **highly available and scalable** by design
+  
+---
+---
+### Networking → Class: **Demo: Load Balancer**
+
+> 📝 **Summary:**  
+> This demo shows how to deploy a **Layer 7 (HTTP) Load Balancer** in a public subnet that distributes traffic to two backend web servers in a private subnet using **weighted round robin**.  
+> It covers setting up the VCN, subnets, compute instances, security rules, health checks, and listener configuration.
+
+#### 📸 Screenshots
+
+![VCN and Subnet Setup](img/12.png)  
+
+![Web Server Configuration](img/13.png)  
+
+![Load Balancer Health Check & Routing](img/14.png)  
+
+---
+---
+
+---
+---
 ---
 
 ## 🧪 Skill Check: OCI Introduction
@@ -447,5 +558,55 @@ IAM allows you to:
 - Control access to OCI resources efficiently
 
 ---
+---
 
+## 🌐 Skill Check: Networking
+
+### **1. Which VCN component blocks inbound traffic, but enables outbound traffic to the internet?**
+
+**✅ Correct Answer:**  
+**NAT Gateway**
+
+**Explanation:**  
+A **NAT Gateway** enables **outbound-only internet access** for private subnet instances while blocking **unsolicited inbound traffic** from the internet.
+
+### **2. Which statement about Virtual Cloud Network (VCN) peering between two VCNs is NOT valid?**
+
+**✅ Correct Answer:**  
+**A VCN peering connection is a VPN-based connection.**
+
+**Explanation:**  
+VCN peering (local or remote) uses **OCI’s internal network**, not VPN. This makes it more efficient and secure for cross-VCN communication.
+
+### **3. Which component is NOT created by default with the creation of a Virtual Cloud Network?**
+
+**✅ Correct Answer:**  
+**Default Local Peering Gateway**
+
+**Explanation:**  
+When you create a VCN, the following are created by default:
+- Default Route Table  
+- Default Security List  
+- Default DHCP Options  
+**Local Peering Gateway** must be created manually if needed.
+
+### **4. Which statement about a Virtual Cloud Network (VCN) is true?**
+
+**✅ Correct Answer:**  
+**A VCN can reside only in a single region but can span multiple availability domains.**
+
+**Explanation:**  
+A **VCN is region-specific** but can span multiple **availability domains (ADs)** within that region. It **cannot** span multiple regions.
+
+> ⚠️ The selected answer in the screenshot (“A VCN can be used with only one instance.”) is **incorrect**.
+
+### **5. Which OSI layer traffic is supported by the OCI Network Load Balancer?**
+
+**✅ Correct Answer:**  
+**Layer 4 (transport)**
+
+**Explanation:**  
+The **OCI Network Load Balancer (NLB)** supports **Layer 4 (TCP/UDP)** traffic. For Layer 7 (HTTP/HTTPS), use the **OCI Load Balancer (LB)** instead.
+
+---
 
