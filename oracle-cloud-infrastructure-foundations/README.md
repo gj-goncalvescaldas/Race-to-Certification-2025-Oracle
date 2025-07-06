@@ -42,18 +42,18 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 - [x] Skill Check: Networking – ✅ [See Summary](#-skill-check-networking)
 
 ### 5. Compute
-- [ ] Compute Introduction *(5 min)* – _Notes pending_
-- [ ] Instance Basics *(4 min)* – _Notes pending_
-- [ ] Demo: Getting Started with Cloud Shell *(3 min)* – _Notes pending_
-- [ ] Demo: Creating a Compute Instance *(12 min)* – _Notes pending_
-- [ ] Scaling *(5 min)* – _Notes pending_
-- [ ] Oracle Container Engine for Kubernetes (OKE) *(10 min)* – _Notes pending_
-- [ ] Container Workloads in OCI *(3 min)* – _Notes pending_
-- [ ] Serverless with Oracle Functions *(5 min)* – _Notes pending_
-- [ ] Skill Check: Compute – _Not Attempted_
+- [x] Compute Introduction *(5 min)* – ✅ [See Summary](#compute--class-compute-introduction)
+- [x] Instance Basics *(4 min)* – ✅ [See Summary](#compute--class-instance-basics)
+- [x] Demo: Getting Started with Cloud Shell *(3 min)* – ✅ [See Summary](#compute--class-demo-getting-started-with-cloud-shell)
+- [x] Demo: Creating a Compute Instance *(12 min)* – ✅ [See Summary](#compute--class-demo-creating-a-compute-instance)
+- [x] Scaling *(5 min)* – ✅ [See Summary](#compute--class-scaling)
+- [x] Oracle Container Engine for Kubernetes (OKE) *(10 min)* – ✅ [See Summary](#compute--class-oracle-container-engine-for-kubernetes-oke)
+- [x] Container Workloads in OCI *(3 min)* – [See Summary](#compute--class-container-workloads-in-oci)
+- [x] Serverless with Oracle Functions *(5 min)* – ✅ [See Summary](#compute--class-serverless-with-oracle-functions)
+- [x] Skill Check: Compute – ✅ [See Summary](#-skill-check-compute)
 
 ### 6. Storage
-- [ ] Storage Introduction *(5 min)* – _Notes pending_
+- [x] Storage Introduction *(5 min)* – ✅ [See Summary](#storage--class-storage-introduction)
 - [ ] Object Storage *(8 min)* – _Notes pending_
 - [ ] Demo: Object Storage *(6 min)* – _Notes pending_
 - [ ] Block Volume *(5 min)* – _Notes pending_
@@ -460,6 +460,199 @@ Allow group OCI-admin-group to manage compartments in tenancy
 
 ---
 ---
+---
+
+### Compute → Class: **Compute Introduction**
+
+> 📝 **Summary:**  
+> OCI Compute provides **virtual machines**, **bare metal servers**, and **dedicated hosts** with flexible shapes for custom CPU and memory combinations. It delivers **scalability**, **high performance**, and **cost efficiency**.
+
+#### ⚙️ Compute Options
+
+- **Flexible Shapes**: Customize CPU cores and memory to fit exact needs  
+- **VMs**: Shared infrastructure, multi-tenant, strong isolation  
+- **Bare Metal**: Full dedicated physical server  
+- **Dedicated Host**: Exclusive host to run your own VMs
+
+#### 🧠 Processor Types
+
+- **AMD**, **Intel**, and **ARM (Ampere A1)** supported  
+- ARM instances offer industry-leading **price/performance**  
+  - Example: Ampere A1 outperformed AMD by 32%, Intel by 69% in NGINX workloads
+
+#### 💸 Pricing & Efficiency
+
+- **Pay-as-you-go** model  
+- OCI is up to **50% cheaper** than other clouds  
+- **Preemptible VMs**: Short-lived, low-cost instances ideal for batch/fault-tolerant jobs
+
+#### ✅ Recap
+
+- Choose the right compute type and shape based on your workload  
+- Maximize performance with custom configurations and processor options  
+- Optimize costs with flexible pricing and preemptible instances
+
+---
+---
+
+### Compute → Class: **Instance Basics**
+
+> 📝 **Summary:**  
+> This lesson covers how compute instances in OCI are tied to other services like **VCN** (for networking), **block volumes** (for OS and data), and introduces **live migration** for high availability without rebooting.
+
+#### 🧱 Key Dependencies for Instances
+
+- **Networking**:
+  - Instances are deployed into **subnets** within a **VCN**
+  - Each instance uses a **virtual NIC (VNIC)** for connectivity
+  - VNIC assigns the **private IP** to the compute instance
+
+- **Storage**:
+  - OS and data are stored on **boot volumes** and **block volumes**
+  - These are network-attached and persist beyond instance reboots
+
+#### 🔁 Live Migration
+
+- Automatically moves VMs between hosts during maintenance or failure  
+- Ensures high availability **without user intervention**  
+- Transparent to the user and avoids downtime during infrastructure events
+
+#### ✅ Recap
+
+OCI compute instances depend on **networking** and **storage** control planes and benefit from built-in **live migration** to maximize uptime.
+
+---
+---
+
+### Compute → Class: **Demo: Getting Started with Cloud Shell**
+
+> 📝 **Summary:**  
+> This demo shows how to access **OCI Cloud Shell** and use it to generate **SSH key pairs** securely from the browser, eliminating the need for external tools.  
+> The public key is used to authenticate remote access, while the private key stays securely with the user.
+
+---
+---
+
+### Compute → Class: **Demo: Creating a Compute Instance**
+
+> 📝 **Summary:**  
+> This demo walks through **manually building a VCN** (with internet gateway, route table, and security list) and deploying a **Compute instance in a public subnet**. After launch, the instance is accessed via SSH, and **Apache is installed** to serve a web page.
+
+#### 📸 Screenshot
+
+![Compute Demo Architecture](img/15.png)
+
+---
+---
+
+### Compute → Class: **Scaling**
+
+> 📝 **Summary:**  
+> OCI Compute supports two types of scaling:  
+> - **Vertical Scaling**: Increase/decrease CPU and memory of an instance (requires downtime).  
+> - **Horizontal Scaling (Autoscaling)**: Automatically adds/removes VMs based on demand for **high availability and elasticity**.
+
+#### ⚙️ Autoscaling in Practice
+
+1. **Create a configuration (template)** from a running instance  
+2. **Create an instance pool** based on the configuration  
+3. **Define Autoscaling rules** using CPU/memory thresholds and desired min/max instance count
+
+💡 **Autoscaling** allows your infrastructure to react to traffic automatically — ideal for dynamic workloads like web stores. No extra cost is incurred for using the feature.
+
+---
+---
+
+### Compute → Class: **Oracle Container Engine for Kubernetes (OKE)**
+
+> 📝 **Summary:**  
+> Oracle Container Engine for Kubernetes (OKE) is a **fully managed**, **highly available**, and **scalable** service to run Kubernetes clusters on OCI.  
+> Containers offer faster boot times, lower resource usage, and portability compared to VMs. Kubernetes handles orchestration — deploying, scaling, and managing containers.
+
+#### 🚀 Key Components
+
+- **Pods**: Smallest unit, runs one or more containers
+- **Worker Nodes**: Machines that run pods
+- **Node Pool**: A group of worker nodes
+- **Control Plane Nodes**: Managed by Oracle, handles cluster management (scheduling, scaling, etc.)
+
+#### ⚙️ Cluster & Node Types
+
+- **Cluster Types**:  
+  - *Enhanced Cluster*: All features + SLA  
+  - *Basic Cluster*: Core features only + SLO  
+
+- **Node Pool Types**:  
+  - *Virtual Nodes*: Serverless, managed by Oracle  
+  - *Managed Nodes*: User-managed and customizable
+---
+---
+
+### Compute → Class: **Container Workloads in OCI**
+
+> 📝 **Summary:**  
+> OCI **Container Instances** provide a **simple**, **secure**, and **serverless** way to run containers without managing servers or Kubernetes (OKE).  
+> Ideal for testing, isolated apps, or APIs, users only provide the container image—OCI handles the compute and runtime automatically.
+
+#### 🚀 Key Benefits
+
+- No need to manage VMs, OS patches, or runtimes  
+- Run **multiple containers** per instance  
+- Supports **environment variables**, **resource limits**, and **startup options**  
+- Provides **workload isolation** for security
+
+---
+---
+
+### Compute → Class: **Serverless with Oracle Functions**
+
+> 📝 **Summary:**  
+> Oracle Functions is a **serverless, event-driven** compute service that lets you run code without managing infrastructure.  
+> Built on the **open-source Fn Project**, it charges **only for execution time**, enabling a truly **consumption-based pricing** model.
+
+#### ⚙️ Key Features
+
+- Code runs inside containers
+- Highly **scalable** and **parallel**
+- **Event-driven**: triggered via API, CLI, or OCI Events
+- Integrates with other **OCI services**
+- **No charge** when idle (you pay only for usage)
+
+---
+---
+---
+
+### Storage → Class: **Storage Introduction**
+
+> 📝 **Summary:**  
+> This lesson introduces OCI's diverse **storage services**, each tailored to different performance, durability, and access needs. Choosing the right storage depends on data type, persistence, connectivity, and protocol requirements.
+
+#### 📦 Key OCI Storage Types
+
+- **Local NVMe**:  
+  - Locally attached SSD storage  
+  - Ultra-high performance, **non-persistent**  
+  - Best for performance-sensitive workloads
+
+- **Block Volume**:  
+  - **Network-attached**, persistent block storage  
+  - Data organized in **blocks**, usable beyond instance lifecycle  
+  - Ideal for databases, boot volumes
+
+- **File Storage**:  
+  - Shared network storage using **files and directories**  
+  - Accessible from multiple compute instances  
+  - Great for shared access and POSIX compliance
+
+- **Object Storage**:  
+  - Highly durable, internet-accessible storage  
+  - Accessed via **HTTP/REST** using `PUT`, `GET`  
+  - Ideal for backups, logs, images, videos, etc.
+
+#### 🔄 Data Migration Tools
+
+- **Data Transfer Disk**: Send your physical disks to OCI  
+- **Data Transfer Appliance**: For larger-scale migrations
 
 ---
 ---
@@ -609,4 +802,58 @@ A **VCN is region-specific** but can span multiple **availability domains (ADs)*
 The **OCI Network Load Balancer (NLB)** supports **Layer 4 (TCP/UDP)** traffic. For Layer 7 (HTTP/HTTPS), use the **OCI Load Balancer (LB)** instead.
 
 ---
+---
+
+## 💻 Skill Check: Compute
+
+### **1. Which type of storage is associated with instances in the OCI Compute service?**
+
+**✅ Correct Answer:**  
+**Block Storage**
+
+**Explanation:**  
+**Block Storage** provides high-performance, durable volumes that can be attached to compute instances. It behaves like a raw hard drive, which is ideal for boot volumes or storing application data.
+
+---
+
+### **2. Which processor type is NOT available for the OCI Compute service?**
+
+**✅ Correct Answer:**  
+**Snapdragon**
+
+**Explanation:**  
+OCI Compute supports **AMD**, **Intel**, and **Ampere** processors. **Snapdragon** is not supported—it's primarily used in mobile devices, not cloud compute environments.
+
+---
+
+### **3. What is the primary purpose of Oracle Cloud Infrastructure Functions?**
+
+**✅ Correct Answer:**  
+**To execute code in response to events or HTTP requests**
+
+**Explanation:**  
+OCI **Functions** is a serverless platform that allows you to run code triggered by **events** or **HTTP requests**, without managing infrastructure.
+
+---
+
+### **4. Which statement about the working of autoscaling in an instance pool is true?**
+
+**✅ Correct Answer:**  
+**It automatically provisions and removes instances in an instance pool.**
+
+**Explanation:**  
+**Autoscaling** dynamically adjusts the number of compute instances in a pool based on usage metrics or schedules, adding or removing instances automatically as needed.
+
+---
+
+### **5. Which two parameters can be customized when creating a flexible shape compute instance?**
+
+**✅ Correct Answer:**  
+- **Number of OCPUs**  
+- **Amount of memory**
+
+**Explanation:**  
+With **flexible shapes**, you can choose the exact **OCPU count** and **memory** allocation to match your workload, providing cost efficiency and performance tuning.
+
+
 
