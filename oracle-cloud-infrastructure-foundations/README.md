@@ -814,8 +814,6 @@ The **OCI Network Load Balancer (NLB)** supports **Layer 4 (TCP/UDP)** traffic. 
 **Explanation:**  
 **Block Storage** provides high-performance, durable volumes that can be attached to compute instances. It behaves like a raw hard drive, which is ideal for boot volumes or storing application data.
 
----
-
 ### **2. Which processor type is NOT available for the OCI Compute service?**
 
 **✅ Correct Answer:**  
@@ -823,8 +821,6 @@ The **OCI Network Load Balancer (NLB)** supports **Layer 4 (TCP/UDP)** traffic. 
 
 **Explanation:**  
 OCI Compute supports **AMD**, **Intel**, and **Ampere** processors. **Snapdragon** is not supported—it's primarily used in mobile devices, not cloud compute environments.
-
----
 
 ### **3. What is the primary purpose of Oracle Cloud Infrastructure Functions?**
 
@@ -834,8 +830,6 @@ OCI Compute supports **AMD**, **Intel**, and **Ampere** processors. **Snapdragon
 **Explanation:**  
 OCI **Functions** is a serverless platform that allows you to run code triggered by **events** or **HTTP requests**, without managing infrastructure.
 
----
-
 ### **4. Which statement about the working of autoscaling in an instance pool is true?**
 
 **✅ Correct Answer:**  
@@ -843,8 +837,6 @@ OCI **Functions** is a serverless platform that allows you to run code triggered
 
 **Explanation:**  
 **Autoscaling** dynamically adjusts the number of compute instances in a pool based on usage metrics or schedules, adding or removing instances automatically as needed.
-
----
 
 ### **5. Which two parameters can be customized when creating a flexible shape compute instance?**
 
