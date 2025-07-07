@@ -68,16 +68,16 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 - [x] Demo: Security Zone and Security Advisor *(6 min)* – ✅ [See Summary](#security--class-demo-security-zones-and-security-advisor)
 - [x] Encryption Basics *(11 min)* – ✅ [See Summary](#security--class-encryption-basics)
 - [x] Vault *(8 min)* – ✅ [See Summary](#security--class-vault)
-- [ ] Demo: Vault *(7 min)* – ✅ [See Summary](#security--demo-vault)
-- [ ] Skill Check: Security – ✅ [See Summary](#-skill-check-security)
+- [x] Demo: Vault *(7 min)* – ✅ [See Summary](#security--demo-vault)
+- [x] Skill Check: Security – ✅ [See Summary](#-skill-check-security)
 
 ### 8. Governance and Administration
-- [ ] Pricing *(5 min)* – _Notes pending_
-- [ ] Cost Management *(4 min)* – _Notes pending_
-- [ ] Demo: Cost Management *(9 min)* – _Notes pending_
-- [ ] Demo: Cloud Advisor *(7 min)* – _Notes pending_
-- [ ] Tagging *(6 min)* – _Notes pending_
-- [ ] Support Rewards *(4 min)* – _Notes pending_
+- [x] Pricing *(5 min)* – ✅ [See Summary](#governance-and-administration--class-pricing)
+- [x] Cost Management *(4 min)* – ✅ [See Summary](#governance-and-administration--class-cost-management)
+- [x] Demo: Cost Management *(9 min)* – ✅ [See Summary](#governance-and-administration--class-demo-cost-management)
+- [x] Demo: Cloud Advisor *(7 min)* – ✅ [See Summary](#governance-and-administration--class-demo-cloud-advisor)
+- [x] Tagging *(6 min)* – ✅ [See Summary](#governance-and-administration--class-tagging)
+- [x] Support Rewards *(4 min)* – ✅ [See Summary](#governance-and-administration--class-support-rewards)
 - [ ] Skill Check: Governance and Administration – _Not Attempted_
 ---
 
@@ -883,6 +883,79 @@ It demonstrates how to use that key when creating an Object Storage bucket, sati
 A policy is also created to allow Object Storage to access the encryption key from the Vault.
 
 ![Vault Demo](img/25.png)
+
+---
+---
+
+### Governance and Administration → Class: **Pricing**
+
+Oracle Cloud Infrastructure offers **simple, transparent, and competitive pricing** models:
+- **Pay As You Go**: Metered usage with no upfront commitment.
+- **Consumption-Based**: Used in services like Functions, charging only when executed.
+- **Annual/Monthly Universal Credits**: Prepaid models with significant discounts and flexibility.
+- **Bring Your Own License**: Reuse existing on-premises licenses in the cloud to lower costs.
+
+Pricing depends on **resource size**, **type**, and **data transfer**:
+- All OCI regions share **the same global pricing**.
+- **Inbound traffic is free**, and **outbound is 10x cheaper** than most competitors.
+- **Inter-Availability Domain traffic is free**, supporting high availability at no extra cost.
+
+---
+---
+
+### Governance and Administration → Class: **Cost Management**
+
+OCI offers several tools to help monitor and control cloud costs:
+- **Budgets**: Set monthly/quarterly budgets per compartment with **alerts** when usage nears or exceeds limits.
+- **Cost Analysis**: Review **past spending patterns** to identify trends and optimize future use.
+- **Usage Reports**: Daily **CSV files** showing resource-level usage, accessible via **Object Storage** with cross-tenancy options.
+- **Service Limits**: View and request changes to default **resource limits** to avoid unintentional overuse or misuse.
+- **Compartment Quotas**: Enforce **resource caps** per compartment (e.g., restrict to 10 VMs or block Exadata use) to ensure governance and cost control.
+
+These tools enable better **budgeting, tracking, and policy-based governance** to optimize cloud spending.
+
+---
+---
+
+### Governance and Administration → Class: **Demo: Cost Management**
+
+In this demo, the instructor explores OCI's built-in cost management tools. He begins with **Cost Analysis**, filtering costs by **service, compartment, and region** to pinpoint where the largest expenses are coming from (e.g., Networking in Phoenix). He then demonstrates how to analyze costs **by tags** (e.g., identifying who created certain resources). Lastly, he shows how to create **Budgets**, set threshold **alerts**, and monitor spending per compartment to avoid overages.
+
+---
+---
+
+### Governance and Administration → Class: **Demo: Cloud Advisor**
+
+In this demo, the instructor shows how to use **OCI Cloud Advisor** to optimize resources across **cost, performance, availability, and security**. He implements recommendations like deleting **idle compute and boot volumes**, enabling **block volume autotuning**, and spreading instances across **fault domains** to improve fault tolerance. For security issues, the demo redirects to **Cloud Guard**, which provides deeper visibility into misconfigurations and risks.
+
+---
+---
+
+### Governance and Administration → Class: **Tagging**
+
+Tagging in Oracle Cloud Infrastructure is a powerful way to **organize, track, and control access** to cloud resources.
+
+- **Tags** are key-value pairs (e.g., `Environment: Production`, `Project: Alpha`) that help categorize resources.
+- **Free-form tags** allow flexibility with no schema, while **defined tags** offer governance via namespaces and policies.
+- Tags support **cost tracking**, **access control**, and **automation**—enabling visibility and policy enforcement at scale.
+- Defined tags also allow setting **allowed values** and **policy restrictions** for who can apply them.
+
+Use tagging to simplify resource management, improve cost visibility, and enforce governance.
+
+---
+---
+
+### Governance and Administration → Class: **Support Rewards**
+
+**Oracle Support Rewards** is a program that reduces your **on-premises Oracle support costs** based on **OCI usage**.
+
+- For every **$1 spent on OCI**, customers earn:
+  - **$0.25** in rewards (standard customers)
+  - **$0.33** in rewards (ULA customers)
+- These rewards can be used to pay for **Oracle technology software support fees**, potentially reducing them **to zero**.
+- The rewards are **automatically tracked** and **redeemable via the OCI Console**, offering transparency and ease of use.
+
+This program incentivizes OCI adoption while directly lowering your existing Oracle tech support costs.
 
 ---
 ---
