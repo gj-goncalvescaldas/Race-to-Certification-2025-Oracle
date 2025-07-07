@@ -78,7 +78,7 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 - [x] Demo: Cloud Advisor *(7 min)* – ✅ [See Summary](#governance-and-administration--class-demo-cloud-advisor)
 - [x] Tagging *(6 min)* – ✅ [See Summary](#governance-and-administration--class-tagging)
 - [x] Support Rewards *(4 min)* – ✅ [See Summary](#governance-and-administration--class-support-rewards)
-- [ ] Skill Check: Governance and Administration – _Not Attempted_
+- [x] Skill Check: Governance and Administration – ✅ [See Summary](#-skill-check-governance-and-administration)
 ---
 
 ## 📂 Lesson Notes
@@ -1244,5 +1244,53 @@ OCI **Cloud Guard** is built around three main components:
 - **Responders** (take action)  
 **Targets** are not a component—they are the **resources** Cloud Guard protects.
 
+---
+---
+
+## 🛡️ Skill Check: Governance and Administration
+
+### **1. Which is NOT a factor that influences pricing in Oracle Cloud Infrastructure?**
+
+**✅ Correct Answer:**  
+**Choice of OCI region**
+
+**Explanation:**  
+OCI pricing is generally **consistent across regions**. Pricing is influenced by **resource types**, **data transfer**, and **services consumed**, not by region selection.
+
+### **2. Which type of traffic is charged under data transfer costs in Oracle Cloud Infrastructure?**
+
+**✅ Correct Answer:**  
+**Egress to the internet is charged.**
+
+**Explanation:**  
+**Outbound (egress)** data transfer **to the internet** is charged in OCI. Most **intra-OCI traffic**, like between ADs or services within a region, is free or heavily discounted.
+
+### **3. In Oracle Cloud Infrastructure, what can you set up to receive notifications when budget thresholds are reached?**
+
+**✅ Correct Answer:**  
+**Email alerts**
+
+**Explanation:**  
+OCI Budget service allows configuring **email notifications** via the **Notification service** to alert you when you approach or exceed your budget thresholds.
+
+### **4. In Oracle Cloud Infrastructure, what is the key difference between service limits and compartment quotas?**
+
+**✅ Correct Answer:**  
+**Service limits are set by Oracle for a tenancy or region, while compartment quotas are user-defined for specific compartments.**
+
+**Explanation:**  
+**Service limits** are **predefined by Oracle**, while **quotas** allow users to control how much of a service can be used in a **specific compartment**.
+
+### **5. Which is NOT a supported Oracle Cloud Infrastructure pricing model?**
+
+**✅ Correct Answer:**  
+**Sovereign subscriptions**
+
+**Explanation:**  
+OCI supports the following pricing models:  
+- **Pay As You Go**  
+- **Oracle Universal Credits**  
+- **Bring Your Own License (BYOL)**  
+**Sovereign subscriptions** is **not** a recognized OCI pricing model.
 
 
