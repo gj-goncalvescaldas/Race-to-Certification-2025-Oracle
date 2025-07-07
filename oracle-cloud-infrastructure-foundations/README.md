@@ -54,12 +54,12 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 
 ### 6. Storage
 - [x] Storage Introduction *(5 min)* – ✅ [See Summary](#storage--class-storage-introduction)
-- [ ] Object Storage *(8 min)* – _Notes pending_
-- [ ] Demo: Object Storage *(6 min)* – _Notes pending_
-- [ ] Block Volume *(5 min)* – _Notes pending_
-- [ ] Demo: Block Volume *(9 min)* – _Notes pending_
-- [ ] File Storage *(4 min)* – _Notes pending_
-- [ ] Skill Check: Storage – _Not Attempted_
+- [x] Object Storage *(8 min)* – ✅ [See Summary](#storage--class-object-storage)
+- [x] Demo: Object Storage *(6 min)* – ✅ [See Summary](#storage--class-demo-object-storage)
+- [x] Block Volume *(5 min)* – ✅ [See Summary](#storage--class-block-volume)
+- [x] Demo: Block Volume *(9 min)* – ✅ [See Summary](#storage--class-demo-block-volume)
+- [x] File Storage *(4 min)* – ✅ [See Summary](#storage--class-file-storage)
+- [x] Skill Check: Storage – ✅ [See Summary](#-skill-check-storage)
 
 ### 7. Security
 - [ ] Security Introduction *(9 min)* – _Notes pending_
@@ -656,6 +656,103 @@ OCI compute instances depend on **networking** and **storage** control planes an
 
 ---
 ---
+### Storage → Class: **Object Storage**
+
+> 📝 **Summary:**  
+> OCI Object Storage is a **high-performance**, **internet-scale** platform for storing **unstructured data** (e.g., logs, media, backups).  
+> It offers **multiple tiers**, built-in **encryption**, **API access**, and **lifecycle automation** for cost-effective, secure storage.
+
+#### 📂 Key Concepts
+
+- **Objects**: Key-value pairs stored in **buckets**
+- **Namespace**: Top-level logical container unique per tenancy
+- **Flat structure**: Folders are simulated via prefixes
+- **Access**: Public APIs, CLI, SDK, or private access from OCI resources
+
+#### 🔥 Storage Tiers
+
+| Tier                | Use Case               | Notes                                         |
+|---------------------|------------------------|-----------------------------------------------|
+| **Standard (Hot)**  | Frequently accessed    | Instant read/write, strongly consistent       |
+| **Infrequent Access** | Long-term, less access | 60% cheaper, 31-day min, retrieval fee        |
+| **Archive**         | Rarely accessed        | 90-day min, restore (1+ hr) then download     |
+
+#### ♻️ Optimization Features
+
+- **Auto-Tiering**: Moves data between tiers based on usage patterns  
+- **Lifecycle Management**: Rules for transitioning or deleting objects  
+- **Versioning**: Enable multiple versions of objects in a bucket  
+- **Encryption**: Always-on by default, supports customer-managed keys
+
+---
+---
+### Storage → Class: **Demo: Object Storage**
+
+> 📝 **Summary:**  
+> This demo walks through **creating a bucket**, **uploading an object**, setting **visibility** (public/private), and using **pre-authenticated requests (PARs)** to securely share private objects.  
+> It highlights key features like **auto-tiering**, **encryption**, and public access controls.
+
+#### 📸 Screenshots
+
+![Object Storage – Bucket Created](img/16.png)  
+![Pre-Authenticated Request in Action](img/17.png)
+
+---
+---
+### Storage → Class: **Block Volume**
+
+> 📝 **Summary:**  
+> OCI Block Volume provides **persistent**, **durable**, and **network-attached** storage for compute instances.  
+> Volumes exist **independently of the instance**, support multiple **tiers**, **encryption**, **resizing**, and **replication** for robust data management.
+
+#### 💽 Key Features
+
+- **Persistence**: Data survives instance termination
+- **Durability**: Multiple copies are maintained
+- **Encryption**: Always-on at rest and in transit (option to BYOK)
+- **Performance Tiers**:
+  - Lower Cost
+  - Balanced (e.g., boot disks)
+  - High Performance
+  - Ultra High Performance (e.g., databases)
+
+#### 🛠️ Advanced Capabilities
+
+- **Auto-Tune Performance**: Automatically reduces cost for detached volumes  
+- **Online Resizing**: Expand volumes without downtime  
+- **Read/Write Sharing**: Attach the same volume to multiple VMs  
+- **Asynchronous Replication**: For DR and regional migration  
+- **Volume Groups**: Backup/restore groups of volumes consistently
+---
+---
+### Storage → Class: **Demo: Block Volume**
+
+> 📝 **Summary:**  
+> This demo shows how to **create and attach a block volume** to a compute instance in OCI.  
+> It also demonstrates **online resizing**, **performance tuning**, and viewing the new volume via SSH after attachment.
+
+#### 📸 Screenshots
+
+![Create Block Volume](img/18.png)  
+![Volume Attached to Instance](img/19.png)  
+![New Disk Verified in Instance](img/20.png)
+
+---
+---
+### Storage → Class: **File Storage**
+
+OCI File Storage Service provides **shared file storage** using **NFSv3**, ideal for use cases like:
+- Enterprise applications (e.g., Oracle E-Business Suite)
+- General-purpose file systems (shared folders)
+- Storing state for microservices and containers
+- HPC, analytics, and scale-out workloads
+
+It enables multiple compute instances to **read/write** from the same file system, supports **snapshots** for backup, and includes **encryption at rest and in transit**. Users mount the file system to instances and begin sharing data seamlessly.
+
+
+---
+---
+
 ---
 
 ## 🧪 Skill Check: OCI Introduction
@@ -847,5 +944,49 @@ OCI **Functions** is a serverless platform that allows you to run code triggered
 **Explanation:**  
 With **flexible shapes**, you can choose the exact **OCPU count** and **memory** allocation to match your workload, providing cost efficiency and performance tuning.
 
+---
+---
+
+## 🗄️ Skill Check: Storage
+
+### **1. You want to store the backup of a database in cloud storage for an extended period at the lowest storage cost. Which object storage tier would you use for storing these backup files?**
+
+**✅ Correct Answer:**  
+**Archive**
+
+**Explanation:**  
+The **Archive Storage** tier offers the **lowest cost** for long-term, rarely accessed data—ideal for backups stored over extended periods.
+
+### **2. In the Oracle Cloud Infrastructure Object Storage Service, what is the primary purpose of a pre-authenticated request URL?**
+
+**✅ Correct Answer:**  
+**To provide temporary and secure access to a specific object**
+
+**Explanation:**  
+**Pre-authenticated request (PAR) URLs** allow access to a specific object without needing OCI credentials. This provides **secure and time-limited sharing** of files stored in Object Storage.
+
+### **3. You have an extremely high performance database workload that requires at least 90 IOPS/GB and 90,000 IOPS per volume. Which OCI Block Volume performance level can be used to meet this requirement?**
+
+**✅ Correct Answer:**  
+**Ultra High Performance**
+
+**Explanation:**  
+The **Ultra High Performance** level supports the **most demanding workloads**, delivering **up to 300,000 IOPS per volume** and **90 IOPS/GB**, meeting or exceeding the specified requirements.
+
+### **4. You have created an Object Storage bucket of Archive tier. Which statement is NOT valid for the Archive Storage tier?**
+
+**✅ Correct Answer:**  
+**The Archive storage bucket can be upgraded to Standard storage.**
+
+**Explanation:**  
+**Buckets cannot be changed between storage tiers** (e.g., from Archive to Standard). You must **restore individual objects** to the Standard tier; the bucket itself **remains Archive**.
+
+### **5. What feature of the Oracle Cloud Infrastructure Block Volume service ensures data durability and protection against hardware failures?**
+
+**✅ Correct Answer:**  
+**Replication**
+
+**Explanation:**  
+**Block Volume Replication** ensures **durability and high availability** by automatically **replicating data across multiple fault domains**, protecting against hardware failure.
 
 
