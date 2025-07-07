@@ -4,6 +4,18 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 
 ---
 
+## 🏅 Certification
+
+![OCI Foundations Certificate](img/26.png)
+
+**Oracle Cloud Infrastructure 2025 Certified Foundations Associate**  
+Certified on **July 07, 2025**  
+*Issued by Oracle University*
+
+This certification validates foundational knowledge of OCI core services, architecture, governance, security, and pricing.
+
+---
+
 ## 📘 Course Overview _(To complete after course completion)_
 
 - **Platform:** Oracle Learning
