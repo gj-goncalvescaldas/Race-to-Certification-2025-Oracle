@@ -871,6 +871,13 @@ Vault enables strong security posture by reducing blast radius, supporting compl
 
 ---
 ---
+### Security → Class: **Demo: Vault**
+ 
+This demo shows how to create a Vault and a Master Encryption Key in Oracle Cloud Infrastructure.  
+It demonstrates how to use that key when creating an Object Storage bucket, satisfying a Security Zone policy.  
+A policy is also created to allow Object Storage to access the encryption key from the Vault.
+
+![Vault Demo](img/25.png)
 
 ---
 ---
