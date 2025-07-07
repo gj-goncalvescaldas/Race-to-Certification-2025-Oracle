@@ -699,6 +699,7 @@ OCI compute instances depend on **networking** and **storage** control planes an
 
 ---
 ---
+
 ### Storage → Class: **Block Volume**
 
 > 📝 **Summary:**  
@@ -723,6 +724,7 @@ OCI compute instances depend on **networking** and **storage** control planes an
 - **Read/Write Sharing**: Attach the same volume to multiple VMs  
 - **Asynchronous Replication**: For DR and regional migration  
 - **Volume Groups**: Backup/restore groups of volumes consistently
+
 ---
 ---
 ### Storage → Class: **Demo: Block Volume**
@@ -748,6 +750,7 @@ OCI File Storage Service provides **shared file storage** using **NFSv3**, ideal
 - HPC, analytics, and scale-out workloads
 
 It enables multiple compute instances to **read/write** from the same file system, supports **snapshots** for backup, and includes **encryption at rest and in transit**. Users mount the file system to instances and begin sharing data seamlessly.
+
 ---
 ---
 ---
@@ -802,6 +805,7 @@ Cloud Guard supports automation via:
 - **Policy-based remediation** through a Cloud Guard operator role
 
 💡 Example: If a public bucket is detected in a monitored compartment, Cloud Guard can automatically make it private—restoring compliance with your defined security policies.
+
 ---
 ---
 ### Security → Class: **Security Zones and Security Advisor**
@@ -825,6 +829,7 @@ It provides guided best practices and enforces **secure configurations** for ser
 - **Virtual Machines**
 
 💡 Example: Security Advisor ensures a new bucket created inside a Security Zone is **not public**, uses **customer-managed keys**, and follows Oracle’s best security practices—automatically guiding and enforcing these decisions.
+
 ---
 ---
 ### Security → Class: **Demo: Security Zones and Security Advisor**
@@ -1116,5 +1121,55 @@ The **Ultra High Performance** level supports the **most demanding workloads**, 
 
 **Explanation:**  
 **Block Volume Replication** ensures **durability and high availability** by automatically **replicating data across multiple fault domains**, protecting against hardware failure.
+
+---
+---
+
+## 🔐 Skill Check: Security
+
+### **1. What is the primary purpose of the Oracle Cloud Infrastructure Vault service?**
+
+**✅ Correct Answer:**  
+**To store and manage encryption keys and secrets**
+
+**Explanation:**  
+OCI **Vault** securely stores, manages, and controls access to **encryption keys and secrets** used across cloud services and applications.
+
+### **2. Which of the following is NOT a component of the Oracle Cloud Infrastructure Vault service?**
+
+**✅ Correct Answer:**  
+**Database backup**
+
+**Explanation:**  
+Vault includes components like **Vaults**, **Master Encryption Keys**, and **Secrets**. **Database backup** is not part of the Vault service; it belongs to the database offerings.
+
+### **3. What is the main advantage of using OCI Security Zones when deploying resources in your cloud environment?**
+
+**✅ Correct Answer:**  
+**Ensuring adherence to security best practices and policies**
+
+**Explanation:**  
+**Security Zones** enforce **security best practices by default**, ensuring all resources deployed within them follow strict policies like encryption and network restrictions.
+
+### **4. In the OCI shared security responsibility model, who is responsible for securing the underlying cloud infrastructure?**
+
+**✅ Correct Answer:**  
+**Oracle**
+
+**Explanation:**  
+In the **shared responsibility model**, **Oracle** secures the **physical infrastructure**, while customers are responsible for their **data, workloads, and configurations**.
+
+### **5. Which option is NOT a component of Oracle Cloud Guard?**
+
+**✅ Correct Answer:**  
+**Targets**
+
+**Explanation:**  
+OCI **Cloud Guard** is built around three main components:  
+- **Detectors** (monitor for issues)  
+- **Problems** (identified risks)  
+- **Responders** (take action)  
+**Targets** are not a component—they are the **resources** Cloud Guard protects.
+
 
 
