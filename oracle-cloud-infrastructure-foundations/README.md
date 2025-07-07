@@ -62,14 +62,14 @@ _A comprehensive guide based on the official Oracle OCI Foundations Course._
 - [x] Skill Check: Storage – ✅ [See Summary](#-skill-check-storage)
 
 ### 7. Security
-- [ ] Security Introduction *(9 min)* – _Notes pending_
-- [ ] Cloud Guard *(5 min)* – _Notes pending_
-- [ ] Security Zones and Security Advisor *(4 min)* – _Notes pending_
-- [ ] Demo: Security Zone and Security Advisor *(6 min)* – _Notes pending_
-- [ ] Encryption Basics *(11 min)* – _Notes pending_
-- [ ] Vault *(8 min)* – _Notes pending_
-- [ ] Demo: Vault *(7 min)* – _Notes pending_
-- [ ] Skill Check: Security – _Not Attempted_
+- [x] Security Introduction *(9 min)* – ✅ [See Summary](#security--class-security-introduction)
+- [x] Cloud Guard *(5 min)* – ✅ [See Summary](#security--class-cloud-guard)
+- [x] Security Zones and Security Advisor *(4 min)* – ✅ [See Summary](#security--class-security-zones--security-advisor)
+- [x] Demo: Security Zone and Security Advisor *(6 min)* – ✅ [See Summary](#security--class-demo-security-zones-and-security-advisor)
+- [x] Encryption Basics *(11 min)* – ✅ [See Summary](#security--class-encryption-basics)
+- [x] Vault *(8 min)* – ✅ [See Summary](#security--class-vault)
+- [ ] Demo: Vault *(7 min)* – ✅ [See Summary](#security--demo-vault)
+- [ ] Skill Check: Security – ✅ [See Summary](#-skill-check-security)
 
 ### 8. Governance and Administration
 - [ ] Pricing *(5 min)* – _Notes pending_
@@ -748,11 +748,132 @@ OCI File Storage Service provides **shared file storage** using **NFSv3**, ideal
 - HPC, analytics, and scale-out workloads
 
 It enables multiple compute instances to **read/write** from the same file system, supports **snapshots** for backup, and includes **encryption at rest and in transit**. Users mount the file system to instances and begin sharing data seamlessly.
+---
+---
+---
+### Security → Class: **Security Introduction**
 
+OCI Security follows a **shared responsibility model**:
+- **Oracle** is responsible for the *security of the cloud* (physical infrastructure, virtualization, network, etc.).
+- **Customers** are responsible for the *security in the cloud* (data, access, endpoints, OS patching).
+
+Security in OCI is built using a **defense-in-depth** approach across multiple layers:
+
+- **Infrastructure Protection**
+  - *Web Application Firewall (WAF)*: Protects against Layer 7 DDoS and malicious traffic.
+  - *Network Firewall*: Monitors and blocks unwanted traffic across networks.
+
+- **Identity and Access Management (IAM)**
+  - Controls user identities, permissions, and access levels.
+  - Includes *Multi-Factor Authentication (MFA)* for added protection.
+
+- **Operating System and Workload Protection**
+  - *Shielded Instances*: Provide secure boot and integrity for sensitive workloads.
+  - *OS Management*: Handles updates and patching at scale.
+  - *Dedicated VM Host*: Offers single-tenant bare metal infrastructure.
+
+- **Data Protection**
+  - *Vault*: Manages encryption keys and secrets.
+  - *Certificates Service*: Handles certificate authorities and SSL certificates.
+  - Encryption is always enabled (at rest and in transit).
+
+- **Detection and Remediation**
+  - *Cloud Guard*: Monitors, detects, and responds to misconfigurations or threats.
+  - *Security Zones*: Enforce security policies (e.g., no public access, mandatory encryption) in specific compartments.
+
+OCI’s extensive security portfolio ensures compliance, visibility, and proactive protection across your entire cloud stack.
+---
+---
+### Security → Class: **Cloud Guard**
+
+**Oracle Cloud Guard** is a **Cloud Security Posture Management (CSPM)** service that helps you:
+- **Detect** misconfigurations or risky activities (e.g., public buckets or instances)
+- **Respond** automatically through **configured responders**
+- **Remediate** issues to improve your cloud security posture
+
+Core components include:
+- **Target**: Defines the scope (compartments) to monitor
+- **Detector**: Identifies risky configurations or activities
+- **Problem**: A potential security issue flagged by a detector
+- **Responder**: Takes corrective action (e.g., making a bucket private)
+
+Cloud Guard supports automation via:
+- **Cloud Events** and **OCI Functions** (e.g., send alerts, trigger workflows)
+- **Policy-based remediation** through a Cloud Guard operator role
+
+💡 Example: If a public bucket is detected in a monitored compartment, Cloud Guard can automatically make it private—restoring compliance with your defined security policies.
+---
+---
+### Security → Class: **Security Zones and Security Advisor**
+
+**Security Zones** allow you to designate compartments where **strict security policies are enforced** and **cannot be disabled**. These compartments are protected using **Security Zone Recipes**, which define rules such as:
+- Only **private subnets** allowed
+- Mandatory use of **customer-managed encryption keys**
+- **Public buckets or compute instances** are automatically denied
+
+Violations of these policies result in **operation denial**, ensuring your most critical resources are always protected—like placing valuables in a fireproof vault.
+
+**Security Advisor** is a unified service that combines:
+- **Security Zones**
+- **Cloud Guard**
+- Other OCI security services
+
+It provides guided best practices and enforces **secure configurations** for services like:
+- **Object Storage**
+- **File Storage**
+- **Block Volume**
+- **Virtual Machines**
+
+💡 Example: Security Advisor ensures a new bucket created inside a Security Zone is **not public**, uses **customer-managed keys**, and follows Oracle’s best security practices—automatically guiding and enforcing these decisions.
+---
+---
+### Security → Class: **Demo: Security Zones and Security Advisor**
+
+This demo walks through creating a **Security Zone** in OCI and enabling **Cloud Guard**, which is required to enforce security zone policies.  
+We see how policy violations (like using Oracle-managed keys instead of customer-managed keys) are **detected and blocked automatically**.  
+Security Zones + Cloud Guard provide an **automated, policy-enforced security posture** across compartments.
+
+![Security Zones Overview](img/21.png)  
+![Enable Cloud Guard](img/22.png)  
+![Policy Violation on Bucket Creation](img/23.png)
+
+---
+---
+### Security → Class: **Encryption Basics**
+
+This lesson explains the fundamentals of encryption, including the difference between **symmetric encryption** (same key for encryption and decryption) and **asymmetric encryption** (different keys for encryption and decryption).  
+
+- **Symmetric encryption** is fast and used in many systems, but all parties must securely share the same key.
+- **Asymmetric encryption** improves security by using a public key to encrypt and a private key to decrypt.
+- Covers the concept of **encryption at rest** (data stored securely) and **encryption in transit** (data protected while moving across networks).
+- Introduces key encryption methods like Advanced Encryption Standard and Rivest–Shamir–Adleman.
+- Explains **Hardware Security Modules**, which are physical devices designed to securely store and manage encryption keys and support cryptographic operations. Oracle uses modules certified to a high international security standard.
+
+---
+---
+### Security → Class: **Vault**
+
+Oracle Cloud Infrastructure Vault is a **centralized service** for managing **encryption keys** and **secret credentials** like passwords, certificates, and access tokens. It helps secure sensitive data by eliminating the need to store secrets in code or configuration files.
+
+- Supports **two protection modes**: software-based (exportable keys) and hardware security module-based (non-exportable, higher security).
+- Enables **envelope encryption**, where customer data is encrypted with data keys, and those data keys are in turn encrypted by master keys.
+- Vault supports **key rotation**, **audit logging**, and **fine-grained access control** using IAM policies.
+- Supports encryption algorithms such as:
+  - Advanced Encryption Standard (symmetric encryption)
+  - Rivest–Shamir–Adleman (asymmetric encryption)
+  - Elliptic Curve Digital Signature Algorithm (for digital signing only)
+- Keys can be used across OCI services like Object Storage, Block Volume, and File Storage.
+- Vault and its keys have a **scheduled deletion policy** (7–30 days) to prevent accidental loss. Once deleted, the data encrypted by those keys becomes unrecoverable.
+
+Vault enables strong security posture by reducing blast radius, supporting compliance standards, and integrating deeply with OCI services.
+
+![Vault Encriptation](img/24.png)  
 
 ---
 ---
 
+---
+---
 ---
 
 ## 🧪 Skill Check: OCI Introduction
