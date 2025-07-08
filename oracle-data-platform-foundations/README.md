@@ -24,7 +24,7 @@ This certification validates foundational knowledge of Oracle's data management 
 ## 🧭 Course Structure
 
 ### 1. Data Management Introduction
-- [ ] Oracle's Data Management Strategy *(7 min)* – ✅ [See Summary](#oracles-data-management-strategy)
+- [x] Oracle's Data Management Strategy *(7 min)* – ✅ [See Summary](#oracles-data-management-strategy)
 - [ ] Oracle Database Offerings *(20 min)* – ✅ [See Summary](#oracle-database-offerings)
 - [ ] Multi-cloud and Hybrid Cloud *(9 min)* – ✅ [See Summary](#multi-cloud-and-hybrid-cloud)
 - [ ] Skill Check: Data Management Introduction – ✅ [See Summary](#skill-check-data-management-introduction)
