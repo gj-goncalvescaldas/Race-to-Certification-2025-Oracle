@@ -31,7 +31,7 @@ This certification validates foundational knowledge of Oracle's data management 
 - [x] Skill Check: Data Management Introduction – ✅ [See Summary](#skill-check-data-management-introduction)
 
 ### 2. Converged Database
-- [ ] How to Simplify Application Development? *(8 min)* – ✅ [See Summary](#how-to-simplify-application-development)
+- [x] How to Simplify Application Development? *(8 min)* – ✅ [See Summary](#how-to-simplify-application-development)
 - [ ] Oracle Autonomous JSON Database *(13 min)* – ✅ [See Summary](#oracle-autonomous-json-database)
 - [ ] Developing on Autonomous DB: Using Graph *(8 min)* – ✅ [See Summary](#developing-on-autonomous-db-using-graph)
 - [ ] Developing on Autonomous DB: Using Spatial *(9 min)* – ✅ [See Summary](#developing-on-autonomous-db-using-spatial)
