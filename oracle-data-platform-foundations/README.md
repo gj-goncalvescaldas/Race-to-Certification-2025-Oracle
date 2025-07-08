@@ -32,10 +32,10 @@ This certification validates foundational knowledge of Oracle's data management 
 
 ### 2. Converged Database
 - [x] How to Simplify Application Development? *(8 min)* – ✅ [See Summary](#how-to-simplify-application-development)
-- [ ] Oracle Autonomous JSON Database *(13 min)* – ✅ [See Summary](#oracle-autonomous-json-database)
-- [ ] Developing on Autonomous DB: Using Graph *(8 min)* – ✅ [See Summary](#developing-on-autonomous-db-using-graph)
-- [ ] Developing on Autonomous DB: Using Spatial *(9 min)* – ✅ [See Summary](#developing-on-autonomous-db-using-spatial)
-- [ ] Skill Check: Converged Database – ✅ [See Summary](#skill-check-converged-database)
+- [x] Oracle Autonomous JSON Database *(13 min)* – ✅ [See Summary](#oracle-autonomous-json-database)
+- [x] Developing on Autonomous DB: Using Graph *(8 min)* – ✅ [See Summary](#developing-on-autonomous-db-using-graph)
+- [x] Developing on Autonomous DB: Using Spatial *(9 min)* – ✅ [See Summary](#developing-on-autonomous-db-using-spatial)
+- [x] Skill Check: Converged Database – ✅ [See Summary](#skill-check-converged-database)
 
 ### 3. Exadata and Base Database Service
 - [ ] Base DB Service Overview – Part 1 *(13 min)* – ✅ [See Summary](#oracle-base-database-service-overview--part-1)
