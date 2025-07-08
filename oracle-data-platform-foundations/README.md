@@ -27,8 +27,8 @@ This certification validates foundational knowledge of Oracle's data management 
 ### 1. Data Management Introduction
 - [x] Oracle's Data Management Strategy *(7 min)* – ✅ [See Summary](#oracles-data-management-strategy)
 - [x] Oracle Database Offerings *(20 min)* – ✅ [See Summary](#oracle-database-offerings)
-- [ ] Multi-cloud and Hybrid Cloud *(9 min)* – ✅ [See Summary](#multi-cloud-and-hybrid-cloud)
-- [ ] Skill Check: Data Management Introduction – ✅ [See Summary](#skill-check-data-management-introduction)
+- [x] Multi-cloud and Hybrid Cloud *(9 min)* – ✅ [See Summary](#multi-cloud-and-hybrid-cloud)
+- [x] Skill Check: Data Management Introduction – ✅ [See Summary](#skill-check-data-management-introduction)
 
 ### 2. Converged Database
 - [ ] How to Simplify Application Development? *(8 min)* – ✅ [See Summary](#how-to-simplify-application-development)
@@ -362,17 +362,20 @@ It’s software-based and doesn’t require dedicated hardware.
 ### **3. Which two interconnect solutions are available to connect Oracle Cloud to other cloud providers?**
 
 **✅ Correct Answers:**  
-- FastConnect  
-- Virtual Cloud Network (VCN)
+- Cloud Router  
+- FastConnect
 
 **❌ Incorrect Choices:**  
-- Cloud Router  
+- Virtual Cloud Network  
 - Virtual Private Cloud
 
 **🧠 Explanation:**  
-- **FastConnect** provides private, high-bandwidth connectivity between OCI and other cloud providers or data centers.  
-- **VCN** is OCI’s internal virtual network and can be extended with FastConnect or VPN.  
-- **Cloud Router** (GCP) and **VPC** (AWS) are not Oracle technologies.
+- **FastConnect** is Oracle’s dedicated private connection service used to interconnect with on-premises environments or other cloud providers, such as Microsoft Azure.  
+- **Cloud Router**, specifically **Megaport Cloud Router (MCR)**, is a third-party solution that enables multicloud connectivity between OCI and other clouds like AWS or Azure.  
+- **Virtual Cloud Network (VCN)** is a core networking component within Oracle Cloud, but **not** an interconnect solution by itself.  
+- **Virtual Private Cloud (VPC)** is AWS-specific terminology.
+
+> ✅ These two (FastConnect + Cloud Router) are actively used to establish secure, performant intercloud connections.
 
 ### **4. Which two statements are true about the Autonomous Database?**
 
