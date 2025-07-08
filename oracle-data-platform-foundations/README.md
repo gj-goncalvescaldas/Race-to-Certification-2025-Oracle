@@ -448,16 +448,181 @@ Indexes can be automatically created via **auto-indexing**, and **Siebel and oth
 #### Oracle Autonomous JSON Database
 ---
 
+> 📝 **Summary:**  
+> This lesson introduces Oracle Autonomous JSON Database (AJD) as part of Oracle’s converged database strategy. It explains how AJD supports modern JSON-based workloads while offering the advantages of a full relational database—automation, security, and compatibility with SQL-based tools.
+
+#### 📦 What Is Oracle Autonomous JSON Database (AJD)?
+
+AJD is a cloud-native, fully managed service optimized for JSON document storage and modern app development. It’s a specialized version of Autonomous Transaction Processing (ATP), with a lower cost tier due to a 20 GB limit on non-JSON data. The JSON limit can be removed by upgrading to ATP.
+
+#### ⚙️ Core Capabilities
+
+AJD supports both transactional applications and analytics over JSON. It’s accessible through SQL and MongoDB-style APIs and drivers, offering flexibility for both relational and document-based approaches. JSON data is stored as binary JSON (OSON) in a relational table.
+
+#### 🧠 Autonomous Features
+
+It is self-driving, automating provisioning, scaling, patching, and tuning. It is self-securing, protecting against internal and external threats. It is self-repairing, minimizing downtime, including patching, to under 2.5 minutes per month.
+
+#### 🔄 Use Cases & Competitive Position
+
+AJD competes with MongoDB, Couchbase, Cosmos DB, and AWS DocumentDB. It offers elastic scaling, high performance (under 10 ms latency in YCSB benchmarks), and a lower price point compared to MongoDB Atlas.
+
+#### 🔗 SQL + NoSQL Interoperability
+
+JSON documents are stored in collections that map to relational tables. These are accessible with Mongo-style CRUD APIs or directly via SQL. Relational views can be created over JSON documents for use in Power BI, Tableau, and other tools that support Oracle drivers.
+
+#### 🧩 Developer Flexibility
+
+Developers can use MongoDB skills, tools, and frameworks. SQL-savvy users can run analytical queries and create reports. The environment supports nested JSON, query-by-example filters, and programmatic access using REST and drivers.
+
+#### 🧠 Final Takeaways
+
+AJD gives developers and analysts the best of both NoSQL and relational worlds. It simplifies development of JSON-first microservices, while still enabling enterprise-grade reliability, analytics, and integration with Oracle’s ecosystem.
+
+
 #### Developing on Oracle Autonomous Database – Using Graph
 ---
+
+> 📝 **Summary:**  
+> This lesson introduces how to model, query, analyze, and visualize graph data using Oracle Graph within the Autonomous Database. It explains the benefits of graph analytics for detecting hidden relationships and solving real-world business problems.
+
+#### 📌 What Is a Graph Database?
+
+A graph database explicitly models relationships between entities using vertices (nodes) and edges (connections). For example:
+- Accounts → vertices
+- Transactions between accounts → edges with properties like amount and date
+
+Graphs make it easier to discover patterns and indirect relationships in complex networks.
+
+#### 🔍 Business Use Cases for Graph Analytics
+
+Graph analytics helps address key challenges in areas such as:
+- Fraud detection and anti-money laundering (e.g., money loops or suspicious patterns)
+- Manufacturing and network management (e.g., what-if analysis)
+- Customer recommendation systems (e.g., finding clusters of similar users or products)
+
+Common use cases involve path analysis, cycle detection, and impact tracing across connected elements.
+
+#### 🛠️ Oracle Graph Capabilities
+
+Oracle Graph includes:
+- A property graph model (flexible schema with custom properties on vertices and edges)
+- Querying with **PGQL (Property Graph Query Language)** — similar to SQL but specialized for graph patterns
+- Over 60 built-in graph algorithms, including:
+  - PageRank
+  - Community detection
+  - Shortest path
+  - Cycle detection
+
+Graph algorithms can run over full graphs or subgraphs and are optimized as parallel in-memory operations for performance.
+
+#### 📊 Real-World Example: Fraud Detection
+
+A customer used graph insights to reduce false positives in fraud detection by:
+- Identifying cycles with up to 6–7 hops
+- Focusing on high in-degree and out-degree accounts (heavy activity)
+- Applying **PageRank** to identify important accounts beyond simple connection counts
+
+Combining graph structure with advanced algorithms improved accuracy and reduced unnecessary investigations.
+
+#### 🧠 Final Takeaways
+
+Oracle Graph is included in all database editions and offers a complete stack for graph-based data modeling, querying, and visualization. It empowers users to explore data relationships and generate actionable insights with high-performance analytics built into Autonomous Database.
 
 #### Developing on Oracle Autonomous Database – Using Spatial
 ---
 
+> 📝 **Summary:**  
+> This lesson explores how Oracle Autonomous Database supports spatial data management. It covers developer APIs, languages, and Spatial Studio for no-code spatial analysis and visualization, enabling location-based insights across various industries.
+
+#### 🌍 What Is Spatial Data?
+
+Spatial data specifies real-world locations and relationships—essential for understanding patterns and correlations. Every enterprise dataset likely includes a location component: incidents, assets, transactions, etc. Spatial insights can drive decisions such as:
+- Where to open new stores
+- Infrastructure planning
+- Fraud detection
+- Tax zones and legal compliance
+
+#### 🧠 Why Use Spatial in Oracle?
+
+Spatial data is fully integrated into Oracle’s converged database:
+- Use SQL and hundreds of spatial operators/functions
+- Combine spatial with other data types like JSON or Graph
+- Run spatial queries alongside your business data
+- Analyze spatial relationships directly in the database
+
+#### 🛠️ Three Key Components of Oracle Spatial
+
+1. **Core Spatial Database Features**  
+   Store, index, query, and analyze spatial data via SQL with hundreds of operators for filtering, categorizing, joining, and enriching spatial datasets.
+
+2. **Developer Tools and APIs**  
+   Build spatial applications using Java, Python, REST, and JavaScript. Perform routing, geofencing, and map rendering programmatically.
+
+3. **Oracle Spatial Studio**  
+   No-code, browser-based tool to create spatial workflows and visualizations. Supports:
+   - Drag-and-drop map creation
+   - Spatial analysis (e.g., geocoding, proximity, clustering)
+   - Integration with Oracle Analytics Cloud
+   - Data publishing and map sharing
+
+#### 📦 Capabilities in Practice
+
+Examples of spatial analytics include:
+- Finding the closest warehouse with stock
+- Mapping dropped call complaints and detecting network gaps
+- Evaluating overlap of service areas after acquisitions
+- Visualizing customer proximity to retail locations
+
+Spatial Studio enables these tasks without writing code and supports data preparation, indexing, and publishing—all graphically.
+
+#### 💡 Final Takeaways
+
+Oracle Spatial is included with Autonomous Database at no extra cost (compute applies). It supports:
+- Developers using SQL, APIs, or frameworks
+- Analysts using no-code Spatial Studio
+- Integration with Graph, JSON, and other features
+
+
 #### Skill Check: Converged Database
 ---
 
----
+#### **1. Which two statements are true about an Autonomous JSON Database?**
+
+✅ **Correct Answers:**
+- The Autonomous JSON Database is accessed via document APIs.  
+- It has instant auto-scaling.
+
+🧠 **Explanation:**  
+Autonomous JSON Database is a document-centric version of Oracle Autonomous Database. It supports document APIs like those in MongoDB, offers automatic scaling of compute and storage, and requires no traditional DBA management. SQL can be used but is not required for all development.
+
+#### **2. Which three options can developers use to access spatial features?**
+
+✅ **Correct Answers:**
+- Node.js  
+- Python  
+- PL/SQL
+
+🧠 **Explanation:**  
+Developers can access spatial capabilities using various tools and programming languages. Oracle supports spatial functions through **Node.js**, **Python**, and **PL/SQL**, making it easy to integrate geospatial analysis into custom apps and scripts.
+
+#### **3. Which two are true about Spatial Studio?**
+
+✅ **Correct Answers:**
+- You can create interactive maps and perform spatial analysis on business data quickly and easily.  
+- Users can convert address data to coordinates so that they can plot locations on a map.
+
+🧠 **Explanation:**  
+Oracle Spatial Studio is a no-code, self-service tool included with Autonomous Database. It helps users geocode address data and generate interactive maps with spatial analysis—all without writing SQL or code.
+
+#### **4. Which two are true about Graph Analytics?**
+
+✅ **Correct Answers:**
+- Oracle provides an Open-Source Graph Language (PGQL).  
+- Graph Analytics can be used to discover influencers, dependencies, communities, and ranking.
+
+🧠 **Explanation:**  
+Oracle supports graph data modeling and analysis with PGQL (Property Graph Query Language). It also provides over 60 parallel in-memory algorithms for advanced analysis, such as finding communities or detecting fraud based on graph patterns.
 
 ### 🧩 Exadata and Base Database Service
 
