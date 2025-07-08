@@ -1,5 +1,15 @@
 # 🎓 Race to Certification 2025 - Oracle
 
+## 📜 Certificates Earned
+
+This section showcases all certifications I’ve earned as part of the **Race to Certification 2025** initiative by Oracle:
+
+### 🏅 Oracle Cloud Infrastructure Foundations
+
+<img src="oracle-cloud-infrastructure-foundations/img/26.png" alt="OCI Foundations Certificate" width="600"/>
+
+---
+
 Welcome to my personal journey toward Oracle Cloud Infrastructure (OCI) certification, as part of the **Race to Certification 2025** program by Oracle — an amazing opportunity to get certified for free between **July 1 and October 31, 2025**.
 
 ---
@@ -38,7 +48,7 @@ This repo not only tracks my learning but also serves as a **study guide** for o
 If you're also working toward Oracle certifications, feel free to fork this repo or reach out with suggestions and feedback!
 
 More info: [Race to Certification 2025](https://education.oracle.com/es/race-to-certification-2025)
+
 ---
 
 > “The comeback is always stronger than the setback.” 💪
-
