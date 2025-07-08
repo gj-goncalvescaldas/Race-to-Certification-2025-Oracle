@@ -20,8 +20,7 @@ This certification validates foundational knowledge of OCI core services, archit
 
 - **Platform:** Oracle Learning
 - **Goal:** Understand the core services and architecture of Oracle Cloud Infrastructure
-- **Final Test:** Skill Checks after each module (score 80% or higher to pass)
-
+  
 ---
 
 ## 🧭 Course Structure
