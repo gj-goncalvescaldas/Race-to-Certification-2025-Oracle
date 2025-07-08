@@ -24,75 +24,73 @@ This certification validates foundational knowledge of Oracle's data management 
 ## 🧭 Course Structure
 
 ### 1. Data Management Introduction
-- [ ] Oracle's Data Management Strategy *(7 min)* – ✅ [See Summary](#data-management-introduction--class-oracles-data-management-strategy)
-- [ ] Oracle Database Offerings *(20 min)* – ✅ [See Summary](#data-management-introduction--class-oracle-database-offerings)
-- [ ] Multi-cloud and Hybrid Cloud *(9 min)* – ✅ [See Summary](#data-management-introduction--class-multi-cloud-and-hybrid-cloud)
-- [ ] Skill Check: Data Management Introduction – ✅ [See Summary](#-skill-check-data-management-introduction)
+- [ ] Oracle's Data Management Strategy *(7 min)* – ✅ [See Summary](#oracles-data-management-strategy)
+- [ ] Oracle Database Offerings *(20 min)* – ✅ [See Summary](#oracle-database-offerings)
+- [ ] Multi-cloud and Hybrid Cloud *(9 min)* – ✅ [See Summary](#multi-cloud-and-hybrid-cloud)
+- [ ] Skill Check: Data Management Introduction – ✅ [See Summary](#skill-check-data-management-introduction)
 
 ### 2. Converged Database
-- [ ] How to Simplify Application Development? *(8 min)* – ✅ [See Summary](#converged-database--class-how-to-simplify-application-development)
-- [ ] Oracle Autonomous JSON Database *(13 min)* – ✅ [See Summary](#converged-database--class-oracle-autonomous-json-database)
-- [ ] Developing on Autonomous DB: Using Graph *(8 min)* – ✅ [See Summary](#converged-database--class-developing-using-graph)
-- [ ] Developing on Autonomous DB: Using Spatial *(9 min)* – ✅ [See Summary](#converged-database--class-developing-using-spatial)
-- [ ] Skill Check: Converged Database – ✅ [See Summary](#-skill-check-converged-database)
+- [ ] How to Simplify Application Development? *(8 min)* – ✅ [See Summary](#how-to-simplify-application-development)
+- [ ] Oracle Autonomous JSON Database *(13 min)* – ✅ [See Summary](#oracle-autonomous-json-database)
+- [ ] Developing on Autonomous DB: Using Graph *(8 min)* – ✅ [See Summary](#developing-on-autonomous-db-using-graph)
+- [ ] Developing on Autonomous DB: Using Spatial *(9 min)* – ✅ [See Summary](#developing-on-autonomous-db-using-spatial)
+- [ ] Skill Check: Converged Database – ✅ [See Summary](#skill-check-converged-database)
 
 ### 3. Exadata and Base Database Service
-- [ ] Base DB Service Overview – Part 1 *(13 min)* – ✅ [See Summary](#exadata-and-base-db--class-base-service-overview-part-1)
-- [ ] Base DB Service Overview – Part 2 *(11 min)* – ✅ [See Summary](#exadata-and-base-db--class-base-service-overview-part-2)
-- [ ] Exadata Database Service Overview *(14 min)* – ✅ [See Summary](#exadata-and-base-db--class-exadata-service-overview)
-- [ ] Cloud Management Responsibilities *(9 min)* – ✅ [See Summary](#exadata-and-base-db--class-cloud-management-responsibilities)
-- [ ] Billing and Licensing *(9 min)* – ✅ [See Summary](#exadata-and-base-db--class-billing-and-licensing)
-- [ ] Administering Exadata *(19 min)* – ✅ [See Summary](#exadata-and-base-db--class-administering-exadata)
-- [ ] Managed Maintenance Tasks – Part 1 *(13 min)* – ✅ [See Summary](#exadata-and-base-db--class-managed-maintenance-tasks-part-1)
-- [ ] Managed Maintenance Tasks – Part 2 *(12 min)* – ✅ [See Summary](#exadata-and-base-db--class-managed-maintenance-tasks-part-2)
-- [ ] Skill Check: Exadata and Base DB – ✅ [See Summary](#-skill-check-exadata-and-base-db)
+- [ ] Base DB Service Overview – Part 1 *(13 min)* – ✅ [See Summary](#oracle-base-database-service-overview--part-1)
+- [ ] Base DB Service Overview – Part 2 *(11 min)* – ✅ [See Summary](#oracle-base-database-service-overview--part-2)
+- [ ] Exadata Database Service Overview *(14 min)* – ✅ [See Summary](#exadata-database-service-overview)
+- [ ] Cloud Management Responsibilities *(9 min)* – ✅ [See Summary](#cloud-management-responsibilities)
+- [ ] Billing and Licensing *(9 min)* – ✅ [See Summary](#billing-and-licensing)
+- [ ] Administering Exadata *(19 min)* – ✅ [See Summary](#exadata-database-lifecycle-management--administering-exadata)
+- [ ] Managed Maintenance Tasks – Part 1 *(13 min)* – ✅ [See Summary](#exadata-database-lifecycle-management-use-managed-maintenance-tasks--part-1)
+- [ ] Managed Maintenance Tasks – Part 2 *(12 min)* – ✅ [See Summary](#exadata-database-lifecycle-management-use-managed-maintenance-tasks--part-2)
+- [ ] Skill Check: Exadata and Base DB – ✅ [See Summary](#skill-check-exadata-and-base-db)
 
 ### 4. Autonomous Database & Tools
-- [ ] ADB Architecture and Integration *(8 min)* – ✅ [See Summary](#adb--class-adb-architecture-and-integration)
-- [ ] ADB Offerings and License Types *(8 min)* – ✅ [See Summary](#adb--class-adb-offerings-and-license-types)
-- [ ] Provision ADB – Auto Scaling *(5 min)* – ✅ [See Summary](#adb--class-auto-scaling)
-- [ ] Provision ADB – Step-by-step *(9 min)* – ✅ [See Summary](#adb--class-provision-adb)
-- [ ] Start and Stop ADB *(6 min)* – ✅ [See Summary](#adb--class-start-and-stop-adb)
-- [ ] Autonomous Database Tools *(5 min)* – ✅ [See Summary](#adb--class-adb-tools)
-- [ ] Skill Check: ADB – ✅ [See Summary](#-skill-check-autonomous-database)
+- [ ] ADB Architecture and Integration *(8 min)* – ✅ [See Summary](#describe-autonomous-database-architecture-and-integration)
+- [ ] ADB Offerings and License Types *(8 min)* – ✅ [See Summary](#describe-the-different-adb-offerings-and-license-types)
+- [ ] Provision ADB – Auto Scaling *(5 min)* – ✅ [See Summary](#create-autonomous-database-serverless-instances---auto-scaling)
+- [ ] Provision ADB – Step-by-step *(9 min)* – ✅ [See Summary](#create-autonomous-database-serverless-instances---provision-adb)
+- [ ] Start and Stop ADB *(6 min)* – ✅ [See Summary](#create-autonomous-database-serverless-instances---start-and-stop-adb)
+- [ ] Autonomous Database Tools *(5 min)* – ✅ [See Summary](#describe-autonomous-database-tools)
+- [ ] Skill Check: ADB – ✅ [See Summary](#skill-check-autonomous-database-adb)
 
 ### 5. AI Innovations
-- [ ] Introduction to AI *(5 min)* – ✅ [See Summary](#ai--class-introduction-to-ai)
-- [ ] Select AI *(8 min)* – ✅ [See Summary](#ai--class-select-ai)
-- [ ] Vector Search *(9 min)* – ✅ [See Summary](#ai--class-vector-search)
+- [ ] Introduction to AI *(5 min)* – ✅ [See Summary](#introduction-to-ai)
+- [ ] Select AI *(8 min)* – ✅ [See Summary](#select-ai)
+- [ ] Vector Search *(9 min)* – ✅ [See Summary](#vector-search)
 
 ### 6. Data Lake, Data Warehouse & Machine Learning
-- [ ] Data Lakehouse on OCI *(10 min)* – ✅ [See Summary](#lakehouse--class-data-lakehouse-on-oci)
-- [ ] Oracle Machine Learning Overview *(13 min)* – ✅ [See Summary](#lakehouse--class-oml-overview)
-- [ ] Data Mesh Architecture *(13 min)* – ✅ [See Summary](#lakehouse--class-data-mesh-architecture)
-- [ ] Skill Check: DL, DW & ML – ✅ [See Summary](#-skill-check-data-lake-dw-ml)
+- [ ] Data Lakehouse on OCI *(10 min)* – ✅ [See Summary](#data-lakehouse-on-oci)
+- [ ] Oracle Machine Learning Overview *(13 min)* – ✅ [See Summary](#oracle-machine-learning-overview)
+- [ ] Data Mesh Architecture *(13 min)* – ✅ [See Summary](#data-mesh-architecture)
+- [ ] Skill Check: DL, DW & ML – ✅ [See Summary](#skill-check-data-lake-data-warehouse--machine-learning)
 
 ### 7. Developing on Oracle Database
-- [ ] Manage ADB with REST APIs *(5 min)* – ✅ [See Summary](#developing--class-rest-apis)
-- [ ] Built-in ADB Tools *(8 min)* – ✅ [See Summary](#developing--class-adb-tools)
-- [ ] CI/CD for APEX – Part 1 *(14 min)* – ✅ [See Summary](#developing--class-cicd-apex-part-1)
-- [ ] CI/CD for APEX – Part 2 *(15 min)* – ✅ [See Summary](#developing--class-cicd-apex-part-2)
-- [ ] Skill Check: Developing on Oracle DB – ✅ [See Summary](#-skill-check-developing-on-db)
+- [ ] Manage ADB with REST APIs *(5 min)* – ✅ [See Summary](#manage-autonomous-database-instances-using-rest-apis-to-manage-adb)
+- [ ] Built-in ADB Tools *(8 min)* – ✅ [See Summary](#autonomous-database-built-in-tools)
+- [ ] CI/CD for APEX – Part 1 *(14 min)* – ✅ [See Summary](#cicd-for-apex-and-oracle-database-developers---part-1)
+- [ ] CI/CD for APEX – Part 2 *(15 min)* – ✅ [See Summary](#cicd-for-apex-and-oracle-database-developers---part-2)
+- [ ] Skill Check: Developing on Oracle DB – ✅ [See Summary](#skill-check-developing-in-oracle-database)
 
 ### 8. Resiliency
-- [ ] Database Maximum Security Architecture *(14 min)* – ✅ [See Summary](#resiliency--class-max-security-architecture)
-- [ ] Maximum Availability Architecture *(15 min)* – ✅ [See Summary](#resiliency--class-max-availability-architecture)
-- [ ] Skill Check: Resiliency – ✅ [See Summary](#-skill-check-resiliency)
+- [ ] Database Maximum Security Architecture *(14 min)* – ✅ [See Summary](#database-maximum-security-architecture)
+- [ ] Maximum Availability Architecture *(15 min)* – ✅ [See Summary](#oracles-maximum-availability-architecture)
+- [ ] Skill Check: Resiliency – ✅ [See Summary](#skill-check-resiliency)
 
 ### 9. Upgrades and Migrations
-- [ ] Oracle DB Cloud Migration *(5 min)* – ✅ [See Summary](#upgrades--class-db-cloud-migration)
-- [ ] Database Upgrade Best Practices *(14 min)* – ✅ [See Summary](#upgrades--class-upgrade-best-practices)
-- [ ] Skill Check: Upgrades & Migrations – ✅ [See Summary](#-skill-check-upgrades-and-migrations)
+- [ ] Oracle DB Cloud Migration *(5 min)* – ✅ [See Summary](#oracle-database-cloud-migration)
+- [ ] Database Upgrade Best Practices *(14 min)* – ✅ [See Summary](#database-upgrade-best-practices)
+- [ ] Skill Check: Upgrades & Migrations – ✅ [See Summary](#skill-check-upgrades--migrations)
 
 ### 10. MySQL and NoSQL
-- [ ] HeatWave MySQL *(20 min)* – ✅ [See Summary](#mysql-nosql--class-heatwave-mysql)
-- [ ] NoSQL Cloud Service – Part 1 *(17 min)* – ✅ [See Summary](#mysql-nosql--class-nosql-overview-part-1)
-- [ ] NoSQL Cloud Service – Part 2 *(17 min)* – ✅ [See Summary](#mysql-nosql--class-nosql-overview-part-2)
-- [ ] Skill Check: MySQL & NoSQL – ✅ [See Summary](#-skill-check-mysql-and-nosql)
+- [ ] HeatWave MySQL *(20 min)* – ✅ [See Summary](#describe-heatwave-mysql)
+- [ ] NoSQL Cloud Service – Part 1 *(17 min)* – ✅ [See Summary](#oracle-nosql-database-cloud-service-overview)
+- [ ] NoSQL Cloud Service – Part 2 *(17 min)* – ✅ [See Summary](#oracle-nosql-database-cloud-service-overview---part-2)
+- [ ] Skill Check: MySQL & NoSQL – ✅ [See Summary](#skill-check-mysql--nosql)
 
 ---
-
-## 📂 Lesson Notes
 
 ## 📂 Lesson Notes
 
