@@ -40,8 +40,8 @@ This certification validates foundational understanding of AI concepts, Machine 
 ### 3. Machine Learning Foundations
 - [x] Module Intro *(1 min)* – ✅ _No notes_
 - [x] Introduction to Machine Learning *(6 min)* – ✅ [See Summary](#introduction-to-machine-learning)
-- [x] Supervised Learning – Classification *(5 min)* – ✅ [See Summary](#supervised-learning---classification)
-- [x] Supervised Learning – Regression *(7 min)* – ✅ [See Summary](#supervised-learning---regression)
+- [x] Supervised Learning – Classification *(5 min)* – ✅ [See Summary](#supervised-learning--classification)
+- [x] Supervised Learning – Regression *(7 min)* – ✅ [See Summary](#supervised-learning--regression)
 - [x] Demo: Introduction to Jupyter Notebooks *(6 min)* – ✅ _No notes_
 - [x] Demo: Basic Machine Learning Part – 1 *(7 min)* – ✅ [See Summary](#demo-basic-machine-learning-part---1)
 - [x] Demo: Basic Machine Learning Part – 2 *(10 min)* – ✅ [See Summary](#demo-basic-machine-learning-part---2)
