@@ -32,7 +32,7 @@ This certification validates foundational understanding of AI concepts, Machine 
 ### 2. AI Foundations
 - [x] Module Intro *(1 min)* – ✅ _No notes_
 - [x] Introduction to AI *(5 min)* – ✅ [See Summary](#introduction-to-ai)
-- [x] AI – Tasks and Data *(8 min)* – ✅ [See Summary](#ai---tasks-and-data)
+- [x] AI – Tasks and Data *(8 min)* – ✅ [See Summary](#ai--tasks-and-data)
 - [x] Demo: AI *(11 min)* – ✅ [See Summary](#demo-ai)
 - [x] AI vs ML vs DL *(8 min)* – ✅ [See Summary](#ai-vs-ml-vs-dl)
 - [x] Skill Check: AI Basics – ✅ [See Summary](#skill-check-ai-basics)
@@ -43,8 +43,8 @@ This certification validates foundational understanding of AI concepts, Machine 
 - [x] Supervised Learning – Classification *(5 min)* – ✅ [See Summary](#supervised-learning--classification)
 - [x] Supervised Learning – Regression *(7 min)* – ✅ [See Summary](#supervised-learning--regression)
 - [x] Demo: Introduction to Jupyter Notebooks *(6 min)* – ✅ _No notes_
-- [x] Demo: Basic Machine Learning Part – 1 *(7 min)* – ✅ [See Summary](#demo-basic-machine-learning-part---1)
-- [x] Demo: Basic Machine Learning Part – 2 *(10 min)* – ✅ [See Summary](#demo-basic-machine-learning-part---2)
+- [x] Demo: Basic Machine Learning Part – 1 *(7 min)* – ✅ [See Summary](#demo-basic-machine-learning-part--1)
+- [x] Demo: Basic Machine Learning Part – 2 *(10 min)* – ✅ [See Summary](#demo-basic-machine-learning-part--2)
 - [x] Unsupervised Learning *(7 min)* – ✅ [See Summary](#unsupervised-learning)
 - [x] Reinforcement Learning *(8 min)* – ✅ [See Summary](#reinforcement-learning)
 - [x] Skill Check: ML Basics – ✅ [See Summary](#skill-check-ml-basics)
@@ -53,7 +53,7 @@ This certification validates foundational understanding of AI concepts, Machine 
 - [ ] Module Intro *(1 min)* – ✅ _No notes_
 - [ ] Introduction to Deep Learning *(10 min)* – ✅ [See Summary](#introduction-to-deep-learning)
 - [ ] Deep Learning Models – Sequence Models *(6 min)* – ✅ [See Summary](#deep-learning-models--sequence-models)
-- [ ] Deep Learning Models – CNN *(10 min)* – ✅ [See Summary](#deep-learning-models---cnn)
+- [ ] Deep Learning Models – CNN *(10 min)* – ✅ [See Summary](#deep-learning-models--cnn)
 - [ ] Demo: Classification with Multilayer Perceptron *(8 min)* – ✅ [See Summary](#demo-classification-with-multilayer-perceptron)
 - [ ] Skill Check: DL Basics – ❌ Not Attempted
 
