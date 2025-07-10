@@ -1070,12 +1070,10 @@ Convolutional Neural Networks are the backbone of modern **computer vision** tas
 #### Demo: Classification with Multilayer Perceptron  
 ---
 
-## Summary
-This lesson demonstrates how to use a Multilayer Perceptron (MLP) to classify a dataset with concentric circles. We explore how changing the number of neurons in the hidden layer affects classification accuracy and decision boundary complexity.
+> 📝 **Summary:**  
+> This lesson demonstrates how to use a Multilayer Perceptron (MLP) to classify a dataset with concentric circles. We explore how changing the number of neurons in the hidden layer affects classification accuracy and decision boundary complexity.
 
-## Sections
-
-### 1. Dataset Creation
+#### 1. Dataset Creation
 - Use `make_circles` from the Sklearn library.
 - Generate 300 samples: 150 points per class (outer circle = 0, inner circle = 1).
 - Add noise and adjust factor to modify point distribution.
@@ -1085,19 +1083,19 @@ This lesson demonstrates how to use a Multilayer Perceptron (MLP) to classify a 
   - `factor` (distance between circles, e.g., 0.5)
   - `random_state` for reproducibility
 
-### 2. Initial Data Visualization
+#### 2. Initial Data Visualization
 - Plot data points colored by label.
 - Observe concentric circle pattern.
 - Explore impact of changing `noise` and `factor`.
 
-### 3. MLP Classifier Setup
+#### 3. MLP Classifier Setup
 - Use an MLP classifier with one hidden layer.
 - Number of neurons in the hidden layer is adjustable (1 to 6 neurons).
 - Use ReLU activation function for non-linear decision boundaries.
 - Use a fixed random seed for initialization.
 - Train the classifier on the dataset.
 
-### 4. Interactive Model Training and Visualization
+#### 4. Interactive Model Training and Visualization
 - Slider widget to select number of neurons.
 - On slider update:
   - Train MLP with chosen hidden layer size.
@@ -1107,13 +1105,13 @@ This lesson demonstrates how to use a Multilayer Perceptron (MLP) to classify a 
   - Overlay training data points.
   - Update plot title and axis labels.
 
-### 5. Observations
+#### 5. Observations
 - With 1 neuron: poor classification, decision boundary too simple.
 - Increasing neurons: decision boundary becomes more complex.
 - More points are classified correctly with more neurons.
 - Visual intuition about model complexity and performance.
 
-### 6. Conclusion
+#### 6. Conclusion
 - MLP can separate non-linearly separable data with enough neurons.
 - Interactive demo helps understand the role of hidden neurons.
 - Thanks for watching!
