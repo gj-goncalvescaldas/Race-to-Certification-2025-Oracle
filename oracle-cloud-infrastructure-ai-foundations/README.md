@@ -3,7 +3,7 @@
 _A comprehensive guide based on the official Oracle AI Foundations Course._  
 > 📌 _This is a summary of Oracle University lessons. No personal analysis or opinion is included._
 > ⚙️ **Note:**  
-> As part of this course, I will implement the machine learning models separately using **Databricks Community Edition**, rather than using **Jupyter Notebooks** as shown in the course. All my practical model implementations will be stored under the `/MachineLearningModels` folder.
+> As part of this course, I will implement the machine learning models separately using **Databricks Community Edition**, rather than using **Jupyter Notebooks** as shown in the course. All my practical model implementations will be stored under the `/ML_Models` folder.
 
 ---
 
