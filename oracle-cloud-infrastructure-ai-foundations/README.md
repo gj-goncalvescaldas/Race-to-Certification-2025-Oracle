@@ -50,12 +50,12 @@ This certification validates foundational understanding of AI concepts, Machine 
 - [x] Skill Check: ML Basics – ✅ [See Summary](#skill-check-ml-basics)
 
 ### 4. Deep Learning Foundations
-- [ ] Module Intro *(1 min)* – ✅ _No notes_
-- [ ] Introduction to Deep Learning *(10 min)* – ✅ [See Summary](#introduction-to-deep-learning)
-- [ ] Deep Learning Models – Sequence Models *(6 min)* – ✅ [See Summary](#deep-learning-models--sequence-models)
-- [ ] Deep Learning Models – CNN *(10 min)* – ✅ [See Summary](#deep-learning-models--cnn)
-- [ ] Demo: Classification with Multilayer Perceptron *(8 min)* – ✅ [See Summary](#demo-classification-with-multilayer-perceptron)
-- [ ] Skill Check: DL Basics – ❌ Not Attempted
+- [x] Module Intro *(1 min)* – ✅ _No notes_
+- [x] Introduction to Deep Learning *(10 min)* – ✅ [See Summary](#introduction-to-deep-learning)
+- [x] Deep Learning Models – Sequence Models *(6 min)* – ✅ [See Summary](#deep-learning-models--sequence-models)
+- [x] Deep Learning Models – CNN *(10 min)* – ✅ [See Summary](#deep-learning-models--cnn)
+- [x] Demo: Classification with Multilayer Perceptron *(8 min)* – ✅ [See Summary](#demo-classification-with-multilayer-perceptron)
+- [x] Skill Check: DL Basics – ✅ [See Summary](#skill-check-dl-basics)
 
 ### 5. Generative AI and LLM Foundations
 - [ ] Module Intro *(1 min)* – ✅ _No notes_
