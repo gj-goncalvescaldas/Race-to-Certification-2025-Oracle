@@ -58,14 +58,14 @@ This certification validates foundational understanding of AI concepts, Machine 
 - [x] Skill Check: DL Basics – ✅ [See Summary](#skill-check-dl-basics)
 
 ### 5. Generative AI and LLM Foundations
-- [ ] Module Intro *(1 min)* – ✅ _No notes_
-- [ ] Introduction to Generative AI *(9 min)* – ✅ [See Summary](#introduction-to-generative-ai)
-- [ ] Introduction to Large Language Models *(8 min)* – ✅ [See Summary](#introduction-to-large-language-models)
-- [ ] Transformers Part-1 *(8 min)* – ✅ [See Summary](#transformers-part-1)
-- [ ] Transformers Part-2 *(9 min)* – ✅ [See Summary](#transformers-part-2)
-- [ ] Prompt Engineering *(11 min)* – ✅ [See Summary](#prompt-engineering)
-- [ ] Customize LLMs with your data *(10 min)* – ✅ [See Summary](#customize-llms-with-your-data)
-- [ ] Skill Check: Gen AI Basics – ❌ Not Attempted
+- [x] Module Intro *(1 min)* – ✅ _No notes_
+- [x] Introduction to Generative AI *(9 min)* – ✅ [See Summary](#introduction-to-generative-ai)
+- [x] Introduction to Large Language Models *(8 min)* – ✅ [See Summary](#introduction-to-large-language-models)
+- [x] Transformers Part-1 *(8 min)* – ✅ [See Summary](#transformers-part-1)
+- [x] Transformers Part-2 *(9 min)* – ✅ [See Summary](#transformers-part-2)
+- [x] Prompt Engineering *(11 min)* – ✅ [See Summary](#prompt-engineering)
+- [x] Customize LLMs with your data *(10 min)* – ✅ [See Summary](#customize-llms-with-your-data)
+- [x] Skill Check: Gen AI Basics – ✅ [See Summary](#skill-check-gen-ai-basics)
 
 ### 6. OCI AI Portfolio
 - [ ] Module Intro *(1 min)* – ✅ _No notes_
@@ -1153,17 +1153,455 @@ The number of neurons in the hidden layer directly impacts the complexity of the
 ### 🧩 Generative AI and LLM Foundations
 
 #### Introduction to Generative AI  
----  
+---
+
+#### 📝 Summary:
+This lesson introduces **Generative AI (GenAI)** and contrasts it with traditional **Machine Learning (ML)** and **Deep Learning (DL)**. It explains how GenAI models learn patterns from data to create entirely new content (text, images, music, etc.), the types of GenAI models, their workflows, and real-world applications such as drug discovery and creative content generation.
+
+#### 🧠 Understanding the AI Hierarchy
+
+- **Artificial Intelligence (AI):** Simulates human intelligence using machines.
+- **Machine Learning (ML):** Subset of AI that uses algorithms to learn from data for prediction or pattern recognition.
+- **Deep Learning (DL):** Subset of ML using neural networks to handle complex data structures.
+- **Generative AI (GenAI):** Subset of DL focused on generating new, original content based on learned patterns.
+
+#### 🧩 What Is Generative AI?
+
+- **GenAI** creates new content—text, images, music, videos—based on patterns learned from data.
+- It differs from traditional ML by not just classifying or predicting but **generating**.
+- Unlike ML, GenAI doesn't require **labeled** data during pretraining.
+- Example: Trained on dog images, GenAI can generate a new dog image without copying any of the originals.
+
+#### ⚙️ How GenAI Works vs Traditional ML
+
+| Aspect                  | Traditional ML                              | Generative AI (GenAI)                           |
+|------------------------|----------------------------------------------|-------------------------------------------------|
+| Data Requirement        | Requires **labeled** data                    | Uses **unlabeled** data for pretraining         |
+| Goal                    | Predict labels/classifications               | Generate new content (text, image, etc.)        |
+| Example Task            | Classify an image as cat or dog              | Generate a new image of a cat or a dog          |
+| Learning Method         | Learns relationship between input & output   | Learns **patterns** in unstructured data        |
+| Inference               | Produces a prediction                        | Produces new content                            |
+
+![Image 7](img/7.png)  
+
+#### 📦 Types of Generative AI Models
+
+1. **Text-Based Models:**
+   - Generate text, code, dialogue, chat, articles, etc.
+   - Trained on massive amounts of text data to understand language structure and meaning.
+
+2. **Multimodal Models:**
+   - Process and generate **multiple modalities** (text, images, audio, video).
+   - Learn relationships across formats (e.g., generating an image from a text prompt).
+
+
+#### 🌍 Applications of Generative AI
+
+- **Creative Content Generation:** Writing, music, video creation.
+- **Medical Imaging & Drug Discovery:** Faster diagnosis and medicine development.
+- **Image & Video Synthesis:** Deepfakes, animations, visual storytelling.
+- **Customer Support & Productivity:** Chatbots, code generation, email drafting.
+- **Scientific Research:** Accelerating analysis and discovery through synthetic data.
+
+#### 🔑 Final Takeaway
+
+Generative AI revolutionizes how machines interact with data—not by recognizing it, but by **creating new content** from learned patterns. It opens up new dimensions in creativity, automation, and problem-solving, reshaping industries from healthcare to entertainment and beyond.
+
+
 #### Introduction to Large Language Models  
----  
+---
+
+#### 📝 Summary:
+This lesson explores **Large Language Models (LLMs)**, a type of probabilistic deep learning model that predicts the next word in a sequence based on prior context. It explains how LLMs assign probabilities to vocabulary words, generate coherent sequences, and are capable of answering questions, translating text, and writing essays. These models are built on **transformer architecture** and scale to billions of parameters.
+
+#### 🧠 What Is a Language Model?
+
+- A **language model** predicts the probability of the next word in a sequence based on prior words.
+- Vocabulary: The model only considers words it has been trained on.
+- Example:  
+  “I wrote to the zoo to send me a pet. They sent me a ___.”  
+  The model assigns probabilities to possible words like dog, lion, elephant, etc.
+
+#### 🧩 What Makes It “Large”?
+
+- **Large Language Models** (LLMs) have **hundreds of millions to billions of parameters**.
+- Parameters are learned weights that enable the model to capture linguistic patterns.
+- More parameters ≠ better by default. Large models risk **overfitting** or excessive computational cost.
+
+![Image 8](img/8.png)  
+
+#### 🧪 How LLMs Generate Text
+
+1. Input a partial sentence → model assigns probabilities to all valid next words.
+2. The word with the highest probability is selected.
+3. The selected word is appended to the sentence and the process repeats.
+4. The generation stops when the **EOS (End of Sentence)** token is predicted.
+
+#### 📚 Example Capabilities of LLMs
+
+- **Answering Questions**: e.g., “What is the capital of France?” → “Paris”
+- **Reasoning and Puzzles**: Multi-step logic and deduction
+- **Essay Writing**: e.g., “Write an article on the French Revolution”
+- **Language Translation**: e.g., “How are you?” → “Comment allez-vous?”
+
+#### ⚙️ Architecture: The Transformer
+
+- LLMs use the **Transformer architecture**, which uses **self-attention** to weigh different parts of the input for better context understanding.
+- Transformers allow LLMs to perform well in:
+  - Text summarization
+  - Sentiment analysis
+  - Question answering
+  - Language generation
+
+#### 📊 Model Scaling Over Time
+
+- LLMs have rapidly increased in size (measured by number of parameters).
+- Some models now exceed **500 billion parameters**.
+- Larger models typically generalize better but at higher computational cost.
+
+#### 🧠 Key Differences from Traditional ML
+
+| Aspect            | Traditional ML Models               | Large Language Models (LLMs)                  |
+|------------------|--------------------------------------|-----------------------------------------------|
+| Data Type         | Structured, labeled                 | Mostly unstructured, text-based               |
+| Goal              | Classification, prediction          | Text generation, completion, translation      |
+| Input-Output      | Feature → Label                     | Prompt → Generated sequence                   |
+| Architecture      | Logistic Regression, Decision Trees | Transformers with attention mechanisms        |
+
+
+#### 🔑 Final Takeaway
+
+**Large Language Models** are advanced AI systems built on transformers that predict and generate human-like text. They can understand, reason, and create language-based content with remarkable fluency. As core enablers of **Generative AI**, they are revolutionizing natural language understanding and interaction across virtually every domain.
+
 #### Transformers Part-1  
----  
+---
+
+#### 📝 Summary:
+This lesson introduces the **Transformer architecture**, a revolutionary deep learning model that overcomes the limitations of traditional Recurrent Neural Networks (RNNs) for language understanding. It explains how Transformers process entire sequences simultaneously using a **self-attention mechanism**, enabling them to understand long-range dependencies and contextual meaning in text.
+
+#### 🧠 Challenges with Traditional RNNs
+
+- RNNs process input **sequentially**, maintaining a **hidden state** at each step.
+- Suitable for short sequences, but **struggle with long-range dependencies**.
+- Context degrades over time → suffers from **vanishing gradients**.
+- Example issue: Difficulty understanding pronoun references like “it” in long sentences.
+
+#### 🧩 How Transformers Solve These Issues
+
+- Transformers process **all tokens simultaneously**, not sequentially.
+- They have a **global view** of the entire sequence at once.
+- Capable of understanding **relationships between distant words** in a sentence.
+
+#### 🧠 Self-Attention Mechanism
+
+- Allows the model to **"pay attention"** to relevant words in the input, regardless of position.
+- Adds **contextual understanding** by weighing the importance of other tokens.
+- Example:
+  - In “Jane threw the frisbee and her dog fetched it,”  
+    self-attention helps the model infer that “it” refers to “frisbee.”
+- Enables accurate understanding of **pronouns, dependencies, and sequence meaning**.
+
+#### ⚙️ Transformer Architecture Overview
+
+| Component     | Function                                                                 |
+|---------------|--------------------------------------------------------------------------|
+| **Encoder**   | Converts input into **context-rich vector representations**              |
+| **Decoder**   | Uses encoded vectors to **generate output text**                         |
+| **Self-Attention** | Core mechanism enabling **contextual relevance between all tokens** |
+| **Parallel Processing** | Allows much faster training and inference vs. RNNs             |
+
+- Introduced in the paper: **"Attention Is All You Need"** (2017).
+- Transformer is the foundation for LLMs like GPT, BERT, and others.
+
+#### 🔁 Encoder-Decoder Structure
+
+- **Encoder**:  
+  Processes the input sentence and extracts **contextual embeddings**.
+- **Decoder**:  
+  Generates a response or prediction based on encoded information.
+- Both components contain **multiple layers** connected via self-attention.
+
+#### 🔑 Final Takeaway
+
+Transformers revolutionized NLP by introducing **self-attention**, enabling models to understand full sequences in context—regardless of word distance. Unlike RNNs, they don’t process one word at a time, but analyze entire inputs at once, making them the core of today’s most powerful language models.
+
 #### Transformers Part-2  
----  
+---
+
+#### 📝 Summary:
+This lesson expands on the **Transformer architecture**, explaining the roles of **tokenization**, **embeddings**, and the differences between **encoder-only**, **decoder-only**, and **encoder-decoder** models. It also introduces practical applications such as **semantic search** and **retrieval-augmented generation (RAG)**, showing how vector-based understanding enables powerful AI workflows.
+
+#### 🔤 Tokens and Tokenization
+
+- **Tokens** are the basic units understood by LLMs:  
+  - Can be full words (e.g., *apple*)  
+  - Word parts (e.g., *friend-ship*)  
+  - Or punctuation marks (e.g., *,* or *.*)
+- Average:
+  - **1 token per word** for simple text  
+  - **2–3 tokens per word** for complex/uncommon vocabulary
+
+#### 📊 What Are Embeddings?
+
+- **Embeddings** are **numerical vector representations** of text (tokens, phrases, or paragraphs).
+- Captures **semantic meaning** and relationships between words.
+- Generated by **encoder models**.
+- Enable models to:
+  - Perform **classification**
+  - Power **semantic search**
+  - Retrieve similar documents via **vector similarity**
+
+#### 🔎 Retrieval-Augmented Generation (RAG)
+
+- RAG enhances LLMs with **external knowledge**:
+  1. Encode corpus into **vectors** using an encoder.
+  2. Encode user input.
+  3. Find similar documents via **vector similarity**.
+  4. Send context + query to an LLM for response.
+- Used in:
+  - Chatbots  
+  - Knowledge assistants  
+  - Search engines  
+
+#### 🧠 Decoder Models
+
+- **Decoder-only transformers** (e.g., GPT models):
+  - Take token sequences as input.
+  - Predict the **next token** one at a time.
+  - Repeat until desired output is generated.
+- Used for:
+  - **Text generation**
+  - **Autocompletion**
+  - **Chat applications**
+
+#### 🔁 Encoder-Decoder Architecture
+
+- Used in **sequence-to-sequence tasks** like **machine translation**.
+- **Workflow:**
+  1. **Encoder** tokenizes and embeds input (e.g., English sentence).
+  2. **Decoder** generates translated output (e.g., French) token-by-token.
+  3. Decoder uses **previous output + context embeddings** at each step.
+
+#### ⚙️ Summary of Transformer Variants
+
+| Type                | Description                                        | Use Cases                                     |
+|---------------------|----------------------------------------------------|-----------------------------------------------|
+| **Encoder-only**     | Converts text to embeddings                        | Semantic Search, RAG, Classification          |
+| **Decoder-only**     | Predicts next token based on input sequence        | Text Generation, Chatbots, Autocomplete       |
+| **Encoder-Decoder**  | Encodes input + generates output sequence          | Translation, Summarization, Sequence Tasks    |
+
+#### 🔑 Final Takeaway
+
+Transformers come in multiple architectural forms tailored for specific NLP tasks. By leveraging **tokenization**, **embeddings**, and specialized **encoder/decoder roles**, these models power everything from **semantic search** to **language generation**. Understanding these core components is key to harnessing LLM capabilities effectively.
+
 #### Prompt Engineering  
----  
+--- 
+
+#### 📝 Summary:
+This lesson explains how **prompts** guide Large Language Models (LLMs) and introduces the concept of **prompt engineering**—crafting inputs to obtain desired outputs. It covers techniques like **instruction tuning**, **in-context learning**, **k-shot prompting**, and **chain-of-thought prompting**, along with a major challenge known as **hallucination**.
+
+#### 🧾 What Is a Prompt?
+
+- A **prompt** is the input or text given to an LLM to generate a response.
+- LLMs are trained to **complete text** by predicting the next likely token.
+- Example: “Four score and seven years ago...” → LLM predicts the rest.
+
+#### ⚙️ Prompt Engineering
+
+- **Prompt engineering** is the process of iteratively refining prompts to elicit useful or specific responses from LLMs.
+- It's challenging because traditional LLMs are **completion-based**, not instruction-following.
+
+#### 🧪 Instruction Tuning & RLHF
+
+- **Instruction Tuning:** Fine-tuning LLMs on datasets with instructions and expected responses.
+  - Example: Llama 2 Chat was fine-tuned on **28,000 prompt-response pairs**.
+- **RLHF (Reinforcement Learning from Human Feedback):**
+  - Human annotators evaluate model outputs.
+  - Their preferences train a **reward model** that helps align model behavior with human expectations.
+
+#### 📌 Prompt Engineering Techniques
+
+1. ### 🧠 In-Context Learning & k-Shot Prompting
+
+| Type         | Description                                          | Example                         |
+|--------------|------------------------------------------------------|----------------------------------|
+| **0-shot**   | No example provided                                  | Translate “cheese” to French.   |
+| **1-shot**   | One example provided                                 | English → French: “apple” = “pomme” |
+| **k-shot**   | k examples shown before asking the model to complete | 3 examples of translation shown |
+
+- Helps condition the model on how to respond **without changing its parameters**.
+
+2. ### 🔗 Chain-of-Thought Prompting
+
+- Encourages the model to **reason step-by-step**, mimicking human problem-solving.
+- Effective for **complex tasks** that require logic, math, or sequential reasoning.
+- Instead of giving just the answer, the model is prompted to explain its reasoning process.
+
+**Example Prompt:**
+> Roger starts with 5 tennis balls.  
+> He buys 2 more cans of tennis balls.  
+> Each can has 3 balls.  
+> How many tennis balls does he have now?
+
+**Model Response (Chain-of-Thought):**
+> Starts with 5.  
+> 2 cans × 3 balls = 6.  
+> 5 + 6 = 11.  
+> **Answer: 11**
+
+Another example:
+
+> The cafeteria had 20 bananas.  
+> They used 10 for pancakes.  
+> Then purchased 8 more.  
+> How many bananas now?
+
+**Model Response (Chain-of-Thought):**
+> 20 - 10 = 10.  
+> 10 + 8 = 18.  
+> **Answer: 18**
+
+- Without chain-of-thought prompting, LLMs may produce incorrect answers.
+- This technique improves **accuracy** and **transparency** in reasoning.
+
+#### 🚨 Hallucination in LLMs
+
+- **Hallucination** occurs when a model generates content that is **not factually correct** or **not grounded in real data**.
+- It may look fluent and confident, making it harder to detect.
+- Example of hallucination:
+  > "In the U.S., people gradually adopted the practice of driving on the left side."
+  - ❌ Factually incorrect – U.S. drives on the **right** side.
+
+- Hallucinations can be:
+  - **Obvious** – easily identifiable.
+  - **Subtle** – sound plausible but are false.
+
+#### 🛡️ Mitigating Hallucinations
+
+- **Retrieval-Augmented Generation (RAG)** reduces hallucination by:
+  - Fetching relevant documents from external sources.
+  - Grounding responses in **real, verifiable information**.
+
+- Current LLMs:
+  - Still hallucinate occasionally.
+  - Researchers are developing methods to **measure groundedness**.
+  - No definitive solution exists yet, but progress is ongoing.
+
+#### 🔑 Final Takeaway
+
+Prompt engineering is a **crucial skill** for getting reliable and useful outputs from LLMs.  
+Key techniques:
+- **In-context learning & k-shot prompting**: Guide LLMs with examples.
+- **Chain-of-thought prompting**: Improve reasoning accuracy.
+- **Instruction tuning & RLHF**: Align model behavior with human expectations.
+
+Despite advances, **hallucination remains a key challenge**, and emerging solutions like **RAG** are vital to improve LLM reliability.
+
 #### Customize LLMs with your data  
----  
+---
+
+### 📊 Overview
+
+To effectively adapt large language models (LLMs) to your specific needs, consider a framework based on two axes:
+
+- **Horizontal axis: Context Optimization**
+  - Inject user- or domain-specific data during inference.
+  - Example: Recent orders made on a website.
+
+- **Vertical axis: LLM Optimization**
+  - Adapt the model itself to better perform domain-specific tasks.
+  - Example: Fine-tuning a model on legal or medical data.
+
+## 1. ⚙️ Prompt Engineering
+
+- **Fastest and simplest method**.
+- Allows quick testing and iteration.
+- No training cost or infrastructure required.
+
+Use Case:
+- When the model **already understands** the topic and task.
+
+## 2. 📚 Retrieval-Augmented Generation (RAG)
+
+### 🔍 What is RAG?
+- Enhances LLM responses using **external knowledge bases**.
+- Combines:
+  - **Retrieval**: Search for relevant documents.
+  - **Augmented Generation**: Ground responses using retrieved content.
+
+### ✅ Advantages
+- No fine-tuning required.
+- Supports **dynamic knowledge updates**.
+- Reduces **hallucinations**.
+
+### 📦 Example:
+> User: “I want to return the dress I bought.”  
+> Chatbot: “Let me check the return policy.”  
+> → Retrieves return policy from internal wiki:  
+> "Returns allowed within 30–90 days. Sale items excluded."  
+> → Uses a vision service to check receipt and approve return.  
+> ✅ Response grounded in real enterprise data.
+
+### 🧠 Key Insight
+- Allows LLMs to access **private knowledge** and generate informed responses in real-time.
+
+## 3. 🧬 Fine-Tuning
+
+### 🛠️ What is Fine-Tuning?
+- Start with a **pretrained model**, then train on **custom domain data**.
+- Result: a **custom model** optimized for your specific needs.
+
+### 🧩 Use Cases:
+- Pretrained model doesn't perform well on your task.
+- You need to teach new skills, domain terms, or formats.
+
+### 🧪 OCI Example: T-Few Fine-Tuning
+- Adds new layers and updates **only a fraction** of weights.
+- **Efficient** and **cost-effective** compared to full model retraining.
+
+### 💡 Benefits:
+1. **Improved Performance**: Better task-specific accuracy.
+2. **Improved Efficiency**: Fewer tokens and smaller models.
+
+### ⚠️ Tradeoffs:
+- Requires **labeled data**, which is:
+  - Expensive and time-consuming.
+- Needs **computational resources** for training.
+
+## 4. 🧭 Choosing the Right Method
+
+| Method               | When to Use                                                 | Pros                                                  | Cons                                   |
+|----------------------|--------------------------------------------------------------|--------------------------------------------------------|----------------------------------------|
+| **Prompt Engineering** | When the model already knows the topic                      | Simple, fast, no cost                                  | Limited control                        |
+| **RAG**               | When data changes often or hallucinations are a concern     | Dynamic, grounded in current data                     | Needs a compatible, high-quality data source |
+| **Fine-Tuning**       | When model fails at specific tasks or needs domain adaptation | Highly accurate and efficient for tailored tasks       | Expensive, complex, needs labeled data |
+
+## 5. 🔁 Iterative Customization Framework
+
+### 🚀 A Practical Journey
+
+1. **Start with prompt engineering**
+   - Set a baseline using few-shot examples.
+2. **Add RAG** if prompts are insufficient
+   - Connect to enterprise knowledge bases.
+3. **Fine-tune** the RAG-enhanced model
+   - Optimize output format, tone, or performance.
+4. **Optimize further**
+   - Improve retrieval and data quality.
+   - Repeat fine-tuning as necessary.
+
+You may end up combining all three strategies for best results.
+
+## 🔑 Final Takeaway
+
+To customize an LLM for your data and tasks, use a **layered approach**:
+
+- Start with **prompt engineering**.
+- Add **retrieval-augmented generation** to ground responses.
+- Apply **fine-tuning** for deep domain adaptation.
+
+Each method builds upon the previous one, offering increasing levels of **control, accuracy, and complexity**.
+
 #### Skill Check: Gen AI Basics  
 ---  
 
