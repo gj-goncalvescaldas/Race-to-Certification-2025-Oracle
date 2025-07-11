@@ -1351,6 +1351,8 @@ This lesson expands on the **Transformer architecture**, explaining the roles of
   - Power **semantic search**
   - Retrieve similar documents via **vector similarity**
 
+  ![Image 9](img/9.png)  
+
 #### 🔎 Retrieval-Augmented Generation (RAG)
 
 - RAG enhances LLMs with **external knowledge**:
