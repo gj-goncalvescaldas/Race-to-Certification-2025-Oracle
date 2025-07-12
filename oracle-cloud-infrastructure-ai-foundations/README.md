@@ -68,14 +68,14 @@ This certification validates foundational understanding of AI concepts, Machine 
 - [x] Skill Check: Gen AI Basics – ✅ [See Summary](#skill-check-gen-ai-basics)
 
 ### 6. OCI AI Portfolio
-- [ ] Module Intro *(1 min)* – ✅ _No notes_
-- [ ] AI Services Overview *(8 min)* – ✅ [See Summary](#ai-services-overview)
-- [ ] ML Services Overview *(7 min)* – ✅ [See Summary](#ml-services-overview)
-- [ ] AI Infrastructure *(6 min)* – ✅ [See Summary](#ai-infrastructure)
-- [ ] GPUs and Superclusters in OCI *(13 min)* – ✅ [See Summary](#gpus-and-superclusters-in-oci)
-- [ ] Responsible AI *(7 min)* – ✅ [See Summary](#responsible-ai)
-- [ ] Demo: Data Science *(10 min)* – ✅ [See Summary](#demo-data-science)
-- [ ] Skill Check: OCI AI Portfolio – ❌ Not Attempted
+- [x] Module Intro *(1 min)* – ✅ _No notes_
+- [x] AI Services Overview *(8 min)* – ✅ [See Summary](#ai-services-overview)
+- [x] ML Services Overview *(7 min)* – ✅ [See Summary](#ml-services-overview)
+- [x] AI Infrastructure *(6 min)* – ✅ [See Summary](#ai-infrastructure)
+- [x] GPUs and Superclusters in OCI *(13 min)* – ✅ [See Summary](#gpus-and-superclusters-in-oci)
+- [x] Responsible AI *(7 min)* – ✅ [See Summary](#responsible-ai)
+- [x] Demo: Data Science *(10 min)* – ✅ _No notes_
+- [x] Skill Check: OCI AI Portfolio – ❌ Not Attempted
 
 ### 7. OCI Generative AI Service
 - [ ] Module Intro *(1 min)* – ✅ _No notes_
@@ -1840,20 +1840,175 @@ OCI Data Science enables end-to-end machine learning without infrastructure worr
 OCI's AI infrastructure, powered by the **latest NVIDIA GPUs** and **AI Quick Actions**, enables scalable training and deployment of advanced AI models, including **LLMs**, with minimal complexity and maximum performance.
 
 #### GPUs and Superclusters in OCI  
----  
+---
+
+> 📝 **Summary:**  
+> This lesson discusses how Oracle Cloud Infrastructure (OCI) leverages RDMA technology and an advanced Supercluster architecture to deliver high-performance, low-latency, large-scale GPU workloads with lossless networking and intelligent placement strategies.
+
+### 🚀 What is RDMA?
+
+- **RDMA (Remote Direct Memory Access)**:
+  - Enables **direct memory transfers** between machines **without CPU involvement**.
+  - Results in **low-latency**, **high-bandwidth**, and **low-overhead** communication.
+  - Crucial for **GPU**, **HPC**, and **database** workloads on OCI.
+  - OCI uses **RoCE (RDMA over Converged Ethernet)** as the foundational transport.
+
+### 🧠 OCI RDMA Superclusters
+
+- Designed to **scale to tens or hundreds of thousands of GPUs**.
+- Built for **lossless RDMA networking** across a **three-tier Clos network**.
+- Enables **GPU-to-GPU communication** at:
+  - **~6.5 µs** (within the same block)
+  - **~20 µs** (across blocks)
+
+### 🧩 Key Components
+
+#### 1. **Supercluster Structure**
+- **GPU Nodes**: Each with 8x NVIDIA A100 GPUs interconnected via **NVLink**.
+- **Network Fabric**: Provides **1.6 Tbps** connectivity per GPU node.
+- **Three-Tier Clos Fabric**: Non-blocking interconnect between all GPUs across blocks.
+
+#### 2. **Lossless Design**
+- High buffer allocations to manage **longer cable distances**.
+- Switches with **intelligent congestion control** to **prevent packet drops**.
+- Ensures **lossless** performance even at **worst-case latency**.
+
+### ⚙️ Optimizations for Performance
+
+| Optimization             | Benefit                                                                 |
+|--------------------------|-------------------------------------------------------------------------|
+| **Placement Control**     | Ensures small workloads are deployed within the same block for low latency. |
+| **Network Locality Hints** | Algorithms can use locality data to keep traffic within racks/blocks.     |
+| **Reduced Flow Collisions**| Limits network contention → results in **higher throughput**.           |
+
+### 📶 Use Case Awareness
+
+- **Latency-Sensitive Workloads**:
+  - HPC or database clusters are placed in **single blocks** for minimum latency.
+- **Large-Scale GPU Workloads**:
+  - May span blocks, but intelligent **topology awareness** keeps most traffic **local**.
+- **Result**:
+  - Majority of traffic experiences **<6.5 µs latency**.
+  - Occasional inter-block traffic reaches **~20 µs**, still **10–20x faster** than standard cloud networks.
+
+### 🧪 Summary: 3 Pillars of RDMA Supercluster
+
+1. **Lossless RDMA Networking**:
+   - Engineered buffers and congestion control for reliability.
+2. **Placement Optimization**:
+   - Smarter control plane deploys workloads efficiently across blocks.
+3. **Locality-Aware Topologies**:
+   - GPU orchestration algorithms minimize latency and maximize throughput.
+
+### ✅ Final Takeaway
+
+OCI's RDMA Supercluster architecture pushes the frontier of GPU networking by combining **scale**, **low-latency**, and **lossless communication**—a key enabler for modern AI, HPC, and database workloads.
+
 #### Responsible AI  
----  
-#### Demo: Data Science  
----  
+---
+
+> 📝 **Summary:**  
+> This lesson explores the ethical, legal, and technical foundations of responsible AI, highlighting the importance of building AI systems that are lawful, ethical, robust, and human-centric.
+
+### 🤔 Why Responsible AI?
+
+- AI is increasingly used in critical areas (e.g., self-driving cars, medical diagnosis).
+- Trust in AI must be grounded in **ethics**, **accountability**, and **transparency**.
+
+### ⚖️ Guiding Principles for Trustworthy AI
+
+| Principle | Description |
+|----------|-------------|
+| **Lawful**   | Complies with all applicable laws and regulations. |
+| **Ethical**  | Respects fundamental rights and human values. |
+| **Robust**   | Technically and socially reliable, avoiding unintentional harm. |
+
+### 🧑‍⚖️ Legal & Ethical Foundations
+
+- **Laws**: Govern and protect rights, including those of minorities and the environment.
+- **Domain-Specific Rules**: Example: medical device regulations in healthcare.
+
+#### 🌍 Fundamental Human Rights
+
+| Value | Meaning |
+|-------|---------|
+| **Human Dignity** | Respect physical and mental integrity. |
+| **Freedom**       | Uphold freedom of expression and privacy. |
+| **Democracy**     | Support democratic processes, not undermine them. |
+| **Equality**      | Avoid unfair bias and discrimination. |
+
+### 🌐 AI Ethics Principles
+
+1. **Human Oversight** – AI should support humans, not replace them.
+2. **Do No Harm** – Avoid physical or social damage.
+3. **Transparency** – AI decisions must be fair and explainable.
+
+### ✅ Responsible AI Requirements
+
+| Requirement | Description |
+|------------|-------------|
+| **Human-Centric Design** | Preserve human autonomy and decision-making. |
+| **Robustness & Security** | Systems should be resilient to misuse or failure. |
+| **Fairness**              | Benefits and costs must be equitably distributed. |
+| **Explainability**        | Decisions should be understandable to stakeholders. |
+
+### 🔄 Implementation Process
+
+1. **Governance** – Define oversight structures.
+2. **Policies & Procedures** – Establish ethical guidelines and protocols.
+3. **Monitoring & Evaluation** – Continuously assess system performance and compliance.
+
+#### 👥 Key Stakeholders
+
+- **Developers** – Build AI systems responsibly.
+- **Deployers** – Implement AI in real-world applications.
+- **End Users** – Interact with and are affected by AI decisions.
+
+### 🏥 Responsible AI in Healthcare
+
+- **Bias Risk**: AI trained on imbalanced datasets may perform poorly across different groups.
+- **Explainability**: Complex algorithms hinder trust if decisions aren't understandable.
+- **Continuous Evaluation**: AI systems must be regularly assessed to avoid harm to patients.
+
+### ✅ Final Takeaway
+
+Responsible AI integrates **ethics**, **law**, and **technical rigor** to ensure AI systems are **trustworthy**, **safe**, and **fair**—especially in high-stakes domains like healthcare.
+
 #### Skill Check: OCI AI Portfolio  
 ---  
+
+#### Skill Check: OCI AI & ML Essentials  
+---
+
+### 1. Which OCI Data Science feature allows you to use catalogued models as HTTP endpoints on fully managed infrastructure?
+
+- ✅ **Correct Answer:** Model Deployments  
+- 🧠 **Explanation:** Model Deployments in OCI Data Science enable you to deploy your ML models as HTTP endpoints, allowing real-time inference and integration with applications. Fully managed infrastructure ensures scalability and ease of use.
+
+### 2. Which data type is used in Oracle Database 23ai to compare documents?
+
+- ✅ **Correct Answer:** Vector  
+- 🧠 **Explanation:** Oracle Database 23ai uses the `VECTOR` data type to store and compare vectors directly, enabling document and semantic similarity comparisons in AI workloads.
+
+### 3. Which is NOT an Oracle Cloud Infrastructure AI service?
+
+- ✅ **Correct Answer:** Translator  
+- 🧠 **Explanation:** While OCI includes AI services like Language, Vision, and Speech, "Translator" is not a standalone service. Translation is included as a feature within the Language service.
+
+### 4. What is the advantage of using OCI Superclusters for AI workloads?
+
+- ✅ **Correct Answer:** Deliver exceptional performance and scalability for complex AI tasks  
+- 🧠 **Explanation:** OCI Superclusters are optimized for high-performance, large-scale AI tasks like deep learning and LLM training. They use advanced GPU networking and RDMA fabric for scalability and efficiency.
+
+### 5. Which OCI Data Science feature enables you to define and run repeatable machine learning tasks on fully managed infrastructure?
+
+- ✅ **Correct Answer:** Jobs  
+- 🧠 **Explanation:** Jobs in OCI Data Science allow you to define and run repeatable machine learning tasks and workflows. You can create and execute specific operations, such as data preprocessing, model training, model evaluation, and more. They offer a structured and automated approach to managing tasks in a project.
 
 ---
 
 ### 🧩 OCI Generative AI Service
 
-#### OCI Generative AI Service Module Intro  
----  
 #### OCI Generative AI  
 ---  
 #### Demo: OCI Generative AI  
