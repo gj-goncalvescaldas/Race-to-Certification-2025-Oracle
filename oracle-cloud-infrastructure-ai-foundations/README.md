@@ -1776,7 +1776,69 @@ Thanks for listening.
 OCI Data Science enables end-to-end machine learning without infrastructure worries. From **development in Jupyter**, to **collaborative projects**, and **deployment as APIs**, it’s a robust toolset for data science teams operating at scale.
 
 #### AI Infrastructure  
----  
+--- 
+
+> 📝 **Summary:**  
+> This lesson introduces the critical role of GPUs in AI and ML infrastructure, highlights NVIDIA's GPU evolution, and explains how Oracle Cloud Infrastructure (OCI) leverages these components to support training and deployment of large language models (LLMs) via AI Quick Actions.
+
+### ⚙️ Why GPUs Matter in AI
+
+- **Machine Learning/AI Workloads**: Require high-volume, repetitive computations on large datasets.
+- **GPU Advantage**:
+  - Thousands of **lightweight cores** work in parallel.
+  - Ideal for **training** and **inference** at massive scale.
+  - High **throughput**, especially in **batch processing** or handling **simultaneous inference requests**.
+
+### 🚀 GPU Optimization for AI
+
+- Supports major deep learning frameworks:  
+  - **TensorFlow**  
+  - **PyTorch**  
+  - **ONNX Runtime**  
+- Utilizes **GPU-specific libraries** to accelerate performance.
+
+### 🧠 NVIDIA GPU Evolution
+
+| GPU Model      | Architecture | Key Feature                                                                 |
+|----------------|--------------|------------------------------------------------------------------------------|
+| A100 (2020)    | Ampere       | Features **Tensor Cores** for fused multiply-accumulate operations.         |
+| H100 (2022)    | Hopper       | Introduces **Transformer Engine** for optimizing transformer model performance. |
+| H200 (2024)    | Hopper       | H100 upgrade with **more memory**.                                          |
+| Blackwell (2025)| Blackwell   | Designed to accelerate **large-scale AI & LLMs**.                          |
+
+
+### 💻 Modern AI Hardware Stack
+
+- **NVIDIA Grace CPU**: Purpose-built for AI Cloud and HPC applications.  
+- **NVIDIA GB200 (Grace + Blackwell)**:
+  - Superchip combining **4 Blackwell GPUs** + **2 CPUs**.
+  - Extreme performance for LLMs and data center workloads.
+  - OCI offers compute instances with:
+    - **H100**
+    - **L40S**
+    - **Edge 200**
+    - **B200**
+    - **GB200 Superchips** (2025 availability)
+
+### 🧮 OCI Superclusters
+
+- Built using latest GPU hardware.
+- Edge 200 → **x performance** over H100 Superclusters.  
+- B200 / GB200 → **APEX performance** for AI workloads.
+
+### 🤖 Using OCI Data Science for LLMs
+
+- Deploy **popular LLMs** on GPU-powered VMs or bare metal using **AI Quick Actions**.
+- Fine-tune base models and deploy custom models for **real-time inference**.
+- **AI Quick Actions** support:
+  - **Virtual LLM**
+  - **Next-generation inference**
+  - **Text embedding inference containers**
+
+### 🔑 Final Takeaway
+
+OCI's AI infrastructure, powered by the **latest NVIDIA GPUs** and **AI Quick Actions**, enables scalable training and deployment of advanced AI models, including **LLMs**, with minimal complexity and maximum performance.
+
 #### GPUs and Superclusters in OCI  
 ---  
 #### Responsible AI  
