@@ -1705,9 +1705,6 @@ Thanks for listening.
 #### ML Services Overview  
 ---
 
-#### OCI ML Services Overview  
----
-
 > 📝 **Summary:**  
 > This lesson explores Oracle Cloud Infrastructure (OCI) Machine Learning Services, focusing on the **OCI Data Science** platform. It supports the entire ML lifecycle with tools like JupyterLab, AutoML, model deployment, and a managed infrastructure for Python-based workflows.
 
