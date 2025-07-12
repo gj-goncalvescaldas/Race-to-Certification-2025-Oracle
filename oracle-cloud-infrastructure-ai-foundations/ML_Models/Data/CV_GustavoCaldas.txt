@@ -1,0 +1,389 @@
+Spanish (Original)
+Gustavo João Gonçalves Caldas
+Fecha de nacimiento: 30/07/2000
+
+Nacionalidad: Portuguesa
+
+Teléfono: (+34) 614146384 (Móvil)
+
+Correo electrónico: gj.goncalvescaldas@gmail.com
+
+Sitio web: https://gj-goncalvescaldas.github.io/
+
+LinkedIn: Gustavo Caldas
+
+Dirección: Arroyomolinos, Madrid, España (Domicilio)
+
+Intereses
+Desde mis años en la universidad, he desarrollado un fuerte interés por el mundo de los datos, orientando mi aprendizaje y experiencia hacia la Ingeniería de Datos, el Machine Learning y la Visualización. Me apasiona construir bases de datos sólidas, diseñar modelos de predicción y extraer información valiosa que aporte un impacto significativo a las empresas. Mis principales intereses giran en torno a transformar datos en conocimiento accionable, impulsando la toma de decisiones estratégicas y el éxito de los proyectos en los que participo.
+
+Valoro trabajar en entornos multiculturales, donde se fomente la diversidad de ideas y perspectivas. Además, aprecio la flexibilidad horaria, ya que me permite optimizar mi tiempo y evitar el tráfico. Dado que resido en el Sur de Madrid, el teletrabajo también es un aspecto fundamental para mantener un equilibrio entre la vida profesional y personal.
+
+En 2024 enfrenté un desafío personal significativo, lo que llevó a pausar temporalmente mi trayectoria profesional.
+
+Experiencia Laboral
+01/09/2022 – 01/11/2023 | Porto, Portugal
+Data Mining Researcher – IOTECH
+
+Colaboré con IOTECH en el proyecto ioCity, financiado por la Unión Europea y centrado en transformar la movilidad urbana mediante soluciones inteligentes e innovadoras.
+
+Realicé preparación, limpieza e integración de datos utilizando la metodología CRISP-DM.
+
+Analicé datos para prever la tasa de ocupación de transportes públicos en Porto.
+
+Desarrollé un sistema en tiempo real para predecir la disponibilidad de asientos en transportes públicos mediante Machine Learning.
+
+Implementé y evalué modelos de regresión: Random Forest Regression, LightGBM, CatBoost, Gradient Boosting y XGBoost.
+
+Tecnologías: Python, pandas, numpy, scikit-learn, matplotlib, Excel.
+
+01/08/2023 – 30/11/2023 | Madrid, España
+Data Engineer – Nationale-Nederlanden
+
+Especialista en Ingeniería de Datos con sólida base en ingeniería de software.
+
+Construcción de un Data Mart desde cero en esquema estrella, diseño e implementación de tablas de dimensiones y hechos.
+
+Procesamiento y carga diaria de datos desde Excel mediante Azure Data Factory y Databricks.
+
+Creación de informes y plantillas en PowerBI, implementando funciones avanzadas en DAX.
+
+Participación en proyectos complejos, corrigiendo errores e integrando nuevas variables de datos.
+
+Tecnologías: Databricks, Azure Data Factory, SQL Server, SQL Management, Excel, Python, PowerBI, Microsoft Azure, DAX, Copilot.
+
+Educación y Formación
+10/09/2018 – 04/07/2022 | Braga, Portugal
+Licenciatura en Ingeniería de Sistemas de Información
+Universidade do Minho
+Nivel 6 EQF-MEC
+
+10/09/2021 – 20/06/2024 | Braga, Portugal
+Máster en Ingeniería de Sistemas de Información
+Universidade do Minho
+Nivel 7 EQF-MEC
+
+19/06/2023 – 11/12/2023 | Madrid, España
+Bootcamp en Marketing Data Analytics
+Universidad Internacional de La Rioja
+Nivel 5 EQF-MEC
+
+Competencias de Idiomas
+Portugués: Nativo
+
+Español: C1 (Comprensión auditiva, lectora, producción oral, interacción oral, expresión escrita)
+
+Inglés: B2 (Comprensión auditiva, lectora, producción oral, interacción oral, expresión escrita)
+
+Niveles: A1 y A2 (usuario básico), B1 y B2 (usuario independiente), C1 y C2 (usuario competente)
+
+Competencias Digitales
+Data Gathering, Data Processing, Data Visualization, Data Analysis
+
+Experiencia en Java, Python y C
+
+Python (Pandas, Numpy, APIs, etc)
+
+Pyspark
+
+ETL (Extracción, Transformación y Carga de datos)
+
+Machine Learning
+
+PostgreSQL, SQLite, SQLServer, MySQL
+
+Power BI & Power Query
+
+Microsoft Azure, Azure Databricks
+
+Dominio de Microsoft Office, incluyendo Excel
+
+Data Warehouse
+
+Publicaciones
+2022
+Dashboards de Control Inteligentes para Monitorear los Sucesos en Ciudades Inteligentes: Un Estudio de Caso Portugués
+
+Mejora de las solicitudes de intervención del Regimiento de Bomberos Profesionales de Lisboa mediante dashboards inteligentes.
+
+El 58% de las falsas alarmas se cancelan tras activar los servicios de emergencia.
+
+El domingo es el día con más registros de sucesos, especialmente a las 9 am y 8 pm. El otoño tiene el mayor número de incidentes.
+
+Estos datos ayudan a anticipar escenarios y mejorar la toma de decisiones en emergencias.
+
+Proyectos
+01/01/2025 – 10/02/2025
+Pipeline de Datos en Tiempo Real para Análisis de Clima y COVID-19 Usando Azure Data Factory, Databricks y Power BI
+
+Creación de dos flujos ETL completos con Azure Data Factory, Databricks, Delta Lake y Power BI.
+
+Primer pipeline: datos meteorológicos en tiempo real desde API, transformados con PySpark, cargados en Delta Lake y visualizados en Power BI.
+
+Segundo pipeline: datos históricos de COVID-19 del ECDC, ingestados, transformados y cargados en Azure SQL para visualización posterior.
+
+Uso de triggers automáticos en Data Factory y automatización en Power BI.
+
+Flujo completo de datos desde la ingesta hasta la visualización, proporcionando una solución escalable para el procesamiento y análisis eficiente de grandes volúmenes de datos.
+
+Enlace: https://github.com/gj-goncalvescaldas/Azure-Data-Factory
+
+English (UK)
+Gustavo João Gonçalves Caldas
+Date of Birth: 30/07/2000
+
+Nationality: Portuguese
+
+Phone: (+34) 614146384 (Mobile)
+
+Email: gj.goncalvescaldas@gmail.com
+
+Website: https://gj-goncalvescaldas.github.io/
+
+LinkedIn: Gustavo Caldas
+
+Address: Arroyomolinos, Madrid, Spain (Residence)
+
+Interests
+Since my university years, I have developed a strong interest in the field of data, focusing my learning and experience on Data Engineering, Machine Learning, and Visualisation. I am passionate about building robust databases, designing predictive models, and extracting valuable insights that have a significant impact on businesses. My main interests revolve around transforming data into actionable knowledge, driving strategic decision-making and the success of the projects I participate in.
+
+I value working in multicultural environments that foster diversity of ideas and perspectives. I also appreciate flexible working hours, as they allow me to optimise my time and avoid traffic. Since I live in the south of Madrid, remote work is also fundamental to maintaining a balance between my professional and personal life.
+
+In 2024, I faced a significant personal challenge, which led me to temporarily pause my professional career.
+
+Work Experience
+01/09/2022 – 01/11/2023 | Porto, Portugal
+Data Mining Researcher – IOTECH
+
+Collaborated with IOTECH on the ioCity project, funded by the European Union and focused on transforming urban mobility through smart and innovative solutions.
+
+Performed data preparation, cleaning, and integration using the CRISP-DM methodology.
+
+Analysed data to predict the occupancy rate of public transport in Porto.
+
+Developed a real-time system to predict seat availability in Porto’s public transport using Machine Learning.
+
+Implemented and evaluated regression models: Random Forest Regression, LightGBM, CatBoost, Gradient Boosting, and XGBoost.
+
+Technologies: Python, pandas, numpy, scikit-learn, matplotlib, Excel.
+
+01/08/2023 – 30/11/2023 | Madrid, Spain
+Data Engineer – Nationale-Nederlanden
+
+Specialist in Data Engineering with a strong background in software engineering.
+
+Built a Data Mart from scratch using a star schema, including the design and implementation of dimension and fact tables.
+
+Daily processing and loading of data from Excel using Azure Data Factory and Databricks.
+
+Created reports and templates in PowerBI, implementing advanced functions in DAX.
+
+Participated in complex projects, correcting errors and integrating new data variables as required.
+
+Technologies: Databricks, Azure Data Factory, SQL Server, SQL Management, Excel, Python, PowerBI, Microsoft Azure, DAX, Copilot.
+
+Education and Training
+10/09/2018 – 04/07/2022 | Braga, Portugal
+Bachelor’s Degree in Information Systems Engineering
+University of Minho
+EQF-MEC Level 6
+
+10/09/2021 – 20/06/2024 | Braga, Portugal
+Master’s Degree in Information Systems Engineering
+University of Minho
+EQF-MEC Level 7
+
+19/06/2023 – 11/12/2023 | Madrid, Spain
+Bootcamp in Marketing Data Analytics
+International University of La Rioja
+EQF-MEC Level 5
+
+Language Skills
+Portuguese: Native
+
+Spanish: C1 (Listening, Reading, Speaking, Interaction, Writing)
+
+English: B2 (Listening, Reading, Speaking, Interaction, Writing)
+
+Levels: A1 and A2 (basic user), B1 and B2 (independent user), C1 and C2 (proficient user)
+
+Digital Skills
+Data Gathering, Data Processing, Data Visualisation, Data Analysis
+
+Experience with Java, Python, and C
+
+Python (Pandas, Numpy, APIs, etc.)
+
+Pyspark
+
+ETL (Extract, Transform, Load)
+
+Machine Learning
+
+PostgreSQL, SQLite, SQLServer, MySQL
+
+Power BI & Power Query
+
+Microsoft Azure, Azure Databricks
+
+Proficient in Microsoft Office, including Excel
+
+Data Warehouse
+
+Publications
+2022
+Intelligent Control Dashboards to Monitor Events in Smart Cities: A Portuguese Case Study
+
+Improvement of intervention requests for the Lisbon Professional Fire Brigade through intelligent dashboards.
+
+58% of false alarms are cancelled after emergency services are activated.
+
+Sunday is the day with the highest number of incidents, especially at 9 am and 8 pm. Autumn records the highest number of incidents.
+
+These data help anticipate scenarios and improve decision-making in emergencies.
+
+Projects
+01/01/2025 – 10/02/2025
+Real-Time Data Pipeline for Weather and COVID-19 Analysis Using Azure Data Factory, Databricks, and Power BI
+
+Creation of two complete ETL workflows using Azure Data Factory, Databricks, Delta Lake, and Power BI.
+
+First pipeline: real-time weather data obtained via API, transformed with PySpark, loaded into Delta Lake, and visualised in Power BI.
+
+Second pipeline: historical COVID-19 data from ECDC, ingested, transformed, and loaded into Azure SQL for further visualisation.
+
+Use of automatic triggers in Data Factory and automation in Power BI.
+
+Complete data flow from ingestion to visualisation, providing a scalable solution for efficient processing and analysis of large volumes of data.
+
+Link: https://github.com/gj-goncalvescaldas/Azure-Data-Factory
+
+Portuguese (Portugal)
+Gustavo João Gonçalves Caldas
+Data de Nascimento: 30/07/2000
+
+Nacionalidade: Portuguesa
+
+Telefone: (+34) 614146384 (Telemóvel)
+
+Email: gj.goncalvescaldas@gmail.com
+
+Website: https://gj-goncalvescaldas.github.io/
+
+LinkedIn: Gustavo Caldas
+
+Morada: Arroyomolinos, Madrid, Espanha (Residência)
+
+Interesses
+Desde os meus anos na universidade, desenvolvi um forte interesse pelo mundo dos dados, direcionando a minha aprendizagem e experiência para a Engenharia de Dados, Machine Learning e Visualização. Tenho paixão por construir bases de dados robustas, desenhar modelos preditivos e extrair informações valiosas que tenham um impacto significativo nas empresas. Os meus principais interesses centram-se em transformar dados em conhecimento acionável, impulsionando a tomada de decisões estratégicas e o sucesso dos projetos em que participo.
+
+Valorizo trabalhar em ambientes multiculturais, onde se promova a diversidade de ideias e perspetivas. Também aprecio a flexibilidade de horários, pois permite-me otimizar o meu tempo e evitar o trânsito. Como resido no sul de Madrid, o teletrabalho é igualmente fundamental para manter o equilíbrio entre a vida profissional e pessoal.
+
+Em 2024, enfrentei um desafio pessoal significativo, o que levou a uma pausa temporária na minha carreira profissional.
+
+Experiência Profissional
+01/09/2022 – 01/11/2023 | Porto, Portugal
+Investigador em Data Mining – IOTECH
+
+Colaborei com a IOTECH no projeto ioCity, financiado pela União Europeia e focado na transformação da mobilidade urbana através de soluções inteligentes e inovadoras.
+
+Realizei preparação, limpeza e integração de dados utilizando a metodologia CRISP-DM.
+
+Analisei dados para prever a taxa de ocupação dos transportes públicos no Porto.
+
+Desenvolvi um sistema em tempo real para prever a disponibilidade de lugares nos transportes públicos do Porto, utilizando Machine Learning.
+
+Implementei e avaliei modelos de regressão: Random Forest Regression, LightGBM, CatBoost, Gradient Boosting e XGBoost.
+
+Tecnologias: Python, pandas, numpy, scikit-learn, matplotlib, Excel.
+
+01/08/2023 – 30/11/2023 | Madrid, Espanha
+Engenheiro de Dados – Nationale-Nederlanden
+
+Especialista em Engenharia de Dados com uma sólida base em engenharia de software.
+
+Construção de um Data Mart de raiz em esquema estrela, incluindo desenho e implementação de tabelas de dimensões e factos.
+
+Processamento e carregamento diário de dados a partir de Excel, utilizando Azure Data Factory e Databricks.
+
+Criação de relatórios e templates em PowerBI, implementando funções avançadas em DAX.
+
+Participação em projetos complexos, corrigindo erros e integrando novas variáveis de dados conforme necessário.
+
+Tecnologias: Databricks, Azure Data Factory, SQL Server, SQL Management, Excel, Python, PowerBI, Microsoft Azure, DAX, Copilot.
+
+Educação e Formação
+10/09/2018 – 04/07/2022 | Braga, Portugal
+Licenciatura em Engenharia de Sistemas de Informação
+Universidade do Minho
+Nível 6 EQF-MEC
+
+10/09/2021 – 20/06/2024 | Braga, Portugal
+Mestrado em Engenharia de Sistemas de Informação
+Universidade do Minho
+Nível 7 EQF-MEC
+
+19/06/2023 – 11/12/2023 | Madrid, Espanha
+Bootcamp em Marketing Data Analytics
+Universidade Internacional de La Rioja
+Nível 5 EQF-MEC
+
+Competências Linguísticas
+Português: Nativo
+
+Espanhol: C1 (Compreensão auditiva, leitura, produção oral, interação oral, expressão escrita)
+
+Inglês: B2 (Compreensão auditiva, leitura, produção oral, interação oral, expressão escrita)
+
+Níveis: A1 e A2 (utilizador básico), B1 e B2 (utilizador independente), C1 e C2 (utilizador competente)
+
+Competências Digitais
+Data Gathering, Data Processing, Data Visualization, Data Analysis
+
+Experiência em Java, Python e C
+
+Python (Pandas, Numpy, APIs, etc.)
+
+Pyspark
+
+ETL (Extração, Transformação e Carga de dados)
+
+Machine Learning
+
+PostgreSQL, SQLite, SQLServer, MySQL
+
+Power BI & Power Query
+
+Microsoft Azure, Azure Databricks
+
+Domínio do Microsoft Office, incluindo Excel
+
+Data Warehouse
+
+Publicações
+2022
+Dashboards de Controlo Inteligentes para Monitorizar Ocorrências em Cidades Inteligentes: Um Caso de Estudo Português
+
+Melhoria dos pedidos de intervenção do Regimento de Bombeiros Profissionais de Lisboa através de dashboards inteligentes.
+
+58% dos falsos alarmes são cancelados após a ativação dos serviços de emergência.
+
+O domingo é o dia com mais registos de ocorrências, especialmente às 9h e 20h. O outono apresenta o maior número de incidentes.
+
+Estes dados ajudam a antecipar cenários e a melhorar a tomada de decisões em situações de emergência.
+
+Projetos
+01/01/2025 – 10/02/2025
+Pipeline de Dados em Tempo Real para Análise de Clima e COVID-19 Usando Azure Data Factory, Databricks e Power BI
+
+Criação de dois fluxos ETL completos utilizando Azure Data Factory, Databricks, Delta Lake e Power BI.
+
+Primeiro pipeline: dados meteorológicos em tempo real obtidos por API, transformados com PySpark, carregados em Delta Lake e visualizados em Power BI.
+
+Segundo pipeline: dados históricos de COVID-19 do ECDC, ingeridos, transformados e carregados em Azure SQL para posterior visualização.
+
+Utilização de triggers automáticos no Data Factory e automatização no Power BI.
+
+Fluxo completo de dados desde a ingestão até à visualização, proporcionando uma solução escalável para o processamento e análise eficiente de grandes volumes de dados.
+
+Link: https://github.com/gj-goncalvescaldas/Azure-Data-Factory
