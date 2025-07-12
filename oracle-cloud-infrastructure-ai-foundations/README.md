@@ -1605,9 +1605,33 @@ To customize an LLM for your data and tasks, use a **layered approach**:
 Each method builds upon the previous one, offering increasing levels of **control, accuracy, and complexity**.
 
 #### Skill Check: Gen AI Basics  
----  
-
 ---
+
+### 1. What aspect of Large Language Models significantly impacts their capabilities, performance, and resource requirements?
+
+- ✅ **Correct Answer:** Model size and parameters, including the number of tokens and weights  
+- 🧠 **Explanation:** The size and complexity of a language model, including the number of parameters (weights) and tokens, significantly affect its capabilities. Larger models tend to generate more coherent and contextually relevant text but require more computational resources for both training and inference.
+
+### 2. Fine-tuning is unnecessary for Large Language Models (LLMs) if your application does not involve which specific aspect?
+
+- ✅ **Correct Answer:** Task specific adaptation  
+- 🧠 **Explanation:** Fine-tuning is mainly used to adapt a model to specific tasks or domains. If the application doesn't require task-specific customization, fine-tuning might not be needed. It’s also used for optimizing efficiency, adapting to specific vocabulary, or addressing biases.
+
+### 3. Which statement accurately describes generative AI?
+
+- ✅ **Correct Answer:** Creates new content without making predictions.  
+- 🧠 **Explanation:** Generative AI focuses on producing new content—text, images, music—rather than predicting outcomes. It leverages training data to create novel, meaningful outputs.
+
+### 4. What is "in-context learning" in the context of large language models (LLMs)?
+
+- ✅ **Correct Answer:** Providing a few examples of a target task via the input prompt  
+- 🧠 **Explanation:** In-context learning allows LLMs to perform new tasks by showing a few examples in the prompt, without modifying the model’s weights. It’s useful for guiding model behavior when direct access or training is not feasible.
+
+### 5. Sequence models are used to solve problems involving sequentially ordered data points or events. Which is NOT the best use case for sequence models?
+
+- ✅ **Correct Answer:** Image classification and object recognition  
+- 🧠 **Explanation:** Sequence models are great for time series, NLP, speech recognition, and translation. However, tasks like image classification and object recognition are better handled by models like CNNs that specialize in spatial data rather than sequential.
+
 
 ### 🧩 OCI AI Portfolio
 
