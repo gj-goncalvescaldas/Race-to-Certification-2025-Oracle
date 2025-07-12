@@ -1635,12 +1635,149 @@ Each method builds upon the previous one, offering increasing levels of **contro
 
 ### 🧩 OCI AI Portfolio
 
-#### OCI AI Portfolio Module Intro  
----  
 #### AI Services Overview  
----  
+---
+
+#### OCI AI Services Overview  
+---
+
+> 📝 **Summary:**  
+> This lesson covers Oracle Cloud Infrastructure (OCI) AI Services, which provide pre-built and customizable AI/ML models to help enterprises leverage their data for business applications. OCI AI services require no infrastructure management and offer multiple access methods including console, APIs, SDKs, and CLI.
+
+#### 🧠 What is OCI AI Services?
+
+- OCI AI Services form part of Oracle's cloud portfolio focused on bringing AI to enterprises across the full technology stack, starting from data and infrastructure layers up to SaaS applications.  
+- AI services consume data, and applications consume AI services.  
+- Includes generative AI and large-scale models as recent advancements.  
+- Services provide **pre-built** models for common use cases, with options for **custom training** using customer data.
+
+#### 🚪 Access Methods
+
+- **OCI Console:** Browser-based UI that enables access to notebook sessions and AI features easily.  
+- **REST API:** Programmatic access for developers; requires coding skills.  
+- **Language SDKs:** Available for Java, Python, TypeScript, JavaScript, .NET, Go, Ruby.  
+- **Command Line Interface (CLI):** Provides quick, scriptable access without full programming.
+
+#### 🔍 OCI AI Service Categories
+
+- **Digital Assistant:**  
+  → AI-driven conversational interfaces to help users complete tasks with natural language.
+
+- **Language Services:**  
+  → Text analysis with pre-trained and custom models including:  
+  - Language detection  
+  - Sentiment analysis  
+  - Key phrase extraction  
+  - Text classification  
+  - Named entity recognition  
+  - Personal identifiable information (PII) detection  
+  → Text translation using natural machine translation across many languages.
+
+- **Vision Services:**  
+  → Image analysis including object detection, classification, and OCR.  
+  → Support for pre-trained and custom models that detect specific objects with bounding boxes or classify scene features.
+
+- **Speech Services:**  
+  → Converts media files with human speech into highly accurate text transcriptions (JSON, SRT formats).
+
+- **Document Understanding:**  
+  → Processes individual or batches of documents to:  
+  - Detect and recognize text (OCR)  
+  - Extract word- and line-level text with bounding boxes  
+  - Extract key-value pairs from structured documents (e.g., invoices, passports)  
+  - Extract tabular data preserving rows and columns  
+  - Classify documents into types.
+
+#### 🤖 Oracle Digital Assistant Features
+
+- Creates and deploys digital assistants that interact via natural language.  
+- Evaluates user input and routes conversations to appropriate skills.  
+- Greets users and lists capabilities on request.  
+- Manages conversation flows, handles interruptions and clarifications.  
+- Supports graceful exit requests from users.
+
+#### 🔑 Final Takeaway
+
+OCI AI Services empower developers and businesses to build intelligent applications with minimal infrastructure overhead, providing a rich suite of pre-trained and customizable AI models accessible through various easy-to-use interfaces.
+
+Thanks for listening.
+
 #### ML Services Overview  
----  
+---
+
+#### OCI ML Services Overview  
+---
+
+> 📝 **Summary:**  
+> This lesson explores Oracle Cloud Infrastructure (OCI) Machine Learning Services, focusing on the **OCI Data Science** platform. It supports the entire ML lifecycle with tools like JupyterLab, AutoML, model deployment, and a managed infrastructure for Python-based workflows.
+
+#### 🔍 The Context of ML Services in OCI
+
+- Oracle’s cloud stack enables enterprises to **leverage data at every layer**, from infrastructure to applications.  
+- At the **top layer**: Applications and business processes that consume AI/ML.  
+- The **middle layer**: AI Services (prebuilt models) and **ML Services** (custom ML lifecycle).  
+- The **bottom layer**: Data and infrastructure which power the models.
+
+#### 💡 What is OCI Data Science?
+
+- A fully managed cloud service that helps data scientists **build, train, deploy, and manage ML models**.  
+- Supports **Python** and **open-source libraries**.  
+- Designed for the **entire ML lifecycle**.
+
+#### ⚙️ Core Principles of OCI Data Science
+
+1. **Accelerated**  
+   → Provides ready-to-use infrastructure and open-source libraries to speed up development.  
+   → Includes Oracle’s own libraries to simplify workflows.
+
+2. **Collaborative**  
+   → Enables teamwork via asset sharing and reproducibility.  
+   → Improves auditability and model version control.
+
+3. **Enterprise-Grade**  
+   → Seamlessly integrated with OCI security and access controls.  
+   → Automatically handles infrastructure, upgrades, and maintenance.
+
+#### 🛠️ Key OCI Data Science Components
+
+- **Projects**  
+  → Containers for organizing and collaborating on data science assets (notebooks, models, etc.).
+
+- **Notebook Sessions**  
+  → Managed **JupyterLab environments** with pre-installed libraries.  
+  → Supports both **CPU** and **GPU**, with configurable storage and compute.  
+  → No manual provisioning needed.
+
+- **Conda Environments**  
+  → Open-source environment/package manager for Python.  
+  → Allows quick switching, saving, and loading of different dependency setups.
+
+- **Accelerated Data Science (ADS) SDK**  
+  → Oracle’s Python library that simplifies:
+    - Data loading and visualization  
+    - Model training with **AutoML**  
+    - Model evaluation and explainability  
+    - Access to model catalog and object storage
+
+- **Models**  
+  → Mathematical representations created and stored within notebooks or projects.
+
+- **Model Catalog**  
+  → Central repository for storing and sharing model artifacts.  
+  → Tracks model metadata (e.g., Git version, script used, notebook source).  
+  → Models can be shared and reloaded into other sessions.
+
+- **Model Deployments**  
+  → Converts models into **HTTP API endpoints** for real-time predictions.  
+  → Enables production-ready ML apps without infrastructure management.
+
+- **Jobs**  
+  → Allows scheduling and running of repeatable ML workflows on OCI-managed compute.
+
+#### 🔑 Final Takeaway
+
+OCI Data Science enables end-to-end machine learning without infrastructure worries. From **development in Jupyter**, to **collaborative projects**, and **deployment as APIs**, it’s a robust toolset for data science teams operating at scale.
+
 #### AI Infrastructure  
 ---  
 #### GPUs and Superclusters in OCI  
