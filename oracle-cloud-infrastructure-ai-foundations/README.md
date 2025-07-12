@@ -75,11 +75,11 @@ This certification validates foundational understanding of AI concepts, Machine 
 - [x] GPUs and Superclusters in OCI *(13 min)* – ✅ [See Summary](#gpus-and-superclusters-in-oci)
 - [x] Responsible AI *(7 min)* – ✅ [See Summary](#responsible-ai)
 - [x] Demo: Data Science *(10 min)* – ✅ _No notes_
-- [x] Skill Check: OCI AI Portfolio – ❌ Not Attempted
+- [x] Skill Check: OCI AI Portfolio – ✅ [See Summary](#skill-check-oci-ai-portfolio)
 
 ### 7. OCI Generative AI Service
-- [ ] Module Intro *(1 min)* – ✅ _No notes_
-- [ ] OCI Generative AI *(8 min)* – ✅ [See Summary](#oci-generative-ai)
+- [x] Module Intro *(1 min)* – ✅ _No notes_
+- [x] OCI Generative AI *(8 min)* – ✅ [See Summary](#oci-generative-ai)
 - [ ] Demo: OCI Generative AI *(13 min)* – ✅ [See Summary](#demo-oci-generative-ai)
 - [ ] Vector Search *(9 min)* – ✅ [See Summary](#vector-search)
 - [ ] Select AI *(8 min)* – ✅ [See Summary](#select-ai)
@@ -2010,7 +2010,54 @@ Responsible AI integrates **ethics**, **law**, and **technical rigor** to ensure
 ### 🧩 OCI Generative AI Service
 
 #### OCI Generative AI  
----  
+---
+
+## 🧠 Summary
+Oracle Cloud Infrastructure (OCI) Generative AI Service is a fully managed, serverless platform offering access to customizable large language models via a unified API. It allows developers to easily build generative AI applications with powerful foundational models, support for fine-tuning, and dedicated GPU-based infrastructure.
+
+## 🔑 Key Characteristics
+
+### 1. Pre-Trained Foundational Models
+- **Chat Models**:
+  - **command-r**
+  - **command-r-plus** (128K token context window)
+  - **llama3-70b-instruct**
+  - Instruction-tuned for conversational and task-based prompts.
+- **Embedding Models**:
+  - **Embed English**
+  - **Embed Multilingual** (100+ languages, supports cross-lingual search)
+  - Convert text into vector representations for tasks like semantic search.
+
+### 2. Flexible Fine-Tuning
+- Customize pre-trained models using domain-specific data.
+- Use **T-Few Fine-Tuning**:
+  - Adds new layers to base model.
+  - Updates only a fraction of weights.
+  - More cost-effective and faster than traditional fine-tuning.
+
+### 3. Dedicated AI Clusters
+- GPU-based compute for training and inference.
+- Uses **RDMA networking** for ultra-low latency communication between GPUs.
+- Ensures **GPU isolation** for secure and consistent performance.
+
+## 📌 How It Works
+- Input: Provide a **text prompt** (e.g., a question or a document).
+- Process: Model generates a response or vector (for embeddings).
+- Output: Text response, vector embeddings, or task-specific output.
+
+## 💡 Use Cases
+- Chat applications
+- Text generation
+- Semantic search
+- Information retrieval
+- Cross-lingual document search
+
+## 🧾 Final Takeaway
+OCI Generative AI Service simplifies the development of advanced AI applications by offering:
+- Powerful pre-trained models from Meta and Cohere.
+- Flexible fine-tuning with low cost and high efficiency.
+- High-performance, secure GPU clusters with ultra-low latency networking.
+
 #### Demo: OCI Generative AI  
 ---  
 #### Vector Search  
