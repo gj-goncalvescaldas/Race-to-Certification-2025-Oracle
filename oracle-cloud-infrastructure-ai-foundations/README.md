@@ -86,15 +86,15 @@ This certification validates foundational understanding of AI concepts, Machine 
 - [x] Skill Check: OCI Gen AI Service – ✅ [See Summary](#skill-check-oci-gen-ai-service)
 
 ### 8. OCI AI Services
-- [ ] Language Intro *(2 min)* – ✅ _No notes_
-- [ ] Demo: Language *(4 min)* – ✅ [See Summary](#demo-language)
-- [ ] Speech Intro *(3 min)* – ✅ [See Summary](#speech-intro)
-- [ ] Demo: Speech *(3 min)* – ✅ [See Summary](#demo-speech)
-- [ ] Vision Intro *(2 min)* – ✅ [See Summary](#vision-intro)
-- [ ] Demo: Vision *(5 min)* – ✅ [See Summary](#demo-vision)
-- [ ] Document Understanding *(2 min)* – ✅ [See Summary](#document-understanding)
-- [ ] Demo: Document Understanding *(3 min)* – ✅ [See Summary](#demo-document-understanding)
-- [ ] Skill Check: OCI AI Services – ❌ Not Attempted
+- [x] Language Intro *(2 min)* – ✅ [See Summary](#language-intro)
+- [x] Demo: Language *(4 min)* – ✅ _No notes_
+- [x] Speech Intro *(3 min)* – ✅ [See Summary](#speech-intro)
+- [x] Demo: Speech *(3 min)* – ✅ _No notes_
+- [x] Vision Intro *(2 min)* – ✅ [See Summary](#vision-intro)
+- [x] Demo: Vision *(5 min)* – ✅ _No notes_
+- [x] Document Understanding *(2 min)* – ✅ [See Summary](#document-understanding)
+- [x] Demo: Document Understanding *(3 min)* – ✅ _No notes_
+- [x] Skill Check: OCI AI Services – ✅ [See Summary](#skill-check-oci-ai-services)
 
 ---
 
@@ -2304,20 +2304,173 @@ Build applications that:
 ### 🧩 OCI AI Services
 
 #### Language Intro  
----  
-#### Demo: Language  
----  
+---
+
+### 🔍 Accessing OCI Language
+- Navigate to **Analytics & AI** in the OCI Console menu.
+- Under **AI Services**, select **Language**.
+
+### 📚 Language Service Resources
+- Quick links to documentation for specific features.
+- API Reference and SDK guides.
+- Related blogs and learning content available.
+
+### 🚀 Trying Out the Service: Text Analytics
+- Go to the **Text Analytics** section.
+- Use the default text or input your own.
+- Click **Analyze** to see the results.
+
+### 🔎 Analysis Results Overview
+1. **Language Detection**
+   - Detects the language (e.g., English).
+   - Shows a confidence score.
+
+2. **Text Classification**
+   - Returns a category (e.g., Science & Technology).
+   - May include subcategories (e.g., Earth Sciences).
+   - Probability scores indicate confidence.
+
+3. **Named Entity Recognition (NER)**
+   - Highlights entities (e.g., locations, dates, products).
+   - Displays entity type and confidence.
+   - Color-coded by entity type.
+
+4. **Key Phrase Extraction**
+   - Lists main key phrases found in the text.
+
+5. **Sentiment Analysis**
+   - **Document-Level Sentiment:** Overall tone (e.g., Mixed).
+   - **Aspect-Based Sentiment:** Sentiment for specific topics or aspects (e.g., Negative).
+   - **Sentence-Level Sentiment:** Classifies each sentence as Positive, Neutral, or Negative.
+
+### ✅ Key Takeaway
+OCI Language provides powerful NLP capabilities, including language detection, classification, entity recognition, key phrase extraction, and sentiment analysis—accessible directly from the console with visual confidence indicators and rich analytics.
+
 #### Speech Intro  
----  
-#### Demo: Speech  
----  
+---
+
+### 🎯 Overview
+OCI Speech is an AI service that converts speech in audio or video files into accurate, timestamped text using Oracle’s deep learning models.
+
+### 🧠 Key Capabilities
+- **Speech-to-Text Conversion**  
+  Automatically transcribes spoken language into grammatically correct, readable text.
+
+- **No Data Science Required**  
+  Simple integration—ideal for developers without ML experience.
+
+- **Direct Object Storage Processing**  
+  Works seamlessly with audio files stored in OCI Object Storage.
+
+### 🌍 Language Support
+- English  
+- Spanish  
+- Portuguese  
+- *(More languages coming soon)*
+
+### ⚙️ Technical Features
+- **Batching Support**: Submit multiple files in one API call.
+- **High-Speed Transcription**: Transcribes hours of audio in under 10 minutes using parallel processing.
+- **Confidence Scores**:  
+  - Per-word confidence  
+  - Overall transcription confidence
+- **Punctuation & Normalization**:  
+  Makes output human-readable and ready for downstream processing.  
+  - Addresses, times, numbers, and URLs are auto-normalized.  
+
+### 🎬 SRT File Support
+- Outputs in SRT format for closed captions.
+- Useful for video subtitling and accessibility.
+
+### 🚫 Profanity Filtering Options
+- **Remove**: Replaces offensive words with `****`.
+- **Mask**: Retains first letter and masks the rest.
+- **Tag**: Keeps the word but flags it in the output metadata.
+
+### ✅ Key Takeaway
+OCI Speech enables fast, accurate, and multilingual speech transcription with enhanced readability, normalization, and customization options—all without requiring ML expertise.
+ 
 #### Vision Intro  
----  
-#### Demo: Vision  
----  
+---
+
+### 🎯 Overview
+OCI Vision is a computer vision service that processes and understands visual content in images. It provides AI-powered analysis for both photos and documents.
+
+### 🧠 Core Capabilities
+
+- **Image Analysis**
+  - **Object Detection**:  
+    Detects and labels objects within an image using bounding boxes, with associated confidence scores.
+  - **Scene Text Recognition**:  
+    Locates and extracts visible text from natural scenes (e.g., signs, posters).
+  - **Image Classification**:  
+    Assigns one or more classification labels to an image based on key visual features.
+
+- **Document AI**
+  - Extracts structured data (e.g., tables, fields) from documents such as invoices or forms using computer vision and AI.
+
+### 🔁 Model Customization
+- OCI Vision supports **custom model training**:  
+  Users can fine-tune models with their own labeled image data to address domain-specific use cases and improve accuracy.
+
+### ✅ Key Takeaway
+OCI Vision enables automated, high-accuracy image and document analysis using pretrained or custom-trained models—making it ideal for applications in retail, manufacturing, logistics, and more.
+
 #### Document Understanding  
----  
-#### Demo: Document Understanding  
----  
+--- 
+
+### 🧠 Overview  
+Document AI is a powerful capability within OCI Vision designed to understand and extract structured information from document images such as PDFs, JPEGs, PNGs, and TIFFs—even when captured as photos.
+
+### 🔍 Core Features
+
+- **Text Recognition (OCR)**  
+  Extracts printed and handwritten text from document images, including:
+  - Tilted or rotated pages  
+  - Shaded or low-quality scans  
+  - Handwritten content
+
+- **Document Classification**  
+  Automatically classifies documents into one of 10 categories based on:
+  - Visual layout  
+  - Extracted keywords  
+  - High-level features  
+  Useful for automating workflows involving receipts, invoices, resumes, etc.
+
+- **Language Detection**  
+  Determines the language by analyzing **visual features** of the text, rather than the text content alone.
+
+- **Table Extraction**  
+  Identifies tables within documents and extracts their content in a structured tabular format.
+
+- **Key-Value Extraction**  
+  Locates and extracts values for 13 predefined fields commonly found in receipts, such as:
+  - Merchant name  
+  - Transaction date  
+  - Line items
+
+### ✅ Key Takeaway  
+Document AI in OCI Vision enables intelligent automation for document-heavy processes by turning scanned content into structured, machine-readable data — even in complex scenarios.
+
 #### Skill Check: OCI AI Services  
----  
+---
+
+### 1. Which capability is offered by the OCI Language service?
+
+- ✅ **Correct Answer:** Text Sentiment Analysis  
+- 🧠 **Explanation:** OCI Language is an NLP service that identifies sentiments in text, not just overall sentiment but also aspect-based sentiment for specific elements within the text.
+
+### 2. Which capability of OCI Vision service uses a bounding box inside an image?
+
+- ✅ **Correct Answer:** Object Detection  
+- 🧠 **Explanation:** Object Detection locates and labels objects within images using bounding boxes, identifying both presence and position.
+
+### 3. Which language is NOT supported by the OCI Speech service?
+
+- ✅ **Correct Answer:** Mandarin  
+- 🧠 **Explanation:** OCI Speech currently supports English, Spanish, and Portuguese. Mandarin is not supported at this time.
+
+### 4. Which OCI AI service is used to extract tabular content from documents?
+
+- ✅ **Correct Answer:** Vision  
+- 🧠 **Explanation:** OCI Vision’s Document AI feature can extract structured content like tables from documents such as PDFs and scanned images.
