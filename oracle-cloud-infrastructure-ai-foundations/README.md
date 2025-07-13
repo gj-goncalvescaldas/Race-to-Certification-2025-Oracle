@@ -80,10 +80,10 @@ This certification validates foundational understanding of AI concepts, Machine 
 ### 7. OCI Generative AI Service
 - [x] Module Intro *(1 min)* – ✅ _No notes_
 - [x] OCI Generative AI *(8 min)* – ✅ [See Summary](#oci-generative-ai)
-- [ ] Demo: OCI Generative AI *(13 min)* – ✅ [See Summary](#demo-oci-generative-ai)
-- [ ] Vector Search *(9 min)* – ✅ [See Summary](#vector-search)
-- [ ] Select AI *(8 min)* – ✅ [See Summary](#select-ai)
-- [ ] Skill Check: OCI Gen AI Service – ❌ Not Attempted
+- [x] Demo: OCI Generative AI *(13 min)* – ✅ [See Summary](#demo-oci-generative-ai)
+- [x] Vector Search *(9 min)* – ✅ [See Summary](#vector-search)
+- [x] Select AI *(8 min)* – ✅ [See Summary](#select-ai)
+- [x] Skill Check: OCI Gen AI Service – ✅ [See Summary](#skill-check-oci-gen-ai-service)
 
 ### 8. OCI AI Services
 - [ ] Language Intro *(2 min)* – ✅ _No notes_
@@ -2059,13 +2059,245 @@ OCI Generative AI Service simplifies the development of advanced AI applications
 - High-performance, secure GPU clusters with ultra-low latency networking.
 
 #### Demo: OCI Generative AI  
----  
+---
+
+## 🌍 Region Selection
+- Service available only in **specific OCI regions** (e.g., Germany Central – Frankfurt).
+- Ensure your selected region supports the **Generative AI service** before using it.
+
+## 🧭 Navigation to Generative AI Service
+- Go to **OCI Console** → Click **Burger Menu** → **Analytics & AI** → **AI Services** → **Generative AI**.
+
+## 📊 Generative AI Dashboard Features
+- **Playground**: Visual, no-code interface to interact with models.
+- **Documentation**: API usage, model specs, and examples.
+- **Dedicated AI Clusters**: GPU-based resources for fine-tuning/inference.
+- **Custom Models**: Your fine-tuned models.
+- **Endpoints**: Host models for production inference.
+
+## 🎮 Playground
+
+### 🔹 Chat Models
+- Available: `command-r`, `command-r-plus`, `llama3-70b-instruct`
+- Support conversational interactions with **context retention**.
+- Token Limits:
+  - `command-r`: 16,000 tokens
+  - `command-r-plus`: 128,000 tokens
+  - `llama3`: 8,000 tokens
+
+#### 🔄 Prompting Example:
+- **Prompt**: "Teach me how to fish"
+- **Follow-up**: "Describe step 3" (uses conversation context)
+
+#### 🔧 Playground Tools:
+- **Preamble Override**: Change model tone/style (e.g., "Answer like a pirate")
+- **Temperature**: Controls output randomness
+- **View Code**: Get generated API code (Python, Java) for easy integration
+
+### 🔹 Embedding Models
+- Convert text → vectors for **semantic search**
+- Models: `embed-english`, `embed-multilingual`
+- Multilingual model supports **100+ languages**, and cross-language search
+
+#### 📈 Example Use Case:
+- Input: 41 HR Help Center articles
+- Output: Visual clustering of vectorized articles (e.g., skills, leave, time card)
+- Semantically similar content = **numerically close vectors**
+
+## 🧱 Dedicated AI Clusters
+- GPU-powered infrastructure for:
+  - **Fine-tuning** custom models
+  - **Inference** serving of hosted models
+
+### 🛠️ How to Create:
+- Go to: **Dedicated AI Clusters** → Click **Create Cluster**
+- Choose use case: **Fine-tuning** or **Hosting**
+- Select base model and size
+
+## 🧬 Custom Models (Fine-Tuning)
+- Go to: **Custom Models** → Click **Create Model**
+- Provide model name and fine-tuning method
+- Requires dedicated AI cluster for compute
+- Supports **T-Few fine-tuning** for efficient, low-cost customization
+
+## 🌐 Model Endpoints (Serving)
+- Go to: **Endpoints** → Click **Create Endpoint**
+- Define: 
+  - Name
+  - Hosted model
+  - Configuration
+  - AI Cluster (used for serving traffic)
+- Used to serve **real-time inference** from fine-tuned models
+
+## ✅ Final Takeaway
+OCI Generative AI Demo walks you through:
+- Selecting a supported region
+- Exploring the Playground with chat and embedding models
+- Fine-tuning using custom data
+- Creating dedicated GPU clusters
+- Hosting inference-ready models via endpoints
+
 #### Vector Search  
----  
+---
+
+## Overview
+
+Oracle Database 23ai introduces built-in **AI Vector Search** capabilities, enabling powerful semantic searches across structured and unstructured data. This feature supports the growing demand for **Gen AI pipelines**, offering integration with foundational models, embeddings, and modern retrieval techniques—all within the database.
+
+## Key Capabilities
+
+### ✅ Converged Database Support
+- Handles JSON, XML, graph, spatial, text, relational, and **vector** data types.
+- Eliminates the need for specialized vector databases.
+
+### ✅ Built-in AI Vector Search
+- **VECTOR datatype** for storing embeddings directly in the database.
+- **VECTOR_EMBEDDING** function to generate vector representations using ONNX models or API-based integration.
+- **VECTOR_DISTANCE** function for similarity search.
+
+## Use Cases
+
+- Image similarity search.
+- Resume matching to job descriptions.
+- Semantic document retrieval.
+- Gen AI pipelines powered by database-native capabilities.
+
+## Indexing & Performance
+
+- **Vector Indexes** enhance search speed and allow approximate search with target accuracy.
+- Indexes can be configured for:
+  - `INMEMORY NEIGHBOR GRAPH` (in-RAM performance)
+  - `NEIGHBOR PARTITIONS` (when in-memory is not feasible)
+- Distance metric defaults to **cosine** but can be customized.
+
+## Approximate Search
+
+- The `TARGET ACCURACY` clause defines acceptable result quality (e.g., 80%).
+- `APPROXIMATE` keyword enables fast retrieval with vector indexes.
+- Oracle can fallback to exact search if no efficient index exists.
+
+## Advanced Joins with Vectors
+
+- Enables **semantic search across normalized relational data**.
+- Example: Finding books with pages similar to a given query, filtered by genre and author origin.
+
+## Full Gen AI Pipeline Integration
+
+1. **Data Ingestion**: From database, CSV, or even social media.
+2. **Document Transformation**: Split, summarize, and embed.
+3. **Embedding Storage**: Stored directly using `VECTOR` datatype.
+4. **Semantic Retrieval**: Performed via SQL using vector functions.
+5. **LLM Integration**: Use RAG (Retrieval-Augmented Generation) patterns.
+
+## Framework Support
+
+- Compatible with **LangChain** and **LlamaIndex** for enhanced app development.
+- Enables developers to build sophisticated Gen AI applications using familiar tools.
+
+## Final Takeaway
+
+Oracle Database 23ai delivers a **unified and powerful environment** for combining relational data with AI-powered vector search. It allows for efficient Gen AI workloads, semantic search, and full pipeline orchestration—all within a single SQL engine.
+
 #### Select AI  
----  
+---
+
+## Overview
+
+Select AI in Oracle Autonomous Database allows you to use **natural language** to query your data. Without knowing table names or writing SQL manually, you can get real-time results by simply asking questions. This lesson explores how Select AI integrates with large language models (LLMs) to power natural language understanding within Oracle's data ecosystem.
+
+## Key Concepts
+
+### 🔹 AI in the Oracle Stack
+Oracle provides AI capabilities across the stack. In this lesson, the focus is on the **data layer**, where natural language queries are interpreted and converted into SQL using **Select AI** in Oracle Autonomous Database.
+
+### 🔹 What Is Select AI?
+- Allows querying data using **natural language**.
+- Users don’t need to know the database schema or SQL.
+- Autonomous Database manages:
+  - Prompt engineering
+  - Query processing
+  - Connecting to LLMs
+  - Delivering answers as result sets or SQL queries
+
+## Benefits
+
+- Reduces dependency on technical users for querying.
+- Fast, intuitive insights using familiar language.
+- Enables **Generative AI** creativity and productivity over your enterprise data.
+- Seamless integration into APEX applications or other front-end tools.
+
+## Example Use Case (via APEX)
+
+- Ask: “Top 10 streamed movies”
+- Follow-up: “Actors in those movies”
+- Ask: “Total number of movies streamed”
+- View data in **interactive reports or charts**
+- No need to know specific table or column names
+
+## SQL Transparency
+
+- Users can view the SQL generated from natural language via `SHOWSQL`.
+- Example: Queries shown in SQL Developer or APEX.
+- Encourages verification and deeper understanding of results.
+
+## Under the Hood: How It Works
+
+1. **User inputs question** in natural language.
+2. **Select AI** connects to a **Large Language Model**.
+3. Database metadata and schema are used to **generate the SQL**.
+4. Results or the SQL statement are returned.
+
+## Flexibility and Control
+
+### 🔹 Pluggable AI Profiles
+- Choose LLMs such as:
+  - OCI Generative AI
+  - OpenAI
+  - Cohere
+  - Llama
+- Configure:
+  - Included schemas, tables, or views
+  - Preferred model for query generation
+
+### 🔹 Secure Architecture
+- All data processing occurs **within your Oracle tenancy**.
+- No data is shared with external LLMs unless configured.
+
+### 🔹 Configuration Tools
+- Use the `DBMS_CLOUD_AI` PL/SQL package to manage AI profiles.
+- Profiles define which models and data structures are used.
+
+## Final Takeaway
+
+Select AI enables **natural language to SQL translation** directly within Oracle Autonomous Database. It's a powerful way to democratize data access, build AI-enabled apps quickly, and maintain security and flexibility across the AI stack.
+
+Build applications that:
+- Use LLMs securely within your environment
+- Support model flexibility for future enhancements
+- Empower users with intuitive querying capabilities
+
 #### Skill Check: OCI Gen AI Service  
 ---  
+
+### 1. Fine-tuning a Pre-trained LLM in OCI  
+- ✅ **Correct Answer:** Dedicated AI Cluster  
+- 🧠 **Explanation:** Dedicated AI Clusters provide GPU-based compute resources required to fine-tune a pre-trained model for specific tasks like customer support or travel booking queries.
+
+### 2. Purpose of Model Endpoints in OCI Generative AI  
+- ✅ **Correct Answer:** To host and serve fine-tuned models for inference  
+- 🧠 **Explanation:** Model endpoints expose deployed models as APIs, enabling real-time inference and integration with applications.
+
+### 3. Difference Between Chat and Embedding Models in OCI Generative AI  
+- ✅ **Correct Answer:** Chat models generate text, while embedding models convert text into numerical representations  
+- 🧠 **Explanation:** Chat models provide conversational responses, while embedding models transform text into vector format for tasks like similarity search and semantic analysis.
+
+### 4. Key Feature for AI Vector Search in Oracle Database 23ai  
+- ✅ **Correct Answer:** VECTOR datatype  
+- 🧠 **Explanation:** The VECTOR datatype stores vector embeddings directly in the database, enabling high-performance similarity search across structured and unstructured data.
+
+### 5. Purpose of the OCI Playground in Generative AI  
+- ✅ **Correct Answer:** To visually explore and test pre-trained and fine-tuned models without writing code  
+- 🧠 **Explanation:** The OCI Playground offers a no-code interface for experimenting with AI models, testing prompts, and evaluating results, making it accessible for users without programming experience.
 
 ---
 
