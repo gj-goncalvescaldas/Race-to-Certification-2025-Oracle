@@ -9,11 +9,11 @@ _A comprehensive guide based on the official Oracle AI Foundations Course._
 
 ## 🏅 Certification
 
-**Oracle Cloud Infrastructure AI Foundations Associate**  
-_(To be completed after passing the exam)_  
-*Issued by Oracle University*
+![OCI Foundations AI Certificate](img/10.png)
 
-This certification validates foundational understanding of AI concepts, Machine Learning (ML), Deep Learning (DL), Generative AI, and Oracle’s AI services in OCI.
+**Oracle Cloud Infrastructure 2025 AI Certified Foundations Associate**  
+Certified on **July 13, 2025**  
+*Issued by Oracle University*
 
 ---
 
