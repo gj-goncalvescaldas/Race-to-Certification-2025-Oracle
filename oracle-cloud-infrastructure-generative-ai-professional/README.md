@@ -97,12 +97,90 @@ Certified on **[Insert Date After Passing]**
 ### 1. Fundamentals of Large Language Models
 
 #### Introduction to Large Language Models  
-
 ---
+
+**Key Concepts:**
+
+- **Language Model:**  
+  A probabilistic model that predicts the likelihood of words in a sequence, based on a fixed vocabulary.
+
+- **Vocabulary Distribution:**  
+  Given a text prefix, the model assigns probabilities to all words in its vocabulary for the next word prediction.
+
+- **Large Language Models (LLMs):**  
+  Language models with many parameters. The term "large" is relative—no strict size threshold. Even smaller models like BERT can be called LLMs in some contexts.
+
+- **LLM Capabilities:**  
+  - Generate coherent text based on input sequences.  
+  - Compute probability distributions over possible next words.  
+  - Can be influenced by mechanisms such as prompting or training.
+
+- **Main Mechanisms to Affect LLM Output:**  
+  - **Prompting:** Influences output without changing model parameters.  
+  - **Training:** Updates model parameters based on new data.
+
+- **Decoding:**  
+  The process of generating text from the model’s probability distributions, creating sentences, paragraphs, or documents.
+
+#### 🛠️ Best Practices / Course Focus
+
+- Understand how LLMs are architected internally.  
+- Learn how to manipulate output distribution via prompting and training.  
+- Master decoding techniques for generating text effectively.  
+- Explore extensions of these ideas in research and industry.
+
+#### ✅ Summary
+
+- LLMs predict text by assigning probabilities over vocabulary words.  
+- "Large" in LLM refers to the number of parameters, but is not strictly defined.  
+- Output can be influenced by prompting (no model change) or training (model update).  
+- Decoding transforms probability distributions into meaningful generated text.  
+- Upcoming lessons will dive deeper into architecture, prompting, training, and decoding.
 
 #### LLM Architectures  
-
 ---
+
+**Key Concepts:**
+
+- **Transformer:**  
+  Core building block behind all modern LLMs, introduced in the 2017 paper *Attention Is All You Need*.  
+  Enables parallel processing and attention mechanisms.
+
+- **Encoder:**  
+  Converts input text into vector representations (embeddings).  
+  - Used for understanding, classification, semantic search  
+  - Models: BERT, RoBERTa  
+  - Produces representations of words and entire sentences
+
+- **Decoder:**  
+  Generates text one token at a time, based on prior context.  
+  - Used for text generation, dialogue, question answering  
+  - Models: GPT-4, LLaMA, Cohere Command  
+  - Output is generated iteratively (token by token)
+
+- **Encoder-Decoder (Seq2Seq):**  
+  Combines both encoder and decoder blocks.  
+  - Used for tasks like translation  
+  - Encoder embeds input; decoder generates output sequence
+
+#### 🛠️ Best Practices
+
+- Use **encoders** for embedding/search/classification tasks  
+- Use **decoders** for fluent text generation  
+- Use **encoder-decoders** for input-to-output sequence tasks like translation  
+- Remember that **decoders generate one token at a time**, which makes generation expensive
+
+#### ✅ Summary
+
+- **Encoders → Embedding**  
+- **Decoders → Text Generation**  
+- **Encoder-Decoder → Sequence-to-Sequence Tasks**
+
+- All built on the **transformer architecture**
+- Model choice depends on task needs:
+  - **Encoder:** understanding and representation  
+  - **Decoder:** generation  
+  - **Encoder-Decoder:** transformation
 
 #### Prompting and Prompt Engineering  
 
