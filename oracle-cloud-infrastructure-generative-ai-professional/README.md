@@ -36,9 +36,9 @@ Certified on **[Insert Date After Passing]**
 
 ### 2. Fundamentals of Large Language Models
 
-- [ ] Module Introduction *(2 min)* – ✅ _No notes_  
-- [ ] Introduction to Large Language Models *(5 min)* – ✅ [See Summary](#introduction-to-large-language-models)  
-- [ ] LLM Architectures *(8 min)* – ✅ [See Summary](#llm-architectures)  
+- [x] Module Introduction *(2 min)* – ✅ _No notes_  
+- [x] Introduction to Large Language Models *(5 min)* – ✅ [See Summary](#introduction-to-large-language-models)  
+- [x] LLM Architectures *(8 min)* – ✅ [See Summary](#llm-architectures)  
 - [ ] Prompting and Prompt Engineering *(14 min)* – ✅ [See Summary](#prompting-and-prompt-engineering)  
 - [ ] Issues with Prompting *(4 min)* – ✅ [See Summary](#issues-with-prompting)  
 - [ ] Training *(6 min)* – ✅ [See Summary](#training)  
