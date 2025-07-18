@@ -13,7 +13,7 @@ _A comprehensive guide based on the official Oracle Generative AI Professional C
 
 ## 🏅 Certification
 
-![OCI Generative AI Certificate](img/genai.png)
+![OCI Generative AI Certificate](img/1.jpg)
 
 **Oracle Cloud Infrastructure 2025 Generative AI Certified Professional**  
 Certified on **[Insert Date After Passing]**  
