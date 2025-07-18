@@ -7,7 +7,7 @@ _A comprehensive guide based on the official Oracle Generative AI Professional C
 > 📌 _This is a summary of Oracle University lessons. No personal analysis or opinion is included._
 
 > ⚙️ **Note:**  
-> As part of this course, I will implement the Generative AI applications separately using **Databricks Community Edition**, rather than using **Jupyter Notebooks** as shown in the course. All my practical implementations will be stored under the `/GenAI_Projects` folder.
+> All my practical implementations will be stored under the `/GenAI_Projects` folder.
 
 ---
 
