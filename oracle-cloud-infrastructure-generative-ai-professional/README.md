@@ -96,7 +96,7 @@ Certified on **[Insert Date After Passing]**
 
 ### 1. Fundamentals of Large Language Models
 
-#### Introduction to Large Language Models  
+## Introduction to Large Language Models  
 ---
 
 **Key Concepts:**
@@ -137,7 +137,7 @@ Certified on **[Insert Date After Passing]**
 - Decoding transforms probability distributions into meaningful generated text.  
 - Upcoming lessons will dive deeper into architecture, prompting, training, and decoding.
 
-#### LLM Architectures  
+## LLM Architectures  
 ---
 
 **Key Concepts:**
@@ -186,7 +186,7 @@ Certified on **[Insert Date After Passing]**
   - **Decoder:** generation  
   - **Encoder-Decoder:** transformation
 
-#### Prompting and Prompt Engineering  
+## Prompting and Prompt Engineering  
 ---
 
 **Key Concepts:**
@@ -271,7 +271,7 @@ Boosts performance on technical tasks like physics/chemistry.
 - Upcoming lesson: how prompt engineering can be used maliciously (jailbreaking)
 
     
-#### Issues with Prompting  
+## Issues with Prompting  
 ---
 
 **Key Concepts:**
@@ -328,7 +328,7 @@ Boosts performance on technical tasks like physics/chemistry.
 
 - Prompting is not just a UX tool — it’s a **security surface**  
 
-#### Training  
+## Training  
 ---
 
 **Key Concepts:**
@@ -374,9 +374,8 @@ Boosts performance on technical tasks like physics/chemistry.
 - Training can be resource-intensive but is key for adapting models to new domains and improving accuracy.  
 - Next lesson will cover **decoding** — the process by which models generate text from learned distributions.
 
-#### Decoding  
+## Decoding  
 ---
-
 
 ### 🔑 Key Concepts
 
@@ -442,7 +441,7 @@ Note:
 - Keeps top-k most probable sequences at each step.
 - More computationally expensive but often results in **higher-quality** text.
 
-### ✅ Summary
+#### ✅ Summary
 
 Decoding is the core mechanism by which language models generate text, word-by-word. Depending on the **task**, different decoding strategies are suitable:
 
@@ -452,7 +451,7 @@ Decoding is the core mechanism by which language models generate text, word-by-w
 
 Understanding decoding is essential for controlling **output quality**, **diversity**, and **relevance** in LLM applications.
 
-#### Hallucination  
+## Hallucination  
 ---
 
 ## Key Concepts
@@ -478,11 +477,11 @@ A particularly dangerous aspect of hallucination is its fluency: outputs often a
 - **Grounded Question Answering:** This variant of QA emphasizes not only accuracy but also verifiable sourcing.
 - **Citations and Attribution:** Ongoing research explores how models can provide references to support their outputs, improving reliability and user trust.
 
-## ✅ Summary
+#### ✅ Summary
 
 Hallucination remains one of the core challenges in deploying large language models safely. It ranges from obvious factual errors to subtle, difficult-to-spot inaccuracies. While there's no guaranteed way to prevent hallucinations, strategies such as retrieval augmentation, grounded generation, and attribution are promising approaches. The NLP research community continues to prioritise methods for identifying and reducing hallucinations to ensure more trustworthy LLM applications.
 
-#### LLM Applications  
+## LLM Applications  
 ---
 
 ## Key Concepts
@@ -551,12 +550,12 @@ This tool-use expands LLM capabilities beyond language generation and into execu
 
 LLMs are being trained to perform structured reasoning to support long-term planning and novel task execution. This allows them to act more flexibly, similar to human problem-solving in unfamiliar settings.
 
-## ✅ Summary
+#### ✅ Summary
 
 This lesson explored key applications of Large Language Models, including Retrieval-Augmented Generation, code generation, multi-modal models, and language agents. These innovations extend LLM utility across domains, enhance factual grounding, and support complex interactions. Research continues to refine these systems through structured reasoning, tool use, and domain-specific integration—expanding both their performance and real-world utility.
 
 
-#### Skill Check: Fundamentals of Large Language Models  
+## Skill Check: Fundamentals of Large Language Models  
 ---
 
 #### 1. What is the role of temperature in the decoding process of an LLM?
