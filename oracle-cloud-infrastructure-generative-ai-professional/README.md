@@ -594,9 +594,9 @@ Fine-tuning changes the entire model’s parameters with labeled data for a spec
 Prompt engineering is about improving the input given to the model—such as instructions or questions—to get better outputs. It does not involve training, architecture changes, or adjusting hyperparameters, but focuses on how the user interacts with the model via prompts.
 
 
-### 2. OCI Generative AI Service
+## 2. OCI Generative AI Service
 
-#### OCI Generative AI  
+## OCI Generative AI  
 ---
 
 ## Key Concepts
@@ -637,126 +637,126 @@ Prompt engineering is about improving the input given to the model—such as ins
 OCI Generative AI Service provides a robust platform combining access to powerful pre-trained chat and embedding models, efficient fine-tuning capabilities via selective weight updates, and dedicated GPU clusters ensuring secure, high-performance workloads. This setup enables developers to build versatile generative AI applications, from conversational agents to semantic search, with minimal infrastructure management and flexible customization options.
 
 
-#### Demo: OCI Generative AI  
+## Demo: OCI Generative AI  
 
 ---
 
-#### Chat Models  
+## Chat Models  
 
 ---
 
-#### Demo Chat Models  
+## Demo Chat Models  
 
 ---
 
-#### Demo Generative AI Inference API  
+## Demo Generative AI Inference API  
 
 ---
 
-#### Demo Config setup for Generative AI Inference API  
+## Demo Config setup for Generative AI Inference API  
 
 ---
 
-#### Embedding Models  
+## Embedding Models  
 
 ---
 
-#### Demo: Embedding Models  
+## Demo: Embedding Models  
 
 ---
 
-#### Prompt Engineering  
+## Prompt Engineering  
 
 ---
 
-#### Customize LLMs with your data  
+## Customize LLMs with your data  
 
 ---
 
-#### Fine Tuning and Inference in OCI Generative AI  
+## Fine Tuning and Inference in OCI Generative AI  
 
 ---
 
-#### Dedicated AI Cluster Sizing and Pricing  
+## Dedicated AI Cluster Sizing and Pricing  
 
 ---
 
-#### Demo: Dedicated AI Clusters  
+## Demo: Dedicated AI Clusters  
 
 ---
 
-#### Fine‑tuning configuration  
+## Fine‑tuning configuration  
 
 ---
 
-#### Demo: Fine‑tuning and Custom Models  
+## Demo: Fine‑tuning and Custom Models  
 
 ---
 
-#### Demo: Inference using Endpoint  
+## Demo: Inference using Endpoint  
 
 ---
 
-#### OCI Generative AI Security  
+## OCI Generative AI Security  
 
 ---
 
-#### Skill Check: Generative AI Service  
+## Skill Check: Generative AI Service  
 
 ---
 
-### 3. RAG using Generative AI Service and Oracle 23ai Vector Search
+## 3. RAG using Generative AI Service and Oracle 23ai Vector Search
 
-#### OCI Generative AI Integrations  
-
----
-
-#### Retrieval Augmented Generation  
+## OCI Generative AI Integrations  
 
 ---
 
-#### Process Documents  
+## Retrieval Augmented Generation  
 
 ---
 
-#### Embed and Store Documents  
+## Process Documents  
 
 ---
 
-#### Retrieval and Generation  
+## Embed and Store Documents  
 
 ---
 
-#### Demo: LangChain Basics  
+## Retrieval and Generation  
 
 ---
 
-#### Conversational RAG  
+## Demo: LangChain Basics  
 
 ---
 
-#### Demo: RAG with Oracle Database 23ai  
+## Conversational RAG  
 
 ---
 
-#### Skill Check: RAG Using Generative AI Service and Oracle 23ai Vector Search  
+## Demo: RAG with Oracle Database 23ai  
 
 ---
 
-### 4. Chatbot using Generative AI Agent Service
-
-#### Oracle Generative AI Agent  
+## Skill Check: RAG Using Generative AI Service and Oracle 23ai Vector Search  
 
 ---
 
-#### Chatbot Demo using Object Store  
+## 4. Chatbot using Generative AI Agent Service
+
+## Oracle Generative AI Agent  
 
 ---
 
-#### Chatbot Demo using Oracle 23ai  
+## Chatbot Demo using Object Store  
 
 ---
 
-#### Skill Check: Chatbot Using Generative AI Agent Service  
+## Chatbot Demo using Oracle 23ai  
+
+---
+
+## Skill Check: Chatbot Using Generative AI Agent Service  
 
 ---
