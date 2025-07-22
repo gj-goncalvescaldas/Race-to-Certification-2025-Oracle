@@ -56,12 +56,12 @@ Certified on **[Insert Date After Passing]**
 - [x] Demo Chat Models *(8 min)* – ✅ [See Summary](#demo-chat-models)  
 - [x] Demo Generative AI Inference API *(8 min)* – ✅ [See Summary](#demo-generative-ai-inference-api)  
 - [x] Demo Config setup for Generative AI Inference API *(6 min)* – ✅ [See Summary](#demo-config-setup-for-generative-ai-inference-api)  
-- [ ] Embedding Models *(14 min)* – ✅ [See Summary](#embedding-models)  
-- [ ] Demo: Embedding Models *(8 min)* – ✅ [See Summary](#demo-embedding-models)  
-- [ ] Prompt Engineering *(12 min)* – ✅ [See Summary](#prompt-engineering)  
-- [ ] Customize LLMs with your data *(10 min)* – ✅ [See Summary](#customize-llms-with-your-data)  
-- [ ] Fine Tuning and Inference in OCI Generative AI *(12 min)* – ✅ [See Summary](#fine-tuning-and-inference-in-oci-generative-ai)  
-- [ ] Dedicated AI Cluster Sizing and Pricing *(11 min)* – ✅ [See Summary](#dedicated-ai-cluster-sizing-and-pricing)  
+- [x] Embedding Models *(14 min)* – ✅ [See Summary](#embedding-models)  
+- [x] Demo: Embedding Models *(8 min)* – ✅ [See Summary](#demo-embedding-models)  
+- [x] Prompt Engineering *(12 min)* – ✅ [See Summary](#prompt-engineering)  
+- [x] Customize LLMs with your data *(10 min)* – ✅ [See Summary](#customize-llms-with-your-data)  
+- [x] Fine Tuning and Inference in OCI Generative AI *(12 min)* – ✅ [See Summary](#fine-tuning-and-inference-in-oci-generative-ai)  
+- [x] Dedicated AI Cluster Sizing and Pricing *(11 min)* – ✅ [See Summary](#dedicated-ai-cluster-sizing-and-pricing)  
 - [ ] Demo: Dedicated AI Clusters *(7 min)* – ✅ [See Summary](#demo-dedicated-ai-clusters)  
 - [ ] Fine-tuning configuration *(10 min)* – ✅ [See Summary](#fine-tuning-configuration)  
 - [ ] Demo: Fine-tuning and Custom Models *(7 min)* – ✅ [See Summary](#demo-fine-tuning-and-custom-models)  
@@ -935,28 +935,323 @@ This demo showed the crucial role of the config file and private key in successf
 
 
 ## Embedding Models  
-
 ---
+
+#### Key Concepts
+
+- **Embeddings**: Numerical representations of text (words, phrases, sentences, documents) that allow machines to assess semantic similarity.
+- **Vector Similarity**: Techniques like Cosine Similarity and Dot Product Similarity quantify the closeness of text representations.
+- **Semantic Clustering**: Similar embeddings form clusters based on meaning (e.g., animals, fruits, cities).
+- **Sentence vs. Word Embeddings**: Both follow the same principle—numerical vectors representing linguistic units to enable similarity comparison.
+- **Retrieval-Augmented Generation (RAG)**: Combines user queries with company data using embeddings and vector databases to enhance LLM responses.
+- **OCI Embedding Models**: Oracle Cloud Infrastructure offers Cohere-powered models to generate embeddings in multiple languages and configurations.
+
+#### Embeddings and Semantic Similarity
+
+The class begins by explaining how embeddings work—converting textual data into numerical vectors. These vectors allow semantic relationships to be inferred by machines. Examples include mapping animal names on axes like size and age, forming vector clusters that reflect their conceptual similarities.
+
+Words with similar meanings generate similar embeddings. The lesson illustrates this through clusters of animals, fruits, and cities, and how a new term (e.g., "tiger") would naturally align with the relevant semantic group due to its vector proximity.
+
+The same logic extends to sentence embeddings, where even phrases like "canine companions say" and "woof" share close vectors, demonstrating cross-granularity comparisons.
+
+![img6](img/6.png)
+![img7](img/7.png)
+
+#### Use Case: Retrieval-Augmented Generation (RAG)
+
+A major practical use of embeddings is enabling RAG systems. Here's how it works:
+
+- A corpus of documents is split into chunks.
+- Each chunk is converted into an embedding and stored in a vector database.
+- When a user submits a query, it's also converted into an embedding.
+- The vector database performs a similarity search to find the most relevant chunks.
+- These chunks are added to the LLM prompt to enhance the model’s ability to answer context-specific questions.
+
+This approach allows LLMs to effectively integrate and respond based on private or proprietary data.
+
+#### Embedding Models in OCI Generative AI
+
+Oracle Cloud supports several embedding models through its integration with Cohere:
+
+- **Cohere.embed-English**: Full-feature English model producing 1,024-dimensional vectors.
+- **Cohere.embed-English-lite**: Faster and smaller model with 384-dimensional output.
+- **Cohere.embed-Multilingual**: Supports over 100 languages, enabling both intra-language and cross-language semantic search.
+
+All models support input of up to 512 tokens per embedding and up to 96 inputs per run. Recent updates, like the **embed v3** model, enhance retrieval quality in RAG by better assessing document relevance and filtering noise.
+
+##### Model Comparison
+
+| Model Type              | Dimensions | Max Tokens | Notes |
+|-------------------------|------------|------------|-------|
+| embed-English           | 1024       | 512        | Best for high-precision embeddings |
+| embed-English-lite      | 384        | 512        | Faster, lower-dimension version |
+| embed-Multilingual      | 1024       | 512        | Supports cross-language use cases |
+| embed-v3 (recommended)  | 1024       | 512        | Improved ranking of relevant results |
+| embed-v3-lite           | 384        | 512        | Fast with lower compute cost |
+
+#### ✅ **Summary**
+
+This lesson provided a comprehensive introduction to embeddings within the OCI Generative AI ecosystem. It demonstrated how embeddings numerically represent text to enable semantic comparisons, highlighted their role in systems like RAG for enterprise applications, and detailed the available OCI embedding models. The takeaway is clear: high-quality embeddings are critical for enabling accurate, efficient, and semantically rich interactions with language models.
 
 ## Demo: Embedding Models  
-
 ---
+
+#### Key Concepts
+
+- **OCI Generative AI Playground**: Interactive UI to test and experiment with generative AI models, including embeddings.
+- **Cohere Embed Models**: Oracle integrates Cohere embedding models (v2 and v3) for English and multilingual text.
+- **Embeddings**: Text is converted into high-dimensional numerical vectors (1024 dimensions for Cohere v3).
+- **Numerical vs Semantic Similarity**: Numerically close embeddings are semantically similar; used for clustering, search, and comparison.
+- **Vector Projection and Visualization**: Embeddings are projected to 2D for intuitive understanding via scatter plots.
+- **Embedding API Access**: Embeddings can be retrieved programmatically using Java or Python via OCI APIs.
+
+## #### Model Selection and Sentence Embedding
+
+- The user selects **Cohere Embed English v3.0** from the model dropdown.
+- Embeddings can be generated from:
+  - Manually entered sentences.
+  - A pre-prepared file (used here with questions about country capitals).
+- The model processes each sentence and returns a **1,024-dimensional vector** for each.
+
+##### Example Sentences Used
+- Questions about capitals of countries like France, Sweden, Canada.
+- Outlier question: *"What is the smallest state in the United States?"* to test semantic grouping.
+
+##### Observations
+- All capital-related questions were clustered together.
+- The outlier question was separated, showing **semantic dissimilarity**.
+- Adding *"What is the smallest state in India?"* correctly grouped near the U.S. question, validating semantic alignment.
+- Adding *"What is the largest state in the U.S.?"* maintained distance from "smallest" questions, preserving topic similarity but distinguishing meaning.
+
+## #### Visualizing Embeddings in 2D
+
+- **2D Projection via Scatter Plot**:
+  - Automatically generated in the playground for intuitive understanding.
+  - Clusters form based on **semantic proximity**.
+  - Closely related sentences show closer placement in the plot.
+- Demonstrates how **high-dimensional semantic relationships** can be approximated visually.
+
+## #### Viewing and Understanding the Embedding Vectors
+
+- **Embedding vectors** (1024 dimensions) can be accessed through:
+  - **"View Code"** option in the playground (Python or Java).
+  - Python code returns vectors as arrays of floating-point numbers.
+- **Jupyter Notebook and VS Code** used to inspect the output.
+  - Reduced the test case to one input for easier viewing.
+  - Verified that each sentence generates one vector of **1024 values**.
+  - Navigated directly to line 1,024 to confirm vector completeness.
+
+#### ✅ Summary
+
+This demo showcased how to use OCI Generative AI's embedding models—specifically Cohere's v3 models—for encoding text into high-dimensional vectors. It demonstrated key functionalities: sentence input (manual/file), 2D visualization for semantic grouping, and accessing raw embeddings via API and Python code. The demo validated how semantic similarity corresponds to num
 
 ## Prompt Engineering  
-
 ---
+
+#### Key Concepts
+
+- **Prompt**: The input text given to a Large Language Model (LLM) to initiate a response.
+- **Prompt Engineering**: The iterative process of refining prompts to guide LLM responses toward specific styles or tasks.
+- **Completion LLMs**: Early LLMs trained to continue text without explicit instruction-following capability.
+- **Instruction-Tuned LLMs**: Modern LLMs like LLaMA 2 Chat fine-tuned with human feedback to follow user instructions.
+- **RLHF (Reinforcement Learning with Human Feedback)**: A method used to align LLMs with human intent by training them on human-rated outputs.
+- **In-Context Learning**: Conditioning a model with examples of a task without changing model parameters.
+- **Few-Shot Prompting**: Providing a few task-specific examples in the prompt to improve response quality.
+- **Prompt Format Compliance**: Adhering to the model’s required structure for optimal results.
+- **Advanced Prompting**: Includes Chain-of-Thought and Zero-Shot Chain-of-Thought prompting for complex tasks.
+
+#### Foundations of Prompt Engineering
+
+Prompt engineering begins with the understanding that LLMs, especially early models, are next-word predictors. These models do not inherently follow instructions; instead, they complete the input text based on patterns learned from vast internet data.
+
+Because completion LLMs are not instruction-aware, users must craft prompts whose completions align with desired outputs. This limitation led to the development of instruction-tuned LLMs such as LLaMA 2 Chat, which are fine-tuned using Reinforcement Learning with Human Feedback (RLHF). RLHF uses human-labeled responses to train a reward model, which then helps align the LLM’s outputs with human preferences.
+
+LLaMA 2 Chat, for instance, builds upon a base model trained on 2 trillion tokens and is further refined with over 28,000 prompt-response pairs, as well as additional meta datasets and smaller curated datasets.
+
+#### In-Context Learning and Prompt Strategies
+
+In-context learning allows LLMs to perform specific tasks based on demonstrations within the prompt. Unlike traditional training, the model's parameters remain unchanged. Instead, the model is "conditioned" through prompt examples.
+
+**Few-shot prompting** refers to giving the model several example input-output pairs (e.g., English-to-French translations) before presenting the actual task. This is shown to improve results over **zero-shot prompting**, where no examples are provided.
+
+An important clarification is that everything provided—task description, examples, and target query—constitutes the complete prompt. Labeling individual parts (e.g., “task” or “example”) doesn’t change the fact that the model sees the entire input as one prompt.
+
+#### Prompt Formatting Requirements for LLaMA 2
+
+To function optimally, models like LLaMA 2 require strict formatting. LLaMA 2 uses special tags:
+
+- `<s>[INST]` and `[/INST]` to denote instruction blocks
+- `<s>[SYSTEM]` and `[/SYSTEM]` for system-level prompts
+
+This formatting helps the model distinguish between user instructions, system guidance, and expected model outputs. Improper formatting can lead to degraded performance or irrelevant results. This is especially important in dialogue-based tasks where multiple turns must be clearly separated.
+
+#### Advanced Prompting Techniques
+
+##### Chain-of-Thought Prompting
+This technique is effective for complex reasoning tasks. It involves showing the model examples of responses that include step-by-step intermediate reasoning. The goal is to guide the model to solve problems in parts, just as a human would.
+
+Chain-of-thought prompting has proven successful for tasks involving math, logic, or structured thinking, and was supported by research published in 2022.
+
+##### Zero-Shot Chain-of-Thought Prompting
+This variant achieves similar results without providing examples. Instead, it uses cues such as “Let’s think step by step,” prompting the model to break down its reasoning on its own. This lightweight method helps simplify prompting while still enabling structured thinking in outputs.
+
+#### ✅ Summary
+
+This lesson provided foundational knowledge on prompt engineering, covering how LLMs respond to input, the evolution from completion to instruction-following models, and strategies for crafting effective prompts. It explained key techniques such as in-context learning, few-shot prompting, and chain-of-thought prompting, while also emphasizing the importance of using the correct prompt format—especially for models like LLaMA 2. These insights prepare users to apply prompt engineering techniques more effectively, setting the stage for the upcoming demonstration.
 
 ## Customize LLMs with your data  
-
 ---
+
+#### Key Concepts
+
+- **Customising LLMs**: Three main techniques—few-shot prompting, fine-tuning, and retrieval-augmented generation (RAG)—allow adapting LLMs to specific tasks or data.
+- **Few-Shot Prompting**: Embedding task demonstrations directly into the prompt; limited by context window length.
+- **Fine-Tuning**: Training an existing model on domain-specific data to improve performance and efficiency.
+- **RAG (Retrieval-Augmented Generation)**: Connecting the LLM to external knowledge bases for up-to-date, grounded responses.
+- **Evaluation and Strategy**: A staged framework determines when and how to apply each method, often in combination.
+
+#### Limitations of Training LLMs from Scratch
+
+Training large language models from scratch is discouraged due to:
+- **High Costs**: Requires millions of dollars and vast computational resources.
+- **Data Requirements**: Needs trillions of tokens and significant annotated data.
+- **Expertise Demands**: Involves managing hardware, understanding performance metrics, and handling model limitations.
+
+#### Techniques for Customising LLMs
+
+##### Few-Shot Prompting
+- **Method**: Embed example task completions in the prompt.
+- **Strengths**: Easy to implement, no training cost, ideal for known tasks.
+- **Limitations**: Limited by the context window; increased latency with each request.
+
+##### Fine-Tuning
+- **Method**: Retrain the model on specific, labelled domain data.
+- **Use Cases**: When LLMs fail on certain tasks or require specific tone/style.
+- **Advantages**: Enhances task-specific performance and efficiency.
+- **Disadvantages**: Labor-intensive, requires annotated data, more complex to execute.
+
+##### Retrieval-Augmented Generation (RAG)
+- **Method**: Link LLMs to external sources (e.g., wikis, vector DBs) for grounded answers.
+- **Use Cases**: Dynamic or frequently updated information, reducing hallucinations.
+- **Advantages**: No fine-tuning needed; always accesses current, reliable data.
+- **Disadvantages**: Setup complexity; requires structured, compatible data sources.
+
+#### Strategic Integration of Customisation Techniques
+
+A practical application journey often involves combining all three techniques:
+
+1. **Start with Prompt Engineering**: Use basic and few-shot prompting.
+2. **Introduce RAG**: Connect to enterprise knowledge bases for grounded outputs.
+3. **Apply Fine-Tuning**: Adjust style or format when prompting and RAG fall short.
+4. **Iterate**: Continuously evaluate performance, adjusting RAG and fine-tuning as needed.
+
+This strategy is guided by a two-axis framework:
+- **Context Optimisation** (horizontal): If context is lacking → apply RAG.
+- **LLM Optimisation** (vertical): If model behaviour needs improving → apply fine-tuning.
+
+The techniques are **not mutually exclusive**—they often build upon each other.
+
+![img8](img/8.png)
+
+#### ✅ Summary
+
+This class introduced three main techniques to customise LLMs with user-specific data: few-shot prompting, fine-tuning, and retrieval-augmented generation (RAG). While training from scratch is impractical, these methods offer scalable ways to tailor model outputs. Few-shot prompting is fast but limited by context. Fine-tuning improves model a
 
 ## Fine Tuning and Inference in OCI Generative AI  
-
 ---
+
+#### Key Concepts
+
+- **Fine-tuning**: The process of adapting a pre-trained foundational model to specific data or tasks by additional training.
+- **Inference**: The use of a trained or fine-tuned model to generate output based on new input text.
+- **Custom Model**: A model created by fine-tuning a pre-trained base model with custom data.
+- **Dedicated AI Clusters**: Single-tenant GPU deployments for consistent performance, divided into fine-tuning clusters and hosting clusters.
+- **T-Few Fine-Tuning**: A parameter-efficient fine-tuning method updating only a small fraction (~0.01%) of model weights, reducing cost and training time.
+- **Model Endpoint**: The interface on a hosting cluster that accepts user requests and returns model-generated responses.
+- **Parameter Sharing**: Technique to reduce GPU memory overhead by sharing common weights between base and fine-tuned models.
+
+#### Fine-Tuning and Inference Workflows in OCI Generative AI
+
+- **Fine-tuning workflow**: 
+  1. Create a fine-tuning AI cluster.
+  2. Gather and prepare training data.
+  3. Initiate fine-tuning process on the base model with custom data.
+  4. Obtain a custom fine-tuned model.
+
+- **Inference workflow**: 
+  1. Create a hosting AI cluster.
+  2. Deploy a model endpoint on this cluster.
+  3. Serve inference requests (user inputs) and generate outputs.
+
+#### Dedicated AI Clusters and Their Role
+
+- **Fine-tuning cluster**: Used for training/fine-tuning models.
+- **Hosting cluster**: Used to host model endpoints for serving inference requests.
+- These clusters provide single-tenant GPU resources ensuring consistent throughput and easier resource planning.
+
+#### T-Few Fine-Tuning Technique
+
+- Unlike vanilla fine-tuning (updating most/all model weights), T-Few fine-tuning updates only a very small subset of layers.
+- Inserts additional layers representing about 0.01% of the model size.
+- Advantages include significantly reduced training time, lower cost, and faster fine-tuning.
+- Uses annotated (labelled) training data with input/output pairs for supervised learning.
+- Fine-tuned weights are localized to these added layers instead of the whole model.
+
+#### Efficient Inference and Memory Management
+
+- Hosting clusters can serve multiple fine-tuned custom models concurrently alongside the base model.
+- This multi-tenancy approach reduces inference costs by sharing GPU resources.
+- GPU memory is limited; switching models traditionally causes overhead due to full model reloads.
+- Parameter sharing in T-Few fine-tuning means base model weights are loaded once and shared with fine-tuned variants.
+- This architecture minimizes memory overhead and speeds up model switching during inference.
+
+#### ✅ Summary
+
+This lesson detailed the fine-tuning and inference processes in OCI Generative AI service, focusing on the efficient T-Few fine-tuning approach. T-Few allows selective, lightweight updates to a small portion of the model’s weights, drastically reducing training time and costs compared to vanilla fine-tuning. OCI’s dedicated AI clusters provide isolated GPU resources for fine-tuning and hosting, enabling consistent performance. Efficient inference is achieved through parameter sharing, allowing multiple fine-tuned models to coexist on the same GPU with minimal memory overhead. This architecture supports scalable, cost-effective deployment of custom LLMs.
+
 
 ## Dedicated AI Cluster Sizing and Pricing  
-
 ---
+
+#### Key Concepts
+
+- **Dedicated AI Clusters:** GPU-based single-tenant resources for hosting and fine-tuning LLMs, with different cluster unit types based on model families.
+- **Cluster Unit Types:** Four types available—Large Cohere, Small Cohere, Embed Cohere, and Large Meta Dedicated—each supporting specific models and use cases.
+- **Service Limits:** Default zeroed cluster unit quotas that require service limit increase requests to provision units.
+- **Sizing:** Number of cluster units required depends on model type and whether the task is fine-tuning or hosting.
+- **Pricing:** Charges based on unit hours, with hosting charged monthly and fine-tuning charged hourly with minimums.
+
+#### Cluster Unit Types and Their Usage
+
+- **Large Cohere Dedicated:** Supports both fine-tuning and hosting for Cohere Command R family models (e.g., Command R-plus 08-2024 hosting requires 2 units).
+- **Small Cohere Dedicated:** Also supports fine-tuning and hosting for some Cohere models (e.g., Command R 08-2024 requires 8 units for fine-tuning, 1 for hosting).
+- **Embed Cohere Dedicated:** For hosting embedding models (English and multilingual), no fine-tuning supported.
+- **Large Meta Dedicated:** For fine-tuning and hosting Meta Llama models (e.g., requires 4 units for fine-tuning, 1 for hosting).
+
+Each cluster type is distinct and used exclusively for its model family, with no mixing.
+
+#### Sizing and Service Limits
+
+- **Service Limits:** These represent the maximum allowed cluster units per tenancy and start at zero.
+- Users must request increases for required units (e.g., 9 small Cohere units for Command R 08-2024 fine-tuning plus hosting).
+- Underlying GPU and infrastructure details are abstracted from customers.
+- Example: Fine-tuning a Cohere Command R 08-2024 model requires 8 small Cohere units, hosting that model requires 1 small Cohere unit, totaling 9 units.
+
+#### Pricing Example and Cost Calculation
+
+- **Fine-tuning Cost:** Charged hourly with a minimum of one hour per fine-tuning job; total hours depend on actual fine-tuning time.
+- **Hosting Cost:** Charged monthly based on 744 unit hours (full month).
+- Example:  
+  - Bob fine-tunes Cohere Command R 08-2024 model 4 times a month, each fine-tuning lasts 5 hours → 40 unit hours/month.  
+  - Hosting requires 744 unit hours/month.  
+  - Total unit hours = 784 (40 + 744).  
+  - At $6.50 per unit hour, monthly cost ≈ $5,900.
+- Multiple models can be hosted on the same cluster without increasing hosting unit hours.
+
+#### ✅ Summary
+
+This lesson explained the sizing and pricing of dedicated AI clusters in OCI Generative AI service. Four cluster unit types correspond to different model families and use cases, with specific unit requirements for fine-tuning and hosting. Service limits start at zero and must be increased via requests. Pricing is based on unit hours: hosting is billed monthly with a minimum commitment, while fine-tuning is billed hourly with minimums. The example demonstrated that fine-tuning and hosting a Cohere Command R model can cost close to $6,000 per month, highlighting the importance of proper sizing and budgeting for AI workloads.
+
 
 ## Demo: Dedicated AI Clusters  
 
