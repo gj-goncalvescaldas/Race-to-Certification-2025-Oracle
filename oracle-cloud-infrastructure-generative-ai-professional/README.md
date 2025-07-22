@@ -62,12 +62,12 @@ Certified on **[Insert Date After Passing]**
 - [x] Customize LLMs with your data *(10 min)* – ✅ [See Summary](#customize-llms-with-your-data)  
 - [x] Fine Tuning and Inference in OCI Generative AI *(12 min)* – ✅ [See Summary](#fine-tuning-and-inference-in-oci-generative-ai)  
 - [x] Dedicated AI Cluster Sizing and Pricing *(11 min)* – ✅ [See Summary](#dedicated-ai-cluster-sizing-and-pricing)  
-- [ ] Demo: Dedicated AI Clusters *(7 min)* – ✅ [See Summary](#demo-dedicated-ai-clusters)  
-- [ ] Fine-tuning configuration *(10 min)* – ✅ [See Summary](#fine-tuning-configuration)  
-- [ ] Demo: Fine-tuning and Custom Models *(7 min)* – ✅ [See Summary](#demo-fine-tuning-and-custom-models)  
-- [ ] Demo: Inference using Endpoint *(6 min)* – ✅ [See Summary](#demo-inference-using-endpoint)  
-- [ ] OCI Generative AI Security *(5 min)* – ✅ [See Summary](#oci-generative-ai-security)  
-- [ ] Skill Check: Generative AI Service – ✅ [See Summary](#skill-check-generative-ai-service)
+- [x] Demo: Dedicated AI Clusters *(7 min)* – ✅ _No notes_ 
+- [x] Fine-tuning configuration *(10 min)* – ✅ [See Summary](#fine-tuning-configuration)  
+- [x] Demo: Fine-tuning and Custom Models *(7 min)* – ✅ [See Summary](#demo-fine-tuning-and-custom-models)  
+- [x] Demo: Inference using Endpoint *(6 min)* – ✅ [See Summary](#demo-inference-using-endpoint)  
+- [x] OCI Generative AI Security *(5 min)* – ✅ [See Summary](#oci-generative-ai-security)  
+- [x] Skill Check: Generative AI Service – ✅ [See Summary](#skill-check-generative-ai-service)
 
 ### 4. RAG using Generative AI Service and Oracle 23ai Vector Search
 
@@ -1252,30 +1252,231 @@ Each cluster type is distinct and used exclusively for its model family, with no
 
 This lesson explained the sizing and pricing of dedicated AI clusters in OCI Generative AI service. Four cluster unit types correspond to different model families and use cases, with specific unit requirements for fine-tuning and hosting. Service limits start at zero and must be increased via requests. Pricing is based on unit hours: hosting is billed monthly with a minimum commitment, while fine-tuning is billed hourly with minimums. The example demonstrated that fine-tuning and hosting a Cohere Command R model can cost close to $6,000 per month, highlighting the importance of proper sizing and budgeting for AI workloads.
 
-
-## Demo: Dedicated AI Clusters  
-
----
-
 ## Fine‑tuning configuration  
-
 ---
+
+## Key Concepts
+
+- **Fine-Tuning Methods**: Two primary methods supported—T-Few and LoRA—both part of PEFT (Parameter Efficient Fine Tuning) which enables adapting models with minimal changes.
+- **Hyperparameters**: Key tuning parameters include epochs, batch size, learning rate, early stopping thresholds, and logging intervals.
+- **Evaluation Metrics**: Accuracy and loss are the two core metrics used to evaluate the effectiveness of model fine-tuning.
+
+#### Fine-Tuning Methods: T-Few and LoRA
+
+- **T-Few**: Acts like adding helper components to a model, modifying only a small part to adapt to new tasks. It tweaks select layers for efficiency.
+- **LoRA (Low Rank Adaptation)**: Functions by adding gears that adjust internal weights without altering the main structure. Maintains model integrity while allowing specialisation.
+- **PEFT (Parameter Efficient Fine Tuning)**: A broader approach, allowing these modifications to enhance performance with limited computational resources.
+
+These methods make it feasible to tailor large models to specific tasks without full retraining.
+
+#### Understanding and Tuning Hyperparameters
+
+- **Epochs**: Represent how many times the model passes through the training dataset. More epochs provide more learning, but with diminishing returns.
+- **Batch Size**: The number of training examples processed at once. Larger sizes can speed up training; smaller sizes may give better accuracy.
+- **Learning Rate**: Dictates how quickly the model updates its weights. A higher rate speeds up training but can lead to overshooting; a lower rate is more precise.
+- **Early Stopping**: Prevents overfitting by stopping training if performance stops improving. Threshold and patience control sensitivity and duration.
+- **Logging Interval**: Determines how often metrics like loss and accuracy are recorded during training.
+
+![img9](img/9.png)
+
+#### Evaluating Fine-Tuning: Accuracy vs. Loss
+
+##### Accuracy
+- Measures the percentage of predicted tokens that match annotated (expected) tokens.
+- Limitation: Doesn't account for semantic similarity—different words with the same meaning can still score low.
+- Example:  
+  - Ground truth: *The cat sat on the mat*  
+  - Prediction: *The cat slept on the rug*  
+  - Result: 4 correct out of 6 tokens = 67% accuracy
+
+##### Loss
+- Measures how wrong predictions are based on probability distributions.
+- A more reliable metric for generative tasks, as it captures semantic and contextual relevance, not just token-by-token matches.
+- Example:  
+  - Low Loss: *The cat slept on the rug* – semantically similar  
+  - High Loss: *The airplane flew at midnight* – contextually irrelevant
+
+Loss decreases as model performance improves, making it a preferred metric for evaluating fine-tuning.
+
+✅ Summary
+
+This class explained the key fine-tuning methods—T-Few and LoRA—available in OCI’s Generative AI platform. It outlined critical hyperparameters that affect model training and discussed the differences between accuracy and loss as evaluation metrics. While accuracy counts correct tokens, loss better captures semantic alignment, making it a more reliable metric for assessing generative model performance. Understanding and properly configuring these elements is essential for effective fine-tuning of language models.
+
 
 ## Demo: Fine‑tuning and Custom Models  
-
 ---
+
+#### Key Concepts
+
+- **OCI Generative AI Console**: Oracle Cloud Infrastructure's platform for managing AI model lifecycles, including fine-tuning and deployment of custom models.
+- **Custom Model Creation**: Users can fine-tune pre-trained foundational models (like Cohere Command Light) with their own datasets using parameter-efficient techniques.
+- **JSONL Format Requirement**: Oracle's fine-tuning process requires training data in `.jsonl` (JSON Lines) format with `"prompt"` and `"completion"` fields on each line.
+- **Dedicated AI Cluster**: A pre-configured Oracle compute resource where the custom model is trained, ensuring compatibility with the selected base model.
+- **Fine-Tuning Methods**: The `tfew` method is used for small datasets, offering parameter-efficient fine-tuning (PEFT) to optimise performance with minimal resource use.
+- **Training Data Access**: Custom datasets must be uploaded to OCI Object Storage and linked properly with IAM policies to be accessible for training.
+
+#### Preparing the Dataset for Fine-Tuning
+
+##### Formatting Requirements
+
+- The training data must be in `.jsonl` format.
+- Each line contains a JSON object with:
+  - `"prompt"`: the human request
+  - `"completion"`: the AI virtual assistant’s rephrased version
+- Files must be UTF-8 encoded and structured line by line (not as a whole JSON array).
+
+##### Dataset Source and Simplification
+
+- Data is based on the paper *Sound Control: Natural Rephrasing in Dialog Systems*.
+- Only two relevant columns were retained: the human request and the assistant’s utterance.
+- Over 2,000 examples were formatted accordingly.
+
+#### Creating and Configuring the Custom Model
+
+##### Step-by-Step Walkthrough
+
+- From the **Generative AI Console**, the user initiates custom model creation.
+- Chose **Cohere Command Light** as the base model to match cluster size (small).
+- Selected **tfew** as the fine-tuning method due to the small dataset size.
+- Linked the model to a pre-created **dedicated AI cluster** named `custom fine-tuning`.
+- Reviewed default hyperparameters (like learning rate, batch size) and proceeded without modification.
+- Uploaded the training file via OCI Object Storage and verified preview lines from the dataset.
+- Submitted the configuration to start the fine-tuning process.
+
+#### Fine-Tuning Process and Outcome
+
+- The service initiates the training job, using the uploaded dataset and selected parameters.
+- The user is informed that the process takes several minutes.
+- Once completed, the output is a fine-tuned **custom model** tailored to rephrasing human requests for virtual assistants.
+- Final metrics such as **accuracy** and **loss** will be used to evaluate the model’s performance once training completes.
+
+#### ✅ Summary
+
+This session demonstrated how to fine-tune a custom generative AI model using Oracle Cloud Infrastructure. It covered data preparation in `.jsonl` format, configuration of model parameters, selection of a compatible base model and cluster, and launching the training process. The approach used parameter-efficient fine-tuning (`tfew`) with a small dataset to rephrase human input into AI-assistant-ready utterances. Once trained, the resulting custom model can be evaluated and deployed for production use.
+
 
 ## Demo: Inference using Endpoint  
-
 ---
+
+#### Key Concepts
+
+- **OCI Generative AI Console**: Oracle's interface for managing custom generative AI models, including creation, deployment, and evaluation.
+- **Custom Model Endpoints**: Ability to create dedicated endpoints to serve fine-tuned models.
+- **Model Evaluation Metrics**: Accuracy and loss are used to assess model performance—high accuracy and low loss indicate good results.
+- **Dedicated AI Clusters**: Infrastructure resource used to host up to 50 custom model endpoints simultaneously.
+- **Content Moderation**: Optional feature to filter out toxic or biased responses, configurable per endpoint.
+
+#### Creating and Deploying a Custom Model Endpoint
+
+- A custom model is selected from the list of available models (including pre-trained and custom).
+- The model is deployed to a **Dedicated AI Cluster**—capacity tracked per endpoint (max 50).
+- **Content Moderation** can be toggled before deployment; in this case, it was left disabled due to familiarity with the dataset.
+- Once created, the **endpoint becomes active** and is listed in the model dropdown within the Generative AI Playground.
+
+#### Testing and Comparing Model Outputs
+
+##### Consistency Across Temperature Settings
+
+- The same prompt was submitted with varying temperature settings (0, 1, 5).
+- The **custom model produced consistent outputs**, showing strong predictability and reliability.
+- This implies the fine-tuned model has captured its intended task well, maintaining output quality even with increased randomness.
+
+##### Custom Model vs Base Model Comparison
+
+- **Prompt**: Rephrase a human request into an AI assistant-friendly command.
+- **Custom Model Output**: Clear and context-appropriate phrasing aligned with assistant design goals.
+- **Base Model Output**: Less relevant phrasing (e.g., "Hello Elon..."), demonstrating reduced alignment with intended behaviour.
+- The comparison shows the **custom model generalises well**, even when tested on data it has never seen.
+
+#### ✅ Summary
+
+This demo illustrated the end-to-end process of deploying and testing a custom model using the OCI Generative AI Console. It highlighted how Oracle supports dedicated AI infrastructure, endpoint management, and model evaluation. The test showed that a fine-tuned custom model not only outperforms the base model in contextual accuracy but also remains robust across variable temperature settings, providing reliable and relevant outputs for production scenarios.
 
 ## OCI Generative AI Security  
-
 ---
+
+#### Key Concepts
+
+- **Dedicated AI Clusters**: Isolated GPU resources allocated to a single customer for generative AI tasks, ensuring complete data and model separation.
+- **Model and Data Isolation**: Custom and base models are run only within a customer’s dedicated cluster, inaccessible to others.
+- **OCI Security Integration**: The Generative AI service integrates with key OCI services like Identity and Access Management (IAM), Key Management, and Object Storage to enforce security and privacy.
+- **Access Control and Encryption**: Access to models is governed by IAM policies, while model weights are securely stored and encrypted in Object Storage.
+
+#### Dedicated Infrastructure for Security
+
+- Each customer receives a **dedicated AI cluster**, which includes:
+  - Exclusive access to a pool of GPUs
+  - An isolated **RDMA (Remote Direct Memory Access)** network
+- These GPUs only run that customer's **base and fine-tuned models**, ensuring no cross-customer resource sharing.
+- This design provides **physical and operational isolation**, enhancing data confidentiality.
+
+#### Model and Data Isolation by Tenancy
+
+- **Tenancy-based restrictions** ensure that:
+  - Applications within a customer’s tenancy can only access their models.
+  - Cross-tenant access is strictly blocked.
+- Example scenario:
+  - Customer 1 and Customer 2 each have separate AI clusters and custom models.
+  - Applications in Customer 2’s tenancy cannot access Customer 1’s models, and vice versa.
+
+#### OCI Security Services in Generative AI
+
+##### Identity and Access Management (IAM)
+
+- Defines **who can access** specific models and **what level of access** they have.
+- Supports fine-grained control at the application and user level.
+  - e.g., Application X accesses Custom Model X
+  - e.g., Application Y accesses Base Model only
+
+##### Key Management and Object Storage
+
+- **Key Management** securely stores base model keys and handles encryption.
+- **OCI Object Storage** holds:
+  - Base model weights
+  - Fine-tuned custom model weights
+- All storage is encrypted by default, with encryption keys managed by the Key Management service.
+
+#### ✅ Summary
+
+This class outlined how OCI Generative AI ensures strong security and privacy through dedicated infrastructure, strict tenancy-based isolation, and integration with OCI’s native security services. Key protections include isolated GPU clusters, IAM-based access control, encrypted model storage, and centralized key management—ensuring that customer data and models are securely contained within each tenant’s boundaries.
 
 ## Skill Check: Generative AI Service  
-
 ---
+
+#### 1. What is the purpose of frequency penalties in language model outputs?
+
+✅ Correct Answer: To penalize tokens that have already appeared, based on the number of times they’ve been used.
+
+🧠 Explanation:  
+Frequency penalties are used to reduce repetition in generated text. When a token (like a word) appears multiple times, a frequency penalty lowers its likelihood of appearing again. This makes the output more varied and avoids redundancy. Other options incorrectly describe the effect or purpose, such as randomly penalizing tokens or rewarding new ones, which are not what frequency penalties do.
+
+#### 2. What is the main advantage of using few-shot model prompting to customize a Large Language Model (LLM)?
+
+✅ Correct Answer: It provides examples in the prompt to guide the LLM to better performance with the training cost.
+
+🧠 Explanation:  
+Few-shot prompting allows an LLM to adapt to new tasks or domains using just a few examples embedded in the prompt—no need for retraining the entire model. This saves time and resources while still leveraging the model’s general capabilities. The other answers are incorrect because few-shot prompting doesn’t expand the dataset, eliminate all compute needs, or directly affect latency.
+
+#### 3. What is the purpose of embeddings in natural language processing?
+
+✅ Correct Answer: To create numerical representations of text that capture the meaning and relationships between words or phrases.
+
+🧠 Explanation:  
+Embeddings transform text into vectors in a continuous space, where semantically similar words are located closer together. This helps models understand relationships and meanings more effectively than basic encodings. Options like translation, increasing data size, or file compression do not reflect what embeddings are used for.
+
+#### 4. What happens if a period (.) is used as a stop sequence in text generation?
+
+✅ Correct Answer: The model stops generating text once it reaches the end of the first sentence, even if the token limit is much higher.
+
+🧠 Explanation:  
+Stop sequences act as signals for the model to end its output. If a period is defined as the stop sequence, the model will halt text generation right after producing the first sentence that ends with a period, regardless of any remaining token allowance. Other options either ignore the purpose of stop sequences or misstate how they influence output.
+
+#### 5. What is a distinctive feature of GPUs in Dedicated AI Clusters used for generative AI tasks?
+
+✅ Correct Answer: GPUs allocated for a customer’s generative AI tasks are isolated from other GPUs.
+
+🧠 Explanation:  
+In Dedicated AI Clusters, GPU isolation ensures that each customer’s workloads and data remain private and secure. This prevents cross-customer interference and enhances performance consistency. The other options incorrectly describe shared usage, public access, or storage roles, which would compromise security and are not the intended use of GPUs in this context.
 
 ## 3. RAG using Generative AI Service and Oracle 23ai Vector Search
 
