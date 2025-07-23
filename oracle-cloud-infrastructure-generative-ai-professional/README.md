@@ -79,11 +79,11 @@ Certified on **[Insert Date After Passing]**
 - [x] Demo: LangChain Basics *(8 min)* – ✅ [See Summary](#demo-langchain-basics)  
 - [x] Conversational RAG *(2 min)* – ✅ [See Summary](#conversational-rag)  
 - [x] Demo: RAG with Oracle Database 23ai *(11 min)* – ✅ [See Summary](#demo-rag-with-oracle-database-23ai)  
-- [ ] Skill Check: RAG Using Generative AI Service and Oracle 23ai Vector Search – ✅ [See Summary](#skill-check-rag-using-generative-ai-service-and-oracle-23ai-vector-search)
+- [x] Skill Check: RAG Using Generative AI Service and Oracle 23ai Vector Search – ✅ [See Summary](#skill-check-rag-using-generative-ai-service-and-oracle-23ai-vector-search)
 
 ### 5. Chatbot using Generative AI Agent Service
 
-- [ ] Oracle Generative AI Agent *(18 min)* – ✅ [See Summary](#oracle-generative-ai-agent)  
+- [x] Oracle Generative AI Agent *(18 min)* – ✅ [See Summary](#oracle-generative-ai-agent)  
 - [ ] Chatbot Demo using Object Store *(16 min)* – ✅ [See Summary](#chatbot-demo-using-object-store)  
 - [ ] Chatbot Demo using Oracle 23ai *(17 min)* – ✅ [See Summary](#chatbot-demo-using-oracle-23ai)  
 - [ ] Skill Check: Chatbot Using Generative AI Agent Service – ✅ [See Summary](#skill-check-chatbot-using-generative-ai-agent-service)
