@@ -71,14 +71,14 @@ Certified on **[Insert Date After Passing]**
 
 ### 4. RAG using Generative AI Service and Oracle 23ai Vector Search
 
-- [ ] OCI Generative AI Integrations *(7 min)* – ✅ [See Summary](#oci-generative-ai-integrations)  
-- [ ] Retrieval Augmented Generation *(4 min)* – ✅ [See Summary](#retrieval-augmented-generation)  
-- [ ] Process Documents *(4 min)* – ✅ [See Summary](#process-documents)  
-- [ ] Embed and Store Documents *(6 min)* – ✅ [See Summary](#embed-and-store-documents)  
-- [ ] Retrieval and Generation *(5 min)* – ✅ [See Summary](#retrieval-and-generation)  
-- [ ] Demo: LangChain Basics *(8 min)* – ✅ [See Summary](#demo-langchain-basics)  
-- [ ] Conversational RAG *(2 min)* – ✅ [See Summary](#conversational-rag)  
-- [ ] Demo: RAG with Oracle Database 23ai *(11 min)* – ✅ [See Summary](#demo-rag-with-oracle-database-23ai)  
+- [x] OCI Generative AI Integrations *(7 min)* – ✅ [See Summary](#oci-generative-ai-integrations)  
+- [x] Retrieval Augmented Generation *(4 min)* – ✅ [See Summary](#retrieval-augmented-generation)  
+- [x] Process Documents *(4 min)* – ✅ [See Summary](#process-documents)  
+- [x] Embed and Store Documents *(6 min)* – ✅ [See Summary](#embed-and-store-documents)  
+- [x] Retrieval and Generation *(5 min)* – ✅ [See Summary](#retrieval-and-generation)  
+- [x] Demo: LangChain Basics *(8 min)* – ✅ [See Summary](#demo-langchain-basics)  
+- [x] Conversational RAG *(2 min)* – ✅ [See Summary](#conversational-rag)  
+- [x] Demo: RAG with Oracle Database 23ai *(11 min)* – ✅ [See Summary](#demo-rag-with-oracle-database-23ai)  
 - [ ] Skill Check: RAG Using Generative AI Service and Oracle 23ai Vector Search – ✅ [See Summary](#skill-check-rag-using-generative-ai-service-and-oracle-23ai-vector-search)
 
 ### 5. Chatbot using Generative AI Agent Service
