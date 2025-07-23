@@ -1481,36 +1481,421 @@ In Dedicated AI Clusters, GPU isolation ensures that each customer’s workloads
 ## 3. RAG using Generative AI Service and Oracle 23ai Vector Search
 
 ## OCI Generative AI Integrations  
-
 ---
+
+#### Key Concepts
+
+- **OCI Generative AI** integrates with various frameworks and services to support LLM-based applications.
+- **LangChain** provides modular components for building applications powered by language models.
+- **Prompt engineering** involves templates and chat prompts for structured interaction with LLMs.
+- **Chains and memory** manage multi-step operations and conversational context.
+- **Oracle 23 AI** can function as a vector store and supports embedding and natural language querying via OCI Generative AI.
+
+#### Integration with LangChain
+
+LangChain is a framework designed to simplify the development of language model applications by providing reusable components such as:
+
+- **LLMs and Chat Models**: LLMs handle pure text completion, while chat models are fine-tuned for dialogue using sequences of chat messages.
+- **Prompts**:  
+  - `PromptTemplate`: Uses fixed text with placeholders, typically for generation models.  
+  - `ChatPromptTemplate`: A list of chat messages with roles and content, intended for chat models.
+
+LangChain allows chaining of operations using:
+- **LangChain Expression Language (LCEL)**: A declarative approach.
+- **LangChain Python Classes**: Like `LLMChain` for programmatic composition.
+
+These tools support the structured input-output process:
+- Capture user query.
+- Use prompts to add context dynamically.
+- Generate a response from the LLM.
+
+#### Chains and Memory Management
+
+LangChain chains can incorporate memory to maintain context across sessions:
+- Memory stores past conversations.
+- On each query:
+  - The chain retrieves relevant memory using a key.
+  - Passes previous chat history and the new question to the LLM.
+  - Stores the new question and answer back in memory.
+
+LangChain supports various memory types:
+- Full history
+- Summaries
+- Extracted entities (like names)
+
+This supports dynamic conversational flows and enhances interaction quality.
+
+#### OCI Generative AI and Oracle 23 AI
+
+OCI Generative AI integrates tightly with Oracle 23 AI in several ways:
+
+- **Embeddings**:  
+  - Generated externally via OCI Generative AI.
+  - Stored and retrieved using Oracle 23 AI as a vector store.
+
+- **Natural Language to SQL**:  
+  - Oracle 23 AI SELECT AI can use OCI Generative AI to translate user input into SQL queries using natural language.
+
+- **LangChain Integration**:  
+  - OCI Generative AI can be invoked through LangChain classes for seamless inclusion in LLM workflows.
+  
+- **Development Tools**:  
+  - Python SDKs and REST APIs enable application development using both services.
+
+#### ✅ Summary
+
+This lesson covered the integration of OCI Generative AI with frameworks like LangChain and services like Oracle 23 AI. LangChain simplifies building LLM applications by offering interchangeable components like prompts, chains, and memory. Oracle 23 AI enhances application capabilities by acting as a vector store and enabling natural language SQL generation. Together, these integrations empower developers to create robust, context-aware AI applications using OCI’s infrastructure.
+
 
 ## Retrieval Augmented Generation  
-
 ---
+
+#### Key Concepts
+
+- **Retrieval Augmented Generation (RAG)** enhances traditional LLMs by incorporating up-to-date external information.
+- **Embedding and Indexing** are used to convert and organise text for efficient retrieval.
+- **RAG Pipeline Phases**: Ingestion, Retrieval, and Generation.
+- **Top-K Search** allows selective inclusion of the most relevant data to improve generation quality and reduce token usage.
+
+#### How Retrieval Augmented Generation Works
+
+RAG supplements the capabilities of standard language models by retrieving relevant, external context to answer queries more accurately and with up-to-date information. Instead of relying solely on the model’s static training data, RAG enhances the query context with additional retrieved chunks of information. This makes responses more relevant, reduces bias, and avoids limitations such as outdated knowledge and token limits.
+
+##### Benefits of RAG
+
+- **Reduced Bias and Errors**: RAG mitigates biases in training data by sourcing diverse, real-time content.
+- **Token Efficiency**: Only the top K relevant text chunks are used, avoiding the need to process entire documents.
+- **Improved Accuracy**: Provides context that the model may not have seen during training.
+- **Scalability**: Handles more query types without needing to retrain the model with massive datasets.
+
+#### RAG Pipeline: Ingestion, Retrieval, Generation
+
+##### Ingestion Phase
+
+- **Document Loading**: Raw text documents are the input source.
+- **Chunking**: Documents are broken into smaller pieces to improve retrieval relevance.
+- **Embedding Creation**: Each chunk is converted into a numerical vector representing its semantic meaning.
+- **Indexing**: These embeddings are stored in a structure optimised for fast similarity searches.
+
+##### Retrieval Phase
+
+- **Query Processing**: The user submits a query.
+- **Similarity Search**: The system finds the most semantically relevant chunks using the indexed embeddings.
+- **Top-K Selection**: The top K matching chunks are selected to form the context.
+
+##### Generation Phase
+
+- **Contextual Generation**: The top K retrieved chunks are passed into the generative model.
+- **Response Creation**: The model uses this augmented context to produce a coherent, context-aware answer.
+
+#### ✅ Summary
+
+Retrieval Augmented Generation (RAG) enhances large language models by providing them with up-to-date, contextually relevant information sourced from external documents. This approach increases the relevance, accuracy, and robustness of responses while reducing reliance on static training data. The RAG process—comprising ingestion, retrieval, and generation—ensures that user queries are answered with the most relevant information, optimally balancing performance, precision, and scalability.
+
 
 ## Process Documents  
-
 ---
+
+#### Key Concepts
+
+- **RAG Pipeline** consists of three phases: ingestion, retrieval, and generation.
+- **Ingestion Phase** focuses on loading and splitting documents for later use by LLMs.
+- **Chunking Strategy** is essential for balancing input size constraints and semantic clarity.
+- **Chunk Overlap** helps maintain context continuity between consecutive text segments.
+- **Text Splitters** use natural separators (paragraphs, sentences, words) to retain semantic meaning.
+
+#### Document Loading and Format Support
+
+The ingestion process begins with loading documents, which may come in various formats such as PDF, CSV, HTML, and JSON. LLM frameworks like LangChain offer specific loader classes that can handle:
+- Single document loading.
+- Bulk loading from directories.
+
+This flexibility allows users to incorporate heterogeneous data sources into their retrieval pipeline efficiently.
+
+#### Chunking Considerations and Techniques
+
+Chunking is the process of breaking loaded documents into smaller, manageable pieces for effective processing by LLMs. Important considerations include:
+
+##### Chunk Size
+
+- Should align with the LLM’s context window.
+- Small chunks fit easily but may lack semantic depth.
+- Large chunks provide context but may exceed input limits or lose specificity.
+
+##### Chunk Overlap
+
+- Helps preserve context between adjacent chunks.
+- Achieved by including part of the previous chunk in the next one.
+
+##### Semantic Chunking
+
+- Uses natural language structure to retain meaning.
+- Splits documents using logical separators:
+  - Paragraphs → Sentences → Words (as fallback)
+- Aims to produce contextually rich and meaningful chunks within the size limit.
+
+#### Example Workflow Using LangChain
+
+1. **Load the Document**:  
+   Use a reader class (e.g., PDF reader) to extract raw text from the document.
+
+2. **Initialize the Text Splitter**:  
+   Create a text splitter object by defining:
+   - `chunk_size`
+   - `chunk_overlap`
+
+3. **Split the Text**:  
+   Call the `split_text` method on the text variable to generate semantically aligned chunks suitable for embedding and retrieval.
+
+#### ✅ Summary
+
+This lesson elaborates on the ingestion phase of the RAG pipeline, focusing on the practicalities of loading and chunking documents. Key insights include the importance of appropriate chunk sizing, using overlap to preserve context, and leveraging semantic structure to generate meaningful text segments. Tools like LangChain simplify this process by offering ready-to-use classes for document loading and text splitting. Proper ingestion design is foundational for effective retrieval and high-quality responses from language models.
+
 
 ## Embed and Store Documents  
-
 ---
+
+#### Key Concepts
+
+- **Embeddings** represent words, sentences, or documents as vectors in a multidimensional space, capturing semantic similarity.
+- **Semantic Similarity** means that embeddings for related concepts (e.g., "tiger" and other animals) are close in vector space.
+- **Oracle 23ai Embedding Support** enables generating and storing embeddings either inside or outside the database.
+- **Vector Data Type** in Oracle 23ai stores embeddings within database columns for efficient similarity search.
+- **Vector Store** holds embedded documents for retrieval based on semantic similarity.
+
+#### Understanding Embeddings and Their Use
+
+Embeddings are numerical representations that encode semantic meaning, allowing machines to assess similarity between text elements. Words with related meanings, such as animals or fruits, have embeddings that cluster closely together in vector space. This concept extends beyond words to sentences, paragraphs, and entire documents.
+
+Embeddings are generated by training embedding models. Oracle 23ai supports:
+
+- Using third-party embedding models externally.
+- Importing ONNX-format embedding models to generate embeddings inside the database, preserving data locality and security.
+
+#### Creating and Storing Embeddings in Oracle 23ai
+
+To store embeddings in the database, Oracle 23ai introduced the **vector** data type. This allows embeddings to be stored in dedicated columns alongside other data types in relational tables.
+
+The process includes:
+
+- Splitting documents into chunks.
+- Wrapping chunks into document objects containing metadata and text content.
+- Establishing a database connection via credentials.
+- Creating embeddings using the OCI Generative AI embedding model.
+- Using the Oracle VS class to create a vector store with:
+  - Document list
+  - Embedding model
+  - Database connection
+  - Target table name
+  - Distance strategy for similarity comparisons
+
+This setup enables efficient semantic search by comparing embeddings in the vector store to user queries.
+
+#### ✅ Summary
+
+This lesson deepens the understanding of embeddings by explaining their semantic basis and how they can be generated and stored in Oracle 23ai. Key practical steps include converting document chunks into document objects, generating embeddings via OCI Generative AI, and storing these embeddings in vector-typed database columns. This foundation enables effective semantic retrieval and search capabilities within the Oracle 23ai platform.
+
 
 ## Retrieval and Generation  
-
 ---
+
+#### Key Concepts
+
+- **Vector Search** retrieves document chunks that are semantically similar to a user query using vector embeddings.
+- **Embedding Similarity Metrics** such as dot product and cosine similarity measure closeness between query and chunk embeddings.
+- **Indexing for Retrieval** improves search performance with structures like HNSW and IVF for large-scale similarity searches.
+- **Retrieval Pipeline** includes encoding the query, performing vector search, retrieving relevant chunks, and generating a response using an LLM.
+
+#### Vector Similarity Search
+
+When a user submits a query, it is first encoded using the same embedding model that was used for document chunks. The encoded query is then compared with stored embeddings to identify semantically relevant chunks. 
+
+##### Similarity Metrics
+
+- **Dot Product**: Considers both magnitude and angle between vectors. Useful when magnitude encodes meaningful information.
+- **Cosine Similarity**: Focuses solely on the angle, often emphasising semantic alignment regardless of content richness.
+
+The goal is to retrieve a few top-ranked chunks that provide concise and relevant context to the LLM, enabling accurate and grounded responses.
+
+![img10](img/10.png)
+
+#### Indexing Techniques for Scalable Retrieval
+
+As the volume of embedded chunks grows, searching through all embeddings becomes inefficient. Indexes provide a scalable solution.
+
+- **HNSW (Hierarchical Navigable Small-World graph)**: An in-memory graph-based index structure for efficient approximate similarity search.
+- **IVF (Inverted File Flat)**: A partition-based method that improves performance by narrowing the search scope through clustering.
+
+These indexing strategies significantly reduce computation while maintaining retrieval accuracy.
+
+#### Implementing the Retrieval Pipeline
+
+The retrieval code follows a structured process:
+
+1. **Import Components**:
+   - `RetrievalQA`, `ChatOCIGenAI`, and `OracleVS`.
+
+2. **Create Vector Store**:
+   - Use `OracleVS` with parameters: embedding model, DB connection, table name, and distance strategy.
+
+3. **Configure Retriever**:
+   - Set `search_type = similarity` and `search_kwargs = {"k": 3}` to fetch the top 3 relevant chunks.
+
+4. **Initialize LLM**:
+   - Create with `ChatOCIGenAI`, providing model ID, endpoint, compartment ID, and auth details.
+
+5. **Construct Retrieval Chain**:
+   - Use `RetrievalQA`, attach retriever and LLM, and set `return_source_documents = True`.
+
+6. **Execute Query**:
+   - Invoke the chain with the user’s question to receive the LLM response with source document references.
+
+#### ✅ Summary
+
+This lesson explains how to implement and optimise the retrieval component of a RAG pipeline. By embedding the query, performing vector similarity search using dot or cosine distance, and leveraging efficient index structures like HNSW or IVF, the system retrieves contextually relevant document chunks. These are then passed to an LLM to generate accurate and grounded responses. The complete retrieval pipeline, from setup to execution, is also demonstrated through practical code.
+
 
 ## Demo: LangChain Basics  
-
 ---
+
+#### Key Concepts
+
+- **OCI Generative AI Service Integration**: The demo uses the `ChatOCIGenAI` class from the LangChain community to connect Oracle Cloud Infrastructure's Generative AI capabilities with LangChain applications.
+- **Oracle-Specific Configuration**: Model name, service endpoint, compartment ID, and token limits are passed as parameters for LLM instantiation.
+- **Conversation Memory with Oracle LLMs**: Demonstrates how conversational memory is retained across multiple interactions using Oracle’s Generative AI models with LangChain’s memory components.
+
+#### Using LLMs with LangChain and OCI
+
+The demo begins by showcasing how to configure and call Oracle’s Generative AI service within a LangChain environment.
+
+- **Model Setup**: The `ChatOCIGenAI` class is instantiated with Oracle-specific parameters including model ID, service endpoint, compartment ID, and max tokens.
+- **Query Execution**: The `invoke` method is used to submit a user query with a specified temperature to control the creativity of the response.
+- **Response Handling**: The system prints the LLM’s response, demonstrating the basic call-and-response functionality.
+
+#### Prompt Engineering with Templates
+
+Prompt engineering is demonstrated using static and dynamic prompt templates.
+
+- **Prompt Templates**: Uses a formatted string with placeholders (e.g., `{user_input}`, `{city}`) that are populated at runtime to produce dynamic prompts.
+- **Prompt Invocation**: The combined prompt string is generated and printed using the `invoke` method.
+- **Chaining with LLMs**: Prompts are piped to LLMs using the `|` operator. The chain is then executed with `invoke` to get a final response.
+- **Chat Prompt Template**: Introduces list-based message formatting for more complex conversational inputs, also chained to the LLM and invoked.
+
+#### Managing Conversation Context with Memory
+
+The demo concludes with a demonstration of using memory to retain context across multiple user inputs.
+
+- **Conversation Memory Setup**: Uses `ConversationBufferMemory` with `ConversationChain` to persist previous questions and answers.
+- **State Retention**: After a user introduces their name, the LLM is able to recall it when asked later, thanks to stored interaction history.
+- **Memory Output**: The internal memory state is printed, showing both the inputs and corresponding LLM responses from each step.
+
+#### ✅ Summary
+
+This demo illustrates the integration of Oracle Cloud Infrastructure's Generative AI service with LangChain, covering model invocation, prompt templating, chaining, and memory management. It demonstrates how to create Oracle-specific LLM configurations, generate dynamic prompts, use message-based inputs, and maintain conversational context using memory. All steps are implemented and executed using LangChain’s high-level abstractions in combination with Oracle’s Generative AI service.
+
 
 ## Conversational RAG  
-
 ---
+
+#### Key Concepts
+
+- Retrieval-Augmented Generation (RAG)
+- Query context enhancement
+- Conversational AI and chatbots
+- Memory in chatbot interactions
+- LangChain memory and chain classes
+
+#### RAG in Conversational Systems
+
+RAG enhances the quality of responses in chatbots by retrieving relevant documents and feeding them to a large language model (LLM). This improves the specificity and contextual relevance of answers. In a chatbot setup, each user question is followed by an answer from the LLM, creating a chain of interactions.
+
+The system retrieves relevant documents from a corpus to support each question with factual context. This ensures that answers are grounded in relevant data, rather than relying solely on the LLM’s internal knowledge.
+
+#### Memory for Multi-Turn Dialogue
+
+In chat scenarios, the meaning of a user's question may depend on previous interactions. To handle this, chatbots use a memory mechanism that stores past questions and answers. This memory is continuously updated and used as context in future queries.
+
+For example, if a user asks "Tell me about Las Vegas," followed by "What’s the typical temperature throughout the year?" the second question refers back to the context of Las Vegas. Memory ensures this connection is maintained.
+
+LangChain simplifies the implementation of such memory mechanisms by offering built-in memory and chain classes.
+
+#### ✅ Summary
+
+This class focused on the role of RAG in building conversational chatbots. It highlighted how document retrieval and conversation memory are used together to provide accurate and contextually rich answers. LangChain tools assist in managing memory and implementing multi-turn dialogue for enhanced user interactions.
+
 
 ## Demo: RAG with Oracle Database 23ai  
-
 ---
+
+### Key Concepts
+
+- **Oracle Autonomous Database (23ai)**: A cloud-native, serverless database offering used for storing and querying data in this demo.
+- **Oracle Vector Store**: A specialized storage mechanism in Oracle 23ai that supports vector embeddings for similarity search and Retrieval-Augmented Generation (RAG).
+- **OCI Generative AI Embeddings & Chat Models**: Oracle Cloud Infrastructure (OCI) models used for generating embeddings and handling user prompts within the RAG pipeline.
+- **oracledb Python Library**: A Python library used to connect to Oracle databases and perform operations programmatically.
+- **RAG Pipeline Implementation**: Retrieval-Augmented Generation workflow integrating Oracle Vector Store, embeddings, document ingestion, and query resolution.
+
+#### Autonomous Database Creation and Setup
+
+The demo begins by creating an Oracle Autonomous Database through the Oracle Cloud Console. The user:
+
+- Provides a display/database name and selects a compartment.
+- Chooses **Data Warehouse** as the workload type and **Serverless** as the deployment.
+- Configures admin credentials and IP-based secure access.
+- Obtains the database connection string, which will be used later with the `oracledb` Python library.
+
+Once the database is set up, access control and connectivity are verified.
+
+#### PDF Processing and Document Ingestion into Oracle Vector Store
+
+##### Text Extraction and Splitting
+
+- A `PdfReader` object is used to read and extract text from the uploaded PDF.
+- A character text splitter is configured with a separator (`.`), `chunk_size`, and `chunk_overlap` to maintain semantic coherence across document segments.
+
+##### Chunk Conversion to Documents
+
+- Each text chunk is converted into a structured document using metadata and content.
+- These documents are transformed into a format suitable for ingestion into Oracle Vector Store.
+
+##### Embedding and Storage
+
+- The `OCIGenerativeAIEmbeddings` class is used to generate embeddings from the documents.
+- Using the `OracleVectorStore.from_documents()` method, documents are embedded and stored in a database table along with their metadata and embeddings.
+
+The table structure includes:
+- Primary key
+- Text content
+- Metadata
+- Embedding vector
+
+#### Query Execution Using RAG and Vector Retrieval
+
+##### Vector Search Setup
+
+- The database is reconnected using `oracledb`, and a new chat model (`ChatOCIGenAI`) and embed model are instantiated.
+- A prompt template is defined to combine the user’s question with retrieved context.
+
+##### Retrieval and Chain Construction
+
+- A vector store object is instantiated using the existing table.
+- A retriever is created with similarity-based search, configured to fetch the top 3 matching documents.
+- A chain is built using:
+  - Retrieved documents as context
+  - `RunnablePassthrough` for forwarding the user’s query
+  - A prompt to generate the final LLM response
+
+##### RAG Execution
+
+- A user question is submitted:  
+  _"Tell us about Module 4 of AI Foundation Certification Course."_
+- The LLM correctly responds using the relevant retrieved document:  
+  _"According to the provided context, Module 4 of the AI Foundation Certification Course is about Generative AI and LLMs."_
+
+### ✅ Summary
+
+This class demonstrated the full pipeline for implementing Retrieval-Augmented Generation (RAG) using Oracle 23ai. Starting with Autonomous Database creation, it showed how to ingest PDF data, generate embeddings, and store them in Oracle Vector Store. It concluded by executing similarity-based vector retrieval and using an Oracle-hosted LLM to generate context-aware responses. This workflow enables powerful enterprise-grade AI capabilities entirely within the Oracle ecosystem.
+
 
 ## Skill Check: RAG Using Generative AI Service and Oracle 23ai Vector Search  
 
