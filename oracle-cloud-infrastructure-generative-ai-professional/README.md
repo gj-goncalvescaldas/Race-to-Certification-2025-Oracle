@@ -1898,14 +1898,110 @@ This class demonstrated the full pipeline for implementing Retrieval-Augmented G
 
 
 ## Skill Check: RAG Using Generative AI Service and Oracle 23ai Vector Search  
-
 ---
+
+### ✅ 1. What is the purpose of memory in the LangChain framework?
+**Correct Answer:** To store various types of data and provide algorithms for summarizing past interactions  
+**Explanation:**  
+Memory in LangChain acts as a dynamic repository that retains and manages information during operations. It helps maintain state and context across interactions, allowing chains to access and use prior inputs or outputs. This supports continuity in conversations or tasks, making it more intelligent and responsive.
+
+### ✅ 2. What is the LCEL in the context of LangChain chains?
+**Correct Answer:** A declarative way to compose chains together using LangChain Expression Language  
+**Explanation:**  
+LCEL (LangChain Expression Language) is a structured, declarative syntax used within LangChain to define and combine chains. It enables clear and maintainable configuration of how components interact. It's a modern feature of LangChain used to streamline and clarify chain design.
+
+### ✅ 3. How are prompt templates typically designed for language models?
+**Correct Answer:** As predefined recipes that guide the generation of language model prompts  
+**Explanation:**  
+Prompt templates serve as predefined patterns or "recipes" used to consistently generate input for language models. They often include placeholders that can be filled dynamically with user queries or contextual information. This ensures coherence and repeatability.
+
+### ✅ 4. What differentiates semantic search from traditional keyword search?
+**Correct Answer:** It involves understanding the intent and context of the search.  
+**Explanation:**  
+Semantic search goes beyond literal keyword matching by interpreting the meaning and context of a query. This allows for more accurate and relevant results. Traditional search simply matches exact words or frequency.
+
+### ✅ 5. What is a key characteristic of Large Language Models (LLMs) without Retrieval Augmented Generation (RAG)?
+**Correct Answer:** They rely on internal knowledge learned during pretraining on a large text corpus.  
+**Explanation:**  
+LLMs without RAG generate responses using knowledge they've acquired from extensive pretraining. They do not access external sources like vector databases. RAG enhances them with real-time retrieval, but by default, they rely on internal learned information.
 
 ## 4. Chatbot using Generative AI Agent Service
 
-## Oracle Generative AI Agent  
+## Oracle Generative AI Agents 
 
----
+### Key Concepts
+- **Generative AI Agents**: Fully managed services in OCI that combine large language models (LLMs) with intelligent retrieval systems.
+- **LLM Core Functions**: Reasoning, acting, persona management, and planning.
+- **RAG (Retrieval-Augmented Generation)**: Enhances responses by grounding them in external data sources.
+- **Data Ingestion**: Structured process of importing data into a knowledge base from sources like object storage or Oracle DB.
+- **Agent Workflow**: Encompasses knowledge base creation, agent configuration, endpoint setup, and interaction.
+- **Moderation & Traceability**: Systems to ensure safe, trackable, and source-based agent responses.
+
+#### OCI Generative AI Agent Architecture
+
+- **User Interface**: Can be a chatbot, web app, or voice assistant where users submit prompts or commands.
+- **Memory**: Retains short and long-term context for continuity across interactions.
+- **Tools Integration**: APIs, databases, or third-party systems can be used to extend functionality.
+- **Prompt**: Directs the LLM on how to interpret and respond to user input.
+- **LLM Operations**:
+  - *Reasoning*: Generates logical and coherent answers.
+  - *Acting*: Executes actions like API calls or DB queries.
+  - *Persona*: Maintains consistent tone and brand alignment.
+  - *Planning*: Structures multi-step workflows.
+- **Knowledge Access**: Integrates with external databases, documents, and RAG to ensure grounded and current responses.
+- **Feedback Loop**: Responses can be fed back into memory, improving future output.
+
+#### Data Sources and Knowledge Base Structure
+
+- **Data Store**: The physical repository (e.g., object storage, databases).
+- **Data Source**: Connection interface to access the data store.
+- **Knowledge Base**: Vectorized and structured content ingested from the source, optimized for retrieval.
+
+**Data Ingestion Options**:
+1. **Object Storage**:
+   - Supports PDF and TXT files (max 100MB each).
+   - Allows charts (2D, labeled), tables, and links.
+   - Only one bucket per data source.
+   - Ideal for managed ingestion scenarios.
+
+2. **Oracle Database 23ai**:
+   - Requires pre-structured tables with `DOCID`, `body`, `vector`.
+   - Must define a vector search function (e.g., `retrieval_func_ai`) using parameters like `p_query` and `top_k`.
+   - Embedding model must match for ingestion and query.
+   - Returns results with `DOCID`, `body`, `score`.
+
+#### Agent Configuration & Workflow
+
+1. **Knowledge Base Setup**:
+   - Define name, compartment, and data source type (Object Storage or Oracle DB).
+   - Enable hybrid search (semantic + lexical).
+   - Upload data and trigger ingestion manually or automatically.
+
+2. **Agent Creation**:
+   - Assign a welcome message and RAG instructions.
+   - Connect to a specific knowledge base.
+   - Agent is now ready for deployment.
+
+3. **Endpoint Creation**:
+   - Facilitates external communication with the agent.
+   - Configurable features: session context, trace, moderation, citation.
+
+4. **Chat Interaction**:
+   - End-users engage with the agent via the endpoint.
+   - Agent provides citations (grounding to data) and traces (conversation history).
+
+#### Additional Concepts
+
+- **Session**: A single user-agent interaction maintaining continuity.
+- **Agent Endpoint**: Communication interface for the agent to connect with services.
+- **Trace**: Historical record of user prompts and agent replies.
+- **Citation**: Metadata for grounding answers to original documents.
+- **Content Moderation**: Filters out harmful or sensitive content in input/output.
+
+#### ✅ Summary
+
+This lesson introduced Oracle Generative AI Agents, detailing their purpose, architecture, and deployment workflow. These agents harness LLMs combined with external data (via RAG) to produce intelligent, grounded, and context-aware responses. By integrating structured ingestion from object storage or Oracle Database 23ai, users can deploy scalable, secure, and adaptable AI solutions for enterprise use. Configuration of sessions, endpoints, moderation, and citation features enhances control, traceability, and safety. The lesson also outlines setup guidelines and best practices to ensure successful implementation.
+
 
 ## Chatbot Demo using Object Store  
 
