@@ -84,9 +84,9 @@ Certified on **[Insert Date After Passing]**
 ### 5. Chatbot using Generative AI Agent Service
 
 - [x] Oracle Generative AI Agent *(18 min)* – ✅ [See Summary](#oracle-generative-ai-agents)  
-- [ ] Chatbot Demo using Object Store *(16 min)* – ✅ [See Summary](#chatbot-demo-using-object-store)  
-- [ ] Chatbot Demo using Oracle 23ai *(17 min)* – ✅ [See Summary](#chatbot-demo-using-oracle-23ai)  
-- [ ] Skill Check: Chatbot Using Generative AI Agent Service – ✅ [See Summary](#skill-check-chatbot-using-generative-ai-agent-service)
+- [x] Chatbot Demo using Object Store *(16 min)* – ✅ [See Summary](#chatbot-demo-using-object-store)  
+- [x] Chatbot Demo using Oracle 23ai *(17 min)* – ✅ [See Summary](#chatbot-demo-using-oracle-23ai)  
+- [x] Skill Check: Chatbot Using Generative AI Agent Service – ✅ [See Summary](#skill-check-chatbot-using-generative-ai-agent-service)
 
 ---
 
