@@ -2004,13 +2004,192 @@ This lesson introduced Oracle Generative AI Agents, detailing their purpose, arc
 
 
 ## Chatbot Demo using Object Store  
-
 ---
+
+#### Key Concepts
+
+- **OCI Generative AI Agents**: A fully managed Oracle Cloud Infrastructure (OCI) service that allows users to create and deploy AI-powered conversational agents based on data stored in Oracle services.
+- **Knowledge Base**: A core component that serves as the foundation for the agent’s responses. Built from supported file types (text or PDF) in object storage or other supported services, it must undergo data ingestion before being usable.
+- **Object Storage as Data Source**: The demo focuses on using OCI Object Storage to host the knowledge base documents for the AI agent.
+- **Hybrid Search (Lexical + Semantic)**: Combines keyword-based search and vector-based semantic search for more accurate retrieval, enabling effective use of Retrieval-Augmented Generation (RAG).
+- **Agent Endpoints**: These endpoints are required to interact with the deployed agent and allow configuration options like session retention, citation tracking, and content moderation.
+
+#### Creating a Knowledge Base with Object Storage
+
+The process begins with navigating to the "Generative AI Agents" section under OCI’s Analytics and AI menu. The creation of a knowledge base follows these steps:
+
+##### Selecting Data Source
+- Object Storage is selected as the data source type.
+- Only `.txt` and `.pdf` files are supported (up to 1,000 files, 100 MB each).
+- Files are selected from an existing bucket. In this demo: `faq.txt` and `oci-ai-foundations.pdf`.
+
+##### Enabling Hybrid Search
+- Hybrid search allows for both lexical and semantic search.
+- This approach enhances retrieval accuracy, which is key to the Retrieval-Augmented Generation (RAG) technique.
+
+##### Ingesting Data
+- Data ingestion must be initiated to make the files usable by the agent.
+- Ingestion logs can be checked to confirm file success or diagnose failures.
+- Failed jobs can be re-run, and the system intelligently skips previously successful ingestions.
+
+##### Managing Knowledge Bases and Sources
+- Only one data source is allowed per knowledge base.
+- Deleting a knowledge base requires first deleting its data source and dependent agents.
+- Data sources can be updated with new files, and ingestion jobs must be re-run afterward.
+
+#### Creating and Configuring an AI Agent
+
+Once the knowledge base is created, the next step is to create the generative AI agent that will use this data.
+
+##### Agent Setup
+- After creating the agent, an endpoint is generated either automatically or manually.
+- This endpoint is required for chat interactions and can be customized.
+
+##### Endpoint Configuration
+- **Session Management**: Maintains conversation memory. Default timeout is 1 hour, configurable up to 7 days.
+- **Content Moderation**: Can be applied to both input and output.
+- **Trace and Citation**: Enable tracking of response origin and interaction history.
+
+##### Editing Endpoints
+- All endpoint settings (trace, citation, session timeout) can be modified post-creation.
+- Some options, like session timeout, are only editable if session is enabled initially.
+
+#### Chatting with the Agent
+
+Once the endpoint is active, the agent can be tested via the OCI interface.
+
+- Users can initiate a chat using the agent and endpoint.
+- The welcome message guides users on available capabilities.
+- Users ask questions like “What is Oracle Free Tier?” and receive contextual, cited answers.
+- Citations include document name, object storage path, and source text.
+- Tracing shows the input question, retrieved sources, and generated responses.
+- Session memory enables follow-up questions without restating the context.
+
+#### ✅ Summary
+
+This demo showcased the full workflow of deploying a Generative AI Agent in Oracle Cloud Infrastructure. It demonstrated how to:
+- Create a knowledge base using object storage
+- Ingest data and validate ingestion logs
+- Configure a conversational AI agent and its endpoint
+- Chat with the agent using session-aware context and citation-backed responses
+
+The class highlights Oracle’s support for secure, flexible generative AI use cases within enterprise environments using native services and integrations.
 
 ## Chatbot Demo using Oracle 23ai  
-
 ---
+
+#### Key Concepts
+
+- **Oracle Autonomous Database (23ai)**: A self-managing, self-securing, and self-repairing cloud database, used in this demo to store and vectorize data for use in a generative AI agent.
+- **Generative AI Agents on OCI**: A managed service that enables building conversational agents backed by structured or unstructured data, including Oracle Database and Object Storage.
+- **Oracle AI Vector Search**: A feature that allows storing and querying vectorized data (e.g., text embeddings), essential for semantic search and Retrieval-Augmented Generation (RAG).
+- **Database Tools Connection**: OCI’s secure method for connecting to Autonomous Databases using stored secrets and private endpoints.
+- **Vault and Secrets Management**: Used to securely store and manage database credentials for secure access from OCI services.
+- **Retrieval Function for AI Agents**: A user-defined SQL function that allows generative agents to retrieve relevant vectorized chunks from a vector table.
+
+#### Creating and Connecting to an Autonomous Database
+
+The demo begins with the creation of an Autonomous Database using the **Oracle Database 23ai** engine:
+
+- **Database Configuration**: Deployed as a serverless data warehouse with private endpoint access.
+- **Security Setup**: Uses an existing VCN and disables mutual TLS for simplicity.
+- **Private Endpoint and Connection Strings**: Key values are stored for later use in establishing database connections.
+
+##### Creating Database Tool Connection
+
+- **OCI Navigation**: From Developer Services → Database Tools → Connections.
+- **Connection Details**: Includes selection of Autonomous Database, admin user credentials, and referencing vault-stored secrets.
+- **Validation**: Ensures connectivity and secure configuration with validation step.
+
+#### Preparing Vector Data for AI Search
+
+A critical part of the workflow involves loading and embedding text data:
+
+##### Ingesting and Vectorizing Text Files
+
+- A `.txt` file is uploaded to an object storage bucket (`faq.txt`) and made accessible via a preauthenticated link.
+- SQL scripts are executed in SQL Worksheet to:
+  - Create access control lists.
+  - Define credentials for embedding access to Oracle Generative AI Service.
+  - Test vector generation using the `cohere.embed-multilingual-v3.0` model.
+
+##### Chunking and Vector Table Creation
+
+- The text file is divided into smaller parts (chunks) and loaded into a table `AI_EXTRACTED_DATA`.
+- A corresponding vector table `AI_EXTRACTED_DATA_VECTOR` is created and populated using embeddings.
+- A custom retrieval function `RETRIEVAL_FUNC_AI` is created to fetch relevant vector data based on a user query.
+
+#### Building and Testing the Generative AI Agent
+
+Once data is vectorized and stored in the database, the Generative AI Agent setup begins:
+
+##### Creating a Knowledge Base
+
+- From the Generative AI Agents UI, a **Knowledge Base** is created using Oracle AI Vector Search.
+- It references:
+  - The Database Tool connection (`demoagent`)
+  - The custom retrieval function (`RETRIEVAL_FUNC_AI`)
+
+##### Creating an Agent and Endpoint
+
+- An agent is created with a custom welcome message.
+- An endpoint is automatically generated for interfacing with the agent.
+- License and acceptable use terms must be accepted before activation.
+
+##### Chatting with the Agent
+
+- Users interact with the deployed agent through the web UI.
+- Sample question: “Tell me about Oracle Free Tier”
+- The agent returns answers with:
+  - **Traces** showing input/output
+  - **Citations** referencing exact document sources
+
+#### ✅ Summary
+
+This demo showcased how to create a fully functional Generative AI Agent in Oracle Cloud Infrastructure using data stored in an Autonomous Database 23ai. Key steps included:
+
+- Creating a private Autonomous Database
+- Vectorizing unstructured text data using Oracle’s embedding model
+- Creating a vector table and retrieval function
+- Configuring a Knowledge Base and deploying a Generative AI Agent with an endpoint
+- Demonstrating chat interaction with citations and traceability
+
+The process highlights Oracle’s integration of database, AI, and security tools to power intelligent conversational agents with enterprise-grade infrastructure.
 
 ## Skill Check: Chatbot Using Generative AI Agent Service  
-
 ---
+
+#### 1. Which field is optional when setting up the Oracle Database 23ai table for Generative AI Agents?
+
+✅ Correct Answer: TITLE
+
+🧠 Explanation:  
+According to the content, when setting up a table in Oracle Database 23ai for Generative AI Agents, the fields **DOCID**, **BODY**, and **VECTOR** are required. **TITLE** is optional and not necessary for the table to function properly.
+
+#### 2. What happens when you restart a previously run ingestion job in OCI Generative AI Agents?
+
+✅ Correct Answer: Only files that failed in the earlier attempt and have since been updated are ingested.
+
+🧠 Explanation:  
+When a previously run ingestion job is restarted, the system intelligently skips files that were already successfully ingested. It focuses only on those that had failed previously and have been updated, improving efficiency and avoiding redundant processing.
+
+#### 3. In the context of OCI Generative AI Agents, what does "Groundedness" mean?
+
+✅ Correct Answer: The model's ability to generate responses that can be traced back to data sources.
+
+🧠 Explanation:  
+"Groundedness" refers to how reliably the model’s output is tied to specific and verifiable data sources. This ensures the generated responses are accurate and can be validated against the underlying content, rather than being generic or fabricated.
+
+#### 4. What is the maximum number of endpoints you can create per agent by default in OCI Generative AI Agents?
+
+✅ Correct Answer: 3
+
+🧠 Explanation:  
+By default, OCI Generative AI Agents allow the creation of up to **three endpoints** per agent. This sets a clear limit on how many separate access points can be defined for each agent.
+
+#### 5. How should you handle a data source in OCI Generative AI Agents if your data is not ready yet?
+
+✅ Correct Answer: Create an empty folder for the data source and populate it later.
+
+🧠 Explanation:  
+If the data isn’t available at setup time, the correct approach is to create an **empty folder** as a placeholder. You can upload the actual data later, and the system will ingest it once it's present. This allows preparation without requiring immediate data readiness.
