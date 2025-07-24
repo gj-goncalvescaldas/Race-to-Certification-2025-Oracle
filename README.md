@@ -12,6 +12,10 @@ This section showcases all certifications I’ve earned as part of the **Race to
 
 <img src="oracle-cloud-infrastructure-ai-foundations/img/10.png" alt="Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate" width="600"/>
 
+### 🏅 Oracle Cloud Infrastructure 2025 Generative AI Certified Professional
+
+<img src="oracle-cloud-infrastructure-generative-ai-professional/img/11.png" alt="Oracle Cloud Infrastructure 2025 Generative AI Certified Professional" width="600"/>
+
 ---
 
 Welcome to my personal journey toward Oracle Cloud Infrastructure (OCI) certification, as part of the **Race to Certification 2025** program by Oracle — an amazing opportunity to get certified for free between **July 1 and October 31, 2025**.
