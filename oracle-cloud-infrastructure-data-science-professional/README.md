@@ -13,7 +13,7 @@ _A comprehensive guide based on the official Oracle Data Science Professional Co
 
 ## 🏅 Certification  
 
-![OCI Data Science Certificate](oracle-cloud-infrastructure-generative-ai-professional/img/1.jpg)  
+![OCI Data Science Certificate](../oracle-cloud-infrastructure-generative-ai-professional/img/1.jpg)  
 
 **Oracle Cloud Infrastructure 2025 Data Science Certified Professional**  
 Certified on **[Insert Date After Passing]**  
