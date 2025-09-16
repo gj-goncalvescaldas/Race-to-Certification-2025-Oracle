@@ -47,10 +47,10 @@ Certified on **[Insert Date After Passing]**
 
 ### 3. Workspace Design and Setup  
 
-- [ ] Projects *(6 min)* – ✅ [See Summary](#projects)  
-- [ ] Notebook Sessions *(10 min)* – ✅ [See Summary](#notebook-sessions)  
-- [ ] How to Work with JupyterLab *(14 min)* – ✅ [See Summary](#how-to-work-with-jupyterlab)  
-- [ ] Conda Environments: Overview *(8 min)* – ✅ [See Summary](#conda-environments-overview)  
+- [x] Projects *(6 min)* – ✅ [See Summary](#projects)  
+- [x] Notebook Sessions *(10 min)* – ✅ [See Summary](#notebook-sessions)  
+- [x] How to Work with JupyterLab *(14 min)* – ✅ [See Summary](#how-to-work-with-jupyterlab)  
+- [x] Conda Environments: Overview *(8 min)* – ✅ [See Summary](#conda-environments-overview)  
 - [ ] Data Science Conda Environments *(15 min)* – ✅ [See Summary](#data-science-conda-environments)  
 - [ ] Manage Conda Environments *(11 min)* – ✅ [See Summary](#manage-conda-environments)  
 - [ ] Demo: Manage Conda Environments *(16 min)* – ✅ [See Summary](#demo-manage-conda-environments)  
@@ -452,19 +452,191 @@ This lesson covers authenticating OCI APIs for data science workloads. It introd
 
 #### Projects  
 
----  
+---
+
+## Key Concepts
+- **Data Science Project** – A collaborative workspace for teams to organize resources and work around a specific use case or business question.  
+- **Resources within Projects** – Includes notebook sessions, models, and other data science artifacts associated with a project.  
+- **Creation Methods** – Projects can be created via the OCI Console UI or programmatically using the ADS SDK.  
+- **Project Metadata** – Includes display name, description, OCID, creation date/time, creator, and tags.  
+- **Project Management** – Viewing, editing, and deleting projects, with specific constraints for deletion.  
+
+#### Creating Projects
+- **From the Console UI:**  
+  - Navigate to Analytics and AI → Data Science → Create Project.  
+  - Select the target compartment, optionally provide a name, description, and tags.  
+  - View the project details immediately after creation.  
+
+- **From the ADS SDK:**  
+  - Use the `ProjectCatalog` object.  
+  - Call the `create_project` method, specifying the compartment ID.  
+  - Environment variables can be used to align with the notebook session’s compartment.  
+
+#### Project Metadata and Organization
+- Projects maintain **metadata**: display name, description, OCID, creation info, and tags.  
+- Editable fields include **display name, description, and tags**.  
+- Tags help in organizing, filtering, and tracking projects effectively.  
+
+#### Managing Projects
+- **Viewing Projects:**  
+  - Access all projects via the Project List page.  
+  - Click a project to view detailed metadata and associated resources.  
+
+- **Editing Projects:**  
+  - Update display name, description, and tags through the Console or SDK.  
+
+- **Deleting Projects:**  
+  - Projects must be empty (no associated notebook sessions or models).  
+  - Delete from List View or Project View, confirming deletion by entering the project name.  
+  - Deleted projects can be filtered out from the active project list.  
+
+## ✅ Summary
+This lesson covers the design and management of **data science workspaces** via projects in OCI. Projects provide a structured environment to organize notebooks, models, and other resources around a specific business use case. Learners are introduced to **creating projects** through the Console UI and ADS SDK, **managing metadata** like names, descriptions, and tags, and **project lifecycle operations** including viewing, editing, and deletion. Proper use of projects ensures organized, collaborative, and maintainable data science workflows.
+
 
 #### Notebook Sessions  
 
----  
+--- 
+
+## Key Concepts
+- **Notebook Sessions** – Managed JupyterLab environments for building, training, and running models in OCI Data Science.  
+- **Managed Infrastructure** – OCI handles compute, storage, software updates, and patching for notebook sessions.  
+- **Compute Shapes** – Support for CPU and GPU shapes to match computational needs.  
+- **Persistent Storage** – Block storage retains notebooks, data, and environments.  
+- **Networking Options** – Default or custom networking for connecting workloads to resources or the internet.  
+- **Lifecycle Management** – Activation, deactivation, scaling, and deletion of notebook sessions.  
+- **Metrics** – CPU, memory, and network usage for monitoring session performance.  
+
+#### Creating Notebook Sessions
+- **From the Console:**  
+  - Navigate to a project → Create Notebook Session.  
+  - Select compartment, optionally provide a name, compute shape, storage size (50–10,240 GB), and networking type.  
+  - Default networking allows quick access to OCI services and internet; custom networking allows connection to pre-existing VCN/subnets.  
+  - Creation takes a few minutes; “Open” button is enabled when active.  
+
+#### Managing Notebook Sessions
+- **Viewing Sessions:**  
+  - All notebook sessions listed on the project’s Notebook Sessions page.  
+  - Metadata includes display name, OCID, creation info, compute shape, storage, VCN/subnet, and tags.  
+
+- **Editing Sessions:**  
+  - Only the display name is editable once the session is active.  
+  - Tags and other settings are viewable across OCI interfaces.  
+
+- **Activating/Deactivating Sessions:**  
+  - Activation provisions compute resources; deactivation shuts down compute but retains block storage.  
+  - Deactivation reduces costs while preserving notebooks and data.  
+  - Reactivation attaches the existing block volume to a new compute instance.  
+  - Compute shape, storage, and network configuration can be adjusted during activation.  
+
+- **Deleting Sessions:**  
+  - Must confirm by entering the display name.  
+  - All files and changes not backed up or committed are lost upon deletion.  
+  - Deletion destroys the compute instance and attached block volume.  
+
+#### Monitoring Metrics
+- Notebook session Details page provides:  
+  - CPU utilization  
+  - Memory usage  
+  - Network traffic (in and out)  
+
+## ✅ Summary
+This lesson introduces **OCI Data Science notebook sessions**, covering their creation, management, and lifecycle. Notebook sessions are fully managed JupyterLab environments supporting both CPU and GPU shapes, with persistent block storage for data and code. Key operations include **activating, deactivating, editing, deleting**, and **monitoring metrics**. Networking options and compute scaling allow flexibility for different workloads. Proper management ensures efficient use of resources, cost control, and preservation of critical project data.
+
 
 #### How to Work with JupyterLab  
 
 ---  
 
+## Key Concepts
+- **JupyterLab** – Web-based user interface for interactive computing, serving as the interface for OCI notebook sessions.  
+- **Integration** – Supports documents, text editors, terminals, notebooks, and custom components.  
+- **File Compatibility** – Handles multiple file types including images, CSV, JSON, Markdown, PDF, Vega, and Vega-Lite.  
+- **Extensions** – Environment Explorer and GitHub integration for managing conda environments and version control.  
+- **Interactive Features** – Code consoles, kernel-backed documents, and live editing across multiple views.  
+- **User Interface Elements** – Menu bar, launcher, left/right sidebars, main work area, and command palette.  
+
+#### JupyterLab Interface Overview
+- **Top Chrome Bar:** Oracle logo, notebook session name, session timeout, Help icon, sign out.  
+- **Left Sidebar:**  
+  - File browser for navigating directories and managing files.  
+  - Terminal and kernel sessions management.  
+  - Git extension for version control.  
+  - Command palette to search and run JupyterLab commands.  
+  - Property Inspector for notebook-specific actions.  
+  - Table of contents for Markdown-based navigation.  
+  - Extensions management.  
+- **Launcher:**  
+  - Quick access to notebooks, consoles, text editors, terminals, Environment Explorer, and notebook examples.  
+  - Right side for creating new files and sessions, selecting kernels, and accessing tutorials.  
+
+#### Notebook Operations
+- **Creating Notebooks:**  
+  - Use the launcher to select a kernel (e.g., Python3) and create a new notebook.  
+  - Tips and environment variables are pre-populated for convenience.  
+  - Renaming notebooks via right-click.  
+- **Running Code:**  
+  - Run cells using the triangle icon, Run menu, or Shift+Enter.  
+  - Cell execution order displayed with numbered output.  
+  - Cell types: Code or Markdown for documentation.  
+  - Merge, split, and reorder cells using Edit menu.  
+- **Kernel Management:**  
+  - Change kernel from the top-right menu.  
+  - Interrupt or shut down kernels when necessary.  
+
+#### Advanced Features
+- **Variable Inspector:** View variables side-by-side with notebook content.  
+- **View Options:**  
+  - Show line numbers, collapse/expand cells and outputs.  
+- **Themes and Settings:** Customize appearance and behavior of JupyterLab.  
+- **File Management:** Create, upload, and interact with various file types; CSV files render with columns and rows.  
+- **Terminal Usage:** Standard Linux commands and pre-installed tools like conda CLI, GIT CLI, and OCI CLI.  
+- **Help Menu:** Access reference material, FAQs, and documentation.  
+
+## ✅ Summary
+This lesson provides a comprehensive overview of **JupyterLab in OCI Data Science**, highlighting its interface, features, and functionality. Users can efficiently create, run, and manage notebooks while leveraging integrated tools such as terminals, variable inspector, Environment Explorer, and GitHub extensions. Navigation, customization, and kernel management enable interactive and productive data science workflows. The lesson emphasizes usability, interactive computing, and multi-format support to streamline development and collaboration within notebook sessions.
+
+
 #### Conda Environments: Overview  
 
 ---  
+
+## Key Concepts
+- **Conda Environment** – Open-source package management system that bundles Python interpreters, libraries, and software into isolated environments.  
+- **Isolation** – Allows separate configurations for different projects, avoiding software conflicts.  
+- **Reproducibility** – Ensures that models and computations can be reproduced over time with consistent software versions.  
+- **Environment Explorer** – GUI tool in OCI Data Science for managing, exploring, and filtering conda environments.  
+- **Types of Conda Environments** – Includes data science managed environments, published (user-managed) environments, and installed environments within notebook sessions.  
+
+#### Benefits of Using Conda
+- Install only required packages or update selectively.  
+- Switch between multiple isolated environments tailored for specific tasks (e.g., computer vision vs. linear regression).  
+- Share environments with team members for consistent collaboration.  
+- Deploy models or run jobs in the same environment used during training, ensuring reproducibility.  
+
+#### Conda Environment Management in OCI
+- **Environment Explorer:**  
+  - Provides card view and list view for managing environments.  
+  - Search and filter by keywords, GPU support, or deprecated status.  
+- **Data Science Conda Environments:**  
+  - Curated and managed by OCI Data Science Service.  
+  - Tailored for specific software frameworks (e.g., PyTorch, TensorFlow), industry verticals (e.g., healthcare), or general-purpose tasks (e.g., exploratory data analysis).  
+- **Published Conda Environments:**  
+  - Created and managed by the user.  
+  - Stored in Object Storage for sharing across notebook sessions, teams, and deployments.  
+- **Installed Conda Environments:**  
+  - Environments installed in individual notebook sessions.  
+  - Required for running notebooks; persist across session deactivation/reactivation as stored on block volume.  
+
+#### Workflow with Conda Environments
+- Select or create a conda environment suitable for your notebook or project.  
+- Use Environment Explorer to manage or filter environments.  
+- Switch between environments for different modeling tasks without conflicts.  
+- Share published environments with teammates for collaboration and consistent reproducibility.  
+- Deploy models or run jobs using the same environment to ensure consistent execution.  
+
+## ✅ Summary
+This lesson provides a detailed overview of **conda environments in OCI Data Science**, highlighting their role in isolating software dependencies, enabling reproducible research, and supporting collaboration. Users can leverage managed data science conda environments or create and share their own published environments. Installed environments in notebook sessions ensure that code runs consistently, and the **Environment Explorer** facilitates efficient management, discovery, and filtering of available environments. Conda environments streamline both model development and deployment while maintaining reproducibility and consistency across projects.
 
 #### Data Science Conda Environments  
 
