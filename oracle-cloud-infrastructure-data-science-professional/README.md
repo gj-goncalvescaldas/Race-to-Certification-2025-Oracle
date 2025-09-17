@@ -51,14 +51,14 @@ Certified on **[Insert Date After Passing]**
 - [x] Notebook Sessions *(10 min)* – ✅ [See Summary](#notebook-sessions)  
 - [x] How to Work with JupyterLab *(14 min)* – ✅ [See Summary](#how-to-work-with-jupyterlab)  
 - [x] Conda Environments: Overview *(8 min)* – ✅ [See Summary](#conda-environments-overview)  
-- [ ] Data Science Conda Environments *(15 min)* – ✅ [See Summary](#data-science-conda-environments)  
-- [ ] Manage Conda Environments *(11 min)* – ✅ [See Summary](#manage-conda-environments)  
-- [ ] Demo: Manage Conda Environments *(16 min)* – ✅ [See Summary](#demo-manage-conda-environments)  
-- [ ] OCI Vault: Introduction *(12 min)* – ✅ [See Summary](#oci-vault-introduction)  
-- [ ] Using OCI Vault in OCI Data Science *(15 min)* – ✅ [See Summary](#using-oci-vault-in-oci-data-science)  
-- [ ] Code Repositories (Git) *(21 min)* – ✅ [See Summary](#code-repositories-git)  
-- [ ] Demo: Code Repositories (Git) *(10 min)* – ✅ [See Summary](#demo-code-repositories-git)  
-- [ ] Skill Check: Workspace Design and Setup – ✅ [See Summary](#skill-check-workspace-design-and-setup)  
+- [x] Data Science Conda Environments *(15 min)* – ✅ [See Summary](#data-science-conda-environments)  
+- [x] Manage Conda Environments *(11 min)* – ✅ [See Summary](#manage-conda-environments)  
+- [x] Demo: Manage Conda Environments *(16 min)* – ✅ [See Summary](#demo-manage-conda-environments)  
+- [x] OCI Vault: Introduction *(12 min)* – ✅ [See Summary](#oci-vault-introduction)  
+- [x] Using OCI Vault in OCI Data Science *(15 min)* – ✅ [See Summary](#using-oci-vault-in-oci-data-science)  
+- [x] Code Repositories (Git) *(21 min)* – ✅ [See Summary](#code-repositories-git)  
+- [x] Demo: Code Repositories (Git) *(10 min)* – ✅ [See Summary](#demo-code-repositories-git)  
+- [x] Skill Check: Workspace Design and Setup – ✅ [See Summary](#skill-check-workspace-design-and-setup)  
 
 ### 4. Machine Learning Lifecycle  
 
@@ -113,13 +113,13 @@ Certified on **[Insert Date After Passing]**
 
 ---  
 
-## 📂 Lesson Notes  
+# 📂 Lesson Notes  
 
 ---  
 
-### 2. Introduction and Configuration  
+# 2. Introduction and Configuration  
 
-#### Data Science: Introduction
+# Data Science: Introduction
 
 ---  
 
@@ -170,7 +170,7 @@ Certified on **[Insert Date After Passing]**
 ## ✅ Summary
 This module introduced **OCI Data Science** and its role in enabling end-to-end machine learning in the cloud. Historical context highlighted the evolution of data science and machine learning. Key OCI principles—productivity, collaboration, and enterprise-grade reliability—were emphasized alongside core features such as projects, notebook sessions, ADS SDK, model catalog, and model deployments. Students are prepared to leverage cloud infrastructure for real-world scenarios, with employee attrition as a primary use case, and to access OCI Data Science via multiple interfaces globally. The next module will cover **provisioning and configuring the cloud environment** to begin hands-on machine learning work.
 
-#### ADS SDK Overview  
+# ADS SDK Overview  
 
 ---  
 
@@ -218,7 +218,7 @@ This module introduced **OCI Data Science** and its role in enabling end-to-end 
 ## ✅ Summary
 This module provided a comprehensive overview of the **ADS SDK**, covering its goals, installation methods, and integration with OCI services. Key functionalities include connecting to diverse data sources, exploratory analysis, feature engineering, AutoML, hyperparameter tuning, evaluation, and model interpretability. The SDK simplifies model deployment and monitoring in production while supporting a variety of ML frameworks. By using ADS, data scientists can accelerate workflows, ensure model reliability, and integrate seamlessly with OCI for enterprise-grade ML operations.
 
-#### Tenancy Configuration Basics  
+# Tenancy Configuration Basics  
 
 --- 
 
@@ -282,7 +282,7 @@ This module provided a comprehensive overview of the **ADS SDK**, covering its g
 This module covered **OCI tenancy configuration basics** for Data Science. Key components include **compartments** for organizing resources, **user groups** and **dynamic groups** for access management, and **policies** for defining permissions. The lesson explained **matching rules** for dynamic groups, **policy syntax and verbs**, and both **required and optional policies** for data science operations. Practical demonstrations included creating compartments, users, groups, dynamic groups, and applying policies to manage access effectively. The knowledge from this module ensures secure, structured, and efficient management of OCI Data Science resources.
 
 
-#### Configure a Tenancy with OCI Resource Manager  
+# Configure a Tenancy with OCI Resource Manager  
 
 ---  
 
@@ -326,7 +326,7 @@ This module covered **OCI tenancy configuration basics** for Data Science. Key c
 ## ✅ Summary
 This module focused on automating OCI Data Science tenancy configuration using **OCI Resource Manager**. The **Data Science Service template** simplifies setup by creating user groups, dynamic groups, and essential policies automatically. Users can deploy these resources by running an ORM stack and then adding users to the created groups. For users preferring code-based configuration, a **Terraform script** is available on GitHub. This approach ensures consistent, repeatable, and efficient setup of OCI Data Science resources.
 
-#### Networking for Data Science  
+# Networking for Data Science  
 
 ---
 
@@ -374,7 +374,7 @@ This module focused on automating OCI Data Science tenancy configuration using *
 This lesson introduced the key **cloud networking components** required for OCI Data Science, including VCNs, subnets, VNICs, DRGs, NAT, and service gateways. It explained how these components fit together to enable **connectivity for data science workloads** and outlined the two network configuration patterns: **default networking** for quick access to the internet and OCI services, and **custom networking** for private network access. Finally, the VCN Wizard provides a streamlined way to set up networking if not already configured via OCI Resource Manager.
 
 
-#### Authenticate to OCI APIs  
+# Authenticate to OCI APIs  
 
 ---  
 
@@ -408,7 +408,7 @@ This lesson introduced the key **cloud networking components** required for OCI 
 This lesson covers authenticating OCI APIs for data science workloads. It introduces **resource principals** as a secure and practical method for authenticating notebook sessions and job runs without storing credentials. Alternative authentication via **OCI configuration files and API keys** is explained for personal IAM users. Guidance is provided on using these authentication methods across ADS SDK, OCI Python SDK, and OCI CLI, emphasizing the differences and cache behavior of resource principal tokens. This ensures secure, flexible access to OCI resources for both interactive and automated workloads.
 
 
-#### Skill Check: Introduction and Configuration  
+# Skill Check: Introduction and Configuration  
 
 ---
 
@@ -448,9 +448,9 @@ This lesson covers authenticating OCI APIs for data science workloads. It introd
 🧠 Explanation: The OCI Console provides a graphical interface that allows interaction with Data Science services without scripting, but it can also support scripted operations in some cases. REST API, SDKs, and CLI require scripting or programming to interact with services.
 
 
-### 3. Workspace Design and Setup  
+# 3. Workspace Design and Setup  
 
-#### Projects  
+# Projects  
 
 ---
 
@@ -494,7 +494,7 @@ This lesson covers authenticating OCI APIs for data science workloads. It introd
 This lesson covers the design and management of **data science workspaces** via projects in OCI. Projects provide a structured environment to organize notebooks, models, and other resources around a specific business use case. Learners are introduced to **creating projects** through the Console UI and ADS SDK, **managing metadata** like names, descriptions, and tags, and **project lifecycle operations** including viewing, editing, and deletion. Proper use of projects ensures organized, collaborative, and maintainable data science workflows.
 
 
-#### Notebook Sessions  
+# Notebook Sessions  
 
 --- 
 
@@ -544,7 +544,7 @@ This lesson covers the design and management of **data science workspaces** via 
 This lesson introduces **OCI Data Science notebook sessions**, covering their creation, management, and lifecycle. Notebook sessions are fully managed JupyterLab environments supporting both CPU and GPU shapes, with persistent block storage for data and code. Key operations include **activating, deactivating, editing, deleting**, and **monitoring metrics**. Networking options and compute scaling allow flexibility for different workloads. Proper management ensures efficient use of resources, cost control, and preservation of critical project data.
 
 
-#### How to Work with JupyterLab  
+# How to Work with JupyterLab  
 
 ---  
 
@@ -597,7 +597,7 @@ This lesson introduces **OCI Data Science notebook sessions**, covering their cr
 This lesson provides a comprehensive overview of **JupyterLab in OCI Data Science**, highlighting its interface, features, and functionality. Users can efficiently create, run, and manage notebooks while leveraging integrated tools such as terminals, variable inspector, Environment Explorer, and GitHub extensions. Navigation, customization, and kernel management enable interactive and productive data science workflows. The lesson emphasizes usability, interactive computing, and multi-format support to streamline development and collaboration within notebook sessions.
 
 
-#### Conda Environments: Overview  
+# Conda Environments: Overview  
 
 ---  
 
@@ -638,208 +638,565 @@ This lesson provides a comprehensive overview of **JupyterLab in OCI Data Scienc
 ## ✅ Summary
 This lesson provides a detailed overview of **conda environments in OCI Data Science**, highlighting their role in isolating software dependencies, enabling reproducible research, and supporting collaboration. Users can leverage managed data science conda environments or create and share their own published environments. Installed environments in notebook sessions ensure that code runs consistently, and the **Environment Explorer** facilitates efficient management, discovery, and filtering of available environments. Conda environments streamline both model development and deployment while maintaining reproducibility and consistency across projects.
 
-#### Data Science Conda Environments  
+# Data Science Conda Environments  
+
+--- 
+
+## Key Concepts
+- **Data Science Conda Pack** – Pre-made, curated conda environments provided by Oracle for data science projects, including necessary software and libraries.  
+- **Environment Explorer** – GUI tool in JupyterLab to browse, manage, and access conda environments.  
+- **Conda Environment Types** – Includes application-based, use case-based, and family/grouping by Python version and architecture.  
+- **Naming Conventions** – Environments are named based on application or use case, architecture, Python version, and sometimes version of included software.  
+- **Popular Use Cases** – Includes computer vision, data exploration, machine learning, natural language processing, ONNX models, Oracle databases, and frameworks like PyTorch, PySpark, and TensorFlow.  
+
+#### Benefits of Oracle Data Science Conda Environments
+- Pre-built for specific tasks or software applications.  
+- Includes OCI Python SDK and ADS SDK.  
+- Provides access to advanced features such as AutoML and model explainability in select environments.  
+- Ensures consistency across notebook sessions, model training, and deployment.  
+
+#### Types and Families of Conda Environments
+- **Application-Based Conda Environments** – Focused on software frameworks (e.g., PyTorch, TensorFlow, ONNX, PySpark).  
+- **Use Case-Based Conda Environments** – Tailored for tasks such as computer vision, data exploration, natural language processing, and financial analytics.  
+- **Conda Environment Families** – Grouped by Python version and architecture (CPU/GPU). Multiple versions may exist for the same environment with software updates.  
+
+#### Popular Conda Environments and Their Features
+- **Computer Vision** – Supports image/video processing, object detection, facial recognition, and image stitching. Includes libraries such as scikit-image, Pillow, OpenCV, and PyTorch.  
+- **Data Exploration and Manipulation** – For data ingestion, visualization, and streaming. Includes pandas, Matplotlib, Seaborn, Plotly, Bokeh, and Kafka Python library.  
+- **General Machine Learning** – Covers data manipulation, supervised learning, AutoML, and model explainability. Includes xgboost, lightgbm, Keras, TensorFlow, Oracle AutoML, and MLX.  
+- **Natural Language Processing (NLP)** – For text extraction, key phrase extraction, POS tagging, and deep learning tasks. Includes nltk, KeyBERT, transformers, PyTorch Lightning, and SimpleTransformers.  
+- **ONNX Environment** – For portable model formats, conversion between frameworks, and inferencing with ONNX Runtime.  
+- **Oracle Database** – Supports Autonomous and on-premise databases (ATP, ADW). Includes ipython-sql, SQL Alchemy, and ADS Connector for ETL, batch processing, and queries.  
+- **PyTorch** – Deep learning framework with GPU and CPU acceleration, used for computer vision, NLP, and general ML.  
+- **PySpark** – Python API for Apache Spark, supports distributed computing and MLlib for machine learning.  
+- **TensorFlow** – Ecosystem for training and deploying deep neural networks. Includes TensorBoard for visualization and ADS for workflow acceleration.  
+
+#### Naming Conventions
+- **Application-Based** – `[Software] [Version] for [Architecture] on Python [Version]`. Example: `PyTorch 1.10 for GPU on Python 3.7`.  
+- **Use Case-Based** – `[Task] for [Architecture] on Python [Version]`. Example: `Data Exploration and Manipulation for CPU on Python 3.7`.  
+
+## ✅ Summary
+Oracle Data Science provides curated **conda packs** to simplify the setup and management of software environments for data science projects. These environments are pre-configured for specific applications or use cases, include key libraries and frameworks, and are organized by Python version and architecture. Users can select the most appropriate environment for tasks such as computer vision, NLP, machine learning, ONNX model execution, database interaction, or distributed computing with PySpark. The **Environment Explorer** in JupyterLab facilitates discovery, management, and customization of these environments, ensuring reproducibility, consistency, and efficiency across notebook sessions, model training, and deployment.
+
+
+# Manage Conda Environments  
+
+---
+
+## Key Concepts
+- **Conda Environment** – A collection of software and libraries bundled together to provide isolated and reproducible setups for data science projects.  
+- **odsc CLI** – Oracle Data Science command line tool to manage conda environments with more control than the GUI Environment Explorer.  
+- **Environment Explorer** – GUI interface for browsing, managing, and accessing conda environments.  
+- **Conda Functionalities via odsc** – Includes browsing, searching, installing, cloning, modifying, publishing, deleting, and creating environments from YAML files.  
+- **Slug** – Unique identifier for a conda environment used in commands.  
+- **Published Conda** – Custom conda environments shared via Oracle Object Storage for model deployment and team collaboration.  
+
+#### Browsing and Searching Conda Environments
+- **Browsing** – Use `odsc conda list` to see details such as name, slug, description, and key libraries.  
+  - `odsc conda list --local` lists installed environments in the notebook session.  
+  - `odsc conda list --override` lists published environments in object storage.  
+- **Searching** – Combine `odsc conda list` with Unix tools like `grep`, `awk`, or `perl` to filter YAML details.  
+  - Example: `odsc conda list | grep <pattern>` to extract specific names or slugs.  
+
+#### Installing Conda Environments
+- Install managed or published conda environments:  
+  - `odsc conda install --slug <slug>` for data science conda environments.  
+  - `odsc conda install --slug <slug> --override` for published environments in object storage.  
+
+#### Cloning Conda Environments
+- Clone existing environments to create a new custom environment:  
+  - `odsc conda clone --from-env <source_slug> --env <new_name>`  
+  - Generates a new slug automatically for identification.  
+
+#### Modifying Conda Environments
+- Use standard conda commands to modify environments:  
+  - Activate environment: `conda activate /home/datascience/conda/<slug>`  
+  - Install or upgrade packages: `python3 -m pip install <package> --upgrade`  
+- Ensures changes only affect the specific environment without altering others.  
+
+#### Publishing Conda Environments
+- Share environments via Object Storage for team use, jobs, and model deployment:  
+  1. Initialize bucket once per notebook session:  
+     - `odsc conda init --bucket_namespace <namespace> --bucket_name <bucket>`  
+  2. Publish environment: `odsc conda publish --slug <slug>`  
+
+#### Deleting Conda Environments
+- Remove unneeded environments to free up space:  
+  - `odsc conda delete --slug <slug>`  
+
+#### Creating Conda Environments from YAML
+- Create environments from scratch using a manifest YAML file:  
+  - `odsc conda create --file <yaml_file>`  
+  - Optional `--empty` flag prevents base packages from being installed.  
+- Base packages include essential tools for notebook sessions.  
+
+## ✅ Summary
+Managing conda environments in Oracle Cloud Data Science Service can be done through both the **Environment Explorer GUI** and the **odsc CLI**. The odsc command provides full control over environments, enabling users to browse, search, install, clone, modify, publish, delete, and create conda environments. Custom and published environments can be shared across teams and used in model deployment and jobs, ensuring reproducibility and flexibility. By combining odsc commands with Unix tools, users can efficiently navigate and manipulate their conda setups, supporting consistent and streamlined data science workflows.
+
+
+# Demo: Manage Conda Environments  
+
+---
+
+
+## Key Concepts
+- **ODSC CLI** – Oracle Data Science command-line tool for managing conda environments with full control over browsing, installing, cloning, modifying, publishing, deleting, and creating environments.  
+- **Data Science Service Conda Packs** – Pre-built or custom conda environments used within Oracle Cloud Data Science notebooks for reproducible and isolated workflows.  
+- **Slug** – Unique identifier for each conda environment, required for most ODSC operations.  
+- **Published Conda Environments** – Custom conda environments uploaded to Oracle Object Storage for sharing and deployment.  
+- **Conda YAML File** – Manifest file defining channels, dependencies, and configurations for creating custom conda environments.
+
+#### Browsing and Searching Conda Environments
+- **Browsing Environments** – `odsc conda list` returns a YAML file with metadata for all Data Science Service-managed conda packs.  
+  - `--local` lists environments installed in the current notebook session.  
+  - `--override` lists published conda environments in Object Storage.  
+- **Searching** – Combine `odsc conda list` with Unix commands like `grep` to extract names, slugs, or other YAML fields.  
+  - Example: `odsc conda list | grep -E 'name|slug'` filters for relevant identifiers.  
+
+#### Installing Conda Environments
+- Install managed or published environments:  
+  - Managed: `odsc conda install --slug <slug>`  
+  - Published: `odsc conda install --slug <slug> --override`  
+- Version selection is available during installation to choose a specific release of the environment.  
+
+#### Cloning Conda Environments
+- Clone an existing environment to create a separate, modifiable copy:  
+  - `odsc conda clone --from-env <source_slug> --env <new_name>`  
+  - New slug is automatically generated based on the new name.  
+
+#### Modifying Conda Environments
+- Activate environment for modification using the standard conda tool:  
+  - `conda activate /home/datascience/conda/<slug>`  
+- Install or upgrade packages (e.g., `pip install pendulum`) within the activated environment.  
+- Deactivate the environment once modifications are complete.  
+
+#### Publishing Conda Environments
+- Steps to share environments via Object Storage:  
+  1. Create an Object Storage bucket and note the namespace.  
+  2. Initialize ODSC for publishing:  
+     - `odsc conda init --bucket_namespace <namespace> --bucket_name <bucket>`  
+  3. Publish environment: `odsc conda publish --slug <slug>`  
+- Published environments appear under the override view and are stored in bucket folders organized by architecture and version.  
+
+#### Deleting Conda Environments
+- Remove unneeded environments from the notebook session:  
+  - `odsc conda delete --slug <slug>`  
+- Prompts for confirmation before deletion to prevent accidental removal.  
+
+#### Creating Conda Environments from YAML
+- Build a new environment from a manifest YAML file:  
+  - `odsc conda create --file <yaml_file>`  
+  - Optional `--empty` flag prevents installing default base packages.  
+- Allows advanced users to define channels, dependencies, and environment specifics programmatically.  
+
+## ✅ Summary
+This demo showcased how Oracle Cloud Infrastructure’s **ODSC CLI** provides comprehensive management of conda environments for Data Science Service notebooks. Users learned to **browse, search, install, clone, modify, publish, delete, and create environments from YAML files**. By leveraging ODSC with standard Unix tools, data scientists can efficiently control environment lifecycles, ensure reproducibility, and share custom conda environments for model deployment and collaborative workflows within Oracle Cloud.
+
+
+# OCI Vault: Introduction  
+
+--- 
+
+## Key Concepts
+- **OCI Vault** – A managed Oracle service for securely storing encryption keys and secrets, preventing sensitive credentials from being stored in code or configuration files.  
+- **Secrets** – Credentials such as passwords, tokens, or other confidential data used to access OCI services or external systems.  
+- **Keys** – Cryptographic entities used for encrypting or signing data; include master encryption keys, data encryption keys, and wrapping keys.  
+- **Key Rotation** – The process of generating new key versions to reduce risk if a key is compromised.  
+- **OCID** – Oracle Cloud Identifier, a unique identifier for vault components such as keys or secrets, which remains consistent across rotations.  
+
+#### Understanding OCI Vault
+- **Purpose** – Centralizes and secures credentials needed for data science workflows, including database access, artifact storage, and OCI service interaction.  
+- **Integration** – Works with ADS SDK, OCI CLI, REST API, and other Oracle services for seamless credential management.  
+- **Components** –  
+  - **Vaults** – Logical containers for keys and secrets. Can be provisioned as virtual private (dedicated HSM) or shared partition.  
+  - **Keys** – Cryptographic keys used for encryption, decryption, and digital signatures.  
+  - **Secrets** – Encrypted credentials stored securely, accessible when needed by applications or code.  
+
+#### Types of Vaults
+- **Virtual Private Vault**  
+  - Dedicated hardware security module (HSM) partition.  
+  - Supports up to 1,000 key versions.  
+  - Allows backups to Object Storage for disaster recovery and cross-region replication.  
+- **Shared Vault**  
+  - HSM partition shared with other Oracle customers.  
+  - Lower cost; pay only for stored keys, key versions, and secrets.  
+  - Does not support Object Storage backups.  
+
+#### Keys and Encryption
+- **Encryption Algorithms Supported** – AES (symmetric), RSA (asymmetric), ECDSA (asymmetric elliptic curve).  
+- **Master Encryption Keys** – Created or imported by users, define encryption algorithm and key shape.  
+- **Data Encryption Keys** – Generated using a master key (envelope encryption); encrypt data while minimizing risk if a key is compromised.  
+- **Key Rotation** – Creates new key versions while maintaining the ability to decrypt previously encrypted data using older versions.  
+
+#### Managing Secrets
+- **Storage** – Store credentials in the Vault rather than code for better security and maintainability.  
+- **Access** – Code retrieves secrets using the secret's OCID, without exposing actual credentials.  
+- **Versioning and Rotation** – Secrets are versioned; rotating secrets updates their content while keeping the OCID consistent.  
+- **Integration** – Secrets can be created via OCI Console UI, SDK, CLI, or REST API.  
+
+## ✅ Summary
+This module demonstrated the importance of **OCI Vault** for secure management of secrets and encryption keys in Oracle Cloud Infrastructure. Key takeaways include using vaults to centralize credentials, understanding vault types (virtual private vs shared), leveraging keys and key versions for encryption, and implementing key and secret rotation to reduce security risk. By storing secrets in OCI Vault instead of code, data scientists ensure secure, maintainable, and auditable access to sensitive resources across workflows.
+
+
+# Using OCI Vault in OCI Data Science  
+
+---
+
+## Key Concepts
+- **OCI Vault** – Securely stores encryption keys and secrets, enabling data scientists to protect credentials and sensitive information.  
+- **Oracle Managed Keys vs Customer Managed Keys** – Oracle can manage master encryption keys automatically, or customers can manage their own keys in their Vault.  
+- **Secrets** – Credentials or sensitive data such as database passwords, authentication tokens, or wallet files.  
+- **OCI SDK vs ADS SDK** – OCI SDK provides general-purpose Vault operations; ADS SDK offers data-science-specific classes for simpler integration.  
+- **Base64 Encoding** – Used to store Python dictionaries or structured data as secrets in the Vault.  
+- **Secret Lifecycle** – Includes creation, storage, retrieval, and rotation of secrets using Vault.
+
+#### Encryption Management in OCI
+- **Oracle Managed Keys** – OCI services automatically use Oracle master keys to generate data encryption keys for resources like block volumes, object storage, OKE clusters, etc.  
+- **Customer Managed Keys** – Keys are created or imported into a customer Vault, and the customer is responsible for key lifecycle and rotation.  
+- **Key Usage** – Master keys generate data encryption keys that encrypt the actual data. Choice of key management is critical for security zones or compliance requirements.  
+
+#### Storing and Retrieving Secrets Using Python
+##### Using OCI SDK
+- **Secret Preparation** – Credentials are converted from Python dictionary → JSON → Base64 encoded object.  
+- **Creating Secret** – Use `Base64SecretContentDetails` to store encoded content, then create `SecretDetails` including metadata (Vault ID, key ID, compartment, description, name).  
+- **Vault Client** – `VaultsClient` and `VaultsClientCompositeOperations` are used to create the secret and wait for it to become active.  
+- **Retrieving Secret** – Use `SecretsClient` with the OCID of the secret, access `secret_bundle_content.content` to obtain Base64 content, then decode back to JSON and Python dictionary.  
+
+##### Using ADS SDK
+- **Simplified Workflow** – ADS SDK provides classes tailored for common data science use cases:  
+  - **MySQLDBSecretKeeper** – Stores and retrieves MySQL database credentials.  
+  - **ADBSecretKeeper** – Stores Autonomous Database credentials and optional wallet files.  
+  - **BDSSecretKeeper** – Stores credentials for OCI Big Data Service and HDFS access.  
+  - **AuthTokenSecretKeeper** – Stores authentication tokens for services like streaming or GitHub.  
+- **Saving Secrets** – Pass Vault ID, key ID, and credentials dictionary to the `save` method along with optional metadata.  
+- **Retrieving Secrets** – Call `load_secret` with the secret OCID to receive a dictionary of credentials in one line of code.  
+
+#### Best Practices
+- Avoid storing credentials in code or configuration files.  
+- Use Vault to centrally manage and rotate secrets.  
+- Choose Oracle or customer managed keys depending on security requirements and compliance.  
+- Use ADS SDK classes to simplify secret handling in data science workflows.  
+
+## ✅ Summary
+This module demonstrated managing encryption keys and secrets in OCI for data science workflows. Key points include the distinction between Oracle managed and customer managed keys, converting credentials into Base64 secrets, storing and retrieving them with the OCI SDK, and leveraging ADS SDK secret keepers for simplified, workflow-oriented access. By following these practices, data scientists can securely manage credentials, integrate with various OCI services, and minimize the risk of exposing sensitive information.
+
+
+# Code Repositories (Git)  
+
+---
+
+## Key Concepts
+- **Version Control Systems (VCS)** – Tools to track changes in code, notebooks, documents, and analyses over time.  
+- **Repositories (Repos)** – Directories that store all versions of a project, allowing collaboration and version history.  
+- **Centralized vs Distributed VCS** – Centralized systems rely on a central server; distributed systems (like Git) allow local copies and offline work.  
+- **Git** – A distributed version control system widely used for managing code and data science projects.  
+- **Git Workflow** – Staging, committing, pushing, pulling, branching, and merging changes.  
+- **OCI Code Repository & GitHub Integration** – Cloud-hosted repositories with secure access and external connections for collaboration.
+
+#### Understanding Version Control
+- **Purpose** – Tracks changes in software, data analysis, and documents, allowing multiple versions and collaboration.  
+- **Resources Managed** – Includes JupyterLab notebooks, datasets, ML models, reports, and code.  
+- **Repository Analogy** – A repository is like a filing cabinet storing a project; each commit represents a snapshot in time.  
+- **Branching and Merging** – Enables parallel development and testing of new ideas without affecting the main code base.
+
+#### Types of Version Control Systems
+- **Centralized VCS** – Simple setup, controlled workflow, examples: Subversion, CVS, Perforce.  
+- **Distributed VCS** – Multiple local copies, offline commits, fast branching, examples: Git, Bazaar, Mercurial.  
+- **Hybrid Approach** – Distributed system with a central server to simplify collaboration in larger teams.
+
+#### Using Git in Data Science
+##### Local Git Workflow
+- **Working Area** – Files being actively modified and tracked.  
+- **Staging** – Selecting which changes to include in the next commit.  
+- **Committing** – Saving a snapshot of staged changes with a message and SHA identifier.  
+- **Branching** – Creating isolated copies to experiment or collaborate without affecting the main branch.  
+- **Merging** – Combining changes from different branches into a single version.
+
+##### Git in OCI JupyterLab
+- **Git Extension** – Graphical interface for creating, cloning, committing, pushing, pulling, and staging changes.  
+- **Supported Services** – OCI Code Repository, GitHub, GitLab, Bitbucket, or self-hosted Git servers.  
+- **Integration Benefits** – Simplifies version control for notebooks and data science projects.
+
+#### Working with Remote Repositories
+- **OCI Code Repository** – Centralized, secure repository integrated with OCI IAM.  
+- **External Repos** – GitHub, Bitbucket, GitLab can be linked via secret tokens in OCI Vault.  
+- **SSH Authentication** – Use key pairs to connect and authenticate without entering credentials each time.  
+- **Common Commands**:
+  - `git init` – Initialize a repository.  
+  - `git clone` – Copy a remote repository locally.  
+  - `git add` – Stage files for commit.  
+  - `git commit` – Create a snapshot of changes.  
+  - `git push` – Upload local commits to a remote repo.  
+  - `git pull` – Fetch and merge changes from a remote repo.  
+  - `git fetch` – Retrieve updates without merging.  
+  - `git remote` – Manage connections to remote repositories.
+
+## ✅ Summary
+This module introduced version control systems and their importance for data science workflows. Key points include centralized versus distributed systems, the role of repositories, and Git’s features for managing code and collaborative work. You learned how to use Git locally, with OCI JupyterLab’s Git extension, and how to connect to remote repositories like OCI Code Repository and GitHub. Essential Git commands and workflows for staging, committing, branching, merging, pushing, and pulling were covered to enable efficient and organized project development.
+
+
+# Demo: Code Repositories (Git)  
+
+---
+
+## Key Concepts
+- **OCI Data Science Notebooks** – The working environment where Git is configured and used.  
+- **Git Configuration** – Setting `user.name` and `user.email` to track authorship of commits.  
+- **SSH Keys for Authentication** – Secure method for authenticating with GitHub, managed through private/public key pairs.  
+- **Remote Repository Linking** – Connecting a local repository in an OCI Notebook to a GitHub repository via SSH.  
+- **Git Workflow in OCI** – Creating, staging, committing, and pushing files between local and GitHub repositories.  
+
+#### Configuring Git in an OCI Notebook
+- Used `git config user.name` and `git config user.email` to record commit authorship.  
+- Verified setup with `git config --list`.  
+- Initialized a local repository in a new folder within the notebook environment.  
+
+#### Generating and Using SSH Keys
+- Generated keys using `ssh-keygen`, creating both private and public keys.  
+- Added the private key to the SSH agent with `ssh-add`.  
+- Copied the public key to GitHub under **SSH and GPG Keys** for authentication.  
+- Verified setup by linking the local repo to GitHub via the SSH connection string.  
+
+#### Creating and Linking Repositories
+- Created a local Git repository in the notebook session.  
+- Created a new GitHub repository through the GitHub interface.  
+- Connected the local repo to GitHub using `git remote add` (via the Git tab).  
+- Confirmed the remote connection with `git remote -v`.  
+
+#### Working with Notebooks and GitHub
+##### Staging and Committing
+- Created a new Jupyter Notebook file in the session.  
+- Tracked the notebook in Git, staged it, and committed with an "Initial Commit" message.  
+
+##### Pushing to GitHub
+- Configured upstream tracking with `git push --set-upstream origin master`.  
+- Pushed commits from the notebook environment to GitHub.  
+- Verified changes in the GitHub repository.  
+
+##### Making and Syncing Changes
+- Edited the notebook (e.g., added math code).  
+- Saved changes, staged updates, and committed with a descriptive message.  
+- Pushed changes again and confirmed updates in GitHub.  
+
+## ✅ Summary
+This demo showed how to integrate GitHub with OCI Data Science Notebooks using SSH authentication. Key steps included configuring Git, generating SSH keys, creating and linking local and remote repositories, and demonstrating the Git workflow of staging, committing, and pushing changes. The process ensures seamless synchronization between local notebook sessions and GitHub repositories, supporting version control and collaborative workflows.
+
+
+# Skill Check: Workspace Design and Setup  
+
+---
+
+#### 1. What is a conda environment?  
+✅ Correct Answer: An open source package and environment management system  
+
+🧠 Explanation: Conda is both a package manager and an environment management system. It helps find and install packages and also manage environments. The other options (system for dependencies, kernel collection, Oracle AI deployment system) do not accurately describe Conda.  
+
+#### 2. Which model has an open source, open model format that allows you to run machine learning models on different platforms?  
+✅ Correct Answer: ONNX  
+
+🧠 Explanation: ONNX is an open source format that makes ML models portable across platforms and frameworks. TensorFlow and PyTorch are frameworks for training models, and PySpark is used for data processing, not model portability.  
+
+#### 3. What happens when a notebook session is deactivated?  
+✅ Correct Answer: The underlying compute instance stops.  
+
+🧠 Explanation: Deactivating a notebook session halts the compute instance and detaches the block volume, preserving data. It reduces costs instead of increasing them, and it does not delete the block volume or discard the boot volume’s data.  
+
+#### 4. What is an accurate description of Git?  
+✅ Correct Answer: Git is a distributed version control system that allows you to track changes made to a set of files.  
+
+🧠 Explanation: Git works by cloning the entire repository, including its history, allowing you to track, commit, and push changes. It is distributed, not centralized, and while it supports collaboration, its main function is version control, not preventing merges.  
+
+#### 5. Which is a unique feature of the published Conda environment?  
+✅ Correct Answer: It allows you to save the Conda environment to an Object Storage bucket.  
+
+🧠 Explanation: Published Conda environments are saved to Object Storage, making them persistent and shareable across Notebook sessions. Other options mention features (availability, solving business cases, block volume storage) that are not the unique publishing characteristic.  
+
+#### 6. Which CLI command allows a customized Conda environment to be shared with co-workers?  
+✅ Correct Answer: odsc conda publish  
+
+🧠 Explanation: The `odsc conda publish` command packages a Conda environment and uploads it to Object Storage, enabling sharing. The other commands (clone, modify, install) serve different purposes and do not publish or share environments.  
+
+#### 7. Which activity of managing a conda environment requires the conda environment to be activated in your terminal?  
+✅ Correct Answer: Modifying a Conda environment  
+
+🧠 Explanation: To add, remove, or change libraries, the Conda environment must be active. Publishing, installing, or cloning can be done without activation.  
+
+#### 8. Where are OCI secrets stored?  
+✅ Correct Answer: OCI Vault  
+
+🧠 Explanation: Secrets such as passwords, tokens, and credentials are securely stored in OCI Vault. Object Storage, databases, and Autonomous Data Warehouse are not designed for secret storage.  
+
+
+# 4. Machine Learning Lifecycle  
+
+# ML Lifecycle: Overview  
 
 ---  
 
-#### Manage Conda Environments  
+# Access Data  
 
 ---  
 
-#### Demo: Manage Conda Environments  
+# Data Preprocessing  
 
 ---  
 
-#### OCI Vault: Introduction  
+# Demo: Data Preprocessing  
 
 ---  
 
-#### Using OCI Vault in OCI Data Science  
+# Data Visualization  
 
 ---  
 
-#### Code Repositories (Git)  
+# Model Training  
 
 ---  
 
-#### Demo: Code Repositories (Git)  
+# Expert Tips: Training a ML model on OCI  
 
 ---  
 
-#### Skill Check: Workspace Design and Setup  
+# Oracle AutoML: Introduction  
 
 ---  
 
-### 4. Machine Learning Lifecycle  
-
-#### ML Lifecycle: Overview  
+# Demo: Oracle AutoML  
 
 ---  
 
-#### Access Data  
+# Hyperparameter Tuning: ADSTuner  
 
 ---  
 
-#### Data Preprocessing  
+# Model Evaluation  
 
 ---  
 
-#### Demo: Data Preprocessing  
+# Expert Tips: ADS Evaluators  
 
 ---  
 
-#### Data Visualization  
+# Model Explanations: Global Explainer  
 
 ---  
 
-#### Model Training  
+# Model Explanations: Local Explainer  
 
 ---  
 
-#### Expert Tips: Training a ML model on OCI  
+# Expert Tips: Explainers  
 
 ---  
 
-#### Oracle AutoML: Introduction  
+# Model Catalog: Overview  
 
 ---  
 
-#### Demo: Oracle AutoML  
+# Model Serialization  
 
 ---  
 
-#### Hyperparameter Tuning: ADSTuner  
+# Model Deployment  
 
 ---  
 
-#### Model Evaluation  
+# Demo: Model Deployment  
 
 ---  
 
-#### Expert Tips: ADS Evaluators  
+# Expert Tips: Hugging Face  
 
 ---  
 
-#### Model Explanations: Global Explainer  
+# Demo: Model Deployment using TensorFlow  
 
 ---  
 
-#### Model Explanations: Local Explainer  
+# LLM Training & LangChain Integration  
 
 ---  
 
-#### Expert Tips: Explainers  
+# Demo: Deploy LangChain based RAG to OCI Data Science  
 
 ---  
 
-#### Model Catalog: Overview  
+# Demo: OCI Data Science Operators  
 
 ---  
 
-#### Model Serialization  
+# Demo: OCI AI Quick Actions  
 
 ---  
 
-#### Model Deployment  
+# Skill Check: Machine Learning Lifecycle  
 
 ---  
 
-#### Demo: Model Deployment  
+# 5. MLOps Practices  
+
+# MLOps Architecture  
 
 ---  
 
-#### Expert Tips: Hugging Face  
+# Data Science Jobs  
 
 ---  
 
-#### Demo: Model Deployment using TensorFlow  
+# Demo: Create Artifacts  
 
 ---  
 
-#### LLM Training & LangChain Integration  
+# Demo: Create and Manage Jobs  
 
 ---  
 
-#### Demo: Deploy LangChain based RAG to OCI Data Science  
+# Demo: Start and Manage a Job Run  
 
 ---  
 
-#### Demo: OCI Data Science Operators  
+# Demo: Scaling  
 
 ---  
 
-#### Demo: OCI AI Quick Actions  
+# Jobs Monitoring and Logging  
 
 ---  
 
-#### Skill Check: Machine Learning Lifecycle  
+# Data Science Pipeline  
 
 ---  
 
-### 5. MLOps Practices  
-
-#### MLOps Architecture  
+# Demo: Data Science Pipeline  
 
 ---  
 
-#### Data Science Jobs  
+# Model Deployment: Autoscaling  
 
 ---  
 
-#### Demo: Create Artifacts  
+# Expert Tips: Pipelines  
 
 ---  
 
-#### Demo: Create and Manage Jobs  
+# Skill Check: MLOps Practices  
 
 ---  
 
-#### Demo: Start and Manage a Job Run  
+# 6. Related OCI Services  
+
+# Spark Applications, Data Flow, and Data Science  
 
 ---  
 
-#### Demo: Scaling  
+# Oracle Open Data  
 
 ---  
 
-#### Jobs Monitoring and Logging  
+# OCI Data Labeling  
 
 ---  
 
-#### Data Science Pipeline  
-
----  
-
-#### Demo: Data Science Pipeline  
-
----  
-
-#### Model Deployment: Autoscaling  
-
----  
-
-#### Expert Tips: Pipelines  
-
----  
-
-#### Skill Check: MLOps Practices  
-
----  
-
-### 6. Related OCI Services  
-
-#### Spark Applications, Data Flow, and Data Science  
-
----  
-
-#### Oracle Open Data  
-
----  
-
-#### OCI Data Labeling  
-
----  
-
-#### Skill Check: Related OCI Services  
+# Skill Check: Related OCI Services  
 
 ---
