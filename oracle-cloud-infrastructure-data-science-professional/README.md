@@ -62,11 +62,11 @@ Certified on **[Insert Date After Passing]**
 
 ### 4. Machine Learning Lifecycle  
 
-- [ ] ML Lifecycle: Overview *(15 min)* – ✅ [See Summary](#ml-lifecycle-overview)  
-- [ ] Access Data *(10 min)* – ✅ [See Summary](#access-data)  
-- [ ] Data Preprocessing *(13 min)* – ✅ [See Summary](#data-preprocessing)  
-- [ ] Demo: Data Preprocessing *(4 min)* – ✅ [See Summary](#demo-data-preprocessing)  
-- [ ] Data Visualization *(10 min)* – ✅ [See Summary](#data-visualization)  
+- [x] ML Lifecycle: Overview *(15 min)* – ✅ [See Summary](#ml-lifecycle-overview)  
+- [x] Access Data *(10 min)* – ✅ [See Summary](#access-data)  
+- [x] Data Preprocessing *(13 min)* – ✅ [See Summary](#data-preprocessing)  
+- [x] Demo: Data Preprocessing *(4 min)* – ✅ [See Summary](#demo-data-preprocessing)  
+- [x] Data Visualization *(10 min)* – ✅ [See Summary](#data-visualization)  
 - [ ] Model Training *(4 min)* – ✅ [See Summary](#model-training)  
 - [ ] Expert Tips: Training a ML Model on OCI *(3 min)* – ✅ [See Summary](#expert-tips-training-a-ml-model-on-oci)  
 - [ ] Oracle AutoML: Introduction *(11 min)* – ✅ [See Summary](#oracle-automl-introduction)  
@@ -1031,23 +1031,241 @@ This demo showed how to integrate GitHub with OCI Data Science Notebooks using S
 
 # ML Lifecycle: Overview  
 
----  
+---
+
+## Key Concepts
+- **Machine Learning Lifecycle** – A structured process to build, deploy, and maintain ML models, consisting of six steps: data access, data exploration and preparation, modeling, validation, deployment, and monitoring.  
+- **Iterative Nature** – The lifecycle is not linear; steps are repeated and refined until satisfactory performance is achieved.  
+- **OCI Data Science Integration** – Provides tools to support each stage of the lifecycle, from data handling to deployment and monitoring.  
+- **Business Problem Orientation** – The lifecycle begins with a business objective that guides every technical decision.  
+
+#### Data Access and Preparation
+- Data is collected into the notebook session in OCI Data Science for quick access.  
+- Sources include enterprise data sets (data lakes, relational and non-relational databases), unstructured data (logs, images, video), public datasets, and data purchased or collected from surveys and sensors.  
+- Preparation involves cleansing, handling missing or corrupt data, and labeling data when necessary (with OCI Data Labeling Cloud Service).  
+- Exploratory Data Analysis (EDA) includes examining feature distributions, identifying outliers, correlations, skew, bias, and missing values.  
+- Feature engineering transforms raw data into meaningful features, such as categorizing time-of-day in traffic datasets or encoding categorical features.  
+
+#### Modeling and Validation
+- **Model Building** – Choosing appropriate algorithms (supervised vs. unsupervised), experimenting with features, and training models.  
+- **Supervised Learning** – Includes classification and regression tasks requiring labeled data.  
+- **Unsupervised Learning** – Focuses on clustering or pattern discovery without labeled outputs.  
+- **Validation** – Splitting datasets into training and testing sets to evaluate model performance.  
+- **Metrics** – Selection depends on the business case:  
+  - Classification: accuracy, precision, recall, confusion matrix.  
+  - Regression: RMSE, MAE, R².  
+  - Clustering: cohesion of clusters.  
+- Multiple models are compared, and the best candidates are preserved using OCI’s model catalog.  
+
+#### Model Deployment
+- Models are deployed for either **batch consumption** (scheduled inferencing) or **real-time inferencing** (on-demand predictions such as fraud detection).  
+- Deployment often requires collaboration with ML ops engineers to manage pipelines and system integration.  
+- Considerations include latency requirements, throughput, and system resource management.  
+
+#### Model Monitoring
+- **Statistical Monitoring** – Detects model drift, data distribution changes, or prediction inconsistencies.  
+- **Ops Monitoring** – Tracks latency, CPU/memory usage, throughput, reliability, and system logs.  
+- Monitoring ensures long-term effectiveness and indicates when retraining or redeployment is needed.  
+- Collaboration between data scientists and engineers is essential for both performance and infrastructure monitoring.  
+
+## ✅ Summary
+This lesson introduced the machine learning lifecycle as a six-step, iterative process supported by OCI Data Science. Starting with data access and preparation, progressing through modeling and validation, and concluding with deployment and monitoring, each phase ensures models are built to address business objectives effectively. Continuous monitoring and iteration are essential for sustaining model accuracy and performance over time, making the lifecycle a dynamic and ongoing process.
+
 
 # Access Data  
 
----  
+---
+
+## Key Concepts
+- **Importance of data** in the machine learning lifecycle.  
+- **Data categories**: batch data, streaming data, and application data.  
+- **Why data is needed**: for hypothesis-driven or data-driven insights and problem-solving.  
+- **Data access in OCI Data Science**: through user interface, command line, and Accelerated Data Science (ADS) libraries.  
+- **Common data sources**: OCI Object Storage, local storage, Autonomous Databases, MySQL, Amazon S3, HTTP/HTTPS endpoints, DatasetBrowser, and PyArrow.  
+- **Semantic data types**: categorical, ordinal, continuous, and datetime.  
+- **Supported and unsupported formats** in ADS.  
+
+#### Data Categories and Collection
+- **Batch data**: generated over time (e.g., backups, migrations).  
+- **Stream data**: logs, IoT device outputs, user events.  
+- **Application data**: created via API calls, logs, or application events.  
+- Data must be **collected into OCI** for preprocessing and training.  
+
+#### Accessing Data Sources
+##### OCI Object Storage
+- Data accessed via **API keys** or **resource principals**.  
+- `set_auth` module manages identity settings.  
+
+##### Local Storage
+- Use pandas functions like `read_csv()` with file paths.  
+
+##### Oracle Autonomous Databases
+- Supports both services with `ads.read_sql` (15x faster than pandas `read_sql`).  
+- Connection with or without **wallet files**.  
+- Best practices: use **bind variables** to avoid SQL injection; optimize queries with indexes.  
+
+##### MySQL
+- Access with ADS, defining engine as `MySQL`.  
+- `ads.to_sql` saves DataFrames back into MySQL.  
+
+##### Amazon S3
+- Public and private files accessible via pandas.  
+- Private access requires credentials in `storage_options`.  
+
+##### HTTP/HTTPS Endpoints
+- Load data directly from URLs with pandas.  
+
+##### DatasetBrowser
+- Easy access to well-known datasets from libraries like Seaborn, Sklearn, GitHub.  
+- Functions: `list()` to see available datasets, `open()` to load them.  
+
+##### PyArrow and OCI File Systems
+- Enables large-scale data processing.  
+- Provides file system–style operations with connection info.  
+
+#### Semantic Data Types in ADS
+- **Categorical**: labeled groups without order (e.g., eye color).  
+- **Ordinal**: ordered categories (e.g., education levels).  
+- **Continuous**: measurable quantitative data (e.g., height).  
+- **Datetime**: temporal data in date/time formats.  
+- Inspectable using `feature_types` and `show_in_notebook`.  
+
+#### Supported Sources and Formats
+- **Supported**: multiple structured and semi-structured formats from supported data sources.  
+- **Unsupported**: DOC, PDF, raw images, sequences (lists, tuples).  
+- **Text extraction module** converts PDF or DOC into plain text.  
+
+## ✅ Summary
+This lesson introduced the first step in the machine learning lifecycle: **data access**. Data can be collected from diverse sources—batch processes, streams, and applications—and must be brought into OCI for use in data science. Oracle’s Accelerated Data Science (ADS) library provides efficient methods to access and process data from Object Storage, Autonomous Databases, MySQL, Amazon S3, HTTP endpoints, DatasetBrowser, and PyArrow. Alongside data access, the lesson covered recognition of **semantic data types** and clarified **supported vs. unsupported formats**. Together, these tools and practices ensure data scientists can efficiently prepare and use data for model development in OCI Data Science.
+
 
 # Data Preprocessing  
 
----  
+---
+
+## Key Concepts
+- **Second step of the ML lifecycle**: data exploration and preparation.  
+- **Need for preprocessing**: real-world data is often incomplete, inconsistent, or contains outliers.  
+- **Core preprocessing tasks**: combining sources, handling missing data, encoding categorical features, detecting outliers, feature scaling, dimensionality reduction, and text preprocessing.  
+- **ADS tools**: `suggest_recommendations`, `auto_transform`, and `visualize_transforms`.  
+- **Splitting data**: dividing into train, test, and validation sets for model generalization.  
+
+![img1](img/1.png)
+
+#### Data Cleaning and Preparation
+- **Combining sources**: join, append, delete, or filter rows/columns; ensure consistent formats and remove duplicates.  
+- **Data imputation**: replace missing values with mean, median, or mode; avoid deleting rows unless necessary.  
+- **Categorical encoding**:  
+  - `label_encoder` for nominal features.  
+  - One-hot encoding for ordinal or hierarchical categories.  
+
+#### Outlier Detection
+- Outliers may be errors or valid unusual points.  
+- Detection methods: scatterplots, boxplots, or statistical measures.  
+- **Supervised learning**: needs labeled data but requires manual effort.  
+- **Unsupervised learning**: assumes outliers are rare and do not follow the main data trend.  
+
+#### Feature Scaling and Dimensionality
+- **Feature scaling**:  
+  - **Normalization** (min–max scaling to [0,1]).  
+  - **Standardization** (mean = 0, variance = 1, Gaussian distribution).  
+- **Dimensionality reduction**:  
+  - **Feature selection**: subset of original variables.  
+  - **Feature extraction**: create new features from existing ones.
+
+![img2](img/2.png)
+
+#### Text Data Preprocessing
+- Steps include: vectorization, stop-word removal, POS tagging, tokenization, stemming, and lemmatization.  
+
+#### ADS Transformation Tools
+- **`suggest_recommendations`**: detects issues and recommends fixes interactively.  
+- **`auto_transform`**: applies multiple optimizations automatically (imputation, dropping correlated columns, handling class imbalance).  
+- **`visualize_transforms`**: produces diagrams of applied transformations.  
+
+#### Splitting Data Sets
+- Essential for evaluating generalization.  
+- Default ADS split: **80% training, 10% testing, 10% validation**.  
+- Ratios can be adjusted: larger training sets (80–90%) for big data, smaller (60–70%) when data is limited.  
+
+## ✅ Summary
+This lesson covered **data exploration and preparation**, the second step of the ML lifecycle. Real-world data often requires cleaning, imputation, encoding, and scaling before it can be used effectively. Oracle’s ADS library provides tools for automated transformations, issue detection, and visualization, helping streamline preprocessing. Finally, splitting datasets into train, test, and validation sets ensures robust model evaluation and generalization. These steps form the foundation for building reliable machine learning models in OCI Data Science.
+
 
 # Demo: Data Preprocessing  
 
----  
+---
+
+## Key Concepts
+- **Accelerated Data Science (ADS)**: Oracle’s Python library for simplifying ML workflows.  
+- **Resource Principal Method**: Used to securely load data from object storage into a DataFrame within an OCI Data Science notebook session.  
+- **ADS Transformation Tools**: `suggest_recommendations`, `auto_transform`, and `visualize_transforms` to detect, apply, and review preprocessing steps.  
+- **ADS Categorical Encoder**: `ads.dataset.labelencoder` to transform categorical values into numerical representations.  
+- **ADS Sampling Utilities**: `upsample` and `downsample` methods from `ads.dataset.helper` for handling imbalanced datasets.  
+- **Data Splitting in ADS**: Built-in functions to divide data into training, testing, and validation sets (default split: 80/10/10).  
+
+#### Loading and Exploring the Dataset
+- Dataset used: Employee dataset with **1,470 rows** and **36 features** (22 ordinal, 11 categorical, 3 constant).  
+- Target feature defined: **Attrition** (whether employees stay or leave).  
+- Data accessed through **object storage** using namespace, bucket, and dataset factory methods in the OCI Data Science notebook.  
+
+#### Automated Data Transformations
+- **`suggest_recommendations`**: Scans the dataset and provides messages with issues and recommended actions.  
+- **`auto_transform`**: Automatically applies optimizations and produces a transformed dataset.  
+- **`visualize_transforms`**: Allows comparison between original and transformed datasets.  
+
+#### Encoding and Balancing Data
+- **Categorical Encoding**: Example shown on the *job function* feature, converting categories into numeric values.  
+- **Upsampling**: Used to balance the dataset by replicating underrepresented records.  
+- **Validation**: Checked by comparing attrition value counts before and after upsampling.  
+
+#### Splitting the Dataset
+- After transformations, the dataset can be split into:  
+  - Training set (default 80%)  
+  - Testing set (default 10%)  
+  - Validation set (default 10%)  
+
+## ✅ Summary
+This demo demonstrated how to use **Oracle’s ADS library** within an OCI Data Science notebook to preprocess a dataset. Key steps included loading data securely from object storage, applying automated transformations, encoding categorical variables, balancing the dataset through upsampling, and splitting data into training, testing, and validation sets. The session highlighted how ADS simplifies and accelerates essential preprocessing tasks for machine learning workflows in Oracle Cloud.
+
 
 # Data Visualization  
 
----  
+---
+
+## Key Concepts
+- **Data Visualization (DV)**: The process of presenting data to reveal insights, patterns, and relationships for analysis and decision-making.  
+- **Exploratory Data Analysis (EDA)**: An initial step in data science where visualization guides understanding of data distributions, anomalies, and trends.  
+- **Accelerated Data Science (ADS) Visualization Tools**: Provides automatic and customizable plotting, correlation analysis, and feature profiling.  
+- **Feature Type System**: Extends Pandas DataFrames to store feature properties and methods, supporting type detection, warnings, and validation for high-quality data.  
+- **Automatic Plot Selection**: ADS detects column data types and generates appropriate visualizations (categorical, continuous, or mixed types).  
+- **Correlation Measures**: Includes Pearson (continuous-continuous), correlation ratio (continuous-categorical), and Cramer’s V (categorical-categorical).  
+
+#### ADS Automatic Visualizations
+- **`show_in_notebook`**: Creates a comprehensive preview of a dataset including feature types, row/column counts, correlations, and basic plots. Uses a statistically significant sample for performance.  
+- **`corr`**: Calculates correlation matrices for different feature types. Separate matrices prevent confusion due to differing ranges and methods.  
+- **`plot`**: Automatically generates plots based on feature types:
+  - Categorical → Bar chart
+  - Continuous → Histogram
+  - Mixed → Violin plot or scatterplot
+  - Continuous-Continuous → Gaussian heatmap  
+
+#### Custom and Advanced Visualizations
+- **`feature_plot`**: Generates univariate plots for individual features or summary plots for entire datasets. Supports ADS and custom feature types.  
+- **Integration with Libraries**: Users can apply external libraries like Seaborn or Matplotlib for advanced customization:
+  - **Seaborn pair plot**: Displays pairwise relationships across multiple features in a grid layout.  
+  - **Matplotlib example**: Visualizes real-world events, e.g., California earthquake locations.  
+- **Automatic Detection and Flexibility**: ADS automatically detects feature types but allows custom plots with preferred libraries using the `call` method.  
+
+#### Correlation and Feature Profiling
+- **Continuous-Continuous**: Pearson correlation coefficient (-1 to 1) for linear relationships.  
+- **Continuous-Categorical**: Correlation ratio (0 to 1) for curvilinear dispersion across categories.  
+- **Categorical-Categorical**: Cramer’s V (0 to 1) measures association between nominal variables.  
+- **Smart Sampling**: `show_in_notebook` uses 95% confidence level and 1% confidence interval to sample data efficiently for visualization without sacrificing accuracy.  
+
+## ✅ Summary
+This lesson covered the use of **ADS for data visualization and profiling**. Students learned to generate **automatic visualizations**, compute **feature correlations**, and create **custom plots** using Python libraries like Seaborn and Matplotlib. ADS simplifies EDA by detecting feature types, selecting optimal plot types, and providing comprehensive dataset previews, enabling efficient insight generation and supporting informed data-driven decisions.
+
 
 # Model Training  
 
