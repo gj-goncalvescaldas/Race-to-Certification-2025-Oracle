@@ -1373,6 +1373,9 @@ This session demonstrated advanced capabilities for model deployment and trainin
   - Automates full ML cycle without requiring user code.  
 
 #### AutoML Workflow in ADS
+
+![img3](img/3.png)
+
 ##### Algorithm Selection
 - Identifies the most suitable algorithm based on the dataset.
 - Uses meta-learned models to predict algorithm performance.
