@@ -67,10 +67,10 @@ Certified on **[Insert Date After Passing]**
 - [x] Data Preprocessing *(13 min)* – ✅ [See Summary](#data-preprocessing)  
 - [x] Demo: Data Preprocessing *(4 min)* – ✅ [See Summary](#demo-data-preprocessing)  
 - [x] Data Visualization *(10 min)* – ✅ [See Summary](#data-visualization)  
-- [ ] Model Training *(4 min)* – ✅ [See Summary](#model-training)  
-- [ ] Expert Tips: Training a ML Model on OCI *(3 min)* – ✅ [See Summary](#expert-tips-training-a-ml-model-on-oci)  
-- [ ] Oracle AutoML: Introduction *(11 min)* – ✅ [See Summary](#oracle-automl-introduction)  
-- [ ] Demo: Oracle AutoML *(29 min)* – ✅ [See Summary](#demo-oracle-automl)  
+- [x] Model Training *(4 min)* – ✅ [See Summary](#model-training)  
+- [x] Expert Tips: Training a ML Model on OCI *(3 min)* – ✅ [See Summary](#expert-tips-training-a-ml-model-on-oci)  
+- [x] Oracle AutoML: Introduction *(11 min)* – ✅ [See Summary](#oracle-automl-introduction)  
+- [x] Demo: Oracle AutoML *(29 min)* – ✅ [See Summary](#demo-oracle-automl)  
 - [ ] Hyperparameter Tuning: ADSTuner *(4 min)* – ✅ [See Summary](#hyperparameter-tuning-adstuner)  
 - [ ] Model Evaluation *(9 min)* – ✅ [See Summary](#model-evaluation)  
 - [ ] Expert Tips: ADS Evaluators *(3 min)* – ✅ [See Summary](#expert-tips-ads-evaluators)  
@@ -1269,19 +1269,195 @@ This lesson covered the use of **ADS for data visualization and profiling**. Stu
 
 # Model Training  
 
----  
+---
+
+## Key Concepts
+- **Model Training**: The process of building a mathematical representation of relationships in data, either between features and a target label (supervised learning) or among features (unsupervised learning).  
+- **Training Artifact**: The output of model training that captures patterns and relationships in the data.  
+- **Score Function**: Evaluates how well the model fits the data, often using error or likelihood measures.  
+- **Loss Function (Cost Function)**: Quantifies the difference between predicted values and true target values as a single number.  
+- **Update Function**: Iteratively adjusts model parameters to reduce loss and improve performance.  
+- **Oracle + Open Source Frameworks**: Oracle data science environments integrate proprietary and open-source tools for flexibility and innovation.  
+- **Training Methods**: Models can be trained via notebooks, conda environments (ADS, MLX, AutoML), or jobs.  
+
+#### The Model Training Process
+- **Supervised vs. Unsupervised**:  
+  - Supervised training learns relationships between features and a target label.  
+  - Unsupervised training focuses on identifying patterns among features without labels.  
+- **Flow of Training**:  
+  - Predictions are generated.  
+  - The loss function measures error between predictions and actual values.  
+  - Parameters are updated iteratively using the update function to reduce loss.  
+- **Visualization Example**:  
+  - True data points (green dots).  
+  - Model predictions (black line).  
+  - Loss represented as red arrows between predictions and true values.  
+
+#### Oracle and Open Source Integration
+- **Open Source Benefits**: Freely available, modifiable, and widely supported with active communities.  
+- **Oracle Environments**: Provide a mix of Oracle proprietary and open-source frameworks to meet business and research needs.  
+- **Custom Libraries**: Users can install external libraries through the terminal or start with their preferred set of frameworks.  
+
+#### Methods of Model Training
+- **Notebooks**: Train models by writing and running Python code in JupyterLab.  
+- **Conda Environments**: Use pre-configured tools such as ADS, MLX, or AutoML for streamlined training.  
+- **Jobs**: Another method for model training, covered later in the course (module 4).  
+
+## ✅ Summary
+This lesson introduced **model training** as the foundation of machine learning. The process builds a representation of data relationships, guided by score, loss, and update functions. Oracle’s data science environments combine **proprietary and open-source frameworks**, enabling flexible training setups. Models can be trained via notebooks, conda environments, or jobs, giving data scientists multiple paths to meet their project needs.
+
 
 # Expert Tips: Training a ML model on OCI  
 
----  
+---
+
+## Key Concepts
+- **AML Model on OCI**: Training and deploying Automated Machine Learning (AML) models using Oracle Cloud Infrastructure.  
+- **Jobs in Data Science Service**: Define resources, source code, and save outputs for model training.  
+- **OCI Object Storage**: Storage service for saving training results and datasets.  
+- **Distributed Training**: Horizontal scaling to parallelize training for large datasets or compute-intensive workloads.  
+- **Supported Frameworks**: Dask, PyTorch Distributed (Horovod), TensorFlow Distributed.  
+- **AutoML / AutoMLx**: Oracle’s automated machine learning pipeline for tuning models and selecting optimal algorithms.  
+- **ADS Documentation**: Reference guide for implementing training, distributed workloads, and AutoML pipelines.  
+
+#### Training AML Models Using Jobs
+- **Job Setup**: Create a job in ADS specifying:
+  - Training code source (Python scripts, GitHub repository)  
+  - Resource allocation (compute, memory)  
+  - Output storage (OCI Object Storage)  
+- **Execution**: Jobs run the training code and save the resulting model or artifacts.  
+- **Flexibility**: Jobs can be configured using Python code or YAML definitions.  
+
+#### Distributed Training on OCI
+- **Purpose**: Enables parallel processing to reduce training time without affecting model accuracy.  
+- **Frameworks Supported**:  
+  - **Dask** for parallelized data processing  
+  - **PyTorch Distributed (Horovod)** for deep learning workloads  
+  - **TensorFlow Distributed** for large-scale training tasks  
+- **Implementation**: Users can choose Docker or GitHub-based workflows. Documentation provides detailed guides for each framework.  
+- **Community Sharing**: Users are encouraged to share implementations on GitHub and discuss in the Oracle User (OU) community.  
+
+#### Automated Machine Learning (AutoML / AutoMLx)
+- **Purpose**: Automatically identifies, tunes, and selects the best model for a given prediction task.  
+- **Workflow**:
+  - Select a prediction task and training dataset  
+  - Use local or parallel engine initialization (`INIT` function)  
+  - AutoMLx pipeline automatically finds and tunes the model  
+- **Resources**: AutoMLx is available as a conda package in OCI Data Science.  
+
+## ✅ Summary
+This session demonstrated advanced capabilities for model deployment and training on Oracle Cloud Infrastructure. Key highlights include creating AML training jobs, leveraging distributed frameworks like Dask, PyTorch, and TensorFlow, and using AutoMLx to automate model selection and tuning. Users are encouraged to explore the ADS and AutoML documentation, implement distributed training workflows, and share their results within the Oracle community for collaborative learning.
+
 
 # Oracle AutoML: Introduction  
 
----  
+---
+
+# Building and Training with AutoML in ADS
+
+## Key Concepts
+- **AutoML (Automated Machine Learning)**: Automates model selection, hyperparameter tuning, feature selection, and adaptive sampling to optimize machine learning workflows.  
+- **ADS (Accelerated Data Science)**: Oracle’s framework that provides AutoML capabilities, meta-learning, and pipeline automation.  
+- **Meta-Learning**: Learning from previous datasets to predict the performance of algorithms, features, and hyperparameter configurations on new data.  
+- **Pipeline Stages**: Algorithm selection, adaptive sampling, feature selection, and model tuning.  
+- **Non-Iterative Feed-Forward Approach**: Oracle AutoML predicts candidate pipeline performance before building models, improving efficiency and reducing runtime.  
+
+#### AutoML Approaches and Oracle Enhancements
+- **Traditional Approaches**:
+  - Bayesian Optimization: Probabilistic model for hyperparameter tuning.
+  - Recommender Systems: Suggests configurations based on similarity to known datasets.
+  - Genetic Algorithms: Tools like TPOT optimize ML pipelines iteratively.  
+- **Oracle AutoML Enhancements**:
+  - Feed-forward, non-iterative approach for efficient pipeline selection.
+  - Uses meta-learning to avoid cold start issues on new datasets.
+  - Automates full ML cycle without requiring user code.  
+
+#### AutoML Workflow in ADS
+##### Algorithm Selection
+- Identifies the most suitable algorithm based on the dataset.
+- Uses meta-learned models to predict algorithm performance.
+- Ranks candidate algorithms to focus on the most promising ones.  
+
+##### Adaptive Sampling
+- Iteratively selects dataset samples to reduce computation without losing quality.
+- Detects unbalanced datasets and ensures sufficient representation.
+- Uses meta-learning to predict algorithm performance on sample subsets.  
+
+##### Feature Selection
+- Identifies highly predictive features and removes noisy or redundant features.
+- Ranks features using multiple algorithms and selects optimal subsets.
+- Reduces model building time and improves performance.  
+
+##### Model Tuning
+- Automatically optimizes hyperparameters for selected algorithms.
+- Uses efficient, scalable methods instead of exhaustive search.
+- Supports parallelism via `n_jobs` and output control via `log_level`.
+- Visualizes results at each pipeline stage.  
+
+#### AutoML Customization and Control
+- Allows specifying algorithm subsets (`model_list`) and custom scoring metrics.
+- Supports user-defined time budgets for model optimization.
+- Maintains a minimum feature list to prevent dropping critical features.
+- Provides comprehensive summaries of training data, pipeline, and model trials.  
+
+## ✅ Summary
+This session introduced Oracle ADS AutoML, highlighting its ability to automate model building, hyperparameter tuning, adaptive sampling, and feature selection. The AutoML pipeline leverages meta-learning to predict algorithm and feature performance efficiently, avoiding cold start issues and reducing compute time. Key workflow stages include algorithm selection, adaptive sampling, feature selection, and model tuning. ADS AutoML allows customization of models, metrics, and runtime, enabling data scientists to efficiently produce high-quality predictive models with minimal manual intervention.
+
 
 # Demo: Oracle AutoML  
 
----  
+---
+
+## Key Concepts
+- **AutoMLx**: Oracle’s automated machine learning tool that simplifies the machine learning lifecycle for classification and regression tasks.  
+- **Census Income Dataset**: Binary classification dataset from UCI Machine Learning Repository used in this demo.  
+- **Pipeline Automation**: AutoMLx automates pre-processing, algorithm selection, adaptive sampling, feature selection, and hyperparameter tuning.  
+- **Model Evaluation**: Uses metrics like ROC AUC, confusion matrix, and custom scoring functions to assess model performance.  
+- **Customization Options**: Users can specify models, scoring metrics, time budgets, and minimum features to influence AutoML behavior.  
+
+#### Data Preparation and Preprocessing
+- **Data Loading**: Dataset fetched using `fetch_openml` and loaded as a pandas dataframe.  
+- **Handling Mislabeled Columns**: Numerical columns incorrectly labeled as categorical are converted to appropriate types.  
+- **Missing Values**: AutoMLx automatically handles missing values by dropping or imputing based on feature type.  
+- **Target Variable Transformation**: Converts income labels into binary format (1 for >50K, 0 for ≤50K).  
+- **Train-Test Split**: 70% training, 30% testing split to evaluate model performance on unseen data.  
+
+#### AutoMLx Pipeline
+##### Preprocessing
+- Cleans, imputes, engineers, and normalizes features automatically.  
+
+##### Algorithm Selection
+- Automatically selects the most suitable classification algorithm based on the dataset.  
+- Examples include LGBM, AdaBoost, DecisionTree, TorchMLP, LinearSVC, LogisticRegression, XGBoost, Gaussian Naive Bayes.  
+
+##### Adaptive Sampling
+- Selects a subset of training data to optimize model evaluation efficiency.  
+- Updates sampling strategy based on performance of candidate models to focus on promising feature regions.  
+
+##### Feature Selection
+- Identifies the most predictive features while removing irrelevant or noisy ones.  
+- Supports multiple feature ranking and selection techniques (e.g., RFE, SFS, correlation analysis).  
+- Option to enforce minimum features to ensure critical attributes are retained.  
+
+##### Hyperparameter Tuning
+- Optimizes model parameters to maximize predictive performance.  
+- Uses parallel processing (`n_jobs`) and configurable verbosity (`log_level`).  
+- Supports tuning of top-N models rather than only the best model.  
+
+#### Model Evaluation
+- **ROC AUC Score**: Evaluates classifier performance on test data.  
+- **Confusion Matrix**: Visualizes true positives, false positives, true negatives, and false negatives.  
+- **Custom Scoring**: Allows user-defined scoring functions using scikit-learn’s `make_scorer`.  
+- **Time Budget**: Limits AutoMLx optimization process to a user-specified runtime.  
+
+#### Customization and Control
+- **Model List**: Restrict optimization to specific algorithms.  
+- **Minimum Feature List**: Preserve essential features in the final model.  
+- **Alternative Scoring Metrics**: Supports metrics like negative log loss, accuracy, F1 score, and others for classification or regression tasks.  
+
+## ✅ Summary
+This demo demonstrated the process of building a binary classifier using Oracle AutoMLx. The tool automates the full machine learning workflow, including preprocessing, algorithm selection, adaptive sampling, feature selection, and hyperparameter tuning. Users can customize the pipeline by selecting specific models, scoring metrics, time budgets, and essential features. AutoMLx efficiently trains models, evaluates them with metrics such as ROC AUC and confusion matrices, and produces a high-performing classifier with minimal manual intervention.
+
 
 # Hyperparameter Tuning: ADSTuner  
 
