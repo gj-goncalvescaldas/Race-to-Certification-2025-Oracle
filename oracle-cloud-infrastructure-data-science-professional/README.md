@@ -71,9 +71,9 @@ Certified on **[Insert Date After Passing]**
 - [x] Expert Tips: Training a ML Model on OCI *(3 min)* – ✅ [See Summary](#expert-tips-training-a-ml-model-on-oci)  
 - [x] Oracle AutoML: Introduction *(11 min)* – ✅ [See Summary](#oracle-automl-introduction)  
 - [x] Demo: Oracle AutoML *(29 min)* – ✅ [See Summary](#demo-oracle-automl)  
-- [ ] Hyperparameter Tuning: ADSTuner *(4 min)* – ✅ [See Summary](#hyperparameter-tuning-adstuner)  
-- [ ] Model Evaluation *(9 min)* – ✅ [See Summary](#model-evaluation)  
-- [ ] Expert Tips: ADS Evaluators *(3 min)* – ✅ [See Summary](#expert-tips-ads-evaluators)  
+- [x] Hyperparameter Tuning: ADSTuner *(4 min)* – ✅ [See Summary](#hyperparameter-tuning-adstuner)  
+- [x] Model Evaluation *(9 min)* – ✅ [See Summary](#model-evaluation)  
+- [x] Expert Tips: ADS Evaluators *(3 min)* – ✅ [See Summary](#expert-tips-ads-evaluators)  
 - [ ] Model Explanations: Global Explainer *(14 min)* – ✅ [See Summary](#model-explanations-global-explainer)  
 - [ ] Model Explanations: Local Explainer *(8 min)* – ✅ [See Summary](#model-explanations-local-explainer)  
 - [ ] Expert Tips: Explainers *(2 min)* – ✅ [See Summary](#expert-tips-explainers)  
@@ -1464,15 +1464,98 @@ This demo demonstrated the process of building a binary classifier using Oracle 
 
 # Hyperparameter Tuning: ADSTuner  
 
----  
+---
+
+## Key Concepts
+- **Hyperparameters**: Model parameters that control the learning process and are not directly learned from data.  
+- **Hyperparameter Tuning**: The process of systematically searching for the best hyperparameter values to optimize model performance.  
+- **ADSTuner**: Oracle’s tool for hyperparameter tuning, compatible with any ML library, providing search strategies, cross-validation, and detailed reports.  
+- **Search Spaces**: Defined ranges of hyperparameters that ADSTuner explores. Options include Perfunctory, Detailed, or custom-defined.  
+- **Cross-Validation**: A method for evaluating model performance across different folds of the data during tuning.  
+- **Stopping Criteria**: Conditions that terminate the hyperparameter search when met.  
+
+#### ADSTuner Overview
+- ADSTuner allows hyperparameter tuning for any model, including those without built-in tuning capabilities.  
+- Generates a **tuning report** listing trial results, best-performing hyperparameters, and statistics.  
+- Requires a reference to the model being tuned and optionally allows setting cross-validation folds and search strategies.  
+
+#### Search Strategies
+- **Perfunctory Search**: Optimizes a small subset of important hyperparameters; used early in model exploration to reduce computational cost.  
+- **Detailed Search**: Covers a broader range of hyperparameters; used after identifying the most suitable model class.  
+- **Custom Search**: Users can define a dictionary specifying hyperparameters and ranges based on prior knowledge of the dataset.  
+- Hyperparameters can be adjusted by adding, removing, or modifying ranges for non-categorical parameters.  
+
+#### Tuning Process
+- Call the `tune` method, providing observations (features) and outcome values (target).  
+- ADSTuner iteratively evaluates different hyperparameter combinations and selects the best-performing set.  
+- Cross-validation folds can be specified to assess model performance across different splits.  
+- The `exit_criterion` parameter sets stopping conditions to end the tuning process when met.  
+
+## ✅ Summary
+ADSTuner simplifies hyperparameter tuning by providing structured search strategies, cross-validation support, and detailed reports. Users can start with a small search (Perfunctory), expand to a Detailed search, or define custom search spaces. The tool evaluates multiple hyperparameter combinations, identifies the best performers, and allows stopping based on criteria, improving model performance efficiently while managing computational cost.
+
 
 # Model Evaluation  
 
----  
+---
+
+## Key Concepts
+- **Model Evaluation**: The process of assessing the quality of a trained ML model’s predictions using metrics and benchmarks.  
+- **Evaluation Metrics**: Functions that convert model predictions into interpretable scores or charts to compare against ground truth values.  
+- **ADS Evaluator**: Oracle’s tool for model evaluation, supporting binary classification, multiclass classification, and regression tasks.  
+- **Benchmarks and Charts**: Confusion matrices, lift/gain charts, precision-recall curves, ROC/AUC curves, residual plots, and QQ plots used to visualize performance.  
+- **Custom Metrics**: User-defined evaluation metrics that can be added to ADS evaluators for tailored analysis.  
+
+#### Model Evaluation Process
+- Evaluation occurs after model training and involves comparing predicted values to a labeled validation set.  
+- Key purposes of model evaluation:
+  - **Benchmarking**: Track and compare model performance across multiple metrics.  
+  - **Discovering Pitfalls**: Identify cases where accuracy may be misleading, e.g., high accuracy but low precision.  
+  - **Understanding Trade-offs**: Assess model performance under different conditions or datasets.  
+
+#### ADS Evaluators
+- **Binary Classification**: Evaluates models with two possible outcomes (e.g., 0 or 1). Metrics include precision, recall, F1-score, ROC/AUC, confusion matrix, lift and gain charts.  
+- **Multiclass Classification**: Evaluates models with more than two discrete classes. Metrics include hamming loss, weighted/macro/micro F1-score, precision, recall, ROC/AUC. Charts include multiclass ROC curves, precision by level, and PR curves.  
+- **Regression**: Evaluates models with continuous outputs. Metrics include R², explained variance, mean squared error (MSE), root mean squared error (RMSE), absolute error, and mean residuals. Charts include observed vs predicted, residuals vs predicted, residuals vs observed, and residual QQ plots.  
+
+#### Using ADS for Evaluation
+- Convert fitted estimators into **ADSModel** objects using `from_estimator`.  
+- Generate metrics with `evaluator.metrics` and display charts with `evaluator.show_in_notebook`.  
+- Add custom metrics using `evaluator.add_metrics`.  
+- For multiclass evaluation, specify class levels in the evaluator.  
+- Visualizations help compare multiple models, e.g., Logistic Regression vs Random Forest.  
+
+## ✅ Summary
+ADS evaluators streamline ML model evaluation by providing standardized metrics, visualizations, and custom metric capabilities. They support binary, multiclass, and regression tasks, enabling comprehensive benchmarking, identifying model weaknesses, and understanding trade-offs. Using ADS ensures consistent, interpretable, and actionable insights into model performance, helping data scientists make informed decisions about model selection and improvements.
+
 
 # Expert Tips: ADS Evaluators  
 
----  
+---
+
+## Key Concepts
+- **ADSEvaluator**: A tool provided by Oracle for evaluating machine learning models efficiently.  
+- **Types of Evaluators**: Supports **binary classification**, **multinomial (multiclass) classification**, and **regression** tasks.  
+- **ADSModel**: A wrapper for ML estimators that allows integration with ADSEvaluator.  
+- **Metrics and Visualization**: Automatically computes evaluation metrics and generates plots for model performance.  
+
+#### Evaluating Binary Classification Models
+- Create a binary classification dataset and split it into training and testing sets.  
+- Fit multiple estimators (e.g., Logistic Regression, Random Forest) on the training data.  
+- Wrap the trained estimators using **ADSModel**.  
+- Instantiate **ADSEvaluator** with the ADSModel objects.  
+- Retrieve evaluation metrics using `evaluator.metrics` for both training and testing sets.  
+- Visualize performance with `evaluator.show_in_notebook`, including confusion matrices and other relevant charts.  
+
+#### Benefits of Using ADSEvaluators
+- Simplifies the process of calculating and comparing metrics across multiple models.  
+- Automatically generates visualizations for easier interpretation of model performance.  
+- Works seamlessly with different types of tasks: binary, multiclass, and regression.  
+- Encourages exploration of different datasets and models to understand performance patterns.  
+
+## ✅ Summary
+ADSEvaluators streamline model evaluation by automating metric calculation and visualization for binary, multiclass, and regression models. By wrapping estimators in ADSModel and using ADSEvaluator, users can quickly benchmark models, interpret results, and explore performance across datasets, making evaluation both efficient and intuitive.
+
 
 # Model Explanations: Global Explainer  
 
