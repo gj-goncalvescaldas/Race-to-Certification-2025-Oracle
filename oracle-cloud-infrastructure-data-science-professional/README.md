@@ -1559,11 +1559,80 @@ ADSEvaluators streamline model evaluation by automating metric calculation and v
 
 # Model Explanations: Global Explainer  
 
----  
+---'
+
+## Key Concepts
+- **Model Explainability**: The ability to explain the reasons behind a machine learning model’s predictions.  
+- **Interpretability**: The extent to which humans can understand the explanations provided by a model.  
+- **Model-Agnostic Explanations**: Treat the model as a black box and do not rely on internal model properties.  
+- **Global vs Local vs What-If Explanations**:  
+  - **Global**: Explains general behavior of the model.  
+  - **Local**: Explains individual predictions.  
+  - **What-If**: Explores the effect of changes in feature values on predictions.  
+
+#### Global Explanation Techniques
+- **Feature Permutation Importance**: Measures a feature’s importance by evaluating how prediction error changes when the feature is shuffled or removed.  
+  - Visualizations: Box plots, bar charts, scatter plots.  
+  - Features with higher ranks have greater impact on predictions.  
+  - Applicable metrics: F1 score for classification, R-squared for regression.  
+- **Feature Dependence Explanations**: Evaluates the relationship between feature values and model predictions.  
+  - **Partial Dependence Plots (PDP)**: Average model prediction over augmented datasets.  
+  - **Individual Conditional Expectation (ICE) Plots**: Model predictions for each sample separately when a feature is varied.  
+  - PDP can handle one or two features (continuous or categorical).  
+  - ICE plots allow visualization of trends for individual samples, highlighting variability in predictions.  
+- **Accumulated Local Effects (ALE)**: Measures the effect of features on predictions while partially isolating other features’ effects.  
+  - More robust than PDP against correlated features.  
+  - Uses conditional distributions to generate augmented data.  
+  - Interprets feature effects for numerical, discrete, and categorical features.  
+  - For categorical features, MLX estimates order using encoding techniques and similarity measures.  
+
+#### Visualization and Interpretation
+- Feature importance and dependence can be visualized using bar charts, box plots, scatter plots, PDP heatmaps, and ICE plots.  
+- ALE plots visualize changes in model predictions relative to average predictions across feature intervals.  
+- The x-axis typically represents feature values; the y-axis represents predicted or change in predicted values.  
+- Visualizations help identify which features most influence model predictions and understand the model’s behavior globally.  
+
+## ✅ Summary
+This lesson introduced model explainability in OCI Data Science, focusing on global explanation techniques. Feature permutation importance, feature dependence (PDP and ICE), and accumulated local effects (ALE) provide model-agnostic methods to interpret and visualize how features influence predictions. These techniques enable practitioners to understand model behavior, identify key features, and communicate results effectively.
+
 
 # Model Explanations: Local Explainer  
 
 ---  
+
+## Key Concepts
+- **Local Explanation**: Explains why a model made a specific prediction for an individual sample.  
+- **What-If Explanation**: Evaluates how changes in feature values affect model predictions.  
+- **LIME (Local Interpretable Model-Agnostic Explanations)**: Approximates a complex model’s local behavior using a simpler surrogate model, such as a linear model.  
+- **Surrogate Model**: A simpler, interpretable model used to approximate the predictions of a complex model locally.  
+- **Feature Importance in Local Context**: Measures each feature's contribution to the prediction for a specific observation.  
+
+#### Local Explainers
+- **Key Idea**: While global model behavior may be complex, local behavior around specific samples can be approximated using simpler models.  
+- **Workflow**:  
+  1. Start with a trained model and select a sample to explain.  
+  2. Generate a large neighborhood of perturbed samples around the selected sample.  
+  3. Compute predictions for these local samples.  
+  4. Train a surrogate linear model on these predictions to approximate local behavior.  
+
+- **LIME Structure in ADS**:  
+  - **Model Section**: Shows the original model predictions and the feature values of the sample.  
+  - **Explainer Section**: Configurations of LIME, surrogate model type, number of local samples, and feature discretization.  
+  - **Explanations Section**:  
+    - **Feature Importance**: Horizontal bar charts showing relative feature contributions (positive increases prediction, negative decreases prediction).  
+    - **Explanation Quality**: Evaluates how accurately the surrogate model approximates local behavior using sample distance distributions and evaluation metrics.  
+
+#### What-If Explainers
+- **Purpose**: Understand the effect of modifying feature values on model predictions.  
+- **Techniques**:  
+  - **Explore Sample**: GUI interface allowing interactive modification of a single observation’s feature values. Predictions update dynamically based on changes.  
+  - **Explore Predictions**: Visualizes predictions across marginal (one feature) or joint (two features) distributions.  
+    - Single-feature plots show how one feature affects the target.  
+    - Two-feature plots use color to indicate target values across feature combinations.  
+
+## ✅ Summary
+This lesson covered local and What-If model explainability in OCI Data Science. Local explainers, like ADS LIME, provide insight into why a model made a specific prediction by approximating local behavior with a surrogate model. What-If explainers allow users to explore how changes in feature values impact predictions, either for a single sample or across feature distributions. These techniques enhance interpretability and help data scientists understand and trust model outputs on an individual level.
+
 
 # Expert Tips: Explainers  
 
