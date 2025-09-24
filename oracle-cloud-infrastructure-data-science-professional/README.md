@@ -1598,8 +1598,6 @@ This lesson introduced model explainability in OCI Data Science, focusing on glo
 
 # Model Explanations: Local Explainer  
 
----  
-
 ## Key Concepts
 - **Local Explanation**: Explains why a model made a specific prediction for an individual sample.  
 - **What-If Explanation**: Evaluates how changes in feature values affect model predictions.  
