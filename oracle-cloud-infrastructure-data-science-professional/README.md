@@ -74,8 +74,8 @@ Certified on **[Insert Date After Passing]**
 - [x] Hyperparameter Tuning: ADSTuner *(4 min)* – ✅ [See Summary](#hyperparameter-tuning-adstuner)  
 - [x] Model Evaluation *(9 min)* – ✅ [See Summary](#model-evaluation)  
 - [x] Expert Tips: ADS Evaluators *(3 min)* – ✅ [See Summary](#expert-tips-ads-evaluators)  
-- [ ] Model Explanations: Global Explainer *(14 min)* – ✅ [See Summary](#model-explanations-global-explainer)  
-- [ ] Model Explanations: Local Explainer *(8 min)* – ✅ [See Summary](#model-explanations-local-explainer)  
+- [x] Model Explanations: Global Explainer *(14 min)* – ✅ [See Summary](#model-explanations-global-explainer)  
+- [x] Model Explanations: Local Explainer *(8 min)* – ✅ [See Summary](#model-explanations-local-explainer)  
 - [ ] Expert Tips: Explainers *(2 min)* – ✅ [See Summary](#expert-tips-explainers)  
 - [ ] Model Catalog: Overview *(9 min)* – ✅ [See Summary](#model-catalog-overview)  
 - [ ] Model Serialization *(7 min)* – ✅ [See Summary](#model-serialization)  
@@ -111,17 +111,11 @@ Certified on **[Insert Date After Passing]**
 - [ ] OCI Data Labeling *(6 min)* – ✅ [See Summary](#oci-data-labeling)  
 - [ ] Skill Check: Related OCI Services – ✅ [See Summary](#skill-check-related-oci-services)  
 
----  
-
 # 📂 Lesson Notes  
-
----  
 
 # 2. Introduction and Configuration  
 
 # Data Science: Introduction
-
----  
 
 ## Key Concepts
 - **Oracle Cloud Infrastructure (OCI) Data Science** – Cloud service for full ML lifecycle support.  
@@ -172,8 +166,6 @@ This module introduced **OCI Data Science** and its role in enabling end-to-end 
 
 # ADS SDK Overview  
 
----  
-
 ## Key Concepts
 - **Accelerated Data Science (ADS) SDK** – Python library designed by data scientists for data scientists to support the full ML lifecycle.  
 - **End-to-End ML Workflow** – Connect to data, perform exploratory analysis, feature engineering, model training, evaluation, interpretability, and deployment.  
@@ -219,8 +211,6 @@ This module introduced **OCI Data Science** and its role in enabling end-to-end 
 This module provided a comprehensive overview of the **ADS SDK**, covering its goals, installation methods, and integration with OCI services. Key functionalities include connecting to diverse data sources, exploratory analysis, feature engineering, AutoML, hyperparameter tuning, evaluation, and model interpretability. The SDK simplifies model deployment and monitoring in production while supporting a variety of ML frameworks. By using ADS, data scientists can accelerate workflows, ensure model reliability, and integrate seamlessly with OCI for enterprise-grade ML operations.
 
 # Tenancy Configuration Basics  
-
---- 
 
 ## Key Concepts
 - **Tenancy Configuration** – Organizing and managing access to OCI Data Science resources.  
@@ -283,8 +273,6 @@ This module covered **OCI tenancy configuration basics** for Data Science. Key c
 
 
 # Configure a Tenancy with OCI Resource Manager  
-
----  
 
 ## Key Concepts
 - **OCI Resource Manager (ORM)** – Service to automate tenancy configuration for OCI Data Science.  
@@ -375,8 +363,6 @@ This lesson introduced the key **cloud networking components** required for OCI 
 
 
 # Authenticate to OCI APIs  
-
----  
 
 ## Key Concepts
 - **Authentication vs. Authorization** – Authentication verifies identity; authorization determines access level.  
@@ -496,8 +482,6 @@ This lesson covers the design and management of **data science workspaces** via 
 
 # Notebook Sessions  
 
---- 
-
 ## Key Concepts
 - **Notebook Sessions** – Managed JupyterLab environments for building, training, and running models in OCI Data Science.  
 - **Managed Infrastructure** – OCI handles compute, storage, software updates, and patching for notebook sessions.  
@@ -545,8 +529,6 @@ This lesson introduces **OCI Data Science notebook sessions**, covering their cr
 
 
 # How to Work with JupyterLab  
-
----  
 
 ## Key Concepts
 - **JupyterLab** – Web-based user interface for interactive computing, serving as the interface for OCI notebook sessions.  
@@ -599,8 +581,6 @@ This lesson provides a comprehensive overview of **JupyterLab in OCI Data Scienc
 
 # Conda Environments: Overview  
 
----  
-
 ## Key Concepts
 - **Conda Environment** – Open-source package management system that bundles Python interpreters, libraries, and software into isolated environments.  
 - **Isolation** – Allows separate configurations for different projects, avoiding software conflicts.  
@@ -639,8 +619,6 @@ This lesson provides a comprehensive overview of **JupyterLab in OCI Data Scienc
 This lesson provides a detailed overview of **conda environments in OCI Data Science**, highlighting their role in isolating software dependencies, enabling reproducible research, and supporting collaboration. Users can leverage managed data science conda environments or create and share their own published environments. Installed environments in notebook sessions ensure that code runs consistently, and the **Environment Explorer** facilitates efficient management, discovery, and filtering of available environments. Conda environments streamline both model development and deployment while maintaining reproducibility and consistency across projects.
 
 # Data Science Conda Environments  
-
---- 
 
 ## Key Concepts
 - **Data Science Conda Pack** – Pre-made, curated conda environments provided by Oracle for data science projects, including necessary software and libraries.  
@@ -793,9 +771,7 @@ Managing conda environments in Oracle Cloud Data Science Service can be done thr
 This demo showcased how Oracle Cloud Infrastructure’s **ODSC CLI** provides comprehensive management of conda environments for Data Science Service notebooks. Users learned to **browse, search, install, clone, modify, publish, delete, and create environments from YAML files**. By leveraging ODSC with standard Unix tools, data scientists can efficiently control environment lifecycles, ensure reproducibility, and share custom conda environments for model deployment and collaborative workflows within Oracle Cloud.
 
 
-# OCI Vault: Introduction  
-
---- 
+# OCI Vault: Introduction   
 
 ## Key Concepts
 - **OCI Vault** – A managed Oracle service for securely storing encryption keys and secrets, preventing sensitive credentials from being stored in code or configuration files.  
@@ -1632,118 +1608,66 @@ This lesson introduced model explainability in OCI Data Science, focusing on glo
 This lesson covered local and What-If model explainability in OCI Data Science. Local explainers, like ADS LIME, provide insight into why a model made a specific prediction by approximating local behavior with a surrogate model. What-If explainers allow users to explore how changes in feature values impact predictions, either for a single sample or across feature distributions. These techniques enhance interpretability and help data scientists understand and trust model outputs on an individual level.
 
 
-# Expert Tips: Explainers  
+# Expert Tips: Explainers   
 
----  
+# Model Catalog: Overview    
 
-# Model Catalog: Overview  
-
----  
-
-# Model Serialization  
-
----  
+# Model Serialization   
 
 # Model Deployment  
 
----  
-
 # Demo: Model Deployment  
-
----  
 
 # Expert Tips: Hugging Face  
 
----  
-
 # Demo: Model Deployment using TensorFlow  
-
----  
 
 # LLM Training & LangChain Integration  
 
----  
-
 # Demo: Deploy LangChain based RAG to OCI Data Science  
 
----  
+# Demo: OCI Data Science Operators   
 
-# Demo: OCI Data Science Operators  
+# Demo: OCI AI Quick Actions   
 
----  
-
-# Demo: OCI AI Quick Actions  
-
----  
-
-# Skill Check: Machine Learning Lifecycle  
-
----  
+# Skill Check: Machine Learning Lifecycle    
 
 # 5. MLOps Practices  
 
-# MLOps Architecture  
-
----  
+# MLOps Architecture   
 
 # Data Science Jobs  
 
----  
-
-# Demo: Create Artifacts  
-
----  
+# Demo: Create Artifacts   
 
 # Demo: Create and Manage Jobs  
 
----  
-
 # Demo: Start and Manage a Job Run  
-
----  
 
 # Demo: Scaling  
 
----  
-
 # Jobs Monitoring and Logging  
-
----  
 
 # Data Science Pipeline  
 
----  
-
 # Demo: Data Science Pipeline  
-
----  
 
 # Model Deployment: Autoscaling  
 
----  
-
 # Expert Tips: Pipelines  
 
----  
-
-# Skill Check: MLOps Practices  
-
----  
+# Skill Check: MLOps Practices   
 
 # 6. Related OCI Services  
 
 # Spark Applications, Data Flow, and Data Science  
 
----  
 
 # Oracle Open Data  
 
----  
 
 # OCI Data Labeling  
 
----  
 
 # Skill Check: Related OCI Services  
 
----
